@@ -20,9 +20,9 @@ _DIRS = \
 	main_tools
 
 # CppUnit only compiled for VC 2008
-ifeq ($(GT_VC), 9)
-_DIRS += main_test
-endif
+#ifeq ($(GT_VC), 9)
+#_DIRS += main_test
+#endif
 
 .PHONY: dirs dep
 

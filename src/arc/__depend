@@ -1,3 +1,8 @@
+$(PATH_OBJ)/gt_arc_main.dlo: \
+	./gt_arc_main.cxx \
+	./gt_arc_analyzer.hxx \
+	../basic/gt_analyzer.hxx
+
 $(PATH_OBJ)/gt_arc_analyzer.dlo: \
 	./gt_arc_analyzer.cxx \
 	./gt_arc_analyzer.hxx \
@@ -83,7 +88,7 @@ $(PATH_OBJ)/gt_arc_lister.dlo: \
 	./gt_zip.hxx \
 	./gt_zoo.hxx
 
-$(PATH_OBJ)/gt_arc_main.dlo: \
+$(PATH_OBJ)/gt_arc_main.obj: \
 	./gt_arc_main.cxx \
 	./gt_arc_analyzer.hxx \
 	../basic/gt_analyzer.hxx
@@ -172,9 +177,4 @@ $(PATH_OBJ)/gt_arc_lister.obj: \
 	./gt_zet.hxx \
 	./gt_zip.hxx \
 	./gt_zoo.hxx
-
-$(PATH_OBJ)/gt_arc_main.obj: \
-	./gt_arc_main.cxx \
-	./gt_arc_analyzer.hxx \
-	../basic/gt_analyzer.hxx
 

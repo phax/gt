@@ -1,3 +1,19 @@
+$(PATH_OBJ)/gt_output_xml.dlo: \
+	./gt_output_xml.cxx \
+	./gt_output_xml.hxx \
+	../basic/gt_output.hxx \
+	./gt_common_output.hxx \
+	../basic/gt_errormsg.hxx \
+	../basic/gt_table.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	./gt_win32_console.hxx
+
 $(PATH_OBJ)/gt_common_output.dlo: \
 	./gt_common_output.cxx \
 	./gt_common_output.hxx \
@@ -36,7 +52,21 @@ $(PATH_OBJ)/gt_output_stdout.dlo: \
 	../res/gt_version.hrc \
 	./gt_win32_console.hxx
 
-$(PATH_OBJ)/gt_output_xml.dlo: \
+$(PATH_OBJ)/gt_win32_console.dlo: \
+	./gt_win32_console.cxx \
+	./gt_win32_console.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_errormsg.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_output_xml.obj: \
 	./gt_output_xml.cxx \
 	./gt_output_xml.hxx \
 	../basic/gt_output.hxx \
@@ -51,20 +81,6 @@ $(PATH_OBJ)/gt_output_xml.dlo: \
 	../res/gt.hrc \
 	../res/gt_version.hrc \
 	./gt_win32_console.hxx
-
-$(PATH_OBJ)/gt_win32_console.dlo: \
-	./gt_win32_console.cxx \
-	./gt_win32_console.hxx \
-	../basic/gt_output.hxx \
-	../basic/gt_cmdline_params.hxx \
-	../basic/gt_stringhelper.hxx \
-	../basic/gt_errormsg.hxx \
-	../basic/gt_utils.hxx \
-	../00/gt_stdafx.hxx \
-	../basic/gt_dll.hxx \
-	../basic/gt_stringloader.hxx \
-	../res/gt.hrc \
-	../res/gt_version.hrc
 
 $(PATH_OBJ)/gt_common_output.obj: \
 	./gt_common_output.cxx \
@@ -91,22 +107,6 @@ $(PATH_OBJ)/gt_output_html.obj: \
 $(PATH_OBJ)/gt_output_stdout.obj: \
 	./gt_output_stdout.cxx \
 	./gt_output_stdout.hxx \
-	../basic/gt_output.hxx \
-	./gt_common_output.hxx \
-	../basic/gt_errormsg.hxx \
-	../basic/gt_table.hxx \
-	../basic/gt_stringhelper.hxx \
-	../basic/gt_utils.hxx \
-	../00/gt_stdafx.hxx \
-	../basic/gt_dll.hxx \
-	../basic/gt_stringloader.hxx \
-	../res/gt.hrc \
-	../res/gt_version.hrc \
-	./gt_win32_console.hxx
-
-$(PATH_OBJ)/gt_output_xml.obj: \
-	./gt_output_xml.cxx \
-	./gt_output_xml.hxx \
 	../basic/gt_output.hxx \
 	./gt_common_output.hxx \
 	../basic/gt_errormsg.hxx \

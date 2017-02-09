@@ -8,17 +8,6 @@ $(PATH_OBJ)/gee_filedata.dlo: \
 	../basic/gt_exe_types.hxx \
 	../exe/gt_exe_macro.hxx
 
-$(PATH_OBJ)/gee_output_c.dlo: \
-	./gee_output_c.cxx \
-	./gee_output.hxx \
-	./gee_filedata.hxx \
-	../basic/gt_filebuffer.hxx \
-	../basic/gt_file.hxx \
-	../exe/gt_exe_pe.hxx \
-	../basic/gt_analyzer.hxx \
-	../basic/gt_exe_types.hxx \
-	../basic/gt_output.hxx
-
 $(PATH_OBJ)/gee_output_opcode.dlo: \
 	./gee_output_opcode.cxx \
 	./gee_output.hxx \
@@ -31,6 +20,17 @@ $(PATH_OBJ)/gee_output_opcode.dlo: \
 	./gee_settings.hxx \
 	../basic/gt_cmdline_params.hxx \
 	../basic/gt_stringhelper.hxx \
+	../basic/gt_output.hxx
+
+$(PATH_OBJ)/gee_output_c.dlo: \
+	./gee_output_c.cxx \
+	./gee_output.hxx \
+	./gee_filedata.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../exe/gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
 	../basic/gt_output.hxx
 
 $(PATH_OBJ)/geew.dlo: \
@@ -60,17 +60,6 @@ $(PATH_OBJ)/gee_filedata.obj: \
 	../basic/gt_exe_types.hxx \
 	../exe/gt_exe_macro.hxx
 
-$(PATH_OBJ)/gee_output_c.obj: \
-	./gee_output_c.cxx \
-	./gee_output.hxx \
-	./gee_filedata.hxx \
-	../basic/gt_filebuffer.hxx \
-	../basic/gt_file.hxx \
-	../exe/gt_exe_pe.hxx \
-	../basic/gt_analyzer.hxx \
-	../basic/gt_exe_types.hxx \
-	../basic/gt_output.hxx
-
 $(PATH_OBJ)/gee_output_opcode.obj: \
 	./gee_output_opcode.cxx \
 	./gee_output.hxx \
@@ -83,6 +72,17 @@ $(PATH_OBJ)/gee_output_opcode.obj: \
 	./gee_settings.hxx \
 	../basic/gt_cmdline_params.hxx \
 	../basic/gt_stringhelper.hxx \
+	../basic/gt_output.hxx
+
+$(PATH_OBJ)/gee_output_c.obj: \
+	./gee_output_c.cxx \
+	./gee_output.hxx \
+	./gee_filedata.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../exe/gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
 	../basic/gt_output.hxx
 
 $(PATH_OBJ)/geew.obj: \

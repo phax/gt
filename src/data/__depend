@@ -8,8 +8,23 @@ $(PATH_OBJ)/gtc_datares.o: \
 	../res/gt_version.rc \
 	../res/gt_version.hrc
 
-$(PATH_OBJ)/gtc_com2exe.dlo: \
-	./gtc_com2exe.cxx
+$(PATH_OBJ)/gtc_fixedname.dlo: \
+	./gtc_fixedname.cxx
+
+$(PATH_OBJ)/gtc_fixedext.dlo: \
+	./gtc_fixedext.cxx
+
+$(PATH_OBJ)/gtc_exe_ext.dlo: \
+	./gtc_exe_ext.cxx
+
+$(PATH_OBJ)/gtc_exe_1j.dlo: \
+	./gtc_exe_1j.cxx
+
+$(PATH_OBJ)/gtc_ne_0j.dlo: \
+	./gtc_ne_0j.cxx
+
+$(PATH_OBJ)/gtc_pe_ext.dlo: \
+	./gtc_pe_ext.cxx
 
 $(PATH_OBJ)/gtc_data.dlo: \
 	./gtc_data.cxx \
@@ -35,44 +50,44 @@ $(PATH_OBJ)/gtc_data.dlo: \
 	./gtc_fixedext.cxx \
 	./gtc_fixedext_filext.cxx
 
-$(PATH_OBJ)/gtc_exe_0j.dlo: \
-	./gtc_exe_0j.cxx
-
-$(PATH_OBJ)/gtc_exe_1j.dlo: \
-	./gtc_exe_1j.cxx
-
 $(PATH_OBJ)/gtc_exe_1lj.dlo: \
 	./gtc_exe_1lj.cxx
-
-$(PATH_OBJ)/gtc_exe_2j.dlo: \
-	./gtc_exe_2j.cxx
-
-$(PATH_OBJ)/gtc_exe_ext.dlo: \
-	./gtc_exe_ext.cxx
-
-$(PATH_OBJ)/gtc_fixedext.dlo: \
-	./gtc_fixedext.cxx
-
-$(PATH_OBJ)/gtc_fixedext_filext.dlo: \
-	./gtc_fixedext_filext.cxx
-
-$(PATH_OBJ)/gtc_fixedname.dlo: \
-	./gtc_fixedname.cxx
-
-$(PATH_OBJ)/gtc_ne_0j.dlo: \
-	./gtc_ne_0j.cxx
 
 $(PATH_OBJ)/gtc_pe_0j.dlo: \
 	./gtc_pe_0j.cxx
 
-$(PATH_OBJ)/gtc_pe_ext.dlo: \
-	./gtc_pe_ext.cxx
+$(PATH_OBJ)/gtc_exe_0j.dlo: \
+	./gtc_exe_0j.cxx
+
+$(PATH_OBJ)/gtc_fixedext_filext.dlo: \
+	./gtc_fixedext_filext.cxx
+
+$(PATH_OBJ)/gtc_exe_2j.dlo: \
+	./gtc_exe_2j.cxx
+
+$(PATH_OBJ)/gtc_com2exe.dlo: \
+	./gtc_com2exe.cxx
 
 $(PATH_OBJ)/gtc_sys.dlo: \
 	./gtc_sys.cxx
 
-$(PATH_OBJ)/gtc_com2exe.obj: \
-	./gtc_com2exe.cxx
+$(PATH_OBJ)/gtc_fixedname.obj: \
+	./gtc_fixedname.cxx
+
+$(PATH_OBJ)/gtc_fixedext.obj: \
+	./gtc_fixedext.cxx
+
+$(PATH_OBJ)/gtc_exe_ext.obj: \
+	./gtc_exe_ext.cxx
+
+$(PATH_OBJ)/gtc_exe_1j.obj: \
+	./gtc_exe_1j.cxx
+
+$(PATH_OBJ)/gtc_ne_0j.obj: \
+	./gtc_ne_0j.cxx
+
+$(PATH_OBJ)/gtc_pe_ext.obj: \
+	./gtc_pe_ext.cxx
 
 $(PATH_OBJ)/gtc_data.obj: \
 	./gtc_data.cxx \
@@ -98,38 +113,23 @@ $(PATH_OBJ)/gtc_data.obj: \
 	./gtc_fixedext.cxx \
 	./gtc_fixedext_filext.cxx
 
-$(PATH_OBJ)/gtc_exe_0j.obj: \
-	./gtc_exe_0j.cxx
-
-$(PATH_OBJ)/gtc_exe_1j.obj: \
-	./gtc_exe_1j.cxx
-
 $(PATH_OBJ)/gtc_exe_1lj.obj: \
 	./gtc_exe_1lj.cxx
-
-$(PATH_OBJ)/gtc_exe_2j.obj: \
-	./gtc_exe_2j.cxx
-
-$(PATH_OBJ)/gtc_exe_ext.obj: \
-	./gtc_exe_ext.cxx
-
-$(PATH_OBJ)/gtc_fixedext.obj: \
-	./gtc_fixedext.cxx
-
-$(PATH_OBJ)/gtc_fixedext_filext.obj: \
-	./gtc_fixedext_filext.cxx
-
-$(PATH_OBJ)/gtc_fixedname.obj: \
-	./gtc_fixedname.cxx
-
-$(PATH_OBJ)/gtc_ne_0j.obj: \
-	./gtc_ne_0j.cxx
 
 $(PATH_OBJ)/gtc_pe_0j.obj: \
 	./gtc_pe_0j.cxx
 
-$(PATH_OBJ)/gtc_pe_ext.obj: \
-	./gtc_pe_ext.cxx
+$(PATH_OBJ)/gtc_exe_0j.obj: \
+	./gtc_exe_0j.cxx
+
+$(PATH_OBJ)/gtc_fixedext_filext.obj: \
+	./gtc_fixedext_filext.cxx
+
+$(PATH_OBJ)/gtc_exe_2j.obj: \
+	./gtc_exe_2j.cxx
+
+$(PATH_OBJ)/gtc_com2exe.obj: \
+	./gtc_com2exe.cxx
 
 $(PATH_OBJ)/gtc_sys.obj: \
 	./gtc_sys.cxx

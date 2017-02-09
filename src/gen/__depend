@@ -1,16 +1,9 @@
-$(PATH_OBJ)/gt_fixedname.dlo: \
-	./gt_fixedname.cxx \
-	./gt_fixedname.hxx \
-	../data/gtc_datatypes.hxx \
-	../data/gtc_data.hxx \
-	../basic/gt_registry.hxx \
-	../basic/gt_stringhelper.hxx \
-	../basic/gt_utils.hxx \
-	../00/gt_stdafx.hxx \
-	../basic/gt_dll.hxx \
-	../basic/gt_stringloader.hxx \
-	../res/gt.hrc \
-	../res/gt_version.hrc
+$(PATH_OBJ)/gt_gen_main.dlo: \
+	./gt_gen_main.cxx \
+	./gt_gen_analyzer.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx
 
 $(PATH_OBJ)/gt_gen_analyzer.dlo: \
 	./gt_gen_analyzer.cxx \
@@ -99,14 +92,7 @@ $(PATH_OBJ)/gt_gen_analyzer.dlo: \
 	./gtgen_xml.hxx \
 	./gtgen_xpt.hxx
 
-$(PATH_OBJ)/gt_gen_main.dlo: \
-	./gt_gen_main.cxx \
-	./gt_gen_analyzer.hxx \
-	../basic/gt_analyzer.hxx \
-	../basic/gt_cmdline_params.hxx \
-	../basic/gt_stringhelper.hxx
-
-$(PATH_OBJ)/gt_fixedname.obj: \
+$(PATH_OBJ)/gt_fixedname.dlo: \
 	./gt_fixedname.cxx \
 	./gt_fixedname.hxx \
 	../data/gtc_datatypes.hxx \
@@ -119,6 +105,13 @@ $(PATH_OBJ)/gt_fixedname.obj: \
 	../basic/gt_stringloader.hxx \
 	../res/gt.hrc \
 	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_gen_main.obj: \
+	./gt_gen_main.cxx \
+	./gt_gen_analyzer.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx
 
 $(PATH_OBJ)/gt_gen_analyzer.obj: \
 	./gt_gen_analyzer.cxx \
@@ -207,10 +200,17 @@ $(PATH_OBJ)/gt_gen_analyzer.obj: \
 	./gtgen_xml.hxx \
 	./gtgen_xpt.hxx
 
-$(PATH_OBJ)/gt_gen_main.obj: \
-	./gt_gen_main.cxx \
-	./gt_gen_analyzer.hxx \
-	../basic/gt_analyzer.hxx \
-	../basic/gt_cmdline_params.hxx \
-	../basic/gt_stringhelper.hxx
+$(PATH_OBJ)/gt_fixedname.obj: \
+	./gt_fixedname.cxx \
+	./gt_fixedname.hxx \
+	../data/gtc_datatypes.hxx \
+	../data/gtc_data.hxx \
+	../basic/gt_registry.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
 

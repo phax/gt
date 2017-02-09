@@ -11,3 +11,4 @@ This application is designed to be compiled and run on Windows only.
       * link.exe
   * At least Visual C++ 7.1/2003/13.00 is required
     * The Platform SDK must be installed
+    * Compile on the commandline by using batch file `src\_make_vs7.cmd`

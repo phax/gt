@@ -1,3 +1,13 @@
+$(PATH_OBJ)/gt_pathmod.dlo: \
+	./gt_pathmod.cxx \
+	../app/gt_cmdline_args.hxx
+
+$(PATH_OBJ)/gt_test.dlo: \
+	./gt_test.cxx \
+	../app/gt_app.hxx \
+	../basic/gt_direntry.hxx \
+	../basic/gt_output.hxx
+
 $(PATH_OBJ)/gt_main.dlo: \
 	./gt_main.cxx \
 	../app/gt_app.hxx \
@@ -31,11 +41,11 @@ $(PATH_OBJ)/gt_mainlister.dlo: \
 	../res/gt.hrc \
 	../res/gt_version.hrc
 
-$(PATH_OBJ)/gt_pathmod.dlo: \
+$(PATH_OBJ)/gt_pathmod.obj: \
 	./gt_pathmod.cxx \
 	../app/gt_cmdline_args.hxx
 
-$(PATH_OBJ)/gt_test.dlo: \
+$(PATH_OBJ)/gt_test.obj: \
 	./gt_test.cxx \
 	../app/gt_app.hxx \
 	../basic/gt_direntry.hxx \
@@ -73,14 +83,4 @@ $(PATH_OBJ)/gt_mainlister.obj: \
 	../basic/gt_stringloader.hxx \
 	../res/gt.hrc \
 	../res/gt_version.hrc
-
-$(PATH_OBJ)/gt_pathmod.obj: \
-	./gt_pathmod.cxx \
-	../app/gt_cmdline_args.hxx
-
-$(PATH_OBJ)/gt_test.obj: \
-	./gt_test.cxx \
-	../app/gt_app.hxx \
-	../basic/gt_direntry.hxx \
-	../basic/gt_output.hxx
 

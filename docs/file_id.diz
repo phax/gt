@@ -1,0 +1,6 @@
+GT2 0.35
+GT2 is a file detection utility that detects all kind of file types according to their binary signature.
+Example: GT will recognize your ZIP file even if it is named "test file.avi" if the first 4 bytes in the file are PK\x03\x04.
+It is different from standard Windows file type detection since it does not consider the file's extension by default. So if you ever stumble across a file that you don't know what it is, run GT2 on it and you will hopefully know what it is.
+http://philip.helger.com/gt
+

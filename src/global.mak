@@ -22,7 +22,7 @@ REBASE     = rebase
 REBASE_EXE = @$(REBASE) -f -a -x $(PATH_BIN)\ -b
 REBASE_DLL = @$(REBASE) -f -a -x $(PATH_BIN)\ -b
 
-CHECKDEP = checkdep $(CCINCLUDE:-I=--include) --no_console --makefile "--prefix$$" "--prefix(PATH_OBJ)/"
+CHECKDEP = ../../tools/checkdep.exe $(CCINCLUDE:-I=--include) --no_console --makefile "--prefix$$" "--prefix(PATH_OBJ)/"
 
 rc_files  := $(wildcard *.rc)
 cxx_files := $(wildcard *.cxx)
