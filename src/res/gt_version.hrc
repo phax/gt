@@ -1,0 +1,8 @@
+#ifndef _GT_VERSION_HRC_
+#define _GT_VERSION_HRC_
+
+// global version number!
+#define GT_VERSION_COMMA_SEP    0,36,0,0
+#define GT_VERSION_STR          _T ("0.36")
+
+#endif

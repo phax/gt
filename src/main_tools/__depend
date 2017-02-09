@@ -1,0 +1,16 @@
+$(PATH_OBJ)/gt_ffdet.dlo: \
+	./gt_ffdet.cxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx
+
+$(PATH_OBJ)/gt_ffdet.obj: \
+	./gt_ffdet.cxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx
+

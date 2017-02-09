@@ -1,0 +1,71 @@
+#include "gt_version.hrc"
+
+#ifndef GT_FILENAME
+#error GT_FILENAME is not defined
+#endif
+
+#ifndef GT_SUFFIX
+#error GT_SUFFIX is not defined
+#endif
+
+#ifndef GT_DESCRIPTION
+#error GT_DESCRIPTION is not defined
+#endif
+
+// compatibility stuff
+#ifdef _T
+#undef _T
+#endif
+#define _T(x)  x
+
+#define _STR(x) #x
+
+#ifdef GT_MAIN_RES
+#define _FILETYPE   VFT_APP
+#define _EXT        ".exe"
+#else
+#define _FILETYPE   VFT_DLL
+#define _EXT        ".dll"
+#endif
+
+VS_VERSION_INFO    VERSIONINFO
+  FILEVERSION      GT_VERSION_COMMA_SEP
+  PRODUCTVERSION   GT_VERSION_COMMA_SEP
+  FILEFLAGSMASK    VS_FFI_FILEFLAGSMASK
+#ifdef _DEBUG
+  FILEFLAGS        VS_FF_DEBUG | VS_FF_PRIVATEBUILD | VS_FF_PRERELEASE
+#else
+  FILEFLAGS        0 // final version
+#endif
+  FILEOS           VOS__WINDOWS32
+  FILETYPE         _FILETYPE
+  FILESUBTYPE      0   // not used
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    // 0x0407 German
+    // 0x0809 UK English
+    // ------
+    // 0x04e4 Windows Multilingual
+    BLOCK "040704E4"
+    BEGIN
+      VALUE "Comment",          "http://www.phloc.com/\0"
+      VALUE "CompanyName",      "http://www.phloc.com/\0"
+      VALUE "FileDescription",  GT_DESCRIPTION "\0"
+      VALUE "FileVersion",      GT_VERSION_STR "\0"
+      VALUE "InternalName",     GT_FILENAME _EXT "\0"
+      VALUE "LegalCopyright",   "Copyright (c) 1999-2008 by PHaX/phloc systems\0"
+      VALUE "OriginalFilename", GT_FILENAME _EXT "\0"
+#ifdef _DEBUG
+      VALUE "PrivateBuild",     "Private debug build for PHaX/phloc systems\0"
+#endif
+      VALUE "ProductName",      "GT2\0"
+      VALUE "ProductVersion",   GT_VERSION_STR "\0"
+    END
+  END
+
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x407, 1252
+  END
+END

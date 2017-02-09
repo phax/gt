@@ -1,0 +1,20 @@
+$(PATH_OBJ)/gt_version.res: \
+	./gt_version.rc \
+	./gt_version.hrc
+
+$(PATH_OBJ)/gtres.res: \
+	./gtres.rc \
+	./gt.hrc \
+	./gt_version.rc \
+	./gt_version.hrc
+
+$(PATH_OBJ)/gt_version.o: \
+	./gt_version.rc \
+	./gt_version.hrc
+
+$(PATH_OBJ)/gtres.o: \
+	./gtres.rc \
+	./gt.hrc \
+	./gt_version.rc \
+	./gt_version.hrc
+

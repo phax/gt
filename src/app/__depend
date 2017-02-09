@@ -1,0 +1,102 @@
+$(PATH_OBJ)/gt_app.dlo: \
+	./gt_app.cxx \
+	./gt_app.hxx \
+	./gt_cmdline_args.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_configfile.hxx \
+	./gt_crashtracker.hxx \
+	./gt_driveinfo.hxx \
+	../basic/gt_errormsg.hxx \
+	../basic/gt_output.hxx \
+	../output/gt_output_html.hxx \
+	../output/gt_output_stdout.hxx \
+	../output/gt_output_xml.hxx \
+	./gt_paramhandler.hxx \
+	../basic/gt_timer.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_cmdline_args.dlo: \
+	./gt_cmdline_args.cxx
+
+$(PATH_OBJ)/gt_crashtracker.dlo: \
+	./gt_crashtracker.cxx \
+	./gt_crashtracker.hxx \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_driveinfo.dlo: \
+	./gt_driveinfo.cxx \
+	./gt_driveinfo.hxx
+
+$(PATH_OBJ)/gt_paramhandler.dlo: \
+	./gt_paramhandler.cxx \
+	./gt_paramhandler.hxx \
+	../basic/gt_direntry.hxx \
+	./gt_driveinfo.hxx \
+	../basic/gt_filesearch.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_timer.hxx \
+	../basic/gt_utils.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	../basic/gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_app.obj: \
+	./gt_app.cxx \
+	./gt_app.hxx \
+	./gt_cmdline_args.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_configfile.hxx \
+	./gt_crashtracker.hxx \
+	./gt_driveinfo.hxx \
+	../basic/gt_errormsg.hxx \
+	../basic/gt_output.hxx \
+	../output/gt_output_html.hxx \
+	../output/gt_output_stdout.hxx \
+	../output/gt_output_xml.hxx \
+	./gt_paramhandler.hxx \
+	../basic/gt_timer.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_cmdline_args.obj: \
+	./gt_cmdline_args.cxx
+
+$(PATH_OBJ)/gt_crashtracker.obj: \
+	./gt_crashtracker.cxx \
+	./gt_crashtracker.hxx \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_driveinfo.obj: \
+	./gt_driveinfo.cxx \
+	./gt_driveinfo.hxx
+
+$(PATH_OBJ)/gt_paramhandler.obj: \
+	./gt_paramhandler.cxx \
+	./gt_paramhandler.hxx \
+	../basic/gt_direntry.hxx \
+	./gt_driveinfo.hxx \
+	../basic/gt_filesearch.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_timer.hxx \
+	../basic/gt_utils.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	../basic/gt_stringhelper.hxx
+

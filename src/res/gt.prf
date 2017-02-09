@@ -1,0 +1,4456 @@
+LANG en
+LANG de
+
+MACRO OUTPUT_HEX_8    "%02Xh"
+MACRO OUTPUT_HEX_16   "%04Xh"
+MACRO OUTPUT_HEX_32   "%08Xh"
+MACRO OUTPUT_HEX_64   "%08I64Xh"
+
+MACRO OUTPUT_DEC_32   "%lu"
+MACRO OUTPUT_DEC_64   "%I64d"
+
+MACRO OUTPUT_HEX_DEC_32   $$OUTPUT_HEX_32 " / " $$OUTPUT_DEC_32
+MACRO OUTPUT_HEX_DEC_64   $$OUTPUT_HEX_64 " / " $$OUTPUT_DEC_64
+
+// generic stuff
+STR HRC_YES
+  de ="ja";
+  all="yes";
+
+STR HRC_NO
+  de ="nein";
+  all="no";
+
+STR HRC_UNKNOWN
+  de ="unbekannt";
+  all="unknown";
+
+STR HRC_HACK
+  all="!HACK!";
+
+STR HRC_WIN32_ERROR
+  de ="Ein Windows Fehler ist aufgetreten";
+  all="A Windows error occured";
+
+
+// gtlib
+// %I64d: number of bytes missing in the file
+STR HRC_GTLIB_ANALYZER_BYTES_MISSING
+  de ="Fehler: scheinbar fehlen $$OUTPUT_DEC_64 Bytes der Datei.\012";
+  all="Error: seems like $$OUTPUT_DEC_64 bytes of the file are missing.\012";
+
+
+// first  %s: packer|encrypter|....
+// second %s: name of the modifier that was found
+// third  %s: optional " (partial match)" string
+STR HRC_GTLIB_COMPARE_FOUND
+  de ="Gefunden: %s '%s%s'\012";
+  all="Found %s '%s%s'\012";
+
+
+STR HRC_GTLIB_CONFIGFILE_REGPATH
+  all="Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders";
+
+STR HRC_GTLIB_CONFIGFILE_REGKEY
+  all="AppData";
+
+// %s: filename
+STR HRC_GTLIB_CONFIGFILE_ERROR
+  de ="Fehler in der Konfigurationsdatei '%s':\012";
+  all="Error in the configuration file '%s':\012";
+
+// %u: configuration file line number
+STR HRC_GTLIB_CONFIGFILE_SYNTAX_ERROR
+  de ="  Zeile %u: Syntax error\012";
+  all="  line %u: Syntax error\012";
+
+// %u: configuration file line number
+// %s: the content of the errornous config file
+STR HRC_GTLIB_CONFIGFILE_UNKNOWN_SWITCH
+  de ="  Zeile %u: Unbekannter Parameter '%s'\012";
+  all="  line %u: Unknown switch '%s'\012";
+
+// %u: configuration file line number
+STR HRC_GTLIB_CONFIGFILE_INVALID_CHAR
+  de ="  Zeile %u: Ungültiges Zeichen\012";
+  all="  line %u: Invalid character\012";
+
+
+// first  %s: source filename
+//        %u: source line number
+// second %s: the name of the file currently scanned
+STR HRC_GTLIB_ERROR_INTERNAL
+  de ="!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\012!! Interner Fehler: %s Zeile %u\012!! Bitte senden Sie '%s' an ph[at]phloc.com\012!! Danke für Ihre Unterstützung !!\012!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\012\012";
+  all="!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\012!! Internal error: %s line %u\012!! Please send '%s' to ph[at]phloc.com\012!! ThanX for your support !!\012!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\012\012";
+
+// %s: source filename
+// %u: source line number
+STR HRC_GTLIB_ERROR_EXCEPTION
+  de ="Exception in der Quelldatei\012  %s\012  Zeile %u:\012%s";
+  all="Exception in source file\012  %s\012  line %u:\012%s";
+
+
+// %s: name of the file currently scanned
+STR HRC_GTLIB_FILEBUFFER_FAILED_TO_OPEN
+  de ="Fehler beim Öffnen von '%s'";
+  all="Failed to open '%s'";
+
+
+// first %s: is the filename
+//    %I64d: is an offset into the file
+STR HRC_GTLIB_FILEBUFFER_EXCEPTION_SETACTFILEPOS
+  de ="Aufgetreten in\012  %s\012Fehler beim Versuch zur Dateiposition $$OUTPUT_DEC_64 zu springen\012";
+  all="Occured in\012  %s\012Error trying to set the filepointer to $$OUTPUT_DEC_64\012";
+
+STR HRC_GTLIB_FILEBUFFER_EXCEPTION_INCACTFILEPOS
+  de ="Aufgetreten in\012  %s\012Fehler beim Versuch zur Dateiposition $$OUTPUT_DEC_64 zu springen\012";
+  all="Occured in\012  %s\012Error trying to increase the filepointer to $$OUTPUT_DEC_64\012";
+
+STR HRC_GTLIB_FILEBUFFER_EXCEPTION_GETBUFFERX_EOF
+  de ="Aufgetreten in\012  %s\012Fehler beim Versuch $$OUTPUT_DEC_64 Bytes über das Dateiende zu lesen\012";
+  all="Occured in\012  %s\012Error trying to read $$OUTPUT_DEC_64 bytes over EOF\012";
+
+STR HRC_GTLIB_FILEBUFFER_EXCEPTION_GETBUFFERX_SOF
+  de ="Aufgetreten in\012  %s\012Fehler beim Versuch $$OUTPUT_DEC_64 Bytes vor dem Dateibeginn zu lesen\012";
+  all="Occured in\012  %s\012Error trying to read $$OUTPUT_DEC_64 bytes before SOF\012";
+
+STR HRC_GTLIB_FILEBUFFER_EXCEPTION_GETCSTRING
+  de ="Aufgetreten in\012  %s\012Fehler beim Versuch einen C-String an der Position $$OUTPUT_DEC_64 zu lesen\012";
+  all="Occured in\012  %s\012Failed to read C like string at $$OUTPUT_DEC_64\012";
+
+STR HRC_GTLIB_FILEBUFFER_EXCEPTION_GETPASCALSTRING
+  de ="Aufgetreten in\012  %s\012Fehler beim Versuch einen Pascal-String an der Position $$OUTPUT_DEC_64 zu lesen\012";
+  all="Occured in\012  %s\012Failed to read Pascal like string at $$OUTPUT_DEC_64\012";
+
+STR HRC_GTLIB_FILEBUFFER_EXCEPTION_GETLINE
+  de ="Aufgetreten in\012  %s\012Fehler beim Versuch eine Zeile an der Position $$OUTPUT_DEC_64 zu lesen\012";
+  all="Occured in\012  %s\012Failed to read single line at $$OUTPUT_DEC_64\012";
+
+STR HRC_GTLIB_FILEBUFFER_EXCEPTION_GETBUFFERX_READ
+  de ="Aufgetreten in\012  %s\012Fehler beim Lesen von $$OUTPUT_DEC_64 Bytes\012";
+  all="Occured in\012  %s\012Failed to read $$OUTPUT_DEC_64 bytes\012";
+
+
+STR HRC_GTLIB_PERESTYPE_CURSOR
+  de ="Mauszeiger (Cursor)";
+  all="Cursor";
+
+STR HRC_GTLIB_PERESTYPE_BITMAP
+  de ="Bild (Bitmap)";
+  all="Bitmap";
+
+STR HRC_GTLIB_PERESTYPE_ICON
+  all="Icon";
+
+STR HRC_GTLIB_PERESTYPE_MENU
+  de ="Menü";
+  all="Menu";
+
+STR HRC_GTLIB_PERESTYPE_DIALOG
+  de ="Dialog";
+  all="Dialog";
+
+STR HRC_GTLIB_PERESTYPE_STRING
+  de ="String-Tabelle";
+  all="String Table";
+
+STR HRC_GTLIB_PERESTYPE_FONTDIR
+  de ="Schriftart-Verzeichnis";
+  all="Font Directory";
+
+STR HRC_GTLIB_PERESTYPE_FONT
+  de ="Schriftart";
+  all="Font";
+
+STR HRC_GTLIB_PERESTYPE_ACCEL
+  de ="Accelerator";
+  all="Accelerator";
+
+STR HRC_GTLIB_PERESTYPE_RCDATA
+  all="RCData";
+
+STR HRC_GTLIB_PERESTYPE_MSGTABLE
+  de ="Message Tabelle";
+  all="Message Table";
+
+STR HRC_GTLIB_PERESTYPE_GROUPCURSOR
+  de ="Mauszeiger Gruppe (Cursor Group)";
+  all="Cursor Group";
+
+STR HRC_GTLIB_PERESTYPE_EMPTY1
+  all="";  // empty!!
+
+STR HRC_GTLIB_PERESTYPE_GROUPICON
+  de ="Icon Gruppe";
+  all="Icon Group";
+
+STR HRC_GTLIB_PERESTYPE_EMPTY2
+  all="";  // empty!!
+
+STR HRC_GTLIB_PERESTYPE_VERSION
+  de ="Versions-Informationen";
+  all="Version Info";
+
+STR HRC_GTLIB_PERESTYPE_DIALOGINCLUDE
+  de ="Dialog-Teil (Dialog Include)";
+  all="Dialog Include";
+
+STR HRC_GTLIB_PERESTYPE_EMPTY3
+  all="";  // empty
+
+STR HRC_GTLIB_PERESTYPE_PNP
+  all="Plug'n'Play";
+
+STR HRC_GTLIB_PERESTYPE_VXD
+  all="VXD";
+
+STR HRC_GTLIB_PERESTYPE_ANIMCURSOR
+  de ="Animierter Mauszeiger (Animated Cursor)";
+  all="Animated Cursor";
+
+STR HRC_GTLIB_PERESTYPE_ANIMICON
+  de ="Animiertes Icon";
+  all="Animated Icon";
+
+STR HRC_GTLIB_PERESTYPE_HTML
+  all="HTML";
+
+STR HRC_GTLIB_PERESTYPE_MANIFEST
+  all="Manifest";
+
+
+STR HRC_GTLIB_PEDIRTYPE_0
+  de ="Export Tabelle";
+  all="Export Table";
+
+STR HRC_GTLIB_PEDIRTYPE_1
+  de ="Import Tabelle";
+  all="Import Table";
+
+STR HRC_GTLIB_PEDIRTYPE_2
+  de ="Ressource Tabelle";
+  all="Ressource Table";
+
+STR HRC_GTLIB_PEDIRTYPE_3
+  de ="Ausnahme Tabelle";
+  all="Exception Table";
+
+STR HRC_GTLIB_PEDIRTYPE_4
+  de ="Zertifikat Tabelle";
+  all="Certificate Table";
+
+STR HRC_GTLIB_PEDIRTYPE_5
+  de ="Base relocation Tabelle";
+  all="Base relocation Table";
+
+STR HRC_GTLIB_PEDIRTYPE_6
+  de ="Debug data";
+  all="Debug data";
+
+STR HRC_GTLIB_PEDIRTYPE_7
+  de ="Architektur";
+  all="Architecture";
+
+STR HRC_GTLIB_PEDIRTYPE_8
+  de ="Globale Zeiger";
+  all="Global Ptr";
+
+STR HRC_GTLIB_PEDIRTYPE_9
+  de ="TLS Tabelle";
+  all="TLS Table";
+
+STR HRC_GTLIB_PEDIRTYPE_A
+  de ="Load Config Tabelle";
+  all="Load Config Table";
+
+STR HRC_GTLIB_PEDIRTYPE_B
+  de ="Bound Import Tabelle";
+  all="Bound Import Table";
+
+STR HRC_GTLIB_PEDIRTYPE_C
+  de ="Import Addressen Tabelle";
+  all="Import Address Table";
+
+STR HRC_GTLIB_PEDIRTYPE_D
+  de ="Delay Import Beschreibung";
+  all="Delay Import Descriptor";
+
+STR HRC_GTLIB_PEDIRTYPE_E
+  de ="COM+ Runtime Header";
+  all="COM+ Runtime Header";
+
+STR HRC_GTLIB_PEDIRTYPE_F
+  de ="Reserviert";
+  all="Reserved";
+
+
+STR HRC_GTLIB_COMPARE_CODE
+  de ="Code";
+  all="code";
+
+STR HRC_GTLIB_COMPARE_PACKER
+  de ="Packer";
+  all="packer";
+
+STR HRC_GTLIB_COMPARE_ENCRYPTER
+  de ="Encrypter";
+  all="encrypter";
+
+STR HRC_GTLIB_COMPARE_COMPILER
+  de ="Compiler";
+  all="compiler";
+
+STR HRC_GTLIB_COMPARE_LINKER
+  de ="Linker";
+  all="linker";
+
+STR HRC_GTLIB_COMPARE_CONVERTER
+  de ="Konverter";
+  all="converter";
+
+STR HRC_GTLIB_COMPARE_PROTECTOR
+  de ="Protector";
+  all="protector";
+
+STR HRC_GTLIB_COMPARE_STICKER
+  de ="Sticker";
+  all="sticker";
+
+STR HRC_GTLIB_COMPARE_EXTENDER
+  de ="Extender";
+  all="extender";
+
+STR HRC_GTLIB_COMPARE_PASSWORD
+  de ="Passwort";
+  all="password";
+
+STR HRC_GTLIB_COMPARE_MODIFIER
+  de ="Modifier";
+  all="modifier";
+
+STR HRC_GTLIB_COMPARE_PARTIAL
+  de =" (teilweise Übereinstimmung)";
+  all=" (partial match)";
+
+
+// arclib
+// %s: type of archive found (e.g. ZIP or RAR)
+STR HRC_ARCLIB_FOUND_ARCHIVE
+  de ="%s Archiv gefunden";
+  all="Found %s archive";
+
+
+// Printed, if the archive does not start at overlay position 0
+// both %I64d% and %04I64X represent the file offset
+STR HRC_ARCLIB_AT_OFFSET
+  de =" bei (relativem) Offset $$OUTPUT_HEX_DEC_64";
+  all=" at (relative) offset $$OUTPUT_HEX_DEC_64";
+
+
+// printed, if the cmdline flag /noarcs was used
+STR HRC_ARCLIB_LISTING_IS_DISABLED
+  de =" (Auflistung ist deaktiviert)";
+  all=" (listing is disabled)";
+
+
+// A non-listable archive
+STR HRC_ARCLIB_NO_LISTER
+  de ="Keine Auflistung möglich\012";
+  all="No lister is implemented\012";
+
+
+// The string in archive listing at the bottom:
+STR HRC_ARCLIB_TOTAL
+  de ="Total (%u Dateien)";
+  all="Total (%u files)";
+
+
+// The filename is appended:
+STR HRC_ARCLIB_READING_ARCHIVE
+  de ="Lese Archiv ";
+  all="Reading archive ";
+
+
+STR HRC_ARCLIB_COLUMN_PACKED
+  de ="Gepackt";
+  all="Packed";
+
+STR HRC_ARCLIB_COLUMN_UNPACKED
+  de ="Entpackt";
+  all="Unpacked";
+
+STR HRC_ARCLIB_COLUMN_PERCENTAGE
+  de ="Proz";
+  all="Perc";
+
+STR HRC_ARCLIB_COLUMN_DATETIME
+  de ="Datum/Zeit";
+  all="Date/time";
+
+STR HRC_ARCLIB_COLUMN_FILENAME
+  de ="Dateiname";
+  all="Filename";
+
+
+// first  %u: major version number
+// second %u: minor version number
+STR HRC_ARCLIB_ARCFLAG_VERSION
+  de ="Archiv Version %u.%u\012";
+  all="Archive version %u.%u\012";
+
+STR HRC_ARCLIB_ARCFLAG_ENCRYPTED
+  de ="Archiv ist verschlüsselt\012";
+  all="Archive is encrypted\012";
+
+STR HRC_ARCLIB_ARCFLAG_SOLID
+  de ="Solid Archiv\012";
+  all="Solid archive\012";
+
+STR HRC_ARCLIB_ARCFLAG_COMMENT
+  de ="Archiv Kommentar vorhanden\012";
+  all="Archive comment present\012";
+
+STR HRC_ARCLIB_ARCFLAG_MULTI_VOLUME
+  de ="Archiv ist aufgeteilt\012";
+  all="Multivolume archive\012";
+
+STR HRC_ARCLIB_ARCFLAG_LOCKED
+  de ="Archiv ist gesperrt\012";
+  all="Archive is locked\012";
+
+STR HRC_ARCLIB_ARCFLAG_AUTHENTIFICATION
+  de ="Authentifizierung vorhanden\012";
+  all="Authentification info present\012";
+
+STR HRC_ARCLIB_ARCFLAG_RECOVERY_RECORD
+  de ="Wiederherstellungsinfo vorhanden\012";
+  all="Recovery record present\012";
+
+
+STR HRC_ARCLIB_FILEFLAG_PASSWORD
+  de =" [Passwort]";
+  all=" [password]";
+
+STR HRC_ARCLIB_FILEFLAG_DIR
+  de =" [Verzeichnis]";
+  all=" [directory]";
+
+STR HRC_ARCLIB_FILEFLAG_FROMLAST
+  de =" [fortgesetzt von vorherigem Teil]";
+  all=" [continued from last volume]";
+
+STR HRC_ARCLIB_FILEFLAG_ONNEXT
+  de =" [wird in nächstem Teil fortgesetzt]";
+  all=" [continued on next volume]";
+
+STR HRC_ARCLIB_FILEFLAG_COMMENT
+  de =" [Kommentar]";
+  all=" [comment]";
+
+
+STR HRC_ARCLIB_ERROR_UNEXPECTED_EOF
+  de ="Fehler: unerwartetes Ende des Archives gefunden\012";
+  all="Error: found unexpected end of archive\012";
+
+STR HRC_ARCLIB_ERROR_UNEXPECTED_VALUE
+  de ="Fehler: unerwarteter Wert gefunden (korruptes oder ungültiges Archiv?)\012";
+  all="Error: found unexpected value (invalid or no such archive?)\012";
+
+STR HRC_ARCLIB_ERROR_MISSING_DATA
+  de ="Warnung: das Archiv ist evtl. unvollständig\012";
+  all="Warning: the archive may be incomplete\012";
+
+STR HRC_ARCLIB_ERROR_UNKNOWN_METHOD
+  de ="Warnung: unbekannte Pack-Methode gefunden\012";
+  all="Warning: unknown pack method detected\012";
+
+STR HRC_ARCLIB_ERROR_EXCEPTION
+  de ="Fehler: eine Exception wurde geworfen\012";
+  all="Error: an exception was thrown\012";
+
+
+// %u: the count of files in the archive
+STR HRC_ARCLIB_AIN_FILES_IN_ARCHIVE
+  de ="%u Dateien im Archiv\012";
+  all="%u files in archive\012";
+
+
+// %s: ARJ version string
+STR HRC_ARCLIB_ARJ_VERSION
+  de ="Version: %s;";
+  all="version: %s;";
+
+// %s: ARJ archive name
+STR HRC_ARCLIB_ARJ_ADDONSTRING
+  de =" orig. Name: '%s'\012";
+  all=" orig. name: '%s'\012";
+
+
+STR HRC_ARCLIB_INNO_RIPPED
+  de ="Schaut so aus, als ob das Archiv von einer EXE Datei entfernt wurde\012";
+  all="Seems like the archive was ripped from an EXE overlay\012";
+
+STR HRC_ARCLIB_INNO_SETUP_DATA
+  de ="Setup Daten";
+  all="Setup data";
+
+
+STR HRC_ARCLIB_LZH_AWARD_NCR_ROM
+  all="NCR ROM";
+
+STR HRC_ARCLIB_LZH_AWARD_BUSLOGIC_RAM
+  all="AHA/BusLogic ROM";
+
+STR HRC_ARCLIB_LZH_AWARD_LOGO_BITMAP
+  all="LOGO BitMap";
+
+STR HRC_ARCLIB_LZH_AWARD_CPU_MICRO_CODE
+  all="CPU micro code";
+
+STR HRC_ARCLIB_LZH_AWARD_EPA_PATTERN
+  all="EPA pattern";
+
+STR HRC_ARCLIB_LZH_AWARD_ACPI_TABLE
+  de ="ACPI Tabelle";
+  all="ACPI table";
+
+STR HRC_ARCLIB_LZH_AWARD_VSA_DRIVER
+  all="VSA driver";
+
+STR HRC_ARCLIB_LZH_AWARD_EXT_SYSTEM_BIOS
+  all="EXT System BIOS";
+
+STR HRC_ARCLIB_LZH_AWARD_SYSTEM_BIOS
+  all="System BIOS";
+
+STR HRC_ARCLIB_LZH_AWARD_VGA_ROM
+  all="VGA ROM";
+
+
+// exelib
+STR HRC_EXELIB_DOS_HEADER_TOO_SMALL
+  de ="Größe des Headers ist zu klein ($$OUTPUT_DEC_32).\012";
+  all="Size of header is too small ($$OUTPUT_DEC_32).\012";
+
+STR HRC_EXELIB_DOS_HEADER_TOO_LARGE
+  de ="Größe des Headers ist zu groß ($$OUTPUT_DEC_32).\012";
+  all="Size of header is too large ($$OUTPUT_DEC_32).\012";
+
+// both %u and %08X contain the new EXE header size
+STR HRC_EXELIB_DOS_CALCED_HEADER_SIZE
+  de ="Berechnete neue Header-Größe: $$OUTPUT_HEX_DEC_32 Bytes\012";
+  all="Calculated new size of header: $$OUTPUT_HEX_DEC_32 bytes\012";
+
+STR HRC_EXELIB_DOS_HEADER_NOW_TOO_LARGE
+  de ="Header ist jetzt zu groß. Ignoriere DOS EXE Teil.\012";
+  all="Header is now too large. Ignoring DOS EXE part.\012";
+
+// %s: COM2EXE author's name
+STR HRC_EXELIB_DOS_FOUND_COM2EXE
+  de ="Habe COM2EXE Konverter von '%s' gefunden\012";
+  all="Found COM2EXE converter from '%s'\012";
+
+// first  %u: major version number
+// second %u: minor version number
+STR HRC_EXELIB_DOS_FOUND_TLINK
+  de ="Habe Linker 'TLink %u.%u' gefunden\012";
+  all="Found linker 'TLink %u.%u'\012";
+
+STR HRC_EXELIB_DOS_PKLITE_ID
+  de ="Habe ID aber keinen Code von PKLite gefunden\012";
+  all="Found ID but no code of PKLite\012";
+
+STR HRC_EXELIB_DOS_PKLITE_CODE
+  de ="Habe Code aber keine ID von PKLite gefunden\012";
+  all="Found code but no ID of PKLite\012";
+
+// first  %u: major version number
+// second %u: minor version number
+STR HRC_EXELIB_DOS_FOUND_PKLITE
+  de ="Habe Packer 'PKLite %u.%02u' gefunden\012";
+  all="Found packer 'PKLite %u.%02u'\012";
+
+// first  %u: major version number
+// second %u: minor version number
+STR HRC_EXELIB_DOS_FOUND_PKLITE_EXTRA
+  de ="Habe Packer 'PKLite %u.%02u' [Extra Kompression] gefunden\012";
+  all="Found packer 'PKLite %u.%02u' [extra compression]\012";
+
+STR HRC_EXELIB_DOS_FOUND_COM
+  de ="DOS COM Executable Datei\012";
+  all="DOS COM executable file\012";
+
+STR HRC_EXELIB_DOS_FOUND_EXE_DOS
+  de ="Ist eine ausführbare DOS Datei\012";
+  all="Is a DOS executable\012";
+
+STR HRC_EXELIB_DOS_FOUND_EXE_PE
+  de ="Ist eine ausführbare Win32 Datei\012";
+  all="Is a Win32 executable\012";
+
+STR HRC_EXELIB_DOS_FOUND_EXE_NE
+  de ="Ist eine ausführbare Win 3.x Datei\012";
+  all="Is a Win 3.x executable\012";
+
+STR HRC_EXELIB_DOS_FOUND_EXE_LE
+  de ="Ist eine ausführbare OS/2 / Win 3.x / DosExt Datei\012";
+  all="Is a OS/2 / Win 3.x / DosExt executable\012";
+
+STR HRC_EXELIB_DOS_FOUND_EXE_DOS_OFFSET
+  de ="Ist eine ausführbare DOS Datei ab Offset $$OUTPUT_HEX_DEC_64\012";
+  all="Is a DOS executable at offset $$OUTPUT_HEX_DEC_64\012";
+
+STR HRC_EXELIB_DOS_FOUND_EXE_PE_OFFSET
+  de ="Ist eine ausführbare Win32 Datei ab Offset $$OUTPUT_HEX_DEC_64\012";
+  all="Is a Win32 executable at offset $$OUTPUT_HEX_DEC_64\012";
+
+STR HRC_EXELIB_DOS_FOUND_EXE_NE_OFFSET
+  de ="Ist eine ausführbare Win 3.x Datei ab Offset $$OUTPUT_HEX_DEC_64\012";
+  all="Is a Win 3.x executable at offset $$OUTPUT_HEX_DEC_64\012";
+
+STR HRC_EXELIB_DOS_FOUND_EXE_LE_OFFSET
+  de ="Ist eine ausführbare OS/2 / Win 3.x / DosExt Datei ab Offset $$OUTPUT_HEX_DEC_64\012";
+  all="Is a OS/2 / Win 3.x / DosExt executable at offset $$OUTPUT_HEX_DEC_64\012";
+
+STR HRC_EXELIB_DOS_REVERSE_HEADER
+  de ="Umgekehrter 'ZM' Dateiheader gefunden";
+  all="Found reverse 'ZM' header";
+
+STR HRC_EXELIB_DOS_LIST_HEADERSIZE
+  de ="Größe des Headers";
+  all="Size of header";
+
+STR HRC_EXELIB_DOS_LIST_FILESIZE
+  de ="Dateigröße im Header";
+  all="File size in header";
+
+STR HRC_EXELIB_DOS_LIST_FILESIZE_INVALID
+  de ="Dateigröße im Header ist ungültig!";
+  all="File size in header is invalid!";
+
+STR HRC_EXELIB_DOS_LIST_ENTRYPOINT
+  de ="Startadresse";
+  all="Entrypoint";
+
+STR HRC_EXELIB_DOS_LIST_ENTRYPOINT_INVALID
+  de ="Die Startadresse ist ungültig!";
+  all="The entrypoint is invalid!";
+
+STR HRC_EXELIB_DOS_LIST_OVERLAY
+  de ="Overlaygröße";
+  all="Overlay size";
+
+STR HRC_EXELIB_DOS_LIST_RELOC_COUNT
+  de ="Relocation Einträge";
+  all="Relocation entries";
+
+STR HRC_EXELIB_DOS_LIST_RELOC_OFFSET
+  de ="Relocation Offset";
+  all="Relocation offset";
+
+STR HRC_EXELIB_DOS_LIST_NO_RELOCS
+  de ="Kein Relocation Einträge gefunden";
+  all="No relocation entries";
+
+
+STR HRC_EXELIB_DOS_PKLITE_VERSION
+  de ="Version im Header: %u.%02u";
+  all="Version in header: %u.%02u";
+
+STR HRC_EXELIB_DOS_PKLITE_EXTRA_COMPRESSION
+  de =" [Extra Kompression]";
+  all=" [extra compression]";
+
+STR HRC_EXELIB_DOS_SEAAXE_ORIGINAL_FILENAME
+  de ="Original Dateiname: '%s'\012";
+  all="Original filename: '%s'\012";
+
+STR HRC_EXELIB_DOS_TRAP_DECRYPTOR_SIZE
+  de ="Decryptor Größe: $$OUTPUT_DEC_64 Bytes\012";
+  all="Decryptor size: $$OUTPUT_DEC_64 bytes\012";
+
+
+STR HRC_EXELIB_MACRO_INVALID_CHAR
+  de ="Nicht unterstütztes Makro-Zeichen '%c'\012";
+  all="Unsupported macro character '%c'\012";
+
+
+STR HRC_EXELIB_LE_AT_OFFSET
+  de ="LE EXE ab Offset $$OUTPUT_HEX_DEC_32\012";
+  all="LE EXE at offset $$OUTPUT_HEX_DEC_32\012";
+
+STR HRC_EXELIB_LE_EP
+  de ="Startadresse: $$OUTPUT_HEX_DEC_32 (Basis Addr: $$OUTPUT_HEX_DEC_32)\012";
+  all="Entrypoint: $$OUTPUT_HEX_DEC_32 (base addr: $$OUTPUT_HEX_DEC_32)\012";
+
+STR HRC_EXELIB_LE_CS_EIP
+  all="CS:EIP = $$OUTPUT_HEX_32:$$OUTPUT_HEX_32\012";
+
+STR HRC_EXELIB_LE_SS_ESP
+  all="SS:ESP = $$OUTPUT_HEX_32:$$OUTPUT_HEX_32\012";
+
+STR HRC_EXELIB_LE_CALCED_EXE_SIZE
+  de ="Berechnete EXE Größe:    $$OUTPUT_HEX_DEC_32 Bytes\012";
+  all="Calculated EXE size:   $$OUTPUT_HEX_DEC_32 bytes\012";
+
+STR HRC_EXELIB_LE_MEM_PAGE_COUNT
+  de ="Speicherseiten von oben: $$OUTPUT_HEX_DEC_32\012";
+  all="Memory pages from top: $$OUTPUT_HEX_DEC_32\012";
+
+STR HRC_EXELIB_LE_MEM_PAGE_SIZE
+  de ="Speicherseiten-Größe:    $$OUTPUT_HEX_DEC_32 Bytes\012";
+  all="Memory page size:      $$OUTPUT_HEX_DEC_32 bytes\012";
+
+STR HRC_EXELIB_LE_BYTES_ON_LAST_PAGE
+  de ="Bytes in letzter Seite:  $$OUTPUT_HEX_DEC_32 Bytes\012";
+  all="Bytes on last page:    $$OUTPUT_HEX_DEC_32 bytes\012";
+
+STR HRC_EXELIB_LE_FIXUP_SECTION_SIZE
+  de ="Fixup-Größe:             $$OUTPUT_HEX_DEC_32 Bytes\012";
+  all="Fixup section size:    $$OUTPUT_HEX_DEC_32 bytes\012";
+
+STR HRC_EXELIB_LE_OBJ_TABLE_LISTING
+  de ="Object-Tabelle\012";
+  all="Object table listing\012";
+
+STR HRC_EXELIB_LE_OBJ_TABLE_INFO
+  de ="%lu Einträge ab rel. Ofs %08Xh (abs. %08Xh):\012";
+  all="%lu entries at rel. ofs %08Xh (abs. %08Xh):\012";
+
+
+STR HRC_EXELIB_LE_OBJ_TABLE_COLUMN_NR
+  all="#";
+
+STR HRC_EXELIB_LE_OBJ_TABLE_COLUMN_PHYSOFS
+  all="PhysOfs";
+
+STR HRC_EXELIB_LE_OBJ_TABLE_COLUMN_ENDOFS
+  all="EndOfs";
+
+STR HRC_EXELIB_LE_OBJ_TABLE_COLUMN_SIZE
+  de ="Groß";
+  all="Size";
+
+STR HRC_EXELIB_LE_OBJ_TABLE_COLUMN_INDEX
+  all="Indx";
+
+STR HRC_EXELIB_LE_OBJ_TABLE_COLUMN_ENTRIES
+  all="Entr";
+
+STR HRC_EXELIB_LE_OBJ_TABLE_COLUMN_VIRTUAL_SIZE
+  de ="VirtGroß";
+  all="VirtSize";
+
+STR HRC_EXELIB_LE_OBJ_TABLE_COLUMN_BASE_ADDR
+  all="BaseAddr";
+
+STR HRC_EXELIB_LE_OBJ_TABLE_COLUMN_FLAGS
+  all="0123456789ABCDEF";
+
+
+STR HRC_EXELIB_NE_ERROR_READ_SEGMENT_TABLE
+  de ="Fehler: Konnte Segment-Tabelle nicht lesen\012";
+  all="Error: Failed to read segment table from file\012";
+
+STR HRC_EXELIB_NE_NO_VALID_SEGMENT_TABLE
+  de ="Fehler: Datei hat keine gültige Segment-Tabelle\012";
+  all="Error: File has no valid segment table\012";
+
+STR HRC_EXELIB_NE_AT_OFFSET
+  de ="NE EXE ab Offset $$OUTPUT_HEX_DEC_32\012";
+  all="NE EXE at offset $$OUTPUT_HEX_DEC_32\012";
+
+STR HRC_EXELIB_NE_NO_EP
+  de ="Datei hat keine startadresse\012";
+  all="File has no entrypoint\012";
+
+STR HRC_EXELIB_NE_CS_TOO_LARGE
+  de ="Fehler: CS ist größer als der Segment-Zähler\012";
+  all="Error: CS is greater than the segment counter\012";
+
+STR HRC_EXELIB_NE_CS_EMPTY
+  de ="Fehler: das CS Segment ist leer!\012";
+  all="Error: the CS segment is empty!\012";
+
+STR HRC_EXELIB_NE_EP_IS_INVALID
+  de ="Fehler: Startadresse ist außerhalb der Datei\012";
+  all="Error: Entrypoint is out of file bounds\012";
+
+STR HRC_EXELIB_NE_EP
+  de ="Startadresse: $$OUTPUT_HEX_DEC_32\012";
+  all="Entrypoint: $$OUTPUT_HEX_DEC_32\012";
+
+STR HRC_EXELIB_NE_SELFLOADER
+  de ="Datei hat einen Selbstlader (möglicherweise ein Entpacker??)\012";
+  all="File has a selfloader (may be an unpacker??)\012";
+
+STR HRC_EXELIB_NE_CALCED_EXE_SIZE
+  de ="Berechnete Dateigröße";
+  all="Calculated file size";
+
+STR HRC_EXELIB_NE_SEG_TABLE_OFS
+  de ="Absolutes Segment-Tabellen Offset";
+  all="Absolute segment table offset";
+
+STR HRC_EXELIB_NE_RES_TABLE_OFS
+  de ="Absolutes Resource-Tabellen Offset";
+  all="Absolute resource table offset";
+
+STR HRC_EXELIB_NE_NAMES_TABLE_OFS
+  de ="Absolutes resident names Tabellen Offset";
+  all="Absolute resident names table offset";
+
+STR HRC_EXELIB_NE_MODULE_REF_TABLE_OFS
+  de ="Absolutes module references Tabellen Offset";
+  all="Absolute module references table offset";
+
+STR HRC_EXELIB_NE_IMP_NAMES_TABLE_OFS
+  de ="Absolutes imported names Tabellen Offset";
+  all="Absolute imported names table offset";
+
+STR HRC_EXELIB_NE_EP_TABLE_OFS
+  de ="Absolutes entry point Tabellen Offset";
+  all="Absolute entry point table offset";
+
+STR HRC_EXELIB_NE_TARGET_OS
+  de ="Ziel Betriebssystem: ";
+  all="Target operating system: ";
+
+STR HRC_EXELIB_NE_OS_UNKNOWN
+  de ="unbekannt\012";
+  all="unknown\012";
+
+STR HRC_EXELIB_NE_OS_OS2
+  all="OS/2\012";
+
+STR HRC_EXELIB_NE_OS_OS2_LFN_SUPPORT
+  de ="Unterstützung für lange Dateinamen\012";
+  all="Long filename support\012";
+
+STR HRC_EXELIB_NE_OS_OS2_PROTECTED_MODE
+  all="2.x protected mode\012";
+
+STR HRC_EXELIB_NE_OS_OS2_PROPORTIONAL_FONT
+  de ="2.x proportionale Schriftarten\012";
+  all="2.x proportional fonts\012";
+
+STR HRC_EXELIB_NE_OS_OS2_FASTLOAD
+  de ="Hat einen fast-load Bereich\012";
+  all="Has fast-load area\012";
+
+STR HRC_EXELIB_NE_OS_WINDOWS
+  all="Windows %d.%02d\012";
+
+STR HRC_EXELIB_NE_OS_EUROPEAN_MSDOS
+  all="European MS-DOS 4.x\012";
+
+STR HRC_EXELIB_NE_OS_WINDOWS386
+  all="Windows 386\012";
+
+STR HRC_EXELIB_NE_OS_BOSS
+  all="BOSS (Borland Operating System Services)\012";
+
+STR HRC_EXELIB_NE_OS_PHAR_LAP_OS2
+  all="Phar Lap DOS Extender 286 OS/2\012";
+
+STR HRC_EXELIB_NE_OS_PHAR_LAP_WIN
+  all="Phar Lap DOS Extender 286 Windows\012";
+
+STR HRC_EXELIB_NE_OS_UNKNOWN_NUM
+  de ="unbekannt (%d)\012";
+  all="unknown (%d)\012";
+
+STR HRC_EXELIB_NE_LINKER_VERSION
+  de ="Linker Version: %d.%02d\012";
+  all="Linker version: %d.%02d\012";
+
+STR HRC_EXELIB_NE_PROGRAM_FLAGS
+  de ="Programm Flags:\012";
+  all="Program flags:\012";
+
+STR HRC_EXELIB_NE_FLAGS_DLL
+  de ="Datei ist eine DLL";
+  all="File is a dynamic-link library (DLL)";
+
+STR HRC_EXELIB_NE_FLAGS_APP
+  de ="Datei ist eine Windows Anwendung";
+  all="File is a Windows application";
+
+STR HRC_EXELIB_NE_FLAGS_PROTMODE
+  de ="Nur Protected Mode";
+  all="Protected mode only";
+
+STR HRC_EXELIB_NE_FLAGS_8086
+  de ="8086 Instruktionen";
+  all="8086 instructions";
+
+STR HRC_EXELIB_NE_FLAGS_80286
+  de ="80286 Instruktionen";
+  all="80286 instructions";
+
+STR HRC_EXELIB_NE_FLAGS_80386
+  de ="80386 Instruktionen";
+  all="80386 instructions";
+
+STR HRC_EXELIB_NE_FLAGS_80x87
+  de ="80x87 Instruktionen";
+  all="80x87 instructions";
+
+STR HRC_EXELIB_NE_SEG_TABLE_LISTING
+  de ="Segment Tabellen Auflistung:\012";
+  all="Segment table listing:\012";
+
+STR HRC_EXELIB_NE_SEG_TABLE_NR
+  all="#";
+
+STR HRC_EXELIB_NE_SEG_TABLE_TYPE
+  de ="Typ";
+  all="Type";
+
+STR HRC_EXELIB_NE_SEG_TABLE_STARTPOS
+  all="StartPos";
+
+STR HRC_EXELIB_NE_SEG_TABLE_ENDPOS
+  all="EndPos";
+
+STR HRC_EXELIB_NE_SEG_TABLE_SIZE
+  de ="Größe";
+  all="Size";
+
+STR HRC_EXELIB_NE_SEG_TABLE_ALLOC
+  all="Alloc";
+
+
+STR HRC_EXELIB_PE_SEG_TABLE_LISTING
+  de ="Sektionen laut Sektionstabelle (Alignment: %08Xh):\012";
+  all="Sections according to section table (section align: %08Xh):\012";
+
+STR HRC_EXELIB_PE_SEG_TABLE_NAME
+  all="Name";
+
+STR HRC_EXELIB_PE_SEG_TABLE_RVA
+  all="RVA";
+
+STR HRC_EXELIB_PE_SEG_TABLE_VIRT_SIZE
+  de ="VirtGröße";
+  all="Virt size";
+
+STR HRC_EXELIB_PE_SEG_TABLE_PHYS_OFS
+  de ="Phys Offs";
+  all="Phys offs";
+
+STR HRC_EXELIB_PE_SEG_TABLE_PHYS_SIZE
+  de ="PhysGröße";
+  all="Phys size";
+
+STR HRC_EXELIB_PE_SEG_TABLE_PHYS_END
+  de ="Phys End";
+  all="Phys end";
+
+STR HRC_EXELIB_PE_SEG_TABLE_FLAGS
+  de ="Flags";
+  all="Flags";
+
+STR HRC_EXELIB_PE_DD_LISTING
+  de ="Auflistung aller verwendeten Data Directory Einträge (benutzt: %d, gesamt: %d):\012";
+  all="Listing of all used data directory entries (used: %d, total: %d):\012";
+
+STR HRC_EXELIB_PE_DD_NAME
+  de ="Name";
+  all="Name";
+
+STR HRC_EXELIB_PE_DD_PHYS_OFS
+  de ="Phys Offs";
+  all="Phys offs";
+
+STR HRC_EXELIB_PE_DD_RVA
+  all="RVA";
+
+STR HRC_EXELIB_PE_DD_PHYS_SIZE
+  de ="PhysGröße";
+  all="Phys size";
+
+STR HRC_EXELIB_PE_DD_SECTION
+  de ="Sektion";
+  all="Section";
+
+STR HRC_EXELIB_PE_NO_DD
+  de ="Kein data directory Eintrag vorhanden\012";
+  all="No data directory entry present\012";
+
+STR HRC_EXELIB_PE_AT_OFFSET
+  de ="PE %s ab Offset ";
+  all="PE %s at offset ";
+
+STR HRC_EXELIB_PE_EP
+  de ="Startadresse";
+  all="Entrypoint";
+
+STR HRC_EXELIB_PE_RESOURCE_DLL
+  de ="Schaut nach einer Resource DLL aus\012";
+  all="Seems to be a resource DLL\012";
+
+STR HRC_EXELIB_PE_EP_RVA
+  de ="Startadressen RVA";
+  all="Entrypoint RVA";
+
+STR HRC_EXELIB_PE_EP_SECTION
+  de ="Startadressen Sektion";
+  all="Entrypoint section";
+
+STR HRC_EXELIB_PE_CALCED_EXE_SIZE
+  de ="Berechnete PE EXE Größe";
+  all="Calculated PE EXE size";
+
+STR HRC_EXELIB_PE_OVERLAY_SIZE
+  de ="Berechnete Overlay Größe";
+  all="Calculated overlay size";
+
+STR HRC_EXELIB_PE_IMAGE_BASE
+  de ="Basis-Adresse";
+  all="Image base";
+
+STR HRC_EXELIB_PE_REBASED
+  de ="Datei scheint rebased zu sein";
+  all="File seems to be rebased";
+
+
+STR HRC_EXELIB_PE_CPU_TYPE
+  de ="Benötigter CPU Typ";
+  all="Required CPU type";
+
+STR HRC_EXELIB_PE_CPU_INDEPENDENT
+  de ="CPU unabhängig";
+  all="CPU independent";
+
+STR HRC_EXELIB_PE_CPU_80386
+  all="80386";
+
+STR HRC_EXELIB_PE_CPU_80486
+  all="80486";
+
+STR HRC_EXELIB_PE_CPU_PENTIUM
+  all="Pentium";
+
+STR HRC_EXELIB_PE_CPU_MIPS_R2000_BIG
+  all="MIPS Mark I (R2000, R3000) big-endian";
+
+STR HRC_EXELIB_PE_CPU_MIPS_R2000_LITTLE
+  all="MIPS Mark I (R2000, R3000) little-endian";
+
+STR HRC_EXELIB_PE_CPU_MIPS_R6000
+  all="MIPS Mark II (R6000)";
+
+STR HRC_EXELIB_PE_CPU_MIPS_R4000
+  all="MIPS Mark III (R4000)";
+
+STR HRC_EXELIB_PE_CPU_MIPS_R10000
+  all="MIPS (R10000)";
+
+STR HRC_EXELIB_PE_CPU_MIPS_WCE
+  all="MIPS little-endian WCE v2";
+
+STR HRC_EXELIB_PE_CPU_DEC_ALPHA_AXP
+  all="DEC Alpha AXP";
+
+STR HRC_EXELIB_PE_CPU_HITACHI_SH3
+  all="Hitachi SH3 little-endian";
+
+STR HRC_EXELIB_PE_CPU_HITACHI_SH3DSP
+  all="Hitachi SH3DSP";
+
+STR HRC_EXELIB_PE_CPU_HITACHI_SH3E
+  all="Hitachi SH3E little-endian";
+
+STR HRC_EXELIB_PE_CPU_HITACHI_SH4
+  all="Hitachi SH4 little-endian";
+
+STR HRC_EXELIB_PE_CPU_HITACHI_SH5
+  all="Hitachi SH5";
+
+STR HRC_EXELIB_PE_CPU_ARM
+  all="ARM";
+
+STR HRC_EXELIB_PE_CPU_THUMB
+  all="THUMB";
+
+STR HRC_EXELIB_PE_CPU_AM33
+  all="AM33";
+
+STR HRC_EXELIB_PE_CPU_IBM_POWERPC
+  all="IBM PowerPC little endian";
+
+STR HRC_EXELIB_PE_CPU_IBM_POWERPCFP
+  all="IBM PowerPCFP";
+
+STR HRC_EXELIB_PE_CPU_INTEL_IA64
+  all="Intel IA64";
+
+STR HRC_EXELIB_PE_CPU_MIPS16
+  all="MIPS16";
+
+STR HRC_EXELIB_PE_CPU_MOTOROLA
+  all="Motorola 68000 series";
+
+STR HRC_EXELIB_PE_CPU_DEC_ALPHA_64
+  all="DEC Alpha 64";
+
+STR HRC_EXELIB_PE_CPU_MIPS_FPU
+  all="MIPS with FPU";
+
+STR HRC_EXELIB_PE_CPU_MIPS16_FPU
+  all="MIPS16 with FPU";
+
+STR HRC_EXELIB_PE_CPU_INFINEON
+  all="Infineon";
+
+STR HRC_EXELIB_PE_CPU_CEF
+  all="CEF";
+
+STR HRC_EXELIB_PE_CPU_EFI
+  all="EFI Byte Code";
+
+STR HRC_EXELIB_PE_CPU_AMD64
+  all="AMD64";
+
+STR HRC_EXELIB_PE_CPU_M32R
+  all="M32R little endian";
+
+STR HRC_EXELIB_PE_CPU_CEE
+  all="CEE";
+
+STR HRC_EXELIB_PE_CPU_VERY_UNKNOWN
+  de ="Die EXE enthält einen unbekannten CPU Typ $$OUTPUT_HEX_16";
+  all="The PE EXE contains an unknown CPU type $$OUTPUT_HEX_16";
+
+
+STR HRC_EXELIB_PE_OS
+  de ="Benötigtes OS";
+  all="Required OS";
+
+STR HRC_EXELIB_PE_OS_V0
+  de ="Win32 Version 0 ;-)";
+  all="version 0 of Win32 ;-)";
+
+STR HRC_EXELIB_PE_OS_ANY
+  de ="Beliebige Win32 Version";
+  all="any version of Win32";
+
+STR HRC_EXELIB_PE_OS_NT351
+  all="Win NT 3.51";
+
+STR HRC_EXELIB_PE_OS_95_NT4
+  all="Win 95 or NT 4";
+
+STR HRC_EXELIB_PE_OS_98_2K
+  all="Win 98 or 2k";
+
+STR HRC_EXELIB_PE_OS_XP
+  all="Win XP";
+
+
+STR HRC_EXELIB_PE_SS
+  de ="Subsystem";
+  all="Subsystem";
+
+STR HRC_EXELIB_PE_SS_UNKNOWN
+  de ="unbekannt/nicht gesetzt";
+  all="unknown/not set";
+
+STR HRC_EXELIB_PE_SS_DEVICE_DRIVER
+  de ="Treiber/native Windows NT";
+  all="device driver/native Windows NT";
+
+STR HRC_EXELIB_PE_SS_WIN_GUI
+  all="Windows GUI";
+
+STR HRC_EXELIB_PE_SS_WIN_CUI
+  all="Windows CUI";
+
+STR HRC_EXELIB_PE_SS_OS2_CHAR
+  all="OS/2 character";
+
+STR HRC_EXELIB_PE_SS_POSIX
+  all="Posix text";
+
+STR HRC_EXELIB_PE_SS_NATIVE_9X
+  de ="Native Win9x Treiber";
+  all="Native Win9x driver";
+
+STR HRC_EXELIB_PE_SS_WIN_CE_GUI
+  all="Windows CE GUI";
+
+STR HRC_EXELIB_PE_SS_EFI_APP
+  de ="EFI Anwendung";
+  all="EFI application";
+
+STR HRC_EXELIB_PE_SS_EFI_DRIVER_BOOT
+  de ="EFI Treiber/Boot Services";
+  all="EFI driver/boot services";
+
+STR HRC_EXELIB_PE_SS_EFI_DRIVER_RUNTIME
+  de ="EFI Treiber/Runtime Services";
+  all="EFI driver/runtime services";
+
+STR HRC_EXELIB_PE_SS_EFI_ROM
+  de="EFI ROM Abbild";
+  all="EFI ROM image";
+
+STR HRC_EXELIB_PE_SS_XBOX
+  de="XBox System";
+  all="XBox system";
+
+STR HRC_EXELIB_PE_SS_WINDOWS_BOOT_APPLICATION
+  de="Boot Applikation";
+  all="Boot application";
+
+// Unused
+STR HRC_EXELIB_PE_SS_VERY_UNKNOWN
+  de ="Die EXE enthält ein nicht erkanntes Subsystem $$OUTPUT_HEX_16";
+  all="The PE EXE contains an unknown subsystem $$OUTPUT_HEX_16";
+
+STR HRC_EXELIB_PE_SS_STRANGE_HIGHBIT
+  de ="Das Subsystem enthält das High-Byte $$OUTPUT_HEX_8 - seltsam";
+  all="The Subsystem's high byte is set to $$OUTPUT_HEX_8 - weird";
+
+
+STR HRC_EXELIB_PE_LINKER_VERSION
+  de ="Linker Version";
+  all="Linker version";
+
+STR HRC_EXELIB_PE_STACK_RESERVE
+  de ="Reservierter Stack";
+  all="Stack reserve";
+
+STR HRC_EXELIB_PE_STACK_COMMIT
+  de ="Bereitgestellter Stack";
+  all="Stack commit";
+
+STR HRC_EXELIB_PE_HEAP_RESERVE
+  de ="Reservierter Heap";
+  all="Heap reserve";
+
+STR HRC_EXELIB_PE_HEAP_COMMIT
+  de ="Bereitgestellter Heap";
+  all="Heap commit";
+
+
+STR HRC_EXELIB_PE_FLAGS
+  de ="Einstellungen:\012";
+  all="Flags:\012";
+
+STR HRC_EXELIB_PE_FLAGS_RELOC_STRIPPED
+  de ="Relocation info aus Datei entfernt";
+  all="Relocation info stripped from file";
+
+STR HRC_EXELIB_PE_FLAGS_EXECUTABLE
+  de ="Ist eine ausführbare Datei";
+  all="File is executable";
+
+STR HRC_EXELIB_PE_FLAGS_LINENUM_STRIPPED
+  de ="Zeilennummern wurden aus Datei entfernt";
+  all="Line numbers stripped from file";
+
+STR HRC_EXELIB_PE_FLAGS_LOCALSYM_STRIPPED
+  de ="Lokale Symbole wurden aus Datei entfernt";
+  all="Local symbols stripped from file";
+
+STR HRC_EXELIB_PE_FLAGS_TRIM
+  de ="Aggressively trim working set";
+  all="Aggressively trim working set";
+
+STR HRC_EXELIB_PE_FLAGS_CANHANDLE_2GB
+  de ="Anwendung kann mit Adressen > 2GB umgehen";
+  all="Application can handle > 2GB addresses";
+
+STR HRC_EXELIB_PE_FLAGS_LITTLE_ENDIAN
+  de ="Little Endian";
+  all="Little endian";
+
+STR HRC_EXELIB_PE_FLAGS_32BIT_WORD
+  de ="Basiert auf 32 Bit-Word Architektur";
+  all="Machine based on 32-bit-word architecture";
+
+STR HRC_EXELIB_PE_FLAGS_DBGINFO_STRIPPED
+  de ="Debugg Info wurde in .DBG Datei ausgelagert";
+  all="Debugging information is stored separately in a .dbg file";
+
+STR HRC_EXELIB_PE_FLAGS_REMOVEABLE_COPY
+  de ="Falls Anwendung auf Wechseldatenträger, kopiere und führe aus Swapdatei aus";
+  all="If the image is on removeable media, copy and run from swap file";
+
+STR HRC_EXELIB_PE_FLAGS_NETWORK_COPY
+  de ="Falls Anwendung im Netzwerk liegt, kopiere und führe aus Swapdatei aus";
+  all="If the image is on the network, copy and run from swap file";
+
+STR HRC_EXELIB_PE_FLAGS_SYSTEM_FILE
+  de ="System Datei";
+  all="System File";
+
+STR HRC_EXELIB_PE_FLAGS_DLL
+  de ="DLL Datei";
+  all="DLL file (library image)";
+
+STR HRC_EXELIB_PE_FLAGS_UP
+  de ="Anwendung sollte nur auf einer Einprozessor-Maschine ausgeführt werden";
+  all="Application should be run only on a uniprocessor machine";
+
+STR HRC_EXELIB_PE_FLAGS_BIG_ENDIAN
+  de ="Big Endian";
+  all="Big endian";
+
+
+STR HRC_EXELIB_PE_DLL_CHAR
+  de ="DLL Characteristics:\012";
+  all="DLL Characteristics:\012";
+
+STR HRC_EXELIB_PE_DLL_CHAR_PROCESS_INIT
+  de ="Hat eine Prozess Initialisierungsroutine";
+  all="Has a process initialization routine";
+
+STR HRC_EXELIB_PE_DLL_CHAR_PROCESS_TERM
+  de ="Hat eine Prozess Terminierungsroutine";
+  all="Has a process termination routine";
+
+STR HRC_EXELIB_PE_DLL_CHAR_THREAD_INIT
+  de ="Hat eine Thread Initialisierungsroutine";
+  all="Has a thread initialization routine";
+
+STR HRC_EXELIB_PE_DLL_CHAR_THREAD_TERM
+  de ="Hat eine Thread Terminierungsroutine";
+  all="Has a thread termination routine";
+
+STR HRC_EXELIB_PE_DLL_CHAR_NO_ISOLATION
+  de ="Keine Isolation";
+  all="No isolation";
+
+STR HRC_EXELIB_PE_DLL_CHAR_NO_SEH
+  de ="Kein Structured Exception Handling (SEH)";
+  all="No structured exception handling (SEH)";
+
+STR HRC_EXELIB_PE_DLL_CHAR_NO_BIND
+  de ="Anwendung nicht binden";
+  all="Do not bind image";
+
+STR HRC_EXELIB_PE_DLL_CHAR_WDM_DRIVER
+  de ="WDM Treiber";
+  all="WDM driver";
+
+STR HRC_EXELIB_PE_DLL_CHAR_TERMINAL_SERVER_AWARE
+  de ="Kann mit Terminal Server umgehen";
+  all="Terminal Server aware";
+
+
+STR HRC_EXELIB_PE_COMPARE_READ_ERROR
+  de ="Info: Fehler beim Lesen der Vergleichsdaten an Offset $$OUTPUT_DEC_64 (Makro %s)\012";
+  all="Info: failed to read comparison data at offset $$OUTPUT_DEC_64 (macro %s)\012";
+
+STR HRC_EXELIB_PE_EP_OUT_OF_BOUNDS
+  de ="Fehler: Startadresse ist ausserhalb der Dateigrenzen\012";
+  all="Error: Entrypoint is out of file bounds\012";
+
+STR HRC_EXELIB_PE_PROCESSED_WITH
+  de ="Verändert/erstellt mit:\012";
+  all="Processed/created with:\012";
+
+STR HRC_EXELIB_PE_MS_LINKER
+  de ="Scheinbar gelinkt mit dem Microsoft linker ";
+  all="Seems to be linked with Microsoft linker ";
+
+STR HRC_EXELIB_PE_GCC
+  de ="Scheint mit GCC gebaut zu sein";
+  all="Seems to be build by GCC";
+
+STR HRC_EXELIB_PE_BORLAND_LINKER
+  de ="Scheint mit Borland Delphi/C++ Builder gebaut zu sein";
+  all="Seems to be build by Borland Delphi/C++ Builder";
+
+// version number is appended
+STR HRC_EXELIB_PE_NEW_UPX
+  de ="Scheint gepackt zu sein mit neuem UPX ";
+  all="Seems to be packed with new UPX ";
+
+// version number is appended
+STR HRC_EXELIB_PE_OLD_UPX
+  de ="Scheint gepackt zu sein mit altem UPX ";
+  all="Seems to be packed with old UPX ";
+
+STR HRC_EXELIB_PE_NOT_PROCESSED
+  de ="Nicht mit einem bekannten Programm verändert/erstellt";
+  all="Not processed/created with any known program";
+
+STR HRC_EXELIB_PE_INVALID_MAGIC
+  de ="PE EXE OFH ID ist ungültig ($$OUTPUT_HEX_16)\012";
+  all="PE EXE OFH header magic is invalid ($$OUTPUT_HEX_16)\012";
+
+STR HRC_EXELIB_PE_INVALID_MAGIC_64
+  de ="PE EXE OFH ID ist ungültig (64 Bit Applikation?)\012";
+  all="PE EXE OFH header magic is invalid (64 bit application?)\012";
+
+
+STR HRC_EXELIB_PE_CERT_INVALID
+  de ="Fehler: Das Offset der Zertifikatstabelle ist ungültig ($$OUTPUT_HEX_64)\012";
+  all="Error: The certificate table offset is invalid ($$OUTPUT_HEX_64)\012";
+
+STR HRC_EXELIB_PE_CERT_AT_OFFSET
+  de ="Zertifikate an Offset $$OUTPUT_HEX_64 (RVA %08Xh)\012";
+  all="Certificates at offset $$OUTPUT_HEX_64 (RVA %08Xh)\012";
+
+
+STR HRC_EXELIB_PE_DD_TOO_MANY
+  de ="Fehler: Mehr als %d data directory Einträge (gefunden: %d) werden nicht unterstützt!\012";
+  all="Error: more then %d data directory entries (found %d) are not supported!\012";
+
+STR HRC_EXELIB_PE_DD_FAILED_TO_INIT
+  de ="Fehler: Konnte PE data directory Handler nicht initialisieren\012";
+  all="Error: failed to init PE data directory handler\012";
+
+
+STR HRC_EXELIB_PE_EXPORT_INVALID
+  de ="Fehler: Das Exporttabellen Offset ist ungültig ($$OUTPUT_HEX_64)\012";
+  all="Error: The export table offset is invalid ($$OUTPUT_HEX_64)\012";
+
+STR HRC_EXELIB_PE_EXPORT_TOO_MANY
+  de ="Fehler: Zu viele exportierte Funktionen gefunden (%d)\012";
+  all="Error: Found too many exported functions (%d)\012";
+
+STR HRC_EXELIB_PE_EXPORT_DLL_NAME
+  de ="Exporttabelle der DLL '%s':\012";
+  all="Export table of DLL '%s':\012";
+
+STR HRC_EXELIB_PE_EXPORT_BASE_ORDINAL
+  de ="Export Basisnummer: %08Xh / %lu\012";
+  all="Base ordinal number: %08Xh / %lu\012";
+
+STR HRC_EXELIB_PE_EXPORT_1_NAME_EXPORTED
+  de ="1 Name wird exportiert\012";
+  all="1 name is exported\012";
+
+STR HRC_EXELIB_PE_EXPORT_N_NAMES_EXPORTED
+  de ="%lu Namen werden exportiert\012";
+  all="%lu names are exported\012";
+
+STR HRC_EXELIB_PE_EXPORT_1_FUNC_EXPORTED
+  de ="1 Funktion wird exportiert\012";
+  all="1 function is exported\012";
+
+STR HRC_EXELIB_PE_EXPORT_N_FUNCS_EXPORTED
+  de ="%lu Funktionen werden exportiert\012";
+  all="%lu functions are exported\012";
+
+STR HRC_EXELIB_PE_EXPORT_COLUMN_ORDINAL
+  de ="Nummer";
+  all="Ordinal";
+
+STR HRC_EXELIB_PE_EXPORT_COLUMN_OFFSET
+  de ="Offset";
+  all="Offset";
+
+STR HRC_EXELIB_PE_EXPORT_COLUMN_NAME
+  de ="Name";
+  all="Name";
+
+
+STR HRC_EXELIB_PE_FIXUPS_INVALID
+  de ="Fehler: Das Fixuptabellen Offset ist ungültig ($$OUTPUT_HEX_64)\012";
+  all="Error: The fixups table offset is invalid ($$OUTPUT_HEX_64)\012";
+
+STR HRC_EXELIB_PE_FIXUPS_AT_OFFSET
+  de ="Fixups an Offset $$OUTPUT_HEX_64 (RVA %08Xh) für %d Bytes\012";
+  all="Fixups at offset $$OUTPUT_HEX_64 (RVA %08Xh) for %d bytes\012";
+
+STR HRC_EXELIB_PE_FIXUPS_LIST_HEADER
+  de ="Page RVA  Größe     Einträge\012";
+  all="Page RVA  Size      Entries\012";
+
+STR HRC_EXELIB_PE_FIXUPS_ERROR_READ_BLOCK
+  de ="Fehler: Konnte PE fixup block nicht lesen\012";
+  all="Error: failed to read PE fixup block\012";
+
+STR HRC_EXELIB_PE_FIXUPS_LIST_BLOCK
+  all="%08Xh %08Xh %d\012";
+
+STR HRC_EXELIB_PE_FIXUPS_LIST_ENTRY
+  all="%s $$OUTPUT_HEX_16\012";
+
+STR HRC_EXELIB_PE_FIXUPS_ERROR_READ_ENTRY
+  de ="Fehler: Konnte PE fixup Eintrag nicht lesen\012";
+  all="Error: failed to read single PE fixup\012";
+
+STR HRC_EXELIB_PE_FIXUPS_EMPTY
+  de ="Fixups-Sektion vorhanden, aber keine Daten enthalten!\012";
+  all="Fixups section present but no data contained!\012";
+
+
+STR HRC_EXELIB_PE_IMPORT_INVALID
+  de ="Fehler: Das Importtabellen Offset ist ungültig ($$OUTPUT_HEX_64)\012";
+  all="Error: The import table offset is invalid ($$OUTPUT_HEX_64)\012";
+
+STR HRC_EXELIB_PE_IMPORT_LIST_HEADER
+  de ="Funktionen der folgenden DLLs werden importiert:\012";
+  all="Functions from the following DLLs are imported:\012";
+
+STR HRC_EXELIB_PE_IMPORT_LIST_DLL
+  all="[%u] %s";
+
+STR HRC_EXELIB_PE_IMPORT_LIST_FORWARDED
+  de =" (weitergeleitet!)";
+  all=" (forwarded!)";
+
+STR HRC_EXELIB_PE_IMPORT_LIST_ORDINAL
+  all="Ordinal #%ld\012";
+
+STR HRC_EXELIB_PE_IMPORT_LIST_NAME
+  all="%s\012";
+
+
+STR HRC_EXELIB_PE_RES_INVALID
+  de ="Fehler: Das Resourcetabellen Offset ist ungültig ($$OUTPUT_HEX_64)\012";
+  all="Error: The resource table offset is invalid ($$OUTPUT_HEX_64)\012";
+
+STR HRC_EXELIB_PE_RES_AT_OFFSET
+  de ="Resourcen an Offset $$OUTPUT_HEX_64 (RVA %08Xh) für %lu Bytes:\012";
+  all="Resources at offset $$OUTPUT_HEX_64 (RVA %08Xh) for %lu bytes:\012";
+
+STR HRC_EXELIB_PE_RES_TOTAL
+  de ="Totale Resourcengröße: %lu Bytes (Daten: %lu Bytes, Inhaltsverz.: %lu Bytes)\012";
+  all="Total resource size: %lu bytes (data: %lu bytes, TOC: %lu bytes)\012";
+
+STR HRC_EXELIB_PE_RES_FAILED_TO_READ_TABLE
+  de ="Fehler: Konnte Resource directory Tabelle nicht lesen\012";
+  all="Error: failed to read resource directory table\012";
+
+STR HRC_EXELIB_PE_RES_LIST_TYPE_NAME
+  all="%s:\012";
+
+STR HRC_EXELIB_PE_RES_LIST_TYPE_ID
+  de ="Typ $$OUTPUT_HEX_DEC_32:\012";
+  all="Type $$OUTPUT_HEX_DEC_32:\012";
+
+STR HRC_EXELIB_PE_RES_LIST_ID
+  all="ID: $$OUTPUT_HEX_DEC_32\012";
+
+STR HRC_EXELIB_PE_RES_LIST_LANG
+  de ="Sprache: $$OUTPUT_HEX_DEC_32\012";
+  all="Lang: $$OUTPUT_HEX_DEC_32\012";
+
+STR HRC_EXELIB_PE_RES_RECURSION_WARN
+  de ="Warnung: nur 3 Recursionen werden unterstützt (derzeit bei Tiefe %lu).\012";
+  all="Warning: only 3 recursion levels are supported (now at level %lu).\012";
+
+STR HRC_EXELIB_PE_RES_ENTRY_INVALID
+  de ="Fehler: Das Resource-Offset ist ungültig\012";
+  all="Error: the resource offset is invalid\012";
+
+STR HRC_EXELIB_PE_RES_FAILED_TO_READ
+  de ="Fehler: Konnte Resource Dateneintrag nicht lesen\012";
+  all="Error: failed to read a resource data entry\012";
+
+STR HRC_EXELIB_PE_RES_RVA_INVALID
+  de ="Fehler: Resourcetabellen Daten-RVA %08Xh ist ungültig (komprimierte EXE?)\012";
+  all="Error: resource table data RVA %08Xh is invalid (compressed EXE?)\012";
+
+STR HRC_EXELIB_PE_RES_LIST_ENTRY
+  de ="RVA: %08Xh; Offset: %08Xh; Größe: %lu Bytes\012";
+  all="RVA: %08Xh; Offset: %08Xh; Size: %lu bytes\012";
+
+STR HRC_EXELIB_PE_RES_STRING_LEN_INVALID
+  de ="Fehler: Länge eines Stringtabellen-Eintrag ist ungültig (komprimierte EXE?)\012";
+  all="Error: String table entry length is invalid (compressed EXE?)\012";
+
+STR HRC_EXELIB_PE_RES_STRING_READ_ERR
+  de ="Fehler: Konnte Resourcenstring an der Adressen %08Xh (%lu Bytes) nicht lesen\012";
+  all="Error: Failed to read resource string at %08Xh for %lu bytes\012";
+
+STR HRC_EXELIB_PE_RES_STRING_LIST
+  all="'%s'\012";
+
+STR HRC_EXELIB_PE_RES_VERSION_LIST
+  de ="VersionInfo Resource:\012";
+  all="VersionInfo resource:\012";
+
+STR HRC_EXELIB_PE_RES_VERSION_NO_VS_VERSION_INFO
+  de ="Fehler: Ungültige VersionInfo Resource: VS_VERSION_INFO nicht gefunden\012";
+  all="Error: invalid VersionInfo resource: found no VS_VERSION_INFO\012";
+
+STR HRC_EXELIB_PE_RES_VERSION_NO_UNKNOWN_BLOCK
+  de ="Fehler: Ungültige VersionInfo Resource: unbekannter Block\012";
+  all="Error: invalid VersionInfo resource: unknown block\012";
+
+STR HRC_EXELIB_PE_RES_VERSION_FILEVER
+  all="FileVersion:    %lu.%lu.%lu.%lu\012";
+
+STR HRC_EXELIB_PE_RES_VERSION_PRODVER
+  all="ProductVersion: %lu.%lu.%lu.%lu\012";
+
+STR HRC_EXELIB_PE_RES_VERSION_OS
+  de ="Ziel-OS:        ";
+  all="Target OS:      ";
+
+STR HRC_EXELIB_PE_RES_VERSION_OS_UNKNOWN
+  de ="unbelannt";
+  all="Unknown";
+
+STR HRC_EXELIB_PE_RES_VERSION_OS_WIN16
+  de ="16 Bit Windows";
+  all="16 bit Windows";
+
+STR HRC_EXELIB_PE_RES_VERSION_OS_PM16
+  de ="OS/2 Presentation Manager 16 Bit";
+  all="OS/2 presentation manager 16 bit";
+
+STR HRC_EXELIB_PE_RES_VERSION_OS_PM32
+  de ="OS/2 Presentation Manager 32 Bit";
+  all="OS/2 presentation manager 32 bit";
+
+STR HRC_EXELIB_PE_RES_VERSION_OS_WIN32
+  de ="32 Bit Windows";
+  all="32 bit Windows";
+
+STR HRC_EXELIB_PE_RES_VERSION_OS_DOS
+  all="MS-DOS";
+
+STR HRC_EXELIB_PE_RES_VERSION_OS_DOS_WIN16
+  de ="16 Bit Windows mit MS-DOS";
+  all="16 bit Windows running with MS-DOS";
+
+STR HRC_EXELIB_PE_RES_VERSION_OS_DOS_WIN32
+  de ="32 Bit Windows mit MS-DOS";
+  all="32 bit Windows running with MS-DOS";
+
+STR HRC_EXELIB_PE_RES_VERSION_OS_OS216
+  de ="16 Bit OS/2";
+  all="16 bit OS/2";
+
+STR HRC_EXELIB_PE_RES_VERSION_OS_OS216_PM
+  de ="16 Bit OS/2 mit Presentation Manager";
+  all="16 bit OS/2 with presentation manager";
+
+STR HRC_EXELIB_PE_RES_VERSION_OS_OS232
+  de ="32 Bit OS/2";
+  all="32 bit OS/2";
+
+STR HRC_EXELIB_PE_RES_VERSION_OS_PS232_PM
+  de ="32 Bit OS/2 mit Presentation Manager";
+  all="32 bit OS/2 with presentation manager";
+
+STR HRC_EXELIB_PE_RES_VERSION_OS_WIN2K
+  all="Windows NT/2000";
+
+STR HRC_EXELIB_PE_RES_VERSION_OS_WIN32_2K
+  de ="32 Bit Windows mit Windows NT/2000";
+  all="32 bit Windows running with Windows NT/2000";
+
+STR HRC_EXELIB_PE_RES_VERSION_OS_WINCE
+  de ="Windows CE";
+  all="Windows CE";
+
+STR HRC_EXELIB_PE_RES_VERSION_OS_INVALID
+  de ="ungültig (%08Xh)";
+  all="Invalid (%08Xh)";
+
+STR HRC_EXELIB_PE_RES_VERSION_LANGUAGE
+  de ="Sprache '%s', Zeichensatz '%s'\012";
+  all="Language '%s', Character set '%s'\012";
+
+STR HRC_EXELIB_PE_RES_VERSION_STRING_TEXT
+  all="%s: '%s'\012";
+
+STR HRC_EXELIB_PE_RES_VERSION_STRING_BIN
+  de ="%s: %lu Bytes\012";
+  all="%s: %lu bytes\012";
+
+STR HRC_EXELIB_PE_RES_0401_ARABIC
+  all="Arabic";
+
+STR HRC_EXELIB_PE_RES_0402_BULGARIAN
+  all="Bulgarian";
+
+STR HRC_EXELIB_PE_RES_0403_CATALAN
+  all="Catalan";
+
+STR HRC_EXELIB_PE_RES_0404_TRADITIONAL_CHINESE
+  all="Traditional Chinese";
+
+STR HRC_EXELIB_PE_RES_0405_CZECH
+  all="Czech";
+
+STR HRC_EXELIB_PE_RES_0406_DANISH
+  all="Danish";
+
+STR HRC_EXELIB_PE_RES_0407_GERMAN
+  all="German";
+
+STR HRC_EXELIB_PE_RES_0408_GREEK
+  all="Greek";
+
+STR HRC_EXELIB_PE_RES_0409_US_ENGLISH
+  all="U.S. English";
+
+STR HRC_EXELIB_PE_RES_040A_CASTILIAN_SPANISH
+  all="Castilian Spanish";
+
+STR HRC_EXELIB_PE_RES_040B_FINNISH
+  all="Finnish";
+
+STR HRC_EXELIB_PE_RES_040C_FRENCH
+  all="French";
+
+STR HRC_EXELIB_PE_RES_040D_HEBREW
+  all="Hebrew";
+
+STR HRC_EXELIB_PE_RES_040E_HUNGARIAN
+  all="Hungarian";
+
+STR HRC_EXELIB_PE_RES_040F_ICELANDIC
+  all="Icelandic";
+
+STR HRC_EXELIB_PE_RES_0410_ITALIAN
+  all="Italian";
+
+STR HRC_EXELIB_PE_RES_0411_JAPANESE
+  all="Japanese";
+
+STR HRC_EXELIB_PE_RES_0412_KOREAN
+  all="Korean";
+
+STR HRC_EXELIB_PE_RES_0413_DUTCH
+  all="Dutch";
+
+STR HRC_EXELIB_PE_RES_0414_NORWEGIAN_BOKMAL
+  all="Norwegian - Bokmal";
+
+STR HRC_EXELIB_PE_RES_0415_POLISH
+  all="Polish";
+
+STR HRC_EXELIB_PE_RES_0416_PORTUGUESE_BRAZIL
+  all="Portuguese (Brazil)";
+
+STR HRC_EXELIB_PE_RES_0417_RHAETO_ROMANIC
+  all="Rhaeto-Romanic";
+
+STR HRC_EXELIB_PE_RES_0418_ROMANIAN
+  all="Romanian";
+
+STR HRC_EXELIB_PE_RES_0419_RUSSIAN
+  all="Russian";
+
+STR HRC_EXELIB_PE_RES_041A_CROATO_SERBIAN_LATIN
+  all="Croato-Serbian (Latin)";
+
+STR HRC_EXELIB_PE_RES_041B_SLOVAK
+  all="Slovak";
+
+STR HRC_EXELIB_PE_RES_041C_ALBANIAN
+  all="Albanian";
+
+STR HRC_EXELIB_PE_RES_041D_SWEDISH
+  all="Swedish";
+
+STR HRC_EXELIB_PE_RES_041E_THAI
+  all="Thai";
+
+STR HRC_EXELIB_PE_RES_041F_TURKISH
+  all="Turkish";
+
+STR HRC_EXELIB_PE_RES_0420_URDU
+  all="Urdu";
+
+STR HRC_EXELIB_PE_RES_0421_BAHASA
+  all="Bahasa";
+
+STR HRC_EXELIB_PE_RES_0804_SIMPLIFIED_CHINESE
+  all="Simplified Chinese";
+
+STR HRC_EXELIB_PE_RES_0807_SWISS_GERMAN
+  all="Swiss German";
+
+STR HRC_EXELIB_PE_RES_0809_UK_ENGLISH
+  all="U.K. English";
+
+STR HRC_EXELIB_PE_RES_080A_MEXICAN_SPANISH
+  all="Mexican Spanish";
+
+STR HRC_EXELIB_PE_RES_080C_BELGIAN_FRENCH
+  all="Belgian French";
+
+STR HRC_EXELIB_PE_RES_0810_SWISS_ITALIAN
+  all="Swiss Italian";
+
+STR HRC_EXELIB_PE_RES_0813_BELGIAN_DUTCH
+  all="Belgian Dutch";
+
+STR HRC_EXELIB_PE_RES_0814_NORWEGIAN_NYNORSK
+  all="Norwegian - Nynorsk";
+
+STR HRC_EXELIB_PE_RES_0816_PORTUGUESE_PORTUGAL
+  all="Portuguese (Portugal";
+
+STR HRC_EXELIB_PE_RES_081A_SERBO_CROATIAN_CYRILLIC
+  all="Serbo-Croatian (Cyrillic";
+
+STR HRC_EXELIB_PE_RES_0C0C_CANADIAN_FRENCH
+  all="Canadian French";
+
+STR HRC_EXELIB_PE_RES_100C_SWISS_FRENCH
+  all="Swiss French";
+
+STR HRC_EXELIB_PE_RES_0000_7BIT_ASCII
+  all="7-bit ASCII";
+
+STR HRC_EXELIB_PE_RES_03A4_JAPAN_SHIFT_JIS_X0208
+  all="Japan (Shift - JIS X-0208)";
+
+STR HRC_EXELIB_PE_RES_03B5_KOREA_SHIFT_KSC_5601
+  all="Korea (Shift - KSC 5601)";
+
+STR HRC_EXELIB_PE_RES_03B6_TAIWAN_BIG5
+  all="Taiwan (Big5)";
+
+STR HRC_EXELIB_PE_RES_04B0_UNICODE
+  all="Unicode";
+
+STR HRC_EXELIB_PE_RES_04E2_LATIN2_EASTERN_EUROPEAN
+  all="Latin-2 (Eastern European)";
+
+STR HRC_EXELIB_PE_RES_04E3_CYRILLIC
+  all="Cyrillic";
+
+STR HRC_EXELIB_PE_RES_04E4_MULTILINGUAL
+  all="Multilingual";
+
+STR HRC_EXELIB_PE_RES_04E5_GREEK
+  all="Greek";
+
+STR HRC_EXELIB_PE_RES_04E6_TURKISH
+  all="Turkish";
+
+STR HRC_EXELIB_PE_RES_04E7_HEBREW
+  all="Hebrew";
+
+STR HRC_EXELIB_PE_RES_04E8_ARABIC
+  all="Arabic";
+
+
+
+STR HRC_EXELIB_PE_ST_FAILED_TO_READ
+  de ="Fehler: Konnte PE Sektionstabelle nicht lesen\012";
+  all="Error: failed to read PE section table\012";
+
+STR HRC_EXELIB_PE_ST_TOO_MANY_SECTIONS
+  de ="Fehler: Datei enthält zu viele Sektionen!\012";
+  all="Error: file contains too many sections!\012";
+
+STR HRC_EXELIB_PE_ST_NOT_FOUND
+  de ="Fehler: Sektionstabelle wurde nicht gefunden\012";
+  all="Error: section table was not found\012";
+
+
+STR HRC_EXELIB_PE_TLS_INVALID
+  de ="Fehler: Das TLS-Tabellen Offset ist ungültig ($$OUTPUT_HEX_64)\012";
+  all="Error: the TLS table offset is invalid ($$OUTPUT_HEX_64)\012";
+
+STR HRC_EXELIB_PE_TLS_AT_OFFSET
+  de ="TLS an Offset $$OUTPUT_HEX_64 (RVA %08Xh) für %d Bytes\012";
+  all="TLS at offset $$OUTPUT_HEX_64 (RVA %08Xh) for %d bytes\012";
+
+STR HRC_EXELIB_PE_1_TLS_ENTRY
+  de ="1 TLS-Verzeichnis Eintrag\012";
+  all="1 TLS directory entry\012";
+
+STR HRC_EXELIB_PE_N_TLS_ENTRIES
+  de ="%u TLS-Verzeichnis Einträge\012";
+  all="%u TLS directory entries\012";
+
+
+// .net managed executables
+STR HRC_EXELIB_NET_AT_OFFSET
+  de =".NET managed %s %d.%d an Offset $$OUTPUT_HEX_DEC_32\012";
+  all=".NET managed %s %d.%d at offset $$OUTPUT_HEX_DEC_32\012";
+
+STR HRC_EXELIB_NET_METADATA_OFFSET
+  de ="Metadaten an Offset %08Xh\012";
+  all="Metadata at offset %08Xh\012";
+
+STR HRC_EXELIB_NET_VERSION
+  de ="Version: '%s'\012";
+  all="Version: '%s'\012";
+
+STR HRC_EXELIB_NET_TOO_MANY_STREAM_HEADER
+  de ="Fehler: Zu viele (%u) Stream header gefunden - 5 sind Maximum!\012";
+  all="Error: Found too many (%u) stream header - maximum is 5!\012";
+
+STR HRC_EXELIB_NET_STREAM_HEADER
+  de ="Stream Header:\012";
+  all="Stream header:\012";
+
+STR HRC_EXELIB_NET_STREAM_POS
+  de ="Pos";
+  all="Pos";
+
+STR HRC_EXELIB_NET_STREAM_OFFSET
+  de ="Offset";
+  all="Offset";
+
+STR HRC_EXELIB_NET_STREAM_SIZE
+  de ="Größe";
+  all="Size";
+
+STR HRC_EXELIB_NET_STREAM_NAME
+  de ="Name";
+  all="Name";
+
+STR HRC_EXELIB_NET_STREAM_STRING_HEAP
+  de =" (String Heap)";
+  all=" (string heap)";
+
+STR HRC_EXELIB_NET_STREAM_USER_STRING_HEAP
+  de =" (Benutzer String Heap)";
+  all=" (user string heap)";
+
+STR HRC_EXELIB_NET_STREAM_BLOB_HEAP
+  de =" (Blob Heap)";
+  all=" (blob heap)";
+
+STR HRC_EXELIB_NET_STREAM_GUID_HEAP
+  de =" (GUID Heap)";
+  all=" (GUID heap)";
+
+STR HRC_EXELIB_NET_STREAM_SET_OF_TABLES
+  de =" (Tabellen)";
+  all=" (set of tables)";
+
+
+// genlib
+// APETAG
+STR HRC_GENLIB_APETAG_FIELD
+  all="%s: %s\012";
+
+// basic
+STR HRC_GENLIB_BASIC_PDF
+  de ="Adobe Portable Document (PDF) Datei";
+  all="Adobe Portable Document (PDF) file";
+
+STR HRC_GENLIB_BASIC_FDF
+  de ="Adobe PDF Form Daten Datei";
+  all="Adobe PDF Form Data file";
+
+STR HRC_GENLIB_BASIC_SUN_SOUND
+  de ="SUN Musik Datei";
+  all="SUN sound file";
+
+STR HRC_GENLIB_BASIC_BORLAND_OBJ
+  de ="Borland Object Datei";
+  all="Borland object file";
+
+STR HRC_GENLIB_BASIC_ASX
+  de ="Windows Media Metadaten Datei";
+  all="Windows Media Metafile";
+
+STR HRC_GENLIB_BASIC_BORLAND_MAP
+  de ="Borland Linker Mapping Datei";
+  all="Borland linker mapping file";
+
+STR HRC_GENLIB_BASIC_RTF
+  de ="Rich Text Format (RTF) Datei";
+  all="Rich text format (RTF) file";
+
+STR HRC_GENLIB_BASIC_APATCH
+  de ="aPatch Daten Datei";
+  all="aPatch data file";
+
+STR HRC_GENLIB_BASIC_WIN_REG4_TEXT
+  de ="Windows Registry Datei v4 (textuell)";
+  all="Windows registry file v4 (textual)";
+
+STR HRC_GENLIB_BASIC_WIN_REG5_TEXT
+  de ="Windows Registry Datei v5 (textuell)";
+  all="Windows registry file v5 (textual)";
+
+STR HRC_GENLIB_BASIC_WIN_VS_SLN
+  de ="Microsoft Visual Studio Solution Datei";
+  all="Microsoft Visual Studio Solution file";
+
+STR HRC_GENLIB_BASIC_FRAMEMAKER
+  de ="Framemaker Interchange Datei";
+  all="Framemaker interchange file";
+
+STR HRC_GENLIB_BASIC_UUE
+  de ="UU-kodierte Datei";
+  all="UU encoded file";
+
+STR HRC_GENLIB_BASIC_PS
+  de ="Adobe Postscript Datei";
+  all="Adobe Postscript file";
+
+STR HRC_GENLIB_BASIC_VCF
+  de ="Virtual Card Datei (VCF)";
+  all="Virtual Card File (VCF)";
+
+STR HRC_GENLIB_BASIC_IBO
+  de ="ibo Ablauf-Profi Datei";
+  all="ibo Ablauf-Profi file";
+
+STR HRC_GENLIB_BASIC_BAT
+  de ="BAT/CMD Batch Datei";
+  all="BAT/CMD batch file";
+
+STR HRC_GENLIB_BASIC_IFO
+  de ="InFOrmation Datei (DVD-Teil)";
+  all="InFOrmation file - DVD part";
+
+STR HRC_GENLIB_BASIC_MCAFEE
+  de ="McAfee Checksummen Datei";
+  all="McAfee checksum file";
+
+STR HRC_GENLIB_BASIC_SSCE_LEXICON
+  de ="Wörterbuch Datei (Wintertree Software)";
+  all="Dictionary file (Wintertree Software)";
+
+STR HRC_GENLIB_BASIC_IE_CACHE
+  de ="Internet Explorer Cache Datei";
+  all="Internet Explorer Cache File";
+
+STR HRC_GENLIB_BASIC_PSP_BROWSE
+  de ="Corel Paint Shop Pro Browser Datei";
+  all="Corel Paint Shop Pro Browser File";
+
+STR HRC_GENLIB_BASIC_THUNDERBYTE
+  de ="Thunderbyte Checksummen-/Überprüfungs Datei";
+  all="Thunderbyte checksum / cleaning / validation file";
+
+STR HRC_GENLIB_BASIC_TP_HLP
+  de ="Turbo Pascal Hilfedatei";
+  all="Turbo Pascal Help File";
+
+STR HRC_GENLIB_BASIC_MS_LINKER
+  de ="Microsoft Linker Datenbank";
+  all="Microsoft Linker Database";
+
+STR HRC_GENLIB_BASIC_PSP_IMAGE
+  de ="Corel Paint Shop Pro Bild Datei";
+  all="Corel Paint Shop Pro Image File";
+
+STR HRC_GENLIB_BASIC_TP_CFG
+  de ="Turbo Pascal Konfigurations Datei";
+  all="Turbo Pascal Configuration File";
+
+STR HRC_GENLIB_BASIC_MS_PDB
+  de ="Microsoft C/C++ Programmdatenbank (PDB)";
+  all="Microsoft C/C++ program database (PDB)";
+
+STR HRC_GENLIB_BASIC_JERUSALEM
+  de ="Jerusalem-Virus Schutz";
+  all="Jerusalem virus protection";
+
+STR HRC_GENLIB_BASIC_IDS
+  de ="DataRescue IDA DLL Beschreibungs Datei (IDS)";
+  all="DataRescue IDA DLL description file (IDS)";
+
+STR HRC_GENLIB_BASIC_PAX2
+  de ="Pax Imperia 2 Gespeicherter Spielstand";
+  all="Pax Imperia 2 save game";
+
+STR HRC_GENLIB_BASIC_MS_PCH
+  de ="Microsoft Precompiled Header Datei (PCH)";
+  all="Microsoft precompiled header file (PCH)";
+
+STR HRC_GENLIB_BASIC_ARJ
+  de ="ARJ selbstextrahierendes Archiv";
+  all="ARJ self extracting archive";
+
+STR HRC_GENLIB_BASIC_MS_PBI
+  de ="Microsoft Profiler Datei (PBI)";
+  all="Microsoft profiler file (PBI)";
+
+STR HRC_GENLIB_BASIC_LOTUS_WORDPRO
+  de ="Lotus WordPro Dokument";
+  all="Lotus WordPro document";
+
+STR HRC_GENLIB_BASIC_LOTUS_AMIPRO
+  de ="Lotus AmiPro Dokument";
+  all="Lotus AmiPro document";
+
+STR HRC_GENLIB_BASIC_ARMADILLO_PRJ
+  de ="Armadillo Projekt Datei";
+  all="Armadillo project file";
+
+STR HRC_GENLIB_BASIC_NU_DD_UNDO
+  de ="Norton Utilities Disk Doctor Undo Datei";
+  all="Norton Utilities Disk Doctor undo file";
+
+STR HRC_GENLIB_BASIC_PS_EXE
+  de ="Ausführbare Sony PlayStation Datei";
+  all="Sony PlayStation executable";
+
+STR HRC_GENLIB_BASIC_CYGWIN_SYMLINK
+  de ="Cygwin Symbolischer Link";
+  all="Cygwin symbolic link";
+
+STR HRC_GENLIB_BASIC_MS_MDB
+  de ="Microsoft Access Datenbank Datei (MDB)";
+  all="Microsoft Access database file (MDB)";
+
+STR HRC_GENLIB_BASIC_EMF
+  de ="Windows Enhanced Metafile Bilddatei (EMF)";
+  all="Windows Enhanced Metafile image (EMF)";
+
+STR HRC_GENLIB_BASIC_LNK
+  de ="Windows Verknüpfungs Datei";
+  all="Windows shortcut file";
+
+STR HRC_GENLIB_BASIC_FPK_OBJ
+  de ="FPK Pascal Object Datei";
+  all="FPK Pascal object file";
+
+STR HRC_GENLIB_BASIC_CPP_LIB
+  de ="C++ Bibliotheks Datei";
+  all="C++ library file";
+
+STR HRC_GENLIB_BASIC_SQL_DB
+  de ="Microsoft SQL Server Datenbank Datei";
+  all="Microsoft SQL Server database file";
+
+STR HRC_GENLIB_BASIC_MS_DBG_INFO
+  de ="Microsoft Debug Information Datei";
+  all="Microsoft debug information file";
+
+STR HRC_GENLIB_BASIC_COBOL_DATA
+  de ="Cobol Daten Datei";
+  all="Cobol data file";
+
+STR HRC_GENLIB_BASIC_IS_UNINSTALL
+  de ="installShield Uninstall Datei";
+  all="installShield uninstall file";
+
+STR HRC_GENLIB_BASIC_MS_WORD
+  de ="Microsoft Word für DOS/Write Dokument";
+  all="Microsoft Word for DOS/Write document";
+
+STR HRC_GENLIB_BASIC_COBOL_INDEX
+  de ="Cobol Index Datei";
+  all="Cobol index file";
+
+STR HRC_GENLIB_BASIC_CUR
+  de ="Windows Maus Cursor Datei/Works für DOS Datei";
+  all="Windows mouse cursor file/Works for DOS file";
+
+STR HRC_GENLIB_BASIC_MS_EXCEL4
+  de ="Microsoft Excel 4 Tabelle";
+  all="Microsoft Excel 4 worksheet";
+
+STR HRC_GENLIB_BASIC_IS_SCRIPT
+  de ="Compilierte installShield Script Datei";
+  all="Compiled installShield installation script";
+
+STR HRC_GENLIB_BASIC_PHARLAP
+  de ="Phar Lap .EXP Datei";
+  all="Phar Lap .EXP file";
+
+STR HRC_GENLIB_BASIC_CPP_SYM
+  de ="C++ Symbol Datei";
+  all="C++ symbol file";
+
+STR HRC_GENLIB_BASIC_LOTUS123
+  de ="Lotus 123 Tabelle";
+  all="Lotus 123 worksheet";
+
+STR HRC_GENLIB_BASIC_MS_WORD2
+  de ="Microsoft Winword 2 Dokument";
+  all="Microsoft Winword 2 document";
+
+STR HRC_GENLIB_BASIC_BGI_FONT
+  de ="Borland BGI Schriftart";
+  all="Borland BGI stroked font";
+
+STR HRC_GENLIB_BASIC_BGI_DRIVER
+  de ="Borland BGI Treiber";
+  all="Borland BGI device driver";
+
+STR HRC_GENLIB_BASIC_MS_VC_HLP
+  de ="Microsoft Visual C++ Hilfedatei";
+  all="Microsoft Visual C++ help file";
+
+STR HRC_GENLIB_BASIC_IBM_HLP
+  de ="IBM Hilfedatei";
+  all="IBM Help file";
+
+STR HRC_GENLIB_BASIC_NOTES45
+  de ="Lotus Notes 4.5 Datenbank";
+  all="Lotus Notes 4.5 database";
+
+STR HRC_GENLIB_BASIC_MS_SBR
+  de ="Microsoft Source Referenz Datei (SBR)";
+  all="Microsoft browse information file (SBR)";
+
+STR HRC_GENLIB_BASIC_PYTHON
+  de ="Kompilierter Phyton Source Code";
+  all="Compiled Python source code";
+
+STR HRC_GENLIB_BASIC_LATEX_FONT
+  de ="LaTeX Schriftart Datei";
+  all="LaTeX font file";
+
+STR HRC_GENLIB_BASIC_INNO_ZLIB
+  de ="zlib-komprimierte Inno Setup Daten";
+  all="zlib compressed Inno Setup data";
+
+STR HRC_GENLIB_BASIC_MS_MDP
+  de ="Microsoft Workspace Datei (MDP)";
+  all="Microsoft workspace file (MDP)";
+
+STR HRC_GENLIB_BASIC_BORLAND_PSM
+  de ="Borland Precompiled Header Datei (PSM)";
+  all="Borland precompiled header file (PSM)";
+
+STR HRC_GENLIB_BASIC_VP_UNIT3
+  de ="Virtual Pascal Unit v3";
+  all="Virtual Pascal unit v3";
+
+STR HRC_GENLIB_BASIC_EMMA
+  de ="Emma Code Coverage Datei";
+  all="Emma code coverage file";
+
+STR HRC_GENLIB_BASIC_BORLAND_DUNIT3
+  de ="Borland Delphi 3 Unit";
+  all="Borland Delphi 3 unit";
+
+STR HRC_GENLIB_BASIC_BORLAND_TV_HELP
+  de ="Turbo Vision Hilfedatei";
+  all="Turbo Vision help file";
+
+STR HRC_GENLIB_BASIC_WIN_REG_BIN
+  de ="Windows Registry Datei (binär)";
+  all="Windows registry file (binary)";
+
+STR HRC_GENLIB_BASIC_BORLAND_DUNIT4
+  de ="Borland Delphi 4 Unit";
+  all="Borland Delphi 4 unit";
+
+STR HRC_GENLIB_BASIC_NUMEGA_BC_RES
+  de ="NuMega BoundsChecker Ergebnis Datei";
+  all="NuMega BoundsChecker result file";
+
+STR HRC_GENLIB_BASIC_MS_COMPRESS
+  de ="Microsoft Compress 6.22 Datei";
+  all="Microsoft Compress 6.22 file";
+
+STR HRC_GENLIB_BASIC_LINKS_LS
+  de ="Links LS Datei";
+  all="Links LS shot file";
+
+STR HRC_GENLIB_BASIC_LOTUS_SCREENCAM
+  de ="Lotus Screen Cam Datei";
+  all="Lotus Screen Cam file";
+
+STR HRC_GENLIB_BASIC_FRACT_MOVIE
+  de ="Fractal Extreme Filemdatei";
+  all="Fractal Extreme movie file";
+
+STR HRC_GENLIB_BASIC_MS_QP_UNIT
+  de ="Microsoft Quick Pascal Unit";
+  all="Microsoft Quick Pascal unit";
+
+STR HRC_GENLIB_BASIC_BORLAND_DELPHI_FORM
+  de ="Borland Delphi 3/4 Form Modul";
+  all="Borland Delphi 3/4 form module";
+
+STR HRC_GENLIB_BASIC_MS_TLB
+  de ="Microsoft Typelibrary file";
+  all="Microsoft Typelibrary file";
+
+STR HRC_GENLIB_BASIC_FRACT_PALETTE
+  de ="Fractal Extreme Paletten Datei";
+  all="Fractal Extreme palette file";
+
+STR HRC_GENLIB_BASIC_BORLAND_OVR
+  de ="Borland Overlay Datei (OVR)";
+  all="Borland overlay file (OVR)";
+
+STR HRC_GENLIB_BASIC_VOB
+  de ="Video OBject Datei - Teil einer DVD/VCD";
+  all="Video OBject file - DVD/VCD part";
+
+STR HRC_GENLIB_BASIC_RESOURCE
+  de ="Kompilierte Microsoft Visual Studio Resource Datei";
+  all="Compiled Microsoft Visual Studio Resource file";
+
+STR HRC_GENLIB_BASIC_CANON_THUMB
+  de ="Canon Film-Vorschaubild";
+  all="Canon digital movie thumbnail image";
+
+STR HRC_GENLIB_BASIC_FOOBAR200_PLAYLIST
+  de ="foobar2000 Playlist Zusammenstellung";
+  all="foobar2000 playlist file";
+
+STR HRC_GENLIB_BASIC_DEMOSHIELD
+  de ="DemoShield Präsentations Datei";
+  all="DemoShield presentation file";
+
+STR HRC_GENLIB_BASIC_DVI
+  de ="DVI Datei (TeX)";
+  all="DVI file (TeX)";
+
+STR HRC_GENLIB_BASIC_DURILCA
+  de ="DURILCA Archiv";
+  all="DURILCA archive file";
+
+STR HRC_GENLIB_BASIC_SYMANTEC_ITDF
+  de ="Symantec Internet Tools Daten Datei 1.0";
+  all="Symantec Internet Tools Data File 1.0";
+
+STR HRC_GENLIB_BASIC_EUDORA_AD
+  de ="Eudora Werbungsdatei";
+  all="Eudora Ad file";
+
+STR HRC_GENLIB_BASIC_MOV
+  de ="Apple QuickTime Film";
+  all="Apple QuickTime movie file";
+
+STR HRC_GENLIB_BASIC_PKCS7
+  de ="PKCS #7 Zertifikat";
+  all="PKCS #7 certificate";
+
+STR HRC_GENLIB_BASIC_FLASH
+  de ="Macromedia Flash Datei";
+  all="Macromedia Flash file";
+
+STR HRC_GENLIB_BASIC_MS_DBG
+  de ="Microsoft Debug Information";
+  all="Microsoft debug information";
+
+STR HRC_GENLIB_BASIC_DER
+  de ="DER verschlüsseltes, binäres X.509 Zertifikat";
+  all="DER encoded binary X.509 certificate";
+
+STR HRC_GENLIB_BASIC_EMULE_PART_MET
+  de ="eMule Download Beschreibungs Datei";
+  all="eMule download description file";
+
+STR HRC_GENLIB_BASIC_PHOTOCD
+  de ="Kodak PhotoCD Bild Datei";
+  all="Kodak PhotoCD image file";
+
+STR HRC_GENLIB_BASIC_WARCRAFT2_PUD
+  de ="Warcraft 2 PUD Datei";
+  all="Warcraft 2 PUD file";
+
+STR HRC_GENLIB_BASIC_WMV
+  de ="Windows Media-Audio/Video Datei (WMA/WMV)";
+  all="Windows Media-Audio/Video file (WMA/WMV)";
+
+// BMF
+STR HRC_GENLIB_BMF
+  de ="BMF %c.%c Bild - %ux%u Pixel\012";
+  all="BMF %c.%c image - %ux%u pixel\012";
+
+// BMP
+STR HRC_GENLIB_BMP_BMP
+  de ="Bitmap Bild";
+  all="Bitmap image";
+
+STR HRC_GENLIB_BMP_SPEC
+  de =" (Typ %s) - %ux%u Pixel - %u Farben";
+  all=" (type %s) - %ux%u pixel - %u colors";
+
+STR HRC_GENLIB_BMP_TYPE2
+  de ="2 - Windows 2.x / OS/2 1.x";
+  all="2 - Windows 2.x / OS/2 1.x";
+
+STR HRC_GENLIB_BMP_TYPE3_3X
+  de ="3 - Windows 3.x";
+  all="3 - Windows 3.x";
+
+STR HRC_GENLIB_BMP_TYPE3_NT
+  de ="3 - Windows NT";
+  all="3 - Windows NT";
+
+STR HRC_GENLIB_BMP_TYPE4
+  de ="4 - Windows 95";
+  all="4 - Windows 95";
+
+STR HRC_GENLIB_BMP_TYPE3_OS2
+  de ="3 - OS/2 2.x ??";
+  all="3 - OS/2 2.x ??";
+
+STR HRC_GENLIB_BMP_TYPE_UNKNOWN
+  de ="unbekannt";
+  all="unknown";
+
+STR HRC_GENLIB_BMP_RES
+  de =" [Auflösung: %ux%u]";
+  all=" [resolution: %ux%u]";
+
+// CCDLNG
+STR HRC_GENLIB_CCDLNG
+  de ="CloneCD Sprachdatei (%s)\012";
+  all="CloneCD language file (%s)\012";
+
+// CHM
+STR HRC_GENLIB_CHM_HEADER
+  de ="Microsoft HTML-Hilfe Datei (CHM)\012";
+  all="Microsoft HTML-Help file (CHM)\012";
+
+STR HRC_GENLIB_CHM_VERSION
+  de ="Version %d - Sprache: $$OUTPUT_HEX_16\n";
+  all="Version %d - Language: $$OUTPUT_HEX_16\n";
+
+STR HRC_GENLIB_CHM_INVALID_GUID_1
+  de ="Fehler: GUID 1 ist ungültig\012";
+  all="Error: GUID 1 is invalid\012";
+
+STR HRC_GENLIB_CHM_INVALID_GUID_2
+  de ="Fehler: GUID 2 ist ungültig\012";
+  all="Error: GUID 2 is invalid\012";
+
+STR HRC_GENLIB_CHM_INVALID_SECTION_0_ID
+  de ="Fehler: Ungültige ID in Sektion 0 ($$OUTPUT_HEX_32)\012";
+  all="Error: Invalid section 0 ID ($$OUTPUT_HEX_32)\012";
+
+STR HRC_GENLIB_CHM_FILESIZE_MISMATCH
+  de ="Fehler: Dateigröße in Header stimmt nicht mit der realen Größe überein\012";
+  all="Error: File size in header does not match the real file size\012";
+
+STR HRC_GENLIB_CHM_INVALID_DIR_HEADER_ID
+  de ="Fehler: Ungültige Verzeichnisheader ID ($$OUTPUT_HEX_32)\012";
+  all="Error: Invalid directory header ID ($$OUTPUT_HEX_32)\012";
+
+STR HRC_GENLIB_CHM_INVALID_DIR_HEADER_VERSION
+  de ="Fehler: Ungültige Verzeichnisheader Version ($$OUTPUT_DEC_32)\012";
+  all="Error: Invalid directory header version ($$OUTPUT_DEC_32)\012";
+
+STR HRC_GENLIB_CHM_INVALID_DIR_HEADER_SIZE
+  de ="Fehler: Ungültige Verzeichnisheader Größe ($$OUTPUT_HEX_8)\012";
+  all="Error: Invalid directory header size ($$OUTPUT_HEX_8)\012";
+
+STR HRC_GENLIB_CHM_INVALID_LIST_CHUNK_ID
+  de ="Fehler: Ungültige Listing Chunk ID ($$OUTPUT_HEX_32)\012";
+  all="Error: Invalid listing chunk ID ($$OUTPUT_HEX_32)\012";
+
+STR HRC_GENLIB_CHM_INVALID_CHUNK_INDEX_ID
+  de ="Fehler: Ungültige Index Chunk ID ($$OUTPUT_HEX_32)\012";
+  all="Error: Invalid index chunk ID ($$OUTPUT_HEX_32)\012";
+
+// %lu: index
+// %hs: filename
+// %lu: content section
+// %Xh: offset
+// %Xh: length
+STR HRC_GENLIB_CHM_ENTRY
+  de ="$$OUTPUT_DEC_32. %hs an $$OUTPUT_DEC_32:%Xh für %Xh Bytes\012";
+  all="$$OUTPUT_DEC_32. %hs at $$OUTPUT_DEC_32:%Xh for %Xh bytes\012";
+
+// Java class files
+STR HRC_GENLIB_CLASS_HEADER
+  de ="Kompilierter Java Bytecode (%u.%u = Java %s)";
+  all="Compiled Java bytecode (%u.%u = Java %s)";
+
+// CRYPT
+STR HRC_GENLIB_CRYPT
+  de ="Crypt! v%u.%02u";
+  all="Crypt! v%u.%02u";
+
+STR HRC_GENLIB_CRYPT_HSL
+  de =" [höchste Sicherheitsstufe]";
+  all=" [high security level]";
+
+// CUE
+STR HRC_GENLIB_CUE_HEADER
+  de ="Cue Sheet für '%hs'\012";
+  all="Cue sheet for '%hs'\012";
+
+// DBF
+STR HRC_GENLIB_DBF_VERSION
+  de ="dBase Datendatei v%u\012";
+  all="dBase datafile v%u\012";
+
+STR HRC_GENLIB_DBF_INDEX_FILE
+  de ="Index Datei (MDX)\012";
+  all="Index file (MDX)\012";
+
+STR HRC_GENLIB_DBF_OVERVIEW
+  de ="%u Einträge mit %u Feldern: %u Bytes/Eintrag\012";
+  all="%u records with %u fields: %u bytes/record\012";
+
+STR HRC_GENLIB_DBF_COLUMN_NAME
+  de ="Name";
+  all="Name";
+
+STR HRC_GENLIB_DBF_COLUMN_LEN
+  de ="Länge";
+  all="Len";
+
+STR HRC_GENLIB_DBF_COLUMN_TYPE
+  de ="Typ";
+  all="Type";
+
+STR HRC_GENLIB_DBF_COLUMN_BINARY
+  de ="Binär";
+  all="binary";
+
+STR HRC_GENLIB_DBF_COLUMN_CHARACTER
+  de ="Zeichen";
+  all="character";
+
+STR HRC_GENLIB_DBF_COLUMN_DATE
+  de ="Datum";
+  all="date";
+
+STR HRC_GENLIB_DBF_COLUMN_FLOAT
+  de ="Float";
+  all="float";
+
+STR HRC_GENLIB_DBF_COLUMN_GENERAL
+  de ="Allgemein (OLE)";
+  all="general (OLE)";
+
+STR HRC_GENLIB_DBF_COLUMN_LOGICAL
+  de ="Logisch";
+  all="logical";
+
+STR HRC_GENLIB_DBF_COLUMN_MEMO
+  de ="Memo";
+  all="memo";
+
+STR HRC_GENLIB_DBF_COLUMN_NUMERICAL
+  de ="Numerisch";
+  all="numerical";
+
+STR HRC_GENLIB_DBF_COLUMN_PICTURE
+  de ="Bild";
+  all="picture";
+
+STR HRC_GENLIB_DBF_COLUMN_VARIABLE
+  de ="Variabel";
+  all="variable";
+
+STR HRC_GENLIB_DBF_COLUMN_SHORT_INT
+  de ="Short int";
+  all="short int";
+
+STR HRC_GENLIB_DBF_COLUMN_LONG_INT
+  de ="Long int";
+  all="long int";
+
+STR HRC_GENLIB_DBF_COLUMN_DOUBLE
+  de ="Double";
+  all="double";
+
+STR HRC_GENLIB_DBF_COLUMN_UNKNOWN
+  de ="unbekannt (%c)";
+  all="unknown (%c)";
+
+// ELF
+
+// prefix
+STR HRC_GENLIB_ELF_UNIX
+  de ="Unix/Linux ";
+  all="Unix/Linux ";
+
+// either or
+STR HRC_GENLIB_ELF_32_BIT
+  de ="32-Bit ";
+  all="32-bit ";
+
+STR HRC_GENLIB_ELF_64_BIT
+  de ="64-Bit ";
+  all="64-bit ";
+
+// more specific
+STR HRC_GENLIB_ELF_INVALID
+  de ="ungültige";
+  all="invalid";
+
+STR HRC_GENLIB_ELF_RELOCATABLE
+  de ="verschiebbare (Object)";
+  all="relocatable (object)";
+
+STR HRC_GENLIB_ELF_EXECUTABLE
+  de ="ausführbare";
+  all="executable";
+
+STR HRC_GENLIB_ELF_SHARED_OBJECT
+  de ="gemeinsam genutzte Object";
+  all="shared object";
+
+STR HRC_GENLIB_ELF_CORE
+  de ="Core";
+  all="core";
+
+STR HRC_GENLIB_ELF_PROC_SPECIFIC
+  de ="Prozessorspezifische";
+  all="processor specific";
+
+STR HRC_GENLIB_ELF_UNKNOWN
+  de ="unbekannte";
+  all="unknown";
+
+// suffic
+STR HRC_GENLIB_ELF_FILE
+  de =" Datei\012";
+  all=" file\012";
+
+STR HRC_GENLIB_ELF_DATA_ENCODING
+  de ="Datenkodierung: ";
+  all="Data encoding: ";
+
+STR HRC_GENLIB_ELF_DE_INVALID
+  de ="ungültig";
+  all="invalid";
+
+STR HRC_GENLIB_ELF_DE_LITTLE_ENDIAN
+  de ="Little Endian";
+  all="little endian";
+
+STR HRC_GENLIB_ELF_DE_BIG_ENDIAN
+  de ="Big Endian";
+  all="big endian";
+
+STR HRC_GENLIB_ELF_DE_UNKNOWN
+  de ="unbekannt";
+  all="unknown";
+
+STR HRC_GENLIB_ELF_MACHINE_TYPE
+  de ="Maschinentyp: ";
+  all="Machine type: ";
+
+STR HRC_GENLIB_ELF_MT_NO_MACHINE
+  de ="keine Maschine";
+  all="no machine";
+
+STR HRC_GENLIB_ELF_MT_ATT
+  all="AT&T WE 32100";
+
+STR HRC_GENLIB_ELF_MT_SPARC
+  all="SPARC";
+
+STR HRC_GENLIB_ELF_MT_INTEL_80386
+  all="Intel 80386";
+
+STR HRC_GENLIB_ELF_MT_MOTOROLA_68000
+  all="Motorola 68000";
+
+STR HRC_GENLIB_ELF_MT_MOTOROLA_88000
+  all="Motorola 88000";
+
+STR HRC_GENLIB_ELF_MT_INTEL_80860
+  all="Intel 80860";
+
+STR HRC_GENLIB_ELF_MT_MIPS_RS32000
+  all="MIPS RS3000";
+
+STR HRC_GENLIB_ELF_NO_EP
+  all="File has no entrypoint\012";
+
+// FLI
+STR HRC_GENLIB_FLI_HEADER
+  de ="%s Animationsdatei - %ux%u - %u Farben [%u Frames]\012";
+  all="%s animation file - %ux%u - %u colors [%u frames]\012";
+
+STR HRC_GENLIB_FLI_DELAY
+  de ="Frameverzögerung: %u.%02u Seks\012";
+  all="Frame delay: %u.%02u secs\012";
+
+// FPK
+STR HRC_GENLIB_FPK_HEADER
+  de ="FPK Pascal %c.%c%c Unit\012";
+  all="FPK Pascal %c.%c%c unit\012";
+
+// GBX
+STR HRC_GENLIB_GBX_HEADER
+  de ="Nadeo Spieldatei\012";
+  all="Nadeo Game file\012";
+
+// GIF
+STR HRC_GENLIB_GIF_SEEMS_TO_BE
+  de ="Scheint eine GIF-Datei zu sein\012";
+  all="Seems to be a GIF image\012";
+
+STR HRC_GENLIB_GIF_ERROR_COL_TABLE
+  de ="Fehler: Konnte die globale GIF-Farbtabelle nicht lesen\012";
+  all="Error: Failed to read the global GIF color table\012";
+
+STR HRC_GENLIB_GIF_EXT_BLOCK
+  de ="GIF%s-Bild - Erweiterungsblock $$OUTPUT_HEX_8";
+  all="GIF%s image - extension block $$OUTPUT_HEX_8";
+
+STR HRC_GENLIB_GIF_GIFLITE
+  de =" [mit GIFLITE modifiziert]";
+  all=" [processed with GIFLITE]";
+
+STR HRC_GENLIB_GIF_EXT_BLOCK_ERR
+  de ="Fehler: Der GIF-Erweiterungsblock ist nicht richtig terminiert\012";
+  all="Error: The GIF extension block is incorrectly terminated\012";
+
+STR HRC_GENLIB_GIF_HEADER
+  de ="GIF%s-Bild - %ux%u - %u Farben";
+  all="GIF%s image - %ux%u - %u colors";
+
+STR HRC_GENLIB_GIF_INTERLACED
+  de =" [interlaced]";
+  all=" [interlaced]";
+
+STR HRC_GENLIB_GIF_ERR_LOCAL_COL_TAB
+  de ="Fehler: Konnte die lokale GIF-Farbtabelle nicht lesen\012";
+  all="Error: Failed to read the local GIF color table\012";
+
+STR HRC_GENLIB_GIF_ERR_DESC_BLOCK
+  de ="Fehler: Der GIF-Bildbeschreibungsblock ist nicht richtig terminiert\012";
+  all="Error: The GIF image descriptor block is incorrectly terminated\012";
+
+STR HRC_GENLIB_GIF_ERR_IMG_DESC
+  de ="Fehler: Ungültige Bildbeschreibungsdaten ID $$OUTPUT_HEX_8\012";
+  all="Error: Invalid image descriptor $$OUTPUT_HEX_8\012";
+
+STR HRC_GENLIB_GIF_UNEXP_EOF
+  de ="Fehler: unerwartetes Ende der Datei\012";
+  all="Error: Unexpected end of file\012";
+
+// GRP
+STR HRC_GENLIB_GRP_HEADER
+  de ="Windows 3.x Gruppendatei '%s'\012";
+  all="Windows 3.x group file '%s'\012";
+
+// HEADTEXT
+STR HRC_GENLIB_HEADTEXT_HEADER
+  de ="Kopftext: '%s'\012";
+  all="Headtext: '%s'\012";
+
+// HLP
+STR HRC_GENLIB_HLP_HEADER
+  de ="Windows %s Hilfedatei\012";
+  all="Windows %s help file\012";
+
+// HTML
+STR HRC_GENLIB_HTML_HEADER
+  de ="HTML (Hyper Text Markup Language) Datei\012";
+  all="HTML (Hyper Text Markup Language) file\012";
+
+STR HRC_GENLIB_HTML_TITLE
+  de ="Titel: '%s'\012";
+  all="Title: '%s'\012";
+
+// ICO
+STR HRC_GENLIB_ICO_HEADER
+  de ="Icon Datei mit %u Bild(ern)\012";
+  all="Icon file with %u image(s)\012";
+
+// ID3
+STR HRC_GENLIB_ID3_HEADER
+  de ="ID3v2.%d.%d Tag (mit $$OUTPUT_DEC_64 Bytes)\012";
+  all="ID3v2.%d.%d tag (for $$OUTPUT_DEC_64 bytes)\012";
+
+STR HRC_GENLIB_ID3_FLAG_UNSYNC
+  de ="Unsynchronisation - wird nicht unterstützt :(\012";
+  all="Unsynchronisation - not handled :(\012";
+
+STR HRC_GENLIB_ID3_FLAG_EXT_HEAD
+  de ="Erweiterter Header vorhanden\012";
+  all="Extended header present\012";
+
+STR HRC_GENLIB_ID3_FLAG_EXPERIMENTAL
+  de ="Als experimentell gekennzeichnet\012";
+  all="Experimental indicator\012";
+
+STR HRC_GENLIB_ID3_FLAG_FOOTER
+  de ="Footer vorhanden\012";
+  all="Footer present\012";
+
+STR HRC_GENLIB_ID3_FRAME
+  de ="%c%c%c%c (%u Bytes)\012";
+  all="%c%c%c%c (%u bytes)\012";
+
+// IFF
+STR HRC_GENLIB_IFF__C_
+  de ="Copyright und Lizenz";
+  all="Copyright notice and license";
+
+STR HRC_GENLIB_IFF_SSA
+  de ="Super smoothe Animation (ProDAD)";
+  all="Super smooth animation (ProDAD)";
+
+STR HRC_GENLIB_IFF_DOC
+  de ="Dokumentformatierungs Informationen";
+  all="Document formating information";
+
+STR HRC_GENLIB_IFF_PBM
+  de ="Portables Bitmap";
+  all="Portable bitmap";
+
+STR HRC_GENLIB_IFF_RGB8
+  de ="24-Bit Farben Bild (Impulse)";
+  all="24-bit color image (Impulse)";
+
+STR HRC_GENLIB_IFF_ACBM
+  de ="Amiga Contiguous Bitmap (MS Basic für Amiga)";
+  all="Amiga Contiguous Bitmap (MS Basic for Amiga)";
+
+STR HRC_GENLIB_IFF_PARA
+  de ="Absatzformatierungs Informationen";
+  all="Paragraph formatting information";
+
+STR HRC_GENLIB_IFF_DR2D
+  de ="2D Objekt Standardformat (Vektordaten)";
+  all="2D object standard format (vector data)";
+
+STR HRC_GENLIB_IFF_HEAD
+  de ="Dokumentenheader Informationen";
+  all="Document header information";
+
+STR HRC_GENLIB_IFF_TDDD
+  de ="Turbo3d rendering Daten (3D Objekte)";
+  all="Turbo3d rendering data (3D objects)";
+
+STR HRC_GENLIB_IFF_WORD
+  de ="Pro-write Daten";
+  all="Pro-write word processing";
+
+STR HRC_GENLIB_IFF_PAGE
+  de ="Seitenumbruch";
+  all="Page break indicator";
+
+STR HRC_GENLIB_IFF_PDEF
+  de ="Deluxe Print Seitendefinition";
+  all="Deluxe Print page definition";
+
+STR HRC_GENLIB_IFF_AIFF
+  de ="Audio Austausch Dateiformat";
+  all="Audio interchange file format";
+
+STR HRC_GENLIB_IFF_TRAK
+  de ="MIDI Musikdaten";
+  all="MIDI music data";
+
+STR HRC_GENLIB_IFF_ILBM
+  de ="InterLeaved BitMap";
+  all="InterLeaved BitMap (interleaved planar bitmap data)";
+
+STR HRC_GENLIB_IFF_ANBM
+  de ="Animiertes Bitmap";
+  all="Animated bitmap";
+
+STR HRC_GENLIB_IFF_ANIM
+  de ="Cel Animationen";
+  all="Cel animations";
+
+STR HRC_GENLIB_IFF_RGBN
+  de ="12-Bit Farben Bild (Impulse)";
+  all="12-bit color image (Impulse)";
+
+STR HRC_GENLIB_IFF_YUVN
+  de ="YUV Bilddaten (V-Lab)";
+  all="YUV image data (V-Lab)";
+
+STR HRC_GENLIB_IFF_VDEO
+  de ="Deluxe Video Construction Set Video";
+  all="Deluxe Video Construction Set video";
+
+STR HRC_GENLIB_IFF_ANNO
+  de ="AnnoAnmerkung bzw. Kommentar";
+  all="Annotation or comment";
+
+STR HRC_GENLIB_IFF_DEEP
+  de ="IFF Deep (24-Bit Fraben Bild)";
+  all="IFF Deep (24-bit color image)";
+
+STR HRC_GENLIB_IFF_SAMP
+  de ="Gesampletes Geräusch";
+  all="Sampled sound";
+
+STR HRC_GENLIB_IFF_GSCR
+  de ="Allgemein verwendbares Musikstück";
+  all="General use musical score";
+
+STR HRC_GENLIB_IFF_USCR
+  de ="Uhuru Sound Software Musikstück";
+  all="Uhuru Sound Software musical score";
+
+STR HRC_GENLIB_IFF_FNTR
+  de ="Raster Schriftart";
+  all="Raster font";
+
+STR HRC_GENLIB_IFF_TABS
+  de ="Tabulator Positionen";
+  all="Tab positions";
+
+STR HRC_GENLIB_IFF_PICS
+  de ="Macintosh Bild";
+  all="Macintosh picture";
+
+STR HRC_GENLIB_IFF_VERS
+  de ="Dateiversion";
+  all="File version";
+
+STR HRC_GENLIB_IFF_SMUS
+  de ="Einfaches Musikstück";
+  all="Simple musical score";
+
+STR HRC_GENLIB_IFF_FOOT
+  de ="Dokumentenfooter Informationen";
+  all="Document footer information";
+
+STR HRC_GENLIB_IFF_TEXT
+  de ="Text für einen Absatz";
+  all="Text for a paragraph";
+
+STR HRC_GENLIB_IFF_FTXT
+  de ="Formatierter Text";
+  all="Formatted text";
+
+STR HRC_GENLIB_IFF_FNTV
+  de ="Vektor Schriftart";
+  all="Vector font";
+
+STR HRC_GENLIB_IFF_UVOX
+  de ="Uhuru Sound Software Macintosh Sprache";
+  all="Uhuru Sound Software Macintosh voice";
+
+STR HRC_GENLIB_IFF_8SVX
+  de ="8-Bit gesamplete Sprache";
+  all="8-bit sampled voice";
+
+STR HRC_GENLIB_IFF_BODY
+  de ="Bilddaten";
+  all="image data";
+
+STR HRC_GENLIB_IFF_HEADER
+  de ="IFF Datei\012";
+  all="IFF file\012";
+
+STR HRC_GENLIB_IFF_UNK_TYPE
+  de ="Unbekannter Typ %08Xh";
+  all="Unknown type %08Xh";
+
+STR HRC_GENLIB_IFF_UNK_SUBTYPE
+  de ="Unbekannter Subtyp %08Xh";
+  all="Unknown subtype %08Xh";
+
+STR HRC_GENLIB_IFF_BYTES
+  de =" (%u Bytes)\012";
+  all=" (%u bytes)\012";
+
+// INI
+STR HRC_GENLIB_INI_CLONECD
+  de ="Clone CD Einstellungen";
+  all="Clone CD image configuration";
+
+STR HRC_GENLIB_INI_URL
+  de ="Windows Verknüpfung zu einer URL";
+  all="Windows Internet Shortcut";
+
+STR HRC_GENLIB_INI_HEADER
+  de ="%s Datei [%s]\012";
+  all="%s file [%s]\012";
+
+// ImpulseTracker
+STR HRC_GENLIB_IT_HEADER
+  de ="Impulse Tracker Modul '%s'\012";
+  all="Impulse Tracker Module '%s'\012";
+
+// JPG
+STR HRC_GENLIB_JPG_INVALID_ID
+  de ="Fehler: JPG Bild - ungültige ID gefunden\012";
+  all="Error: JPG image - found invalid ID\012";
+
+STR HRC_GENLIB_JPG_HEADER
+  de ="JPG Bild - %ux%u Pixel - ";
+  all="JPG image - %ux%u pixel - ";
+
+STR HRC_GENLIB_JPG_COL_GREYSCALED
+  de ="Graustufen";
+  all="Greyscaled";
+
+STR HRC_GENLIB_JPG_COL_TRUE24
+  de ="24-Bit Farben";
+  all="Truecolor (24 bit)";
+
+STR HRC_GENLIB_JPG_COL_TRUE32
+  de ="32-Bit Farben";
+  all="Truecolor (32 bit)";
+
+STR HRC_GENLIB_JPG_COL_UNKNOWN
+  de ="unbekannte Farbdefinition";
+  all="unknown color type";
+
+STR HRC_GENLIB_JPG_NO_SOF
+  de ="Fehler: JPG Bild - SOFn Segment wurde nicht gefunden\012";
+  all="Error: JPG image - SOFn segment is not found\012";
+
+STR HRC_GENLIB_JPG_COMMENT
+  de ="JPG Kommentar: '%s'\012";
+  all="JPG comment: '%s'\012";
+
+// LIB
+STR HRC_GENLIB_LIB_HEADER
+  de ="Microsoft C/C++ Bibliothek\012";
+  all="Microsoft C/C++ library\012";
+
+STR HRC_HENLIB_LIB_TABLE_OFFSET
+  de ="Offset";
+  all="Offset";
+
+STR HRC_HENLIB_LIB_TABLE_SIZE
+  de ="Größe";
+  all="Size";
+
+STR HRC_HENLIB_LIB_TABLE_NAME
+  de ="Name";
+  all="Name";
+
+STR HRC_GENLIB_LIB_ERR_INVALID
+  de ="Fehler: Das Ende des Headers ist falsch\012";
+  all="Error: End of header is incorrect\012";
+
+// MPEG4
+STR HRC_GENLIB_M4A_HEADER
+  de ="MPEG-4 Audio Datei (iTunes AAC)\012";
+  all="MPEG-4 Audio file (iTunes AAC)\012";
+
+// MAC
+STR HRC_GENLIB_MAC_HEADER
+  de ="MAC Bilddatei\012";
+  all="MAC image file\012";
+
+// MAP
+STR HRC_GENLIB_MAP_MS_HEADER
+  de ="Microsoft Map Datei\012";
+  all="Microsoft map file\012";
+
+// MIDI
+STR HRC_GENLIB_MIDI_HEADER
+  de ="MIDI Musikdatei\012";
+  all="MIDI music file\012";
+
+STR HRC_GENLIB_MIDI_MULTI_CHANNEL
+  de ="Eine Mehrkanal-Spur";
+  all="One multi-channel track";
+
+STR HRC_GENLIB_MIDI_SIMULTEANOUS
+  de ="Eine oder mehrere simultane Spuren";
+  all="One or more simultaneous tracks";
+
+STR HRC_GENLIB_MIDI_SINGLE
+  de ="Eine oder mehrere sequentiell unabhängige Einkanal-Spuren";
+  all="One or more sequentially independent single-track patterns";
+
+STR HRC_GENLIB_MIDI_UNKNOWN
+  de ="Unbekanntes Spurformat";
+  all="Unknown track format";
+
+STR HRC_GENLIB_MIDI_BLOCKS
+  de =" mit %u Blöcken\012";
+  all=" with %u blocks\012";
+
+// MP3
+STR HRC_GENLIB_MP3_HEADER
+  de ="MPEG %d layer %d Datei\012";
+  all="MPEG %d layer %d file\012";
+
+STR HRC_GENLIB_MP3_BITRATE
+  de ="Bitrate: %u KB/Sek\012";
+  all="Bitrate: %u KB/sec\012";
+
+STR HRC_GENLIB_MP3_ERROR_PROT
+  de ="Fehlerschutz: ";
+  all="Error protection: ";
+
+STR HRC_GENLIB_MP3_STEREO
+  de ="Stereo";
+  all="Stereo";
+
+STR HRC_GENLIB_MP3_JOINT_STEREO
+  de ="Joint Stereo";
+  all="Joint stereo";
+
+STR HRC_GENLIB_MP3_TWO_CHANNELS
+  de ="2 Kanäle";
+  all="Two channels";
+
+STR HRC_GENLIB_MP3_MONO
+  de ="Mono";
+  all="Mono";
+
+// MP3TAG
+STR HRC_GENLIB_MP3TAG_HEADER
+  de ="MP3 TAG\012";
+  all="MP3 TAG\012";
+
+STR HRC_GENLIB_MP3TAG_TITLE
+  de ="Titel:     '%s'\012";
+  all="Title:   '%s'\012";
+
+STR HRC_GENLIB_MP3TAG_ARTIST
+  de ="Interpret: '%s'\012";
+  all="Artist:  '%s'\012";
+
+STR HRC_GENLIB_MP3TAG_ALBUM
+  de ="Album:     '%s'\012";
+  all="Album:   '%s'\012";
+
+STR HRC_GENLIB_MP3TAG_YEAR
+  de ="Jahr:      '%s'\012";
+  all="Year:    '%s'\012";
+
+STR HRC_GENLIB_MP3TAG_COMMENT
+  de ="Kommentar: '%s'\012";
+  all="Comment: '%s'\012";
+
+// MPC
+STR HRC_GENLIB_MPC_HEADER
+  de ="MP+ SV%d.%d Musikdatei\012";
+  all="MP+ SV%d.%d music file\012";
+
+// MPEG
+STR HRC_GENLIB_MPEG_HEADER
+  de ="MPEG Filem - %ux%u Pixel\012";
+  all="MPEG movie - %ux%u pixel\012";
+
+// OBJ
+STR HRC_GENLIB_OBJ_HEADER
+  de ="Common Object File Format (COFF) i386 (%d Sektionen)\012";
+  all="Common Object File Format (COFF) i386 (%d sections)\012";
+
+STR HRC_GENLIB_OBJ_SYMTAB_AT
+  de ="Enthält Symboltabelle bei: $$OUTPUT_HEX_DEC_32\012";
+  all="Contains symbol table at: $$OUTPUT_HEX_DEC_32\012";
+
+STR HRC_GENLIB_OBJ_SYMTAB_COUNT
+  de ="Anzahl der Symbole:        $$OUTPUT_DEC_32\012";
+  all="Number of symbols:        $$OUTPUT_DEC_32\012";
+
+STR HRC_GENLIB_OBJ_CHARACTERISTICS
+  de ="Eigenschaften ($$OUTPUT_HEX_8):\012";
+  all="Characteristics ($$OUTPUT_HEX_8):\012";
+
+STR HRC_GENLIB_OBJ_FLAG_RELOCS_STRP
+  de ="Relocations wurden aus Datei entfernt\012";
+  all="relocations stripped from file\012";
+
+STR HRC_GENLIB_OBJ_FLAG_EXEC
+  de ="ist ausführbar\012";
+  all="image is executable\012";
+
+STR HRC_GENLIB_OBJ_FLAG_NO_LINES
+  de ="Zeilennummern wurden entfernt\012";
+  all="line numbers have been removed\012";
+
+STR HRC_GENLIB_OBJ_FLAG_NO_SYMTAB
+  de ="Symboltabelleneinträge für lokale Symbole wurden entfernt\012";
+  all="symbol table entries for local symbols have been removed\012";
+
+STR HRC_GENLIB_OBJ_FLAG_AGGR_TRIM
+  de ="Speicherverbrauch minimieren\012";
+  all="aggresively trim working set\012";
+
+STR HRC_GENLIB_OBJ_FLAG_2GB
+  de ="kann mit Speicheradressen > 2GB umgehen\012";
+  all="can handle adresses > 2GB\012";
+
+STR HRC_GENLIB_OBJ_FLAG_16BIT_WORD
+  de ="Maschine basiert auf 16-Bit-Word Architektur\012";
+  all="machine based on 16-bit-word architecture\012";
+
+STR HRC_GENLIB_OBJ_FLAG_LITTLE_END
+  de ="Little Endian\012";
+  all="little endian\012";
+
+STR HRC_GENLIB_OBJ_FLAG_32BIT_WORD
+  de ="Maschine basiert auf 32-Bit-Word Architektur\012";
+  all="machine based on 32-bit-word architecture\012";
+
+STR HRC_GENLIB_OBJ_FLAG_NO_DEBUG
+  de ="Debug Informationen wurden entfernt\012";
+  all="debugging information removed from file\012";
+
+STR HRC_GENLIB_OBJ_FLAG_REMOVEABLE
+  de ="Falls Anwendung auf Wechseldatenträger, kopiere und führe aus Swapdatei aus";
+  all="if image is on removeable media, copy and run from swapfile\012";
+
+STR HRC_GENLIB_OBJ_FLAG_SYSTEM_FILE
+  de ="Anwendung ist eine Systemdatei\012";
+  all="image is a system file not a user program\012";
+
+STR HRC_GENLIB_OBJ_FLAG_DLL
+  de ="Anwendung ist eine DLL\012";
+  all="image is a DLL\012";
+
+STR HRC_GENLIB_OBJ_FLAG_RUN_ON_UP
+  de ="Anwendung sollte nur auf einer Einprozessormaschine ausgeführt werden\012";
+  all="image should be run only on a uniprocessor (UP) machine\012";
+
+STR HRC_GENLIB_OBJ_FLAG_BIG_END
+  de ="Big Endian\012";
+  all="big endian\012";
+
+STR HRC_GENLIB_OBJ_SIZEOF_OPT_HDR
+  de ="Größe des optionalen Headers:  %d/$$OUTPUT_HEX_16\012";
+  all="Size of optional header:  %d/$$OUTPUT_HEX_16\012";
+
+STR HRC_GENLIB_OBJ_SECTION_LIST
+  de ="Sektionsauflistung:\012";
+  all="Section listing:\012";
+
+STR HRC_GENLIB_OBJ_LIST_NR
+  de ="#";
+  all="#";
+
+STR HRC_GENLIB_OBJ_LIST_NAME
+  de ="Name";
+  all="name";
+
+STR HRC_GENLIB_OBJ_LIST_REALNAME
+  de ="echter Name";
+  all="realname";
+
+STR HRC_GENLIB_OBJ_LIST_OFFSET
+  de ="Offset";
+  all="offset";
+
+STR HRC_GENLIB_OBJ_LIST_SIZE
+  de ="Größe";
+  all="size";
+
+STR HRC_GENLIB_OBJ_SECTION_ARCH
+  de ="Alpha Architekturinformationen\012";
+  all="Alpha architecture information\012";
+
+STR HRC_GENLIB_OBJ_SECTION_BSS
+  de ="Uninitialisierte Daten\012";
+  all="Uninitialized data\012";
+
+STR HRC_GENLIB_OBJ_SECTION_DATA
+  de ="Iinitialisierte Daten\012";
+  all="Initialized data\012";
+
+STR HRC_GENLIB_OBJ_SECTION_DEBUG_F
+  de ="FPO Debug Einträge (Anzahl: %lu)\012";
+  all="FPO debug records (count: %lu)\012";
+
+STR HRC_GENLIB_OBJ_SECTION_FPO_ERR
+  de ="Fehler: FPO Sektion nicht richtig aligned\012";
+  all="Error: FPO section not properly aligned\012";
+
+STR HRC_GENLIB_OBJ_SECTION_DEBUG
+  de ="CV4 Debug Informationen: ";
+  all="CV4 debug symbols: ";
+
+STR HRC_GENLIB_OBJ_SECTION_DEBUG_CV3
+  all="CodeView <= 3";
+
+STR HRC_GENLIB_OBJ_SECTION_DEBUG_CV4
+  all="CodeView 4";
+
+STR HRC_GENLIB_OBJ_SECTION_DEBUG_CV5
+  all="CodeView >= 5";
+
+STR HRC_GENLIB_OBJ_SECTION_DEBUG_UNK
+  de ="Typ %08Xh";
+  all="type %08Xh";
+
+STR HRC_GENLIB_OBJ_SECTION_DRECTVE
+  de ="Linker Anweisungen: '%s'\012";
+  all="Linker directives: '%s'\012";
+
+STR HRC_GENLIB_OBJ_SECTION_EDATA
+  de ="Export Tabellen\012";
+  all="Export tables\012";
+
+STR HRC_GENLIB_OBJ_SECTION_IDATA
+  de ="Import Tabellen\012";
+  all="Import tables\012";
+
+STR HRC_GENLIB_OBJ_SECTION_PDATA
+  de ="Exception Code Tabelle\012";
+  all="Exception procedure table\012";
+
+STR HRC_GENLIB_OBJ_SECTION_RDATA
+  de ="Schreibgeschützt initialisierte Daten\012";
+  all="Readonly initialized data\012";
+
+STR HRC_GENLIB_OBJ_SECTION_RELOC
+  de ="Anwendungsrelocations\012";
+  all="Image relocations\012";
+
+STR HRC_GENLIB_OBJ_SECTION_RSRC
+  de ="Resource Verzeichnis\012";
+  all="Resource directory\012";
+
+STR HRC_GENLIB_OBJ_SECTION_SXDATA
+  de ="Exception Handler Informationen (sxdata)\012";
+  all="Exception handler information (sxdata)\012";
+
+STR HRC_GENLIB_OBJ_SECTION_TEXT
+  de ="Ausführbarer Code\012";
+  all="Executable code\012";
+
+STR HRC_GENLIB_OBJ_SECTION_TLS
+  de ="Thread-lokaler Speicherbereich\012";
+  all="Thread-local storage\012";
+
+STR HRC_GENLIB_OBJ_SECTION_XDATA
+  de ="Exception scope Tabelle\012";
+  all="Exception scope table\012";
+
+STR HRC_GENLIB_OBJ_SECTION_UNKNOWN
+  de ="Unbekannter Sektionsname '%s'\012";
+  all="Unknown section name '%s'\012";
+
+STR HRC_GENLIB_OBJ_IDENTIFIED
+  de ="Nur %lu von %lu Sektionen wurden erkannt\012";
+  all="Identified only %lu of %lu sections\012";
+
+// PCX
+STR HRC_GENLIB_PCX_HEADER
+  de ="PCX Bild - %dx%d Pixel - %d Farben\012";
+  all="PCX image - %dx%d pixel - %d colors\012";
+
+// PGP
+STR HRC_GENLIB_PGP_HEADER
+  de ="PGP Nachricht (Version: %s)\012";
+  all="PGP message (Version: %s)\012";
+
+// PHP
+STR HRC_GENLIB_PHP_HEADER
+  de ="PHP Source Code\012";
+  all="PHP source code\012";
+
+// PIF
+STR HRC_GENLIB_PIF_HEADER
+  de ="Windows PIF Datei für '%s'\012";
+  all="Windows PIF file for '%s'\012";
+
+// PKG
+STR HRC_GENLIB_PKG_HEADER
+  de ="installShield Paketdatei\012";
+  all="installShield Package file\012";
+
+STR HRC_GENLIB_PKG_INV_VERSION
+  de ="Fehler: Unerwartete Version (%08Xh)\012";
+  all="Error: Unexpected version (%08Xh)\012";
+
+STR HRC_GENLIB_PKG_ERR_READ_1
+  de ="Fehler: Konnte keine %u Bytes be %I64d lesen [1]\012";
+  all="Error: Failed to read %u bytes at %I64d [1]\012";
+
+STR HRC_GENLIB_PKG_ITEM
+  de ="%s bei Offset %u/%08Xh (Disk %d - %d)\012";
+  all="%s at offset %u/%08Xh (Disk %d - %d)\012";
+
+STR HRC_GENLIB_PKG_ERR_READ_2
+  de ="Fehler: Konnte keine %u Bytes be %I64d lesen [2]\012";
+  all="Error: Failed to read %u bytes at %I64d [2]\012";
+
+STR HRC_GENLIB_PKG_GUARD_BYTE
+  de ="Das PKG Verzeichnis Guardbyte ist %d\012";
+  all="The PKG directory guard byte is %d\012";
+
+STR HRC_GENLIB_PKG_ERR_READ_3
+  de ="Fehler: Konnte keine %u Bytes be %I64d lesen [3]\012";
+  all="Error: Failed to read %u bytes at %I64d [3]\012";
+
+STR HRC_GENLIB_PKG_ERR_INV_INDEX
+  de ="Fehler: Der PKG Verzeichnisindex ist ungültig (%d von %d)\012";
+  all="Error: The PKG directory index is invalid (%d of %d)\012";
+
+STR HRC_GENLIB_PKG_FILE
+  de ="%s (%u Bytes)\012";
+  all="%s (%u bytes)\012";
+
+// PMWLite
+STR HRC_GENLIB_PMWLITE_HEADER
+  de ="PMWLite %u.%u\012";
+  all="PMWLite %u.%u\012";
+
+// PNG
+STR HRC_GENLIB_PNG_INTERLACED
+  de =" [interlaced]";
+  all=" [interlaced]";
+
+STR HRC_GENLIB_PNG_HEADER
+  de ="PNG Bild%s - %ux%u Pixel - %u Farben\012";
+  all="PNG image%s - %ux%u pixel - %u colors\012";
+
+// POIFS
+STR HRC_GENLIB_POIFS_HEADER
+  de ="POIFS Dokument (Winword, Excel, Starwriter, ...)\012";
+  all="POIFS document (Winword, Excel, Starwriter, ...)\012";
+
+// PSD
+STR HRC_GENLIB_PSD_HEADER
+  de ="Photoshop Bild - %ux%u Pixel\012";
+  all="Photoshop image - %ux%u pixel\012";
+
+// RES
+STR HRC_GENLIB_RES_HEADER
+  de ="Windows Resourcedatei\012";
+  all="Windows resource file\012";
+
+STR HRC_GENLIB_RES_ERR_ALIGN
+  de ="Fehler: Möglicherweise ist der Header nicht auf 4 Bytes aligned\012";
+  all="Error: Maybe header is not aligned to 4-byte boundaries\012";
+
+STR HRC_GENLIB_RES_TYPE_0001
+  de ="Mauszeiger";
+  all="Cursor";
+
+STR HRC_GENLIB_RES_TYPE_0002
+  de ="Bitmap";
+  all="Bitmap";
+
+STR HRC_GENLIB_RES_TYPE_0003
+  de ="Icon";
+  all="Icon";
+
+STR HRC_GENLIB_RES_TYPE_0004
+  de ="Menü";
+  all="Menu";
+
+STR HRC_GENLIB_RES_TYPE_0005
+  de ="Dialog";
+  all="Dialog";
+
+STR HRC_GENLIB_RES_TYPE_0006
+  de ="Stringtabelle";
+  all="String Table";
+
+STR HRC_GENLIB_RES_TYPE_0007
+  de ="Schriftarten Verzeichnis";
+  all="Font Directory";
+
+STR HRC_GENLIB_RES_TYPE_0008
+  de ="Schriftart";
+  all="Font";
+
+STR HRC_GENLIB_RES_TYPE_0009
+  de ="Kurzwahltabelle";
+  all="Accelerators Table";
+
+STR HRC_GENLIB_RES_TYPE_000A
+  de ="RC Daten (benutzerspezifische binäre Daten)";
+  all="RC data (custom binary data)";
+
+STR HRC_GENLIB_RES_TYPE_000B
+  de ="Nachrichtentabelle";
+  all="Message table";
+
+STR HRC_GENLIB_RES_TYPE_000C
+  de ="Gruppen Mauszeiger";
+  all="Group Cursor";
+
+STR HRC_GENLIB_RES_TYPE_000E
+  de ="Gruppen Icon";
+  all="Group Icon";
+
+STR HRC_GENLIB_RES_TYPE_0010
+  de ="Versionsinformation";
+  all="Version Information";
+
+STR HRC_GENLIB_RES_TYPE_0011
+  de ="Dialog-Teil";
+  all="Dialog Include";
+
+STR HRC_GENLIB_RES_TYPE_0013
+  de ="Plug'n'Play";
+  all="Plug'n'Play";
+
+STR HRC_GENLIB_RES_TYPE_0014
+  de ="VXD";
+  all="VXD";
+
+STR HRC_GENLIB_RES_TYPE_0015
+  de ="Animierter Mauszeiger";
+  all="Animated Cursor";
+
+STR HRC_GENLIB_RES_TYPE_2002
+  de ="Bitmap (neue Version)";
+  all="Bitmap (new version)";
+
+STR HRC_GENLIB_RES_TYPE_2004
+  de ="Menü (neue Version)";
+  all="Menu (new version)";
+
+STR HRC_GENLIB_RES_TYPE_2005
+  de ="Dialog (neue Version)";
+  all="Dialog (new version)";
+
+STR HRC_GENLIB_RES_TYPE_UNK
+  de ="unbekannt ($$OUTPUT_HEX_16)";
+  all="unknown ($$OUTPUT_HEX_16)";
+
+STR HRC_GENLIB_RES_TYPE_AS_NAME
+  all="'%s'";
+
+STR HRC_GENLIB_RES_NAME_AS_ID
+  all=" #%u";
+
+STR HRC_GENLIB_RES_NAME_AS_TEXT
+  all=" '%s'";
+
+STR HRC_GENLIB_RES_DATASIZE
+  de =" für %u Bytes\012";
+  all=" for %u bytes\012";
+
+STR HRC_GENLIB_RES_TOO_LARGE
+  de ="Fehler: %I64d Bytes fehlen\012";
+  all="Error: %I64d bytes are missing\012";
+
+// RIFF
+STR HRC_GENLIB_RIFF_SUBTYPE_AVI
+  de ="Animation Video (AVI)\012";
+  all="Animation Video (AVI)\012";
+
+STR HRC_GENLIB_RIFF_SUBTYPE_CDR6
+  de ="Corel Draw 6 Grafikdatei (CDR)\012";
+  all="Corel Draw 6 graphic file (CDR)\012";
+
+STR HRC_GENLIB_RIFF_SUBTYPE_CDT6
+  de ="Corel Draw 6 Templatedatei (CDT)\012";
+  all="Corel Draw 6 template file (CDT)\012";
+
+STR HRC_GENLIB_RIFF_SUBTYPE_CDR7
+  de ="Corel Draw 7 Grafikdatei (CDR)\012";
+  all="Corel Draw 7 graphic file (CDR)\012";
+
+STR HRC_GENLIB_RIFF_SUBTYPE_CDT7
+  de ="Corel Draw 7 Templatedatei (CDT)\012";
+  all="Corel Draw 7 template file (CDT)\012";
+
+STR HRC_GENLIB_RIFF_SUBTYPE_CDR8
+  de ="Corel Draw 8 Grafikdatei (CDR)\012";
+  all="Corel Draw 8 graphic file (CDR)\012";
+
+STR HRC_GENLIB_RIFF_SUBTYPE_CDT8
+  de ="Corel Draw 8 Templatedatei (CDT)\012";
+  all="Corel Draw 8 template file (CDT)\012";
+
+STR HRC_GENLIB_RIFF_SUBTYPE_CDR9
+  de ="Corel Draw 9 Grafikdatei (CDR)\012";
+  all="Corel Draw 9 graphic file (CDR)\012";
+
+STR HRC_GENLIB_RIFF_SUBTYPE_CDT9
+  de ="Corel Draw 9 Templatedatei (CDT)\012";
+  all="Corel Draw 9 template file (CDT)\012";
+
+STR HRC_GENLIB_RIFF_SUBTYPE_CDRA
+  de ="Corel Draw 10 Grafikdatei (CDR)\012";
+  all="Corel Draw 10 graphic file (CDR)\012";
+
+STR HRC_GENLIB_RIFF_SUBTYPE_CDTA
+  de ="Corel Draw 10 Templatedatei (CDT)\012";
+  all="Corel Draw 10 template file (CDT)\012";
+
+STR HRC_GENLIB_RIFF_SUBTYPE_CDRB
+  de ="Corel Draw 11 Grafikdatei (CDR)\012";
+  all="Corel Draw 11 graphic file (CDR)\012";
+
+STR HRC_GENLIB_RIFF_SUBTYPE_CDTB
+  de ="Corel Draw 11 Templatedatei (CDT)\012";
+  all="Corel Draw 11 template file (CDT)\012";
+
+STR HRC_GENLIB_RIFF_SUBTYPE_CDRC
+  de ="Corel Draw 12 Grafikdatei (CDR)\012";
+  all="Corel Draw 12 graphic file (CDR)\012";
+
+STR HRC_GENLIB_RIFF_SUBTYPE_CDTC
+  de ="Corel Draw 12 Templatedatei (CDT)\012";
+  all="Corel Draw 12 template file (CDT)\012";
+
+STR HRC_GENLIB_RIFF_SUBTYPE_WAVE
+  de ="Wave Musikdatei (WAV)";
+  all="Wave music file (WAV)";
+
+STR HRC_GENLIB_RIFF_WAVE_COMPRESSED
+  de =" (komprimiert - Typ %d)";
+  all=" (compressed - type %d)";
+
+STR HRC_GENLIB_RIFF_SUBTYPE_sfbk
+  de ="EMU SoundFont bank\012";
+  all="EMU SoundFont bank\012";
+
+STR HRC_GENLIB_RIFF_SUBTYPE_UNK
+  de ="RIFF Datei: unbekannter Typ '%s'\012";
+  all="RIFF File: unknown type '%s'\012";
+
+STR HRC_GENLIB_RIFF_WAVE_CHANNELS
+  de ="Kanäle:            %d";
+  all="Channels:          %d";
+
+STR HRC_GENLIB_RIFF_WAVE_MONO
+  de =" (mono)";
+  all=" (mono)";
+
+STR HRC_GENLIB_RIFF_WAVE_STEREO
+  de =" (stereo)";
+  all=" (stereo)";
+
+STR HRC_GENLIB_RIFF_WAVE_QUADRO
+  de =" (quadrophonisch)";
+  all=" (quadrophonic)";
+
+STR HRC_GENLIB_RIFF_WAVE_SAMPLING
+  de ="Abtastrate:        %d";
+  all="Sampling rate:     %d";
+
+STR HRC_GENLIB_RIFF_WAVE_NON_STD
+  de =" (nicht standard-konform)";
+  all=" (non standard)";
+
+STR HRC_GENLIB_RIFF_WAVE_DATASIZE
+  de ="Datengröße:        ";
+  all="Data size:         ";
+
+STR HRC_GENLIB_RIFF_WAVE_0BITS_SMPL
+  de ="Fehler in Datenstrukturen gefunden\012";
+  all="found error in data structure\012";
+
+STR HRC_GENLIB_RIFF_WAVE_SIZE_COMPR
+  de ="%d Bytes (dekomprimiert: %d Bytes)\012";
+  all="%d bytes (decompressed: %d bytes)\012";
+
+STR HRC_GENLIB_RIFF_WAVE_SIZE
+  de ="%d Bytes";
+  all="%d bytes";
+
+STR HRC_GENLIB_RIFF_WAVE_FRAMES
+  de =" (%d Sample Frames)";
+  all=" (%d sample frames)";
+
+STR HRC_GENLIB_RIFF_WAVE_BYTES_SEC
+  de ="Durch. Bytes/Sek:  %d\012";
+  all="Average bytes/sec: %d\012";
+
+STR HRC_GENLIB_RIFF_WAVE_BITS
+  de ="Bits:              %d";
+  all="Bits:              %d";
+
+STR HRC_GENLIB_RIFF_WAVE_DIVBY0
+  de =" (Fehler in den Daten)";
+  all=" (error in data)";
+
+STR HRC_GENLIB_RIFF_WAVE_DECOMP_BITS
+  de =" (dekomprimiert: %d Bits)";
+  all=" (decompressed: %d bits)";
+
+STR HRC_GENLIB_RIFF_WAVE_PLAYTIME
+  de ="Spielzeit:         ";
+  all="Playtime:          ";
+
+STR HRC_GENLIB_RIFF_WAVE_TIME_MIN
+  de ="%u:%02u.%02u Min";
+  all="%u:%02u.%02u min";
+
+STR HRC_GENLIB_RIFF_WAVE_TIME_SEC
+  de ="%u.%02u Sek";
+  all="%u.%02u sec";
+
+// Shell
+STR HRC_GENLIB_SHELL_HEADER
+  de ="Shell Skript: '%s'\012";
+  all="Shell script: '%s'\012";
+
+// Sources
+STR HRC_GENLIB_SOURCE_PASCAL_PROGRAM
+  de ="Pascal Programm";
+  all="Pascal program";
+
+STR HRC_GENLIB_SOURCE_PASCAL_LIBRARY
+  de ="Pascal Bibliothek";
+  all="Pascal library";
+
+STR HRC_GENLIB_SOURCE_PASCAL_UNIT
+  de ="Pascal Unit";
+  all="Pascal unit";
+
+STR HRC_GENLIB_SOURCE_PASCAL_PROC
+  de ="Pascal Prozedur";
+  all="Pascal procedure";
+
+STR HRC_GENLIB_SOURCE_PASCAL_FUNC
+  de ="Pascal Funktion";
+  all="Pascal function";
+
+STR HRC_GENLIB_SOURCE_PASCAL_SOURCE
+  de ="Pascal Source Code";
+  all="Pascal source code";
+
+STR HRC_GENLIB_SOURCE_MODULA_PROGRAM
+  de ="Modula Programm";
+  all="Modula program";
+
+STR HRC_GENLIB_SOURCE_MODULA_DEFFILE
+  de ="Modula Definitionsdatei";
+  all="Modula definition file";
+
+STR HRC_GENLIB_SOURCE_MODULA_IMPFILE
+  de ="Modula Implementierungsdatei";
+  all="Modula implementation file";
+
+STR HRC_GENLIB_SOURCE_PROLOG
+  de ="Prolog Source Code";
+  all="Prolog source code";
+
+STR HRC_GENLIB_SOURCE_C
+  de ="C/C++ Source Code";
+  all="C/C++ source code";
+
+STR HRC_GENLIB_SOURCE_CPP
+  de ="C++ Source Code";
+  all="C++ source code";
+
+STR HRC_GENLIB_SOURCE_JAVA
+  de ="Java Source Code";
+  all="Java source code";
+
+STR HRC_GENLIB_SOURCE_JAVASCRIPT
+  de ="JavaScript Source Code";
+  all="JavaScript source code";
+
+STR HRC_GENLIB_SOURCE_ADONIS
+  de ="Exportierte ADONIS Modelle/Bibliothek";
+  all="Exported ADONIS models/library";
+
+STR HRC_GENLIB_SOURCE_PERL
+  de ="Perl Packet";
+  all="Perl package";
+
+STR HRC_GENLIB_SOURCE_IDENTIFIER
+  all=" '%s'";
+
+// SYS
+STR HRC_GENLIB_SYS_HEADER
+  de ="DOS Gerätetreiber\012";
+  all="DOS Device driver\012";
+
+STR HRC_GENLIB_SYS_BLOCK_DD
+  de ="Block Gerätetreiber mit %d Geräte(n)\012";
+  all="Block device driver with %d device(s)\012";
+
+STR HRC_GENLIB_SYS_CHAR_DD
+  de ="Zeichen Gerätetreiber '%s'\012";
+  all="Character device driver '%s'\012";
+
+// TEXT
+STR HRC_GENLIB_TEXT_HEADER
+  de ="Textdatei (%s)\012";
+  all="Textfile (%s style)\012";
+
+// TIFF
+STR HRC_GENLIB_TIFF_HEADER
+  de ="TIFF Datei - %ux%u Pixel - %u Farben\012";
+  all="TIFF file - %ux%u pixel - %u colors\012";
+
+// TPU
+STR HRC_GENLIB_TPU_HEADER
+  de ="Turbo Pascal %s Unit\012";
+  all="Turbo Pascal %s unit\012";
+
+// TTF
+STR HRC_GENLIB_TTF_HEADER
+  de ="Truetype Schriftart";
+  all="Truetype font";
+
+STR HRC_GENLIB_TTF_INVALID_IDX
+  de =" [ungültiger Index]";
+  all=" [invalid index]";
+
+STR HRC_GENLIB_TTF_ENTRY
+  all=" '%s'";
+
+// TWS
+STR HRC_GENLIB_TWS_HEADER
+  de ="Helios Textpad Workspace Datei\012";
+  all="Helios Textpad workspace file\012";
+
+STR HRC_GENLIB_TWS_VERSION
+  de ="Version: %u\012";
+  all="Version: %u\012";
+
+// Unicode TEXT
+STR HRC_GENLIB_UNICODE_TEXT_HEADER
+  de ="Unicode Textdatei\012";
+  all="Unicode Textfile\012";
+
+// VOC
+STR HRC_GENLIB_VOC_HEADER
+  de ="Creative Voice %d.%d VOC Datei\012";
+  all="Creative Voice %d.%d VOC file\012";
+
+STR HRC_GENLIB_VOC_LISTING
+  de ="Enthaltene Typen:\012";
+  all="Listing block types:\012";
+
+STR HRC_GENLIB_VOC_ERROR_IN_DATA
+  de ="Könnte ein Fehler in der Datei sein\012";
+  all="May be error in the file\012";
+
+STR HRC_GENLIB_VOC_SOUND_DATA
+  de ="Musikdaten: %d Hz, ";
+  all="Sound data: %d Hz, ";
+
+STR HRC_GENLIB_VOC_8BIT
+  de ="8 Bits";
+  all="8 bits";
+
+STR HRC_GENLIB_VOC_4BIT
+  de ="4 Bits";
+  all="4 bits";
+
+STR HRC_GENLIB_VOC_2_6BIT
+  de ="2,6 Bits";
+  all="2.6 bits";
+
+STR HRC_GENLIB_VOC_2BIT
+  de ="2 Bits";
+  all="2 bits";
+
+STR HRC_GENLIB_VOC_MULTI_DAC
+  de ="mehrfach DAC mit %d Kanälen";
+  all="multi DAC with %d channels";
+
+STR HRC_GENLIB_VOC_SOUND_CONTINUE
+  de ="Musikfortsetzung\012";
+  all="Sound continue\012";
+
+STR HRC_GENLIB_VOC_SILENCE
+  de ="Stille für %d.%d Sek.\012";
+  all="Silence for %d.%d secs\012";
+
+STR HRC_GENLIB_VOC_MARKER
+  de ="Markierung %d\012";
+  all="Marker %d\012";
+
+STR HRC_GENLIB_VOC_ASCII
+  de ="ASCII\012";
+  all="ASCII\012";
+
+STR HRC_GENLIB_VOC_REPEAT_INFINITE
+  de ="Wiederhole unendlich\012";
+  all="Repeat infinite\012";
+
+STR HRC_GENLIB_VOC_REPEAT_N_TIMES
+  de ="Wiederhole %d mal\012";
+  all="Repeat %d times\012";
+
+STR HRC_GENLIB_VOC_END_REPEAT
+  de ="Ende der Wiederholung\012";
+  all="End repeat\012";
+
+STR HRC_GENLIB_VOC_EXTENDED
+  de ="Erweitert\012";
+  all="Extended\012";
+
+STR HRC_GENLIB_VOC_UNKNOWN
+  de ="Unbekanntes Element %d\012";
+  all="Unknown block type %d\012";
+
+// WMF
+STR HRC_GENLIB_WMF_HEADER
+  de ="Windows Metafile Datei (WMF)\012";
+  all="Windows Metafile image (WMF)\012";
+
+STR HRC_GENLIB_WMF_COORDS
+  de ="Gespeicherte Koordinaten: %d/%d - %d/%d\012";
+  all="Coordinates stored: %d/%d - %d/%d\012";
+
+STR HRC_GENLIB_WMF_SIZE
+  de ="Größe in Pixel: %dx%d\012";
+  all="Size in pixel: %dx%d\012";
+
+// WPC
+STR HRC_GENLIB_WPC_HEADER
+  de ="Wordperfect %s Datei";
+  all="Wordperfect %s file";
+
+STR HRC_GENLIB_WPC_01
+  de ="Makro";
+  all="macro";
+
+STR HRC_GENLIB_WPC_02
+  de ="Hilfe";
+  all="help";
+
+STR HRC_GENLIB_WPC_03
+  de ="Tastaturbelegung";
+  all="keyboard definition";
+
+STR HRC_GENLIB_WPC_0A
+  de ="Dokument";
+  all="document";
+
+STR HRC_GENLIB_WPC_0B
+  de ="Wörterbuch";
+  all="dictionary";
+
+STR HRC_GENLIB_WPC_0C
+  de ="Thesaurus";
+  all="thesaurus";
+
+STR HRC_GENLIB_WPC_0D
+  de ="Block";
+  all="block";
+
+STR HRC_GENLIB_WPC_0E
+  de ="Rechteckiger Block";
+  all="rectangular block";
+
+STR HRC_GENLIB_WPC_0F
+  de ="spalten-Block";
+  all="column block";
+
+STR HRC_GENLIB_WPC_10
+  de ="Drucker Resource (PRS)";
+  all="printer resource (PRS)";
+
+STR HRC_GENLIB_WPC_11
+  de ="Setup";
+  all="setup";
+
+STR HRC_GENLIB_WPC_12
+  de ="Prefix Information";
+  all="prefix information";
+
+STR HRC_GENLIB_WPC_13
+  de ="Drucker Resource (ALL)";
+  all="printer resource (ALL)";
+
+STR HRC_GENLIB_WPC_14
+  de ="Anzeigen Resource (DRS)";
+  all="display resource (DRS)";
+
+STR HRC_GENLIB_WPC_15
+  de ="Overlay (WP.FIL)";
+  all="overlay (WP.FIL)";
+
+STR HRC_GENLIB_WPC_16
+  de ="Bild (WPG)";
+  all="graphic (WPG)";
+
+STR HRC_GENLIB_WPC_17
+  de ="Silbentrennungs-Modul (Code)";
+  all="hyphenation code module";
+
+STR HRC_GENLIB_WPC_18
+  de ="Silbentrennungs-Modul (Daten)";
+  all="hyphenation data module";
+
+STR HRC_GENLIB_WPC_19
+  de ="Makro Resource (MRS)";
+  all="macro resource (MRS)";
+
+STR HRC_GENLIB_WPC_1A
+  de ="Grafik Treiber (WPD)";
+  all="graphics driver (WPD)";
+
+STR HRC_GENLIB_WPC_1B
+  de ="Silbentrennungs-Modul (lex)";
+  all="hyphenation lex module";
+
+STR HRC_GENLIB_WPC_46
+  de ="PostScript Schriftart";
+  all="PostScript font";
+
+STR HRC_GENLIB_WPC_UNK
+  de ="<unbekannt>";
+  all="<unknown>";
+
+STR HRC_GENLIB_WPC_ENCRYPTED
+  de =" (verschlüsselt)";
+  all=" (encrypted)";
+
+// WordPerfect graphics (0x16) subtype strings (number == index)
+STR HRC_GENLIB_WPC_WPG_01
+  de ="Füllattribute";
+  all="Fill attributes";
+
+STR HRC_GENLIB_WPC_WPG_02
+  de ="Linienattribute";
+  all="Line attributes";
+
+STR HRC_GENLIB_WPC_WPG_03
+  de ="Markerattribute";
+  all="Marker attributes";
+
+STR HRC_GENLIB_WPC_WPG_04
+  de ="Polymarker";
+  all="Polymarker";
+
+STR HRC_GENLIB_WPC_WPG_05
+  de ="Linie";
+  all="Line";
+
+STR HRC_GENLIB_WPC_WPG_06
+  de ="Polylinie";
+  all="Polyline";
+
+STR HRC_GENLIB_WPC_WPG_07
+  de ="Rechteck";
+  all="Rectangle";
+
+STR HRC_GENLIB_WPC_WPG_08
+  de ="Polygon";
+  all="Polygon";
+
+STR HRC_GENLIB_WPC_WPG_09
+  de ="Ellipse";
+  all="Ellipse";
+
+STR HRC_GENLIB_WPC_WPG_0A
+  de ="Reserviert";
+  all="Reserved";
+
+STR HRC_GENLIB_WPC_WPG_0B
+  de ="Bitmap (Typ 1)";
+  all="Bitmap (Type 1)";
+
+STR HRC_GENLIB_WPC_WPG_0C
+  de ="Graphischer Text (Typ 1)";
+  all="Graphics text (Type 1)";
+
+STR HRC_GENLIB_WPC_WPG_0D
+  de ="Graphischer Text Attribute";
+  all="Graphics text attributes";
+
+STR HRC_GENLIB_WPC_WPG_0E
+  de ="Farbentabelle";
+  all="Color map";
+
+STR HRC_GENLIB_WPC_WPG_0F
+  de ="Beginn der WPG Daten (Typ 1)";
+  all="Start of WPG data (Type 1)";
+
+STR HRC_GENLIB_WPC_WPG_10
+  de ="Ende der WPG Daten";
+  all="End of WPG data";
+
+STR HRC_GENLIB_WPC_WPG_11
+  de ="Postscript Daten folgen (Typ 1)";
+  all="Postscript data follows (Type 1)";
+
+STR HRC_GENLIB_WPC_WPG_12
+  de ="Ausgabe Attribute";
+  all="Output attributes";
+
+STR HRC_GENLIB_WPC_WPG_13
+  de ="Geschwungene Polylinie";
+  all="Curved polyline";
+
+STR HRC_GENLIB_WPC_WPG_14
+  de ="Bitmap (Typ 2)";
+  all="Bitmap (Type 2)";
+
+STR HRC_GENLIB_WPC_WPG_15
+  de ="Beginn Gestalt";
+  all="Start figure";
+
+STR HRC_GENLIB_WPC_WPG_16
+  de ="Beginn Diagramm";
+  all="Start chart";
+
+STR HRC_GENLIB_WPC_WPG_17
+  de ="PlanPerfect Daten";
+  all="PlanPerfect data";
+
+STR HRC_GENLIB_WPC_WPG_18
+  de ="Graphischer Text (Typ 2)";
+  all="Graphics text (Type 2)";
+
+STR HRC_GENLIB_WPC_WPG_19
+  de ="Beginn der WPG Daten (Typ 2)";
+  all="Start of WPG data (Type 2)";
+
+STR HRC_GENLIB_WPC_WPG_1A
+  de ="Graphischer Text (Typ 3)";
+  all="Graphics text (Type 3)";
+
+STR HRC_GENLIB_WPC_WPG_1B
+  de ="Postscript Daten folgen (Typ 2)";
+  all="Postscript data follows (Type 2)";
+
+STR HRC_GENLIB_WPC_WPG_OFFSET
+  de =" an %I64d";
+  all=" at %I64d";
+
+STR HRC_GENLIB_WPC_WPG_SIZE
+  all=" (%dx%d -- %d)";
+
+STR HRC_GENLIB_WPC_WPG_COLORS
+  de =" (%d Farben)";
+  all=" (%d colors)";
+
+STR HRC_GENLIB_WPC_WPG_VERSION
+  de =" (Version %d)";
+  all=" (Version %d)";
+
+STR HRC_GENLIB_WPC_WPG_UNKNOWN
+  de ="  unbekannter Typ ($$OUTPUT_HEX_8)";
+  all="  unknown type ($$OUTPUT_HEX_8)";
+
+STR HRC_GENLIB_WPC_WPG_ERROR
+  de ="Fehler: Fehler in WPG Daten!\012";
+  all="Error: error in WPG data!\012";
+
+// XML
+STR HRC_GENLIB_XML_HEADER
+  de ="XML Datei; Kodierung: %s\012";
+  all="XML file; Encoding: %s\012";
+
+// XPT
+STR HRC_GENLIB_XPT_HEADER
+  de ="Compilierte Mozilla Type Library %u.%u\012";
+  all="Compiled Mozilla type library %u.%u\012";
+
+STR HRC_GENLIB_XPT_SIZE_MISMATCH
+  de ="Fehler: Dateigröße passt nicht: erwartet %lu - gefunden %I64d Bytes\012";
+  all="Error: File size mismatch: expected %lu - existing %I64d bytes\012";
+
+STR HRC_GENLIB_XPT_INTERFACES
+  de ="Enthält %u Interfaces\012";
+  all="Containing %u interfaces\012";
+
+
+// 04_name
+STR HRC_NAMELIB_SPECIAL_FILENAME
+  de ="Spezieller Dateiname: '%s'\012";
+  all="Special filename: '%s'\012";
+
+STR HRC_NAMELIB_SPECIAL_EXTENSION
+  de ="Spezielle Erweiterung: %s\012";
+  all="Special extension: %s\012";
+
+STR HRC_NAMELIB_SPECIAL_CAN_DETECT
+  de ="Dateien dieses Typs können erkannt werden\012";
+  all="Files of this type can be detected\012";
+
+STR HRC_NAMELIB_SPECIAL_SHOULD_DETECT
+  de ="Dateien dieses Typs sollten erkannt werden - falsche Erweiterung\012";
+  all="Files of this type should be detected - wrong extension?\012";
+
+STR HRC_NAMELIB_SPECIAL_FILEXT_COM
+  de ="Die folgenden Informationen stammen von http://filext.com\012";
+  all="The following information is based on http://filext.com\012";
+
+STR HRC_NAMELIB_SPECIAL_WIN_EXT
+  de ="Erweiterung aus der Windows Registry: '%s' (HKCL\\%s)\012";
+  all="Extension in the Windows registry: '%s' (HKCL\\%s)\012";
+
+STR HRC_NAMELIB_OPEN_WITH
+  de ="Zu öffnen mit dem Programm: '%s'\012";
+  all="Open with application: '%s'\012";
+
+
+// application stuff
+// generic cmdline switches
+STR HRC_APP_FLAG_HELP
+  de ="zeige eine Auflistung aller Parameter";
+  all="show a help screen with all parameters";
+
+STR HRC_APP_FLAG_ALLDRIVES
+  de ="durchsuche alle Datenträger (inkludiert Parameter '/s')";
+  all="scan all drives (includes parameter '/s')";
+
+STR HRC_APP_FLAG_ALLFIXED
+  de ="durchsuche alle lokalen Datenträger (inkludiert Parameter '/s')";
+  all="scan all fixed (local) drives (includes parameter '/s')";
+
+STR HRC_APP_FLAG_ALLNETWORK
+  de ="durchsuche alle Netzwerk Datenträger (includes parameter '/s')";
+  all="scan all network (remote) drives (includes parameter '/s')";
+
+STR HRC_APP_FLAG_FLUSHOUTPUT
+  de ="deaktivierte das Ausgabe-Caching (sehr langsam)";
+  all="do not cache output (very slow)";
+
+STR HRC_APP_FLAG_LISTMODE
+  de ="zeige nur Überblicksinformationen an";
+  all="use short list-mode for output";
+
+STR HRC_APP_FLAG_LISTOPTS
+  de ="zeige alle effektiv gesetzten Parameter an";
+  all="show all used command line/config file parameters";
+
+STR HRC_APP_FLAG_NOCONFIGGLOBAL
+  de ="ignoriere die Konfigurationsdatei im Verzeichnis der Applikation";
+  all="do not read the config file in the EXE directory";
+
+STR HRC_APP_FLAG_NOCONFIGLOCAL
+  de ="ignoriere die Konfigurationsdatei im Profil-Verzeichnis";
+  all="do not read the config file in the profile directory";
+
+STR HRC_APP_FLAG_NOCOLOR
+  de ="keine Farben verwenden";
+  all="do not use colors";
+
+STR HRC_APP_FLAG_NOERRBOX
+  de ="zeige keine Fehlermeldungsfenster (fügt diese in die Ausgabe ein)";
+  all="do not show error boxes (show errors in the output)";
+
+STR HRC_APP_FLAG_NOLOGO
+  de ="zeige keine Copyright-Informationen";
+  all="do not show copyright";
+
+STR HRC_APP_FLAG_OUTHTML
+  de ="erzeuge eine HTML-Ausgabe";
+  all="do write HTML to stdout";
+
+STR HRC_APP_FLAG_OUTLINENUMS
+  de ="schreibe Zeilennummern an den Beginn jeder Zeile";
+  all="do write line numbers at the beginning of each line";
+
+STR HRC_APP_FLAG_OUTPAUSE
+  de ="pausiere nach je # Linien";
+  all="pause every # lines";
+
+STR HRC_APP_FLAG_OUTXML
+  de ="erzeuge eine XML-Ausgabe";
+  all="do write XML to stdout";
+
+STR HRC_APP_FLAG_SUBDIRS
+  de ="durchsuche rekursiv alle Unterverzeichnisse";
+  all="recursively scan subdirectories";
+
+STR HRC_APP_FLAG_WAITFORKEY
+  de ="warte nach der letzten Ausgabe auf einen Tastendruck";
+  all="wait for a key when finished";
+
+
+// GT specific stuff
+STR HRC_APP_FLAG_EXEMOD
+  de ="zeige nur die Modifier von EXE Dateien";
+  all="show only the modifier of EXE files";
+
+STR HRC_APP_FLAG_FTE
+  de ="setzte die Fehlertoleranz bei der Modifiererkennung bei DOS EXEs auf # Bytes";
+  all="set the fault tolerance in DOS EXE code compare to # bytes";
+
+STR HRC_APP_FLAG_FTN
+  de ="setzte die Fehlertoleranz bei der Modifiererkennung bei NE EXEs auf # Bytes";
+  all="set the fault tolerance in NE EXE code compare to # bytes";
+
+STR HRC_APP_FLAG_FTP
+  de ="setzte die Fehlertoleranz bei der Modifiererkennung bei PE EXEs auf # Bytes";
+  all="set the fault tolerance in PE EXE code compare to # bytes";
+
+STR HRC_APP_FLAG_FTS
+  de ="setzte die Fehlertoleranz bei der Modifiererkennung bei SYS Dateien auf # Bytes";
+  all="set the fault tolerance in SYS code compare to # bytes";
+
+STR HRC_APP_FLAG_GTUI2
+  de ="starte gtui2 und leite die Ausgabe dorthin um";
+  all="start gtui2 and redirect the output there";
+
+STR HRC_APP_FLAG_NOTIDENTIFIED
+  de ="ignoriere erkannte Dateien (zeige nur unbekannte)";
+  all="do not show identified files (show only not identified files)";
+
+STR HRC_APP_FLAG_NOARCS
+  de ="liste nicht den Inhalt von Archiven auf";
+  all="do not list files in archives";
+
+STR HRC_APP_FLAG_NOFOOTER
+  de ="zeige keine Fusszeile an";
+  all="do not output footer";
+
+STR HRC_APP_FLAG_NOOVR
+  de ="zeige nur die erste Ebene einer Datei an";
+  all="do not list overlays in any files";
+
+STR HRC_APP_FLAG_NOSCANEXT
+  de ="suche nicht nach bekannten Dateierweiterungen";
+  all="do not scan for special file extensions";
+
+STR HRC_APP_FLAG_NOSCANNAME
+  de ="suche nicht nach bekannten Dateinamen";
+  all="do not scan for special filenames";
+
+STR HRC_APP_FLAG_NOTUNKNOWN
+  de ="ignoriere unbekannte Dateien (zeige nur erkannte)";
+  all="do not list unknown files";
+
+STR HRC_APP_FLAG_PEALL
+  de ="Kurzform für die Anzeige von PE EXE Data Directory, Section Tabelle und Version";
+  all="shortcut for PE EXE data directory, section table and version";
+
+STR HRC_APP_FLAG_PEDD
+  de ="zeige den Inhalt des PE EXE Data Directorys";
+  all="list data directory of PE EXEs";
+
+STR HRC_APP_FLAG_PEEXP
+  de ="zeige die exportierten Funktionen von PE EXEs";
+  all="list exports of PE EXEs";
+
+STR HRC_APP_FLAG_PEFIXUP
+  de ="zeige die Fixups von PE EXEs";
+  all="list fixups of PE EXEs";
+
+STR HRC_APP_FLAG_PEIMP
+  de ="zeige die importierten DLLs von PE EXEs (keine Funktionen)";
+  all="list imported DLLs of PE EXEs (no functions)";
+
+STR HRC_APP_FLAG_PEIMP2
+  de ="zeige die importierten DLLs und Funktionen von PE EXEs";
+  all="list imported DLLs and functions of PE EXEs";
+
+STR HRC_APP_FLAG_PERES
+  de ="zeige die Resourcen von PE EXEs";
+  all="list resources of PE EXEs";
+
+STR HRC_APP_FLAG_PERES2
+  de ="zeige die Resourcen sowie alle Strings von PE EXEs";
+  all="list resources of PE EXEs and all strings";
+
+STR HRC_APP_FLAG_PESECT
+  de ="zeige die Segment-Tabelle von PE EXEs";
+  all="list segment table of PE EXEs";
+
+STR HRC_APP_FLAG_PEVER
+  de ="zeige die VersionInfo Resource von PE EXEs";
+  all="list VersionInfo resources of PE EXEs";
+
+STR HRC_APP_FLAG_STATUS
+  de ="definiere Format für Fortschrittsanzeige (Makros: $T, $D, $P, $F)";
+  all="set status information (macros: $T, $D, $P, $F)";
+
+STR HRC_APP_FLAG_ZHWND
+  de ="sende eine WM_COPYDATA Nachricht an das angegebene Fensterhandle";
+  all="send a WM_COPYDATA msg to the specified window handle";
+
+
+// other app stuff
+STR HRC_APP_HEADER
+  all=" (c) 1999-2008 by PHaX/phloc systems (ph@phloc.com)\012";
+
+// %s: executable filename (e.g. gt2)
+STR HRC_APP_SYNTAX
+  de ="Syntax: %s Dateien1 [Dateien2 [...]] [Parameter]\012";
+  all="Syntax: %s filemask [filemask [...]] [parameter]\012";
+
+STR HRC_APP_SYNTAX_OPTIONS
+  de ="Unterstützte Parameter (Groß-/Kleinschreibung!):\012";
+  all="Supported parameters (case sensitive!):\012";
+
+// %s: a single filename or a filemask
+STR HRC_APP_NO_FILE_FOUND
+  de ="Keine Datei gefunden, die '%s' entspricht\012";
+  all="Found no filename that matches '%s'\012";
+
+STR HRC_APP_PRESS_ANY_KEY
+  de ="Drücken Sie eine beliebige Taste um das Programm zu beenden";
+  all="Press any key to end the program";
+
+STR HRC_APP_USED_OPTIONS
+  de ="Verwendete Kommandozeilen-/Konfigurationsdatei-Parameter:\012";
+  all="Used commandline/config file parameters:\012";
+
+STR HRC_APP_ERROR_READ_CFGFILE
+  de ="Fehler: konnte Konfigurationsdatei nicht lesen\012";
+  all="Error: failed to read the configuration file\012";
+
+// %s: executable filename (e.g. gt2)
+STR HRC_APP_HOW_TO_SHOW_PARAMS
+  de ="Verwenden Sie ""%s -?"" um alle unterstützten Parameter zu sehen\012";
+  all="Run ""%s -?"" to see all supported parameters\012";
+
+// %s: the parameter passed on the cmdline
+STR HRC_APP_INVALID_CHAR_IN_PARAM
+  de ="Parameter '%s' enthält mindestens ein ungültiges Zeichen\012";
+  all="Parameter '%s' contains at least one invalid character\012";
+
+// %s: the parameter passed on the cmdline
+STR HRC_APP_NO_REL_PATHES_ALLOWED
+  de ="Relative Pfade ('%s') sind nicht erlaubt, wenn /alldrives verwendet wird!\012";
+  all="Relative pathes ('%s') are not allowed when using /alldrives!\012";
+
+// %s: the parameter passed on the cmdline
+STR HRC_APP_NO_DRIVE_LETTERS_ALLOWED
+  de ="Laufwerksangaben ('%s') sind nicht erlaubt, wenn /alldrives verwendet wird!\012";
+  all="Drive letters ('%s') are not allowed when using /alldrives!\012";
+
+
+STR HRC_APP_0_BYTE_FILE
+  de ="Dateien mit einer Größe von 0 Bytes können nicht analysiert werden.\012";
+  all="Files with a size of 0 bytes cannot be analyzed.\012";
+
+STR HRC_APP_UNKNOWN_TEXT_FILE
+  de ="Unbekannte Textdatei\012";
+  all="Unknown text file format\012";
+
+STR HRC_APP_UNKNOWN_BINARY_FILE
+  de ="Unbekannte Binärdatei";
+  all="Unknown binary file format";
+
+STR HRC_APP_ERROR_OPEN_EACCES
+  de ="Konnte Datei nicht öffnen: kein Zugriff\012";
+  all="Failed to open file: access denied\012";
+
+STR HRC_APP_ERROR_OPEN_SHARING_VIOLATION
+  de ="Konnte Datei nicht öffnen: wird von einem anderen Programm verwendet\012";
+  all="Failed to open file: sharing violation\012";
+
+
+// console
+STR HRC_APP_CONSOLE_REALLY_QUIT
+  de ="Wollen Sie das Programm wirklich beenden?";
+  all="Do you really want to quit the program?";
+
+STR HRC_APP_CONSOLE_REALLY_QUIT_HDR
+  de ="Frage";
+  all="Question";
+
+STR HRC_APP_CONSOLE_PRESS_KEY
+  de ="Drücken Sie eine Taste um fortzufahren";
+  all="Press any key to continue";
+
+
+// output mode stdout
+STR HRC_APP_OUTPUT_STDOUT_FILESTART_EXT
+  all="- <%s>";
+
+STR HRC_APP_OUTPUT_STDOUT_FILESTART_LIST
+  de ="- %s (%I64d Bytes) - %s";
+  all="- %s (%I64d bytes) - %s";
+
+STR HRC_APP_OUTPUT_STDOUT_FILESTART_NEXT_LEVEL
+  de ="- nächste Ebene bei %I64d/%08I64Xh für %I64d/%08I64Xh (%d.%02d%%)";
+  all="- next level at %I64d/%08I64Xh for %I64d/%08I64Xh (%d.%02d%%)";
+
+// output mode HTML
+STR HRC_APP_OUTPUT_HTML_FILESTART_LIST
+  de ="(%I64d Bytes) - %s";
+  all="(%I64d bytes) - %s";
+
+STR HRC_APP_OUTPUT_HTML_FILESTART_NEXT_LEVEL
+  de ="Nächste Ebene bei %I64d/%08I64Xh für %I64d/%08I64Xh (%d.%02d%%)";
+  all="Next level at %I64d/%08I64Xh for %I64d/%08I64Xh (%d.%02d%%)";
+
+// for all output modes
+STR HRC_APP_OUTPUT_FILESTART_DOS_TEXT
+  de ="DOS/Windows Text";
+  all="DOS/Windows text";
+
+STR HRC_APP_OUTPUT_FILESTART_UNIX_TEXT
+  de ="Unix Text";
+  all="Unix text";
+
+STR HRC_APP_OUTPUT_FILESTART_MAC_TEXT
+  de ="Mac Text";
+  all="Mac text";
+
+STR HRC_APP_OUTPUT_FILESTART_BINARY
+  de ="binär";
+  all="binary";
+
+STR HRC_APP_OUTPUT_FILESTART_NO_ATTRS
+  de ="Fehler: Konnte Attribute von Datei '%s' nicht ermitteln\012";
+  all="Error: Failed to retrieve attributes for the file '%s'\012";
+
+STR HRC_APP_OUTPUT_FILESTART_ATTRS_COMPRESSED
+  de =" [komprimiert]";
+  all=" [compressed]";
+
+STR HRC_APP_OUTPUT_FILESTART_ATTRS_OFFLINE
+  de =" [Offline Inhalt]";
+  all=" [offline content]";
+
+// fixed extensions:
+INCLUDE gt_extensions.prf
+INCLUDE gt_filenames.prf

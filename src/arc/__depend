@@ -1,0 +1,180 @@
+$(PATH_OBJ)/gt_arc_analyzer.dlo: \
+	./gt_arc_analyzer.cxx \
+	./gt_arc_analyzer.hxx \
+	../basic/gt_analyzer.hxx \
+	./gt_arc_lister.hxx \
+	./gt_arc_structs.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_direntry.hxx \
+	../basic/gt_exception.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_arc_lister.dlo: \
+	./gt_arc_lister.cxx \
+	./gt_arc_lister.hxx \
+	./gt_arc_structs.hxx \
+	../basic/gt_crc32.hxx \
+	../basic/gt_direntry.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_table.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	../basic/gt_time.hxx \
+	./gt_777.hxx \
+	./gt_ace.hxx \
+	./gt_ain.hxx \
+	./gt_akt7.hxx \
+	./gt_akt9.hxx \
+	./gt_amg.hxx \
+	./gt_arc.hxx \
+	./gt_arg.hxx \
+	./gt_arj.hxx \
+	./gt_arq.hxx \
+	./gt_arx.hxx \
+	./gt_asd.hxx \
+	./gt_bix.hxx \
+	./gt_bli.hxx \
+	./gt_boa.hxx \
+	./gt_bsa.hxx \
+	./gt_bsn.hxx \
+	./gt_cab.hxx \
+	./gt_dpa.hxx \
+	./gt_gz.hxx \
+	./gt_ha.hxx \
+	./gt_inno.hxx \
+	./gt_imp.hxx \
+	./gt_ins.hxx \
+	./gt_isc.hxx \
+	./gt_iso.hxx \
+	./gt_lg.hxx \
+	./gt_lzh.hxx \
+	./gt_lzo.hxx \
+	./gt_nero.hxx \
+	./gt_nero5.hxx \
+	./gt_nsis.hxx \
+	./gt_paq.hxx \
+	./gt_paq8.hxx \
+	./gt_ppz.hxx \
+	./gt_rar.hxx \
+	./gt_sbc.hxx \
+	./gt_sony.hxx \
+	./gt_sti.hxx \
+	./gt_syn.hxx \
+	./gt_tar.hxx \
+	./gt_xpa.hxx \
+	./gt_yc.hxx \
+	./gt_zet.hxx \
+	./gt_zip.hxx \
+	./gt_zoo.hxx
+
+$(PATH_OBJ)/gt_arc_main.dlo: \
+	./gt_arc_main.cxx \
+	./gt_arc_analyzer.hxx \
+	../basic/gt_analyzer.hxx
+
+$(PATH_OBJ)/gt_arc_analyzer.obj: \
+	./gt_arc_analyzer.cxx \
+	./gt_arc_analyzer.hxx \
+	../basic/gt_analyzer.hxx \
+	./gt_arc_lister.hxx \
+	./gt_arc_structs.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_direntry.hxx \
+	../basic/gt_exception.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_arc_lister.obj: \
+	./gt_arc_lister.cxx \
+	./gt_arc_lister.hxx \
+	./gt_arc_structs.hxx \
+	../basic/gt_crc32.hxx \
+	../basic/gt_direntry.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_table.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	../basic/gt_time.hxx \
+	./gt_777.hxx \
+	./gt_ace.hxx \
+	./gt_ain.hxx \
+	./gt_akt7.hxx \
+	./gt_akt9.hxx \
+	./gt_amg.hxx \
+	./gt_arc.hxx \
+	./gt_arg.hxx \
+	./gt_arj.hxx \
+	./gt_arq.hxx \
+	./gt_arx.hxx \
+	./gt_asd.hxx \
+	./gt_bix.hxx \
+	./gt_bli.hxx \
+	./gt_boa.hxx \
+	./gt_bsa.hxx \
+	./gt_bsn.hxx \
+	./gt_cab.hxx \
+	./gt_dpa.hxx \
+	./gt_gz.hxx \
+	./gt_ha.hxx \
+	./gt_inno.hxx \
+	./gt_imp.hxx \
+	./gt_ins.hxx \
+	./gt_isc.hxx \
+	./gt_iso.hxx \
+	./gt_lg.hxx \
+	./gt_lzh.hxx \
+	./gt_lzo.hxx \
+	./gt_nero.hxx \
+	./gt_nero5.hxx \
+	./gt_nsis.hxx \
+	./gt_paq.hxx \
+	./gt_paq8.hxx \
+	./gt_ppz.hxx \
+	./gt_rar.hxx \
+	./gt_sbc.hxx \
+	./gt_sony.hxx \
+	./gt_sti.hxx \
+	./gt_syn.hxx \
+	./gt_tar.hxx \
+	./gt_xpa.hxx \
+	./gt_yc.hxx \
+	./gt_zet.hxx \
+	./gt_zip.hxx \
+	./gt_zoo.hxx
+
+$(PATH_OBJ)/gt_arc_main.obj: \
+	./gt_arc_main.cxx \
+	./gt_arc_analyzer.hxx \
+	../basic/gt_analyzer.hxx
+

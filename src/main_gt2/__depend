@@ -1,0 +1,86 @@
+$(PATH_OBJ)/gt_main.dlo: \
+	./gt_main.cxx \
+	../app/gt_app.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_timer.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_mainlister.dlo: \
+	./gt_mainlister.cxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_direntry.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../gen/gt_fixedname.hxx \
+	../data/gtc_datatypes.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_pathmod.dlo: \
+	./gt_pathmod.cxx \
+	../app/gt_cmdline_args.hxx
+
+$(PATH_OBJ)/gt_test.dlo: \
+	./gt_test.cxx \
+	../app/gt_app.hxx \
+	../basic/gt_direntry.hxx \
+	../basic/gt_output.hxx
+
+$(PATH_OBJ)/gt_main.obj: \
+	./gt_main.cxx \
+	../app/gt_app.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_timer.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_mainlister.obj: \
+	./gt_mainlister.cxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_direntry.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../gen/gt_fixedname.hxx \
+	../data/gtc_datatypes.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_pathmod.obj: \
+	./gt_pathmod.cxx \
+	../app/gt_cmdline_args.hxx
+
+$(PATH_OBJ)/gt_test.obj: \
+	./gt_test.cxx \
+	../app/gt_app.hxx \
+	../basic/gt_direntry.hxx \
+	../basic/gt_output.hxx
+

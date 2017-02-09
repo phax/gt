@@ -1,0 +1,5 @@
+#include <windows.h>
+
+#define GT_FILENAME     "gtdata"
+#define GT_DESCRIPTION  "Signature data file."
+#include "gt_version.rc"

@@ -1,0 +1,350 @@
+$(PATH_OBJ)/gt_analyzer.dlo: \
+	./gt_analyzer.cxx \
+	./gt_analyzer.hxx \
+	./gt_cmdline_params.hxx \
+	./gt_stringhelper.hxx \
+	./gt_filebuffer.hxx \
+	./gt_file.hxx \
+	./gt_output.hxx \
+	./gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	./gt_dll.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_cmdline_params.dlo: \
+	./gt_cmdline_params.cxx \
+	./gt_cmdline_params.hxx \
+	./gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_compare.dlo: \
+	./gt_compare.cxx \
+	./gt_compare.hxx \
+	../data/gtc_datatypes.hxx \
+	./gt_output.hxx \
+	./gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	./gt_dll.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	./gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_configfile.dlo: \
+	./gt_configfile.cxx \
+	./gt_configfile.hxx \
+	./gt_errormsg.hxx \
+	./gt_linereader.hxx \
+	./gt_registry.hxx \
+	./gt_cmdline_params.hxx \
+	./gt_stringhelper.hxx \
+	./gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	./gt_dll.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_crc32.dlo: \
+	./gt_crc32.cxx \
+	./gt_crc32.hxx
+
+$(PATH_OBJ)/gt_direntry.dlo: \
+	./gt_direntry.cxx \
+	./gt_direntry.hxx \
+	./gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_errormsg.dlo: \
+	./gt_errormsg.cxx \
+	./gt_output.hxx \
+	./gt_stringhelper.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_exception.dlo: \
+	./gt_exception.cxx \
+	./gt_exception.hxx \
+	./gt_errormsg.hxx \
+	./gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	./gt_dll.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	./gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_exe_types.dlo: \
+	./gt_exe_types.cxx \
+	./gt_exe_types.hxx \
+	./gt_analyzer.hxx \
+	./gt_direntry.hxx \
+	./gt_filebuffer.hxx \
+	./gt_file.hxx \
+	./gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	./gt_dll.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	./gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_file.dlo: \
+	./gt_file.cxx \
+	./gt_file.hxx \
+	./gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	./gt_dll.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	./gt_stringhelper.hxx \
+	./gt_errormsg.hxx \
+	./gt_exception.hxx
+
+$(PATH_OBJ)/gt_filebuffer.dlo: \
+	./gt_filebuffer.cxx \
+	./gt_filebuffer.hxx \
+	./gt_file.hxx \
+	./gt_exception.hxx \
+	./gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	./gt_dll.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	./gt_stringhelper.hxx \
+	./gt_output.hxx
+
+$(PATH_OBJ)/gt_filesearch.dlo: \
+	./gt_filesearch.cxx \
+	./gt_filesearch.hxx \
+	../00/gt_stdafx.hxx \
+	./gt_dll.hxx
+
+$(PATH_OBJ)/gt_linereader.dlo: \
+	./gt_linereader.cxx \
+	./gt_linereader.hxx
+
+$(PATH_OBJ)/gt_locale.dlo: \
+	./gt_locale.cxx \
+	./gt_locale.hxx \
+	./gt_errormsg.hxx \
+	./gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_output.dlo: \
+	./gt_output.cxx \
+	./gt_output.hxx
+
+$(PATH_OBJ)/gt_registry.dlo: \
+	./gt_registry.cxx \
+	./gt_registry.hxx
+
+$(PATH_OBJ)/gt_stringhelper.dlo: \
+	./gt_stringhelper.cxx \
+	./gt_stringhelper.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_stringloader.dlo: \
+	./gt_stringloader.cxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_time.dlo: \
+	./gt_time.cxx \
+	./gt_time.hxx \
+	./gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_timer.dlo: \
+	./gt_timer.cxx \
+	./gt_timer.hxx
+
+$(PATH_OBJ)/gt_utils.dlo: \
+	./gt_utils.cxx \
+	./gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	./gt_dll.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	./gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_analyzer.obj: \
+	./gt_analyzer.cxx \
+	./gt_analyzer.hxx \
+	./gt_cmdline_params.hxx \
+	./gt_stringhelper.hxx \
+	./gt_filebuffer.hxx \
+	./gt_file.hxx \
+	./gt_output.hxx \
+	./gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	./gt_dll.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_cmdline_params.obj: \
+	./gt_cmdline_params.cxx \
+	./gt_cmdline_params.hxx \
+	./gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_compare.obj: \
+	./gt_compare.cxx \
+	./gt_compare.hxx \
+	../data/gtc_datatypes.hxx \
+	./gt_output.hxx \
+	./gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	./gt_dll.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	./gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_configfile.obj: \
+	./gt_configfile.cxx \
+	./gt_configfile.hxx \
+	./gt_errormsg.hxx \
+	./gt_linereader.hxx \
+	./gt_registry.hxx \
+	./gt_cmdline_params.hxx \
+	./gt_stringhelper.hxx \
+	./gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	./gt_dll.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_crc32.obj: \
+	./gt_crc32.cxx \
+	./gt_crc32.hxx
+
+$(PATH_OBJ)/gt_direntry.obj: \
+	./gt_direntry.cxx \
+	./gt_direntry.hxx \
+	./gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_errormsg.obj: \
+	./gt_errormsg.cxx \
+	./gt_output.hxx \
+	./gt_stringhelper.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_exception.obj: \
+	./gt_exception.cxx \
+	./gt_exception.hxx \
+	./gt_errormsg.hxx \
+	./gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	./gt_dll.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	./gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_exe_types.obj: \
+	./gt_exe_types.cxx \
+	./gt_exe_types.hxx \
+	./gt_analyzer.hxx \
+	./gt_direntry.hxx \
+	./gt_filebuffer.hxx \
+	./gt_file.hxx \
+	./gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	./gt_dll.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	./gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_file.obj: \
+	./gt_file.cxx \
+	./gt_file.hxx \
+	./gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	./gt_dll.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	./gt_stringhelper.hxx \
+	./gt_errormsg.hxx \
+	./gt_exception.hxx
+
+$(PATH_OBJ)/gt_filebuffer.obj: \
+	./gt_filebuffer.cxx \
+	./gt_filebuffer.hxx \
+	./gt_file.hxx \
+	./gt_exception.hxx \
+	./gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	./gt_dll.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	./gt_stringhelper.hxx \
+	./gt_output.hxx
+
+$(PATH_OBJ)/gt_filesearch.obj: \
+	./gt_filesearch.cxx \
+	./gt_filesearch.hxx \
+	../00/gt_stdafx.hxx \
+	./gt_dll.hxx
+
+$(PATH_OBJ)/gt_linereader.obj: \
+	./gt_linereader.cxx \
+	./gt_linereader.hxx
+
+$(PATH_OBJ)/gt_locale.obj: \
+	./gt_locale.cxx \
+	./gt_locale.hxx \
+	./gt_errormsg.hxx \
+	./gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_output.obj: \
+	./gt_output.cxx \
+	./gt_output.hxx
+
+$(PATH_OBJ)/gt_registry.obj: \
+	./gt_registry.cxx \
+	./gt_registry.hxx
+
+$(PATH_OBJ)/gt_stringhelper.obj: \
+	./gt_stringhelper.cxx \
+	./gt_stringhelper.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_stringloader.obj: \
+	./gt_stringloader.cxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_time.obj: \
+	./gt_time.cxx \
+	./gt_time.hxx \
+	./gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_timer.obj: \
+	./gt_timer.cxx \
+	./gt_timer.hxx
+
+$(PATH_OBJ)/gt_utils.obj: \
+	./gt_utils.cxx \
+	./gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	./gt_dll.hxx \
+	./gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	./gt_stringhelper.hxx
+

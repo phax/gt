@@ -1,0 +1,8 @@
+$(PATH_OBJ)/gt_stdafx.dlo: \
+	./gt_stdafx.cxx \
+	./gt_stdafx.hxx
+
+$(PATH_OBJ)/gt_stdafx.obj: \
+	./gt_stdafx.cxx \
+	./gt_stdafx.hxx
+

@@ -1,0 +1,2303 @@
+STR HRC_DATA_EXT__DDD
+  all="Temporary";
+
+STR HRC_DATA_EXT__B2B
+  all="LHA Archiver temporary";
+
+STR HRC_DATA_EXT_2gr
+  all="286 Grabber";
+
+STR HRC_DATA_EXT_386
+  all="Windows 386 enhanced mode driver";
+
+STR HRC_DATA_EXT_3db
+  all="3DMark database";
+
+STR HRC_DATA_EXT_3ds
+  all="3DStudio mech";
+
+STR HRC_DATA_EXT_3fx
+  all="CorelChart effects";
+
+STR HRC_DATA_EXT_3gr
+  all="386 Grabber";
+
+STR HRC_DATA_EXT_4md
+  all="4MD music";
+
+STR HRC_DATA_EXT_669
+  all="669 music";
+
+STR HRC_DATA_EXT_8ba
+  all="Adobe Photoshop Plug-In";
+
+STR HRC_DATA_EXT_8be
+  all="Adobe Photoshop Export";
+
+STR HRC_DATA_EXT_8bf
+  all="Adobe Photoshop Filter";
+
+STR HRC_DATA_EXT_8bi
+  all="Adobe Photoshop Import";
+
+STR HRC_DATA_EXT_8bp
+  all="Adobe Photoshop Plug-In";
+
+STR HRC_DATA_EXT_8bx
+  all="Adobe Photoshop Extension";
+
+STR HRC_DATA_EXT_8by
+  all="Adobe Photoshop Plug-In";
+
+STR HRC_DATA_EXT__QDQ
+  all="1st Reader temporary";
+
+STR HRC_DATA_EXT_DPBcd
+  all="DevPartner Error Detection";
+
+STR HRC_DATA_EXT_DPRul
+  all="DevPartner Error Detection";
+
+STR HRC_DATA_EXT_DPSup
+  all="DevPartner Error Detection";
+
+STR HRC_DATA_EXT_abl
+  all="Encrypted ADONIS library";
+
+STR HRC_DATA_EXT_abm
+  all="Image PALS album";
+
+STR HRC_DATA_EXT_abr
+  all="Adobe Photoshop Brush";
+
+STR HRC_DATA_EXT_acb
+  all="ACB archive";
+
+STR HRC_DATA_EXT_ace
+  all="ACE archive";
+
+STR HRC_DATA_EXT_acf1
+  all="Adobe Photoshop custom filter";
+
+STR HRC_DATA_EXT_acf2
+  all="Adeline Software XCF";
+
+STR HRC_DATA_EXT_acm
+  all="Audio Compression Module (Windows driver)";
+
+STR HRC_DATA_EXT_aco
+  all="Adobe Color Palette";
+
+STR HRC_DATA_EXT_adl
+  all="Exported ADONIS models";
+
+STR HRC_DATA_EXT_ae
+  all="SoftQuad Author Editor";
+
+STR HRC_DATA_EXT_ai1
+  all="AI Encapsulated Postscript image";
+
+STR HRC_DATA_EXT_ai2
+  all="Adobe Illustrator EPS";
+
+STR HRC_DATA_EXT_aif
+  all="Audio Interchange";
+
+STR HRC_DATA_EXT_ain
+  all="AIN archive";
+
+STR HRC_DATA_EXT_all
+  all="Decrypted ADONIS library";
+
+STR HRC_DATA_EXT_amg
+  all="AMGC archive";
+
+STR HRC_DATA_EXT_ani
+  all="Windows animation";
+
+STR HRC_DATA_EXT_ans
+  all="ANSI image";
+
+STR HRC_DATA_EXT_ap
+  all="AP archive";
+
+STR HRC_DATA_EXT_ape
+  all="Monkeys Audio music";
+
+STR HRC_DATA_EXT_arc
+  all="PKARC/ARC archive";
+
+STR HRC_DATA_EXT_arj
+  all="ARJ archive";
+
+STR HRC_DATA_EXT_arm
+  all="Armadillo SPS project";
+
+STR HRC_DATA_EXT_art
+  all="First Publisher image";
+
+STR HRC_DATA_EXT_ARTask
+  all="BMC Remedy Task shortcut";
+
+STR HRC_DATA_EXT_asc
+  all="ADONIS LEO script";
+
+STR HRC_DATA_EXT_asm
+  all="Assembler source";
+
+STR HRC_DATA_EXT_asp
+  all="Active Server Page (ASP)";
+
+STR HRC_DATA_EXT_ast
+  all="Adobe Photoshop color separation table";
+
+STR HRC_DATA_EXT_asx
+  all="Windows advanced stream redirector";
+
+STR HRC_DATA_EXT_att
+  all="AT&T Group 4 image";
+
+STR HRC_DATA_EXT_au
+  all="Next/Sun digital audio";
+
+STR HRC_DATA_EXT_aud
+  all="Sierra audio";
+
+STR HRC_DATA_EXT_avb
+  all="AntiViral Toolkit Pro v.2.x virus base";
+
+STR HRC_DATA_EXT_avc
+  all="AntiViral Toolkit Pro v.3.x virus base";
+
+STR HRC_DATA_EXT_avi
+  all="AVI (Audio Visual Interleaved multimedia format) movie";
+
+STR HRC_DATA_EXT_awd
+  all="Award BIOS update";
+
+STR HRC_DATA_EXT_awk
+  all="awk script";
+
+STR HRC_DATA_EXT_axs
+  all="Grapher of Surfer axes";
+
+STR HRC_DATA_EXT_b8
+  all="CubiComp PictureMaker image (blue)";
+
+STR HRC_DATA_EXT_baf
+  all="BAFF (BMP) image library";
+
+STR HRC_DATA_EXT_bak
+  all="Backup";
+
+STR HRC_DATA_EXT_bas
+  all="BASIC source";
+
+STR HRC_DATA_EXT_bat
+  all="DOS Batch";
+
+STR HRC_DATA_EXT_bce
+  all="NuMega Boundschecker result";
+
+STR HRC_DATA_EXT_bda
+  all="Uranus persons base";
+
+STR HRC_DATA_EXT_bgi
+  all="Borland image Interface";
+
+STR HRC_DATA_EXT_bi
+  all="BASIC include (Visual Basic for DOS)";
+
+STR HRC_DATA_EXT_bin
+  all="Binary";
+
+STR HRC_DATA_EXT_blk
+  all="WordPerfect temporary";
+
+STR HRC_DATA_EXT_bmp
+  all="Bitmap image";
+
+STR HRC_DATA_EXT_bmt
+  all="Ami Pro Button";
+
+STR HRC_DATA_EXT_bnk
+  all="AdLib Instrument ID";
+
+STR HRC_DATA_EXT_bnr
+  all="Banner image";
+
+STR HRC_DATA_EXT_bsa
+  all="BSA archive";
+
+STR HRC_DATA_EXT_btn
+  all="Makeover button";
+
+STR HRC_DATA_EXT_bz2
+  all="BZip2 archive";
+
+STR HRC_DATA_EXT_c
+  all="C source";
+
+STR HRC_DATA_EXT_c2d
+  all="Roxio WinOnCD image";
+
+STR HRC_DATA_EXT_c4
+  all="JEDMICS CCITT4 image";
+
+STR HRC_DATA_EXT_cab
+  all="Windows Cabinet";
+
+STR HRC_DATA_EXT_cal1
+  all="CALS Raster image";
+
+STR HRC_DATA_EXT_cal2
+  all="SuperCalc data";
+
+STR HRC_DATA_EXT_cal3
+  all="Windows Calendar";
+
+STR HRC_DATA_EXT_can
+  all="CAN (Crunched ANsi)";
+
+STR HRC_DATA_EXT_cap1
+  all="ProComm capture";
+
+STR HRC_DATA_EXT_cap2
+  all="StoryBoard capture image";
+
+STR HRC_DATA_EXT_cat1
+  all="CP Backup Catalog";
+
+STR HRC_DATA_EXT_cat2
+  all="FOXPRO catalogue";
+
+STR HRC_DATA_EXT_cbl
+  all="Cobol source";
+
+STR HRC_DATA_EXT_cbs
+  all="MasterWord button bar configuration";
+
+STR HRC_DATA_EXT_ccd
+  all="Clone CD image configuration";
+
+STR HRC_DATA_EXT_ccp
+  all="Clone CD profile";
+
+STR HRC_DATA_EXT_cda
+  all="CD-Audio";
+
+STR HRC_DATA_EXT_cdr
+  all="CorelDraw";
+
+STR HRC_DATA_EXT_cdt
+  all="CorelDraw template image";
+
+STR HRC_DATA_EXT_cel
+  all="Lumena CEL image";
+
+STR HRC_DATA_EXT_cfg
+  all="Configuration";
+
+STR HRC_DATA_EXT_cgm1
+  all="Computer image Metafile object image format";
+
+STR HRC_DATA_EXT_cgm2
+  all="StoryBoard pictures library";
+
+STR HRC_DATA_EXT_ch3
+  all="Harvard image";
+
+STR HRC_DATA_EXT_chi
+  all="ChiWritter text";
+
+STR HRC_DATA_EXT_chk
+  all="WordPerfect temporary";
+
+STR HRC_DATA_EXT_chm
+  all="Windows compiled help";
+
+STR HRC_DATA_EXT_chp1
+  all="Type Set image";
+
+STR HRC_DATA_EXT_chp2
+  all="Ventura Publisher chapter";
+
+STR HRC_DATA_EXT_chr
+  all="Borland/Grapher font";
+
+STR HRC_DATA_EXT_cl2
+  all="Corel CD Creator Disk Description";
+
+STR HRC_DATA_EXT_class
+  all="Compiled Java bytecode";
+
+STR HRC_DATA_EXT_clp
+  all="Windows Clipboard data";
+
+STR HRC_DATA_EXT_clx
+  all="Wintertree lexicon";
+
+STR HRC_DATA_EXT_cmb
+  all="Xtree for Windows Button Bar";
+
+STR HRC_DATA_EXT_cmf
+  all="Sound Blaster synthesized sound";
+
+STR HRC_DATA_EXT_cmp
+  all="Photofinish Calibration Map";
+
+STR HRC_DATA_EXT_cmp7
+  all="Araxis Merge saved comparison";
+
+STR HRC_DATA_EXT_cmx
+  all="CorelDraw CMX image";
+
+STR HRC_DATA_EXT_cnf
+  all="Configuration";
+
+STR HRC_DATA_EXT_cnt
+  all="Windows help content";
+
+STR HRC_DATA_EXT_cnv1
+  all="Winword convertor DLL";
+
+STR HRC_DATA_EXT_cnv2
+  all="WordPerfect temporary";
+
+STR HRC_DATA_EXT_cob
+  all="COBOL source";
+
+STR HRC_DATA_EXT_com
+  all="DOS executable COM";
+
+STR HRC_DATA_EXT_coo1
+  all="Fabasoft Components";
+
+STR HRC_DATA_EXT_coo2
+  all="Ventura Publisher image";
+
+STR HRC_DATA_EXT_cpl
+  all="Control Panel apple";
+
+STR HRC_DATA_EXT_cpp
+  all="C++ source";
+
+STR HRC_DATA_EXT_cpt1
+  all="Compact Pro CPT archive";
+
+STR HRC_DATA_EXT_cpt2
+  all="Corel PHOTOPAINT image";
+
+STR HRC_DATA_EXT_crd
+  all="Windows Cardfile data";
+
+STR HRC_DATA_EXT_crf
+  all="Calcomp image";
+
+STR HRC_DATA_EXT_crk
+  all="Information how to crack";
+
+STR HRC_DATA_EXT_crl
+  all="Certificate Revocation List";
+
+STR HRC_DATA_EXT_cs
+  all="C# source";
+
+STR HRC_DATA_EXT_css
+  all="Cascaded Style Sheets";
+
+STR HRC_DATA_EXT_csv1
+  all="Semicolon separated Excel interchange format";
+
+STR HRC_DATA_EXT_csv2
+  all="SuperCalc output data";
+
+STR HRC_DATA_EXT_cty
+  all="SimCity city";
+
+STR HRC_DATA_EXT_cue
+  all="CUE sheet";
+
+STR HRC_DATA_EXT_cur
+  all="Microsoft Resource Cursors";
+
+STR HRC_DATA_EXT_cut
+  all="Dr.Halo or Dr.Genius Image image";
+
+STR HRC_DATA_EXT_cvp
+  all="Symantec Winfax PRO coverpage";
+
+STR HRC_DATA_EXT_cxx
+  all="C++ source";
+
+STR HRC_DATA_EXT_d3d
+  all="CorelDREAM 3D 8 Image";
+
+STR HRC_DATA_EXT_daf
+  all="Sony digital audio";
+
+STR HRC_DATA_EXT_dat
+  all="Data";
+
+STR HRC_DATA_EXT_db
+  all="FoxPro database";
+
+STR HRC_DATA_EXT__dbD
+  all="dBASE Temporary";
+
+STR HRC_DATA_EXT_dbf
+  all="DBF database";
+
+STR HRC_DATA_EXT_dbt
+  all="FoxPro MEMO-fields";
+
+STR HRC_DATA_EXT_dbx
+  all="DataBeam image";
+
+STR HRC_DATA_EXT_dcp
+  all="Delphi Compiled project";
+
+STR HRC_DATA_EXT_dcu
+  all="Delphi Compiled Unit";
+
+STR HRC_DATA_EXT_dcx
+  all="Intel DCX image";
+
+STR HRC_DATA_EXT_dd2
+  all="Dangerous Dave data";
+
+STR HRC_DATA_EXT_ddi
+  all="Disk Dupe disk image";
+
+STR HRC_DATA_EXT_def
+  all="Definitions";
+
+STR HRC_DATA_EXT_dfx
+  all="Micrografx Effects DLL";
+
+STR HRC_DATA_EXT_dib
+  all="Microsoft Bitmap image";
+
+STR HRC_DATA_EXT_dic
+  all="Dictionary data";
+
+STR HRC_DATA_EXT_dif
+  all="Data Interchange Format (used by Visicalc)";
+
+STR HRC_DATA_EXT_dig1
+  all="DIG Music";
+
+STR HRC_DATA_EXT_dig2
+  all="DIG driver";
+
+STR HRC_DATA_EXT_dir
+  all="CPS Backup Directory";
+
+STR HRC_DATA_EXT_diz
+  all="Directory identification";
+
+STR HRC_DATA_EXT_dlg
+  all="Windows SDK dialog editor data";
+
+STR HRC_DATA_EXT_dll
+  all="Windows Dynamic Link Library";
+
+STR HRC_DATA_EXT_dms
+  all="Disk Masher archive";
+
+STR HRC_DATA_EXT_doc
+  all="Microsoft Word document";
+
+STR HRC_DATA_EXT_dot
+  all="Microsoft Word template";
+
+STR HRC_DATA_EXT_dpa
+  all="DPA archive";
+
+STR HRC_DATA_EXT_drv
+  all="DOS System Driver";
+
+STR HRC_DATA_EXT_drw
+  all="ACAD or Designer or Micrografx Draw image";
+
+STR HRC_DATA_EXT_ds
+  all="TWAIN (Scanner spec) data source DLL";
+
+STR HRC_DATA_EXT_dsk
+  all="Desktop";
+
+STR HRC_DATA_EXT_dsp1
+  all="Norton viewer DLL";
+
+STR HRC_DATA_EXT_dsp2
+  all="Microsoft Visual Studio 6 project";
+
+STR HRC_DATA_EXT_dsw
+  all="Microsoft Visual Studio 6 workspace";
+
+STR HRC_DATA_EXT_dtd
+  all="Document Type Description (for SGML/XML)";
+
+STR HRC_DATA_EXT_dtx
+  all="Reinger data";
+
+STR HRC_DATA_EXT_dur
+  all="DURILCA archive";
+
+STR HRC_DATA_EXT_dvi
+  all="TeX/LaTeX DeVice Independent";
+
+STR HRC_DATA_EXT_dwc
+  all="DWC archive";
+
+STR HRC_DATA_EXT_dxf
+  all="AutoCAD vector image";
+
+STR HRC_DATA_EXT_ear
+  all="Java Enterprise Archive (J2EE Server)";
+
+STR HRC_DATA_EXT_ec
+  all="Emma coverage launch configuration";
+
+STR HRC_DATA_EXT_edl
+  all="EDL movie";
+
+STR HRC_DATA_EXT_eft
+  all="ChiWritter font";
+
+STR HRC_DATA_EXT_em
+  all="Emma coverage instrumentation data";
+
+STR HRC_DATA_EXT_emc
+  all="WestWood Studio games dialogues";
+
+STR HRC_DATA_EXT_emf
+  all="Windows Enhanced Metafile image";
+
+STR HRC_DATA_EXT_enc
+  all="PCIENC Encrupted archive";
+
+STR HRC_DATA_EXT_env
+  all="Envelope or Environment";
+
+STR HRC_DATA_EXT_eps
+  all="Packed PostScript image";
+
+STR HRC_DATA_EXT_ers
+  all="ER Mapper Raster image";
+
+STR HRC_DATA_EXT_esa
+  all="Electronic Arts archive";
+
+STR HRC_DATA_EXT_exe
+  all="DOS/Windows executable";
+
+STR HRC_DATA_EXT_ext
+  all="Extensions";
+
+STR HRC_DATA_EXT_fac
+  all="StoryBoard font";
+
+STR HRC_DATA_EXT_fal
+  all="Q0 header image";
+
+STR HRC_DATA_EXT_far
+  all="FAR music";
+
+STR HRC_DATA_EXT_fas
+  all="Macsyma compiled program";
+
+STR HRC_DATA_EXT_fax
+  all="Fax bitmaps in CCITT format";
+
+STR HRC_DATA_EXT_fcd
+  all="Analyzer compiled data";
+
+STR HRC_DATA_EXT_fdf
+  all="Adobe Acrobat form data";
+
+STR HRC_DATA_EXT_fdl
+  all="Flowmark Definition Language";
+
+STR HRC_DATA_EXT_ff
+  all="Intelligont FIAS format";
+
+STR HRC_DATA_EXT_ffx
+  all="Microsoft Full-text index";
+
+STR HRC_DATA_EXT_fh7
+  all="FreeHand 7 document";
+
+STR HRC_DATA_EXT_fh8
+  all="FreeHand 8 document";
+
+STR HRC_DATA_EXT_fhc
+  all="FreeHand Compressed image format";
+
+STR HRC_DATA_EXT_fi
+  all="Fortran Source Code";
+
+STR HRC_DATA_EXT_fio
+  all="Image PALS viewer DLL";
+
+STR HRC_DATA_EXT_fiz
+  all="FIZ archive";
+
+STR HRC_DATA_EXT_flc
+  all="AutoDesk Animation";
+
+STR HRC_DATA_EXT_fli
+  all="AutoDesk Animation";
+
+STR HRC_DATA_EXT_flm
+  all="FilmStrip movie";
+
+STR HRC_DATA_EXT_fmt
+  all="FoxPro formats";
+
+STR HRC_DATA_EXT_fnt
+  all="Font";
+
+STR HRC_DATA_EXT_fo
+  all="XSL-FO Document";
+
+STR HRC_DATA_EXT_fon
+  all="Font";
+
+STR HRC_DATA_EXT_fop
+  all="FOP image";
+
+STR HRC_DATA_EXT_for
+  all="FORTRAN source";
+
+STR HRC_DATA_EXT_fpd
+  all="TMT-Pascal unit";
+
+STR HRC_DATA_EXT_fpl
+  all="foobar2000 playlist";
+
+STR HRC_DATA_EXT_fpx
+  all="Kodak FlashPix Image";
+
+STR HRC_DATA_EXT_frf
+  all="Abbyy FineReader page data";
+
+STR HRC_DATA_EXT_frm1
+  all="FoxPro report";
+
+STR HRC_DATA_EXT_frm2
+  all="Visual Basic form";
+
+STR HRC_DATA_EXT_frx
+  all="Visual Basic binary program";
+
+STR HRC_DATA_EXT_fsl
+  all="Paradox for Windows screen form";
+
+STR HRC_DATA_EXT_fxp
+  all="FoxPro compiled";
+
+STR HRC_DATA_EXT_g8
+  all="CubiComp PictureMaker image (green)";
+
+STR HRC_DATA_EXT_gbl
+  all="Global module in Basic programs";
+
+STR HRC_DATA_EXT_ged
+  all="Arts$Letter image";
+
+STR HRC_DATA_EXT_gem
+  all="Artline vector image";
+
+STR HRC_DATA_EXT_gfx
+  all="Instant Artist image";
+
+STR HRC_DATA_EXT_gid
+  all="Windows 95 Help Index";
+
+STR HRC_DATA_EXT_gif
+  all="GIF image";
+
+STR HRC_DATA_EXT_gjd
+  all="Trilobyte image library";
+
+STR HRC_DATA_EXT_glb
+  all="Global module in Basic programs";
+
+STR HRC_DATA_EXT_glo
+  all="Global module in Basic programs";
+
+STR HRC_DATA_EXT_gly
+  all="Winword Glossary";
+
+STR HRC_DATA_EXT_gm
+  all="Autologic image";
+
+STR HRC_DATA_EXT_gmk
+  all="GNU makefile";
+
+STR HRC_DATA_EXT_goe
+  all="GOES image";
+
+STR HRC_DATA_EXT_grb
+  all="HP-48sx image";
+
+STR HRC_DATA_EXT_grd
+  all="Grapher or AutoCAD grid";
+
+STR HRC_DATA_EXT_grf
+  all="Stanford/Charisma image";
+
+STR HRC_DATA_EXT_grp
+  all="Windows group";
+
+STR HRC_DATA_EXT_gtt
+  all="Generic translation table";
+
+STR HRC_DATA_EXT_gv
+  all="GrandView outline";
+
+STR HRC_DATA_EXT_gx1
+  all="PaintBrush image";
+
+STR HRC_DATA_EXT_gz
+  all="GZIP archive";
+
+STR HRC_DATA_EXT__hX
+  all="TechHelp data";
+
+STR HRC_DATA_EXT_h
+  all="C/C++ include";
+
+STR HRC_DATA_EXT_ha
+  all="HA archive";
+
+STR HRC_DATA_EXT_hbk
+  all="MathCAD handbook";
+
+STR HRC_DATA_EXT_hft
+  all="ChiWritter font";
+
+STR HRC_DATA_EXT_hgl
+  all="HP Plotter 7475A image";
+
+STR HRC_DATA_EXT_hki
+  all="HKI ZIP archive";
+
+STR HRC_DATA_EXT_hlf
+  all="FAR help";
+
+STR HRC_DATA_EXT_hlp
+  all="Windows Help";
+
+STR HRC_DATA_EXT_hlx
+  all="MultiEdit compiled macros";
+
+STR HRC_DATA_EXT_hpk
+  all="HPACK archive";
+
+STR HRC_DATA_EXT_hqr
+  all="HQR data";
+
+STR HRC_DATA_EXT_hqx
+  all="BinHex archive";
+
+STR HRC_DATA_EXT_hrf
+  all="Hitachi Raster Format image";
+
+STR HRC_DATA_EXT_hsc
+  all="HSC music";
+
+STR HRC_DATA_EXT_hsi
+  all="HSI JPEG image";
+
+STR HRC_DATA_EXT_hst
+  all="History";
+
+STR HRC_DATA_EXT_htm
+  all="HTML (HyperText Markup Language)";
+
+STR HRC_DATA_EXT_html
+  all="HTML (HyperText Markup Language)";
+
+STR HRC_DATA_EXT_hxx
+  all="C/C++ include";
+
+STR HRC_DATA_EXT_hyp
+  all="Hyper archive";
+
+STR HRC_DATA_EXT_ibg
+  all="PDS image";
+
+STR HRC_DATA_EXT_ica
+  all="IBM IOCA image";
+
+STR HRC_DATA_EXT_ice
+  all="ICE archive";
+
+STR HRC_DATA_EXT_icm
+  all="ICM profile";
+
+STR HRC_DATA_EXT_ico
+  all="Windows icon";
+
+STR HRC_DATA_EXT_id
+  all="Lotus notes ID";
+
+STR HRC_DATA_EXT_idb1
+  all="DataRescue IDA stored database";
+
+STR HRC_DATA_EXT_idb2
+  all="Visual Studio minimal rebuild dependeny";
+
+STR HRC_DATA_EXT_idc
+  all="Core IDC image";
+
+STR HRC_DATA_EXT_idx
+  all="Index";
+
+STR HRC_DATA_EXT_iff
+  all="Amiga IFF/ILBM image";
+
+STR HRC_DATA_EXT_ifo
+  all="DVD part: InFOrmation";
+
+STR HRC_DATA_EXT_igf
+  all="Inset Systems IGF image";
+
+STR HRC_DATA_EXT_il
+  all="hDC Designer Icon Library (in DLL format)";
+
+STR HRC_DATA_EXT_img
+  all="GEM bitmapped image";
+
+STR HRC_DATA_EXT_imz
+  all="Compressed WinImage";
+
+STR HRC_DATA_EXT_inc
+  all="(Assembler) Include";
+
+STR HRC_DATA_EXT_inf
+  all="Windows INF";
+
+STR HRC_DATA_EXT_ini
+  all="Windows INI";
+
+STR HRC_DATA_EXT_int
+  all="Turbo Pascal TPU interface parts";
+
+STR HRC_DATA_EXT_io
+  all="Silmaris Software data";
+
+STR HRC_DATA_EXT_ip
+  all="Icon Packager Theme";
+
+STR HRC_DATA_EXT_iso
+  all="ISO CD image";
+
+STR HRC_DATA_EXT_isu
+  all="installSHIELD uninstallation";
+
+STR HRC_DATA_EXT_j
+  all="JAR archive";
+
+STR HRC_DATA_EXT_jar
+  all="Java archive (ZIP)";
+
+STR HRC_DATA_EXT_jav
+  all="Java source code";
+
+STR HRC_DATA_EXT_java
+  all="Java source code";
+
+STR HRC_DATA_EXT_jbf
+  all="Paint Shop Pro browse";
+
+STR HRC_DATA_EXT_jpg
+  all="JPEG image";
+
+STR HRC_DATA_EXT_js
+  all="JavaScript Source";
+
+STR HRC_DATA_EXT_jsl
+  all="J# Source";
+
+STR HRC_DATA_EXT_jsp
+  all="Java Server Page";
+
+STR HRC_DATA_EXT_jv
+  all="Jovian image";
+
+STR HRC_DATA_EXT_jws
+  all="Apache Axis WebService (Java source code)";
+
+STR HRC_DATA_EXT_kbd
+  all="KBD";
+
+STR HRC_DATA_EXT_kex
+  all="Kedit Macro";
+
+STR HRC_DATA_EXT_key
+  all="Program registration/key";
+
+STR HRC_DATA_EXT_kfx
+  all="Kofax Group 4 image";
+
+STR HRC_DATA_EXT_kml1
+  all="Kedit Macro Library";
+
+STR HRC_DATA_EXT_kml2
+  all="Keyhole XML (Google Earth)";
+
+STR HRC_DATA_EXT_ksw
+  all="Lotus 1-2-3 data";
+
+STR HRC_DATA_EXT_lan
+  all="Erdas LAN/GIS Image image";
+
+STR HRC_DATA_EXT_lbl
+  all="FOXPRO label";
+
+STR HRC_DATA_EXT_lbm
+  all="Amiga IFF/ILBM image";
+
+STR HRC_DATA_EXT_lbr
+  all="Story Board picture libraries";
+
+STR HRC_DATA_EXT_leo
+  all="ADONIS LEO script";
+
+STR HRC_DATA_EXT_lex
+  all="Short for lexigographi...gram dependent format";
+
+STR HRC_DATA_EXT_lfd
+  all="XWING inside";
+
+STR HRC_DATA_EXT_lft
+  all="ChiWritters font for laser printers";
+
+STR HRC_DATA_EXT_lgo
+  all="Windows logo shown during startup";
+
+STR HRC_DATA_EXT_lha
+  all="Amiga LZ archive";
+
+STR HRC_DATA_EXT_lib
+  all="C, C++ libraries";
+
+STR HRC_DATA_EXT_lic
+  all="License";
+
+STR HRC_DATA_EXT_lim
+  all="Limit archive";
+
+STR HRC_DATA_EXT_lin
+  all="AutoCAD image";
+
+STR HRC_DATA_EXT_lnk
+  all="Microsoft Windows Shortcut";
+
+STR HRC_DATA_EXT_log
+  all="LOG";
+
+STR HRC_DATA_EXT_lsp
+  all="LISP source";
+
+STR HRC_DATA_EXT_lst
+  all="List";
+
+STR HRC_DATA_EXT_lwp
+  all="Lotus Word Pro document";
+
+STR HRC_DATA_EXT_lzh
+  all="LHA archive";
+
+STR HRC_DATA_EXT_lzs
+  all="LARC archive";
+
+STR HRC_DATA_EXT_lzw
+  all="Amiga LHWARP archive";
+
+STR HRC_DATA_EXT_m
+  all="MatLab/Mathematica source";
+
+STR HRC_DATA_EXT_m3u
+  all="WinAMP playlist";
+
+STR HRC_DATA_EXT_m4
+  all="GNU M4";
+
+STR HRC_DATA_EXT_m4a
+  all="MPEG-4 audio (iTunes AAC)";
+
+STR HRC_DATA_EXT_m4f
+  all="GNU M4 frozen";
+
+STR HRC_DATA_EXT_ma
+  all="Used by Mathematica App executable";
+
+STR HRC_DATA_EXT_mac
+  all="Macros or MacPaint image";
+
+STR HRC_DATA_EXT_mak
+  all="Makefile (part)";
+
+STR HRC_DATA_EXT_manifest
+  all="Application specific Windows settings";
+
+STR HRC_DATA_EXT_map
+  all="Map";
+
+STR HRC_DATA_EXT_max
+  all="3DStudio Max scene";
+
+STR HRC_DATA_EXT_mbx
+  all="Eudora mailbox";
+
+STR HRC_DATA_EXT_mcd
+  all="Mathcad task";
+
+STR HRC_DATA_EXT_mcf
+  all="Mathcad inside";
+
+STR HRC_DATA_EXT_mcs
+  all="MathCAD image";
+
+STR HRC_DATA_EXT_md5
+  all="MD5 checksum";
+
+STR HRC_DATA_EXT_mda
+  all="Microsoft Access Database";
+
+STR HRC_DATA_EXT_mdb
+  all="Microsoft Access Database";
+
+STR HRC_DATA_EXT_mdi
+  all="MIDI music";
+
+STR HRC_DATA_EXT_mdx
+  all="DBase master index";
+
+STR HRC_DATA_EXT_met
+  all="eMule download description";
+
+STR HRC_DATA_EXT_mid
+  all="MIDI music";
+
+STR HRC_DATA_EXT_mk
+  all="Makefile";
+
+STR HRC_DATA_EXT_mmm
+  all="MultiMedia Movie";
+
+STR HRC_DATA_EXT_mnu
+  all="Menu";
+
+STR HRC_DATA_EXT_mnx
+  all="AutoCAD image";
+
+STR HRC_DATA_EXT_mod
+  all="Amiga musical module or Some module";
+
+STR HRC_DATA_EXT_mov
+  all="QuickTime movie";
+
+STR HRC_DATA_EXT_mp2
+  all="MPEG Layer II music";
+
+STR HRC_DATA_EXT_mp3
+  all="MPEG Layer III music";
+
+STR HRC_DATA_EXT_mpc
+  all="Music (similar to mp3)";
+
+STR HRC_DATA_EXT_mpeg
+  all="MPEG Video";
+
+STR HRC_DATA_EXT_mpg
+  all="MPEG Video";
+
+STR HRC_DATA_EXT_msg
+  all="Message";
+
+STR HRC_DATA_EXT_msp
+  all="Microsoft Paint format (from Windowns 2.x)";
+
+STR HRC_DATA_EXT_msx
+  all="CP/M MSX archive";
+
+STR HRC_DATA_EXT_mtm
+  all="MTM music";
+
+STR HRC_DATA_EXT_mtv
+  all="MTV image";
+
+STR HRC_DATA_EXT_mu
+  all="Quattro pro for DOS Menu definition";
+
+STR HRC_DATA_EXT_mve
+  all="movie";
+
+STR HRC_DATA_EXT_mw2
+  all="MechWarrior II data";
+
+STR HRC_DATA_EXT_mxl
+  all="PackRat 5.0 support DLLs";
+
+STR HRC_DATA_EXT_ncd
+  all="Norton Change Directory (directory tree)";
+
+STR HRC_DATA_EXT_ndx
+  all="dBASE index";
+
+STR HRC_DATA_EXT_new
+  all="Info about new things in program";
+
+STR HRC_DATA_EXT_nfo
+  all="Software information";
+
+STR HRC_DATA_EXT_nl
+  all="Norton Desktop Icon Library";
+
+STR HRC_DATA_EXT_nlm
+  all="Novell NetWare programm";
+
+STR HRC_DATA_EXT_not
+  all="MasterMouse inside";
+
+STR HRC_DATA_EXT_nrl
+  all="NRL Schema";
+
+STR HRC_DATA_EXT_nsh
+  all="NSIS Script Header";
+
+STR HRC_DATA_EXT_nsi
+  all="NSIS Script";
+
+STR HRC_DATA_EXT_nss
+  all="Norton Screen Saver module";
+
+STR HRC_DATA_EXT_nu3
+  all="Norton Utilities 3.x";
+
+STR HRC_DATA_EXT_nvdl
+  all="NVDL Schema";
+
+STR HRC_DATA_EXT_nws
+  all="NEWS' image";
+
+STR HRC_DATA_EXT_oaz
+  all="OAZ Fax image";
+
+STR HRC_DATA_EXT_obj
+  all="Object code";
+
+STR HRC_DATA_EXT_oct
+  all="OCT (octalizer) music";
+
+STR HRC_DATA_EXT_ocx
+  all="Windows OCX control (shoul be detected)";
+
+STR HRC_DATA_EXT_olb
+  all="Object Library";
+
+STR HRC_DATA_EXT_old
+  all="Backup";
+
+STR HRC_DATA_EXT_omf
+  all="ObjectVision meta";
+
+STR HRC_DATA_EXT_opt
+  all="Grapher optimized image";
+
+STR HRC_DATA_EXT_ovd
+  all="ObjectVision data";
+
+STR HRC_DATA_EXT_ovl
+  all="Overlay data";
+
+STR HRC_DATA_EXT_ovr
+  all="Overlay data";
+
+STR HRC_DATA_EXT_ovy
+  all="Overlay data";
+
+STR HRC_DATA_EXT_p10
+  all="Tektronix Plot 10 image";
+
+STR HRC_DATA_EXT_pac
+  all="TPACK archive";
+
+STR HRC_DATA_EXT_pak
+  all="PAK archive";
+
+STR HRC_DATA_EXT_pal
+  all="Color palette";
+
+STR HRC_DATA_EXT_part
+  all="eMule partially downloaded content";
+
+STR HRC_DATA_EXT_pas
+  all="PASCAL source";
+
+STR HRC_DATA_EXT_pat1
+  all="PCIllustrator";
+
+STR HRC_DATA_EXT_pat2
+  all="US Patent Image image";
+
+STR HRC_DATA_EXT_pbl
+  all="Adobe Premiere Batch List";
+
+STR HRC_DATA_EXT_pbm
+  all="Portable Bitmap";
+
+STR HRC_DATA_EXT_pcd
+  all="Kodak PhotoCD image";
+
+STR HRC_DATA_EXT_pce
+  all="Linkway image";
+
+STR HRC_DATA_EXT_pcl1
+  all="HP LaserJet II image";
+
+STR HRC_DATA_EXT_pcl2
+  all="PCX library";
+
+STR HRC_DATA_EXT_pcs
+  all="PCS-EGA image";
+
+STR HRC_DATA_EXT_pct
+  all="Macintosh PICT image";
+
+STR HRC_DATA_EXT_pcx
+  all="PCX image";
+
+STR HRC_DATA_EXT_pdb
+  all="Packrat 5.0 data";
+
+STR HRC_DATA_EXT_pdf
+  all="Adobe PDF (Portable document)";
+
+STR HRC_DATA_EXT_pdg
+  all="Print Shop Deluxe data";
+
+STR HRC_DATA_EXT_pdr
+  all="StoryBoard image";
+
+STR HRC_DATA_EXT_pdw
+  all="HiJaak Image Draw image";
+
+STR HRC_DATA_EXT_pec2bac
+  all="PECompact 2 Backup";
+
+STR HRC_DATA_EXT_pfa
+  all="PostScript Font";
+
+STR HRC_DATA_EXT_pfb
+  all="PostScript Font";
+
+STR HRC_DATA_EXT_pfm1
+  all="PostScript Font Metric";
+
+STR HRC_DATA_EXT_pfm2
+  all="Windows Type 1 font metric";
+
+STR HRC_DATA_EXT_pft
+  all="ChiWritter font for matrix printers";
+
+STR HRC_DATA_EXT_pgl
+  all="HP Plotter 7475A vector image";
+
+STR HRC_DATA_EXT_php
+  all="PHP script";
+
+STR HRC_DATA_EXT_php3
+  all="PHP3 script";
+
+STR HRC_DATA_EXT_phtml
+  all="PHP HTML";
+
+STR HRC_DATA_EXT_pi1
+  all="GODS game data";
+
+STR HRC_DATA_EXT_pic
+  all="123 vector image";
+
+STR HRC_DATA_EXT_pif
+  all="Microsoft Pifex";
+
+STR HRC_DATA_EXT_pit
+  all="Mac PackIt archive";
+
+STR HRC_DATA_EXT_pix
+  all="Inset Systems PIX image";
+
+STR HRC_DATA_EXT_pkt
+  all="FIDO mail packet";
+
+STR HRC_DATA_EXT_pkx
+  all="Rational XDE Unit";
+
+STR HRC_DATA_EXT_pl
+  all="Perl Script";
+
+STR HRC_DATA_EXT_pla
+  all="SimEarth planet";
+
+STR HRC_DATA_EXT_plb
+  all="Adobe Premiere Library";
+
+STR HRC_DATA_EXT_plt
+  all="Grapher vector / HP Plotter 7475A image";
+
+STR HRC_DATA_EXT_pm
+  all="Perl module";
+
+STR HRC_DATA_EXT_pm3
+  all="PageMaker 3.0 data";
+
+STR HRC_DATA_EXT_pmt
+  all="Image-72 image";
+
+STR HRC_DATA_EXT_png
+  all="PNG image";
+
+STR HRC_DATA_EXT_pnm
+  all="Portable BitMap (PBM) image";
+
+STR HRC_DATA_EXT_pod
+  all="Perl documentation";
+
+STR HRC_DATA_EXT_pom
+  all="Apache Maven POM";
+
+STR HRC_DATA_EXT_ppc
+  all="Cuted PCX image";
+
+STR HRC_DATA_EXT_ppj
+  all="Adobe Premiere Movie Project";
+
+STR HRC_DATA_EXT_pr1
+  all="Packrat 4.0 data";
+
+STR HRC_DATA_EXT_pr2
+  all="Packrat 4.x data";
+
+STR HRC_DATA_EXT_pre
+  all="Stork image";
+
+STR HRC_DATA_EXT_prg
+  all="FOXPRO program";
+
+STR HRC_DATA_EXT_prj
+  all="(Turbo C[++]) Project";
+
+STR HRC_DATA_EXT_prn
+  all="Spreadsheet output (printer)";
+
+STR HRC_DATA_EXT_pro
+  all="Profile data";
+
+STR HRC_DATA_EXT_properties
+  all="Java properties";
+
+STR HRC_DATA_EXT_prs1
+  all="Norton Viewer DLL";
+
+STR HRC_DATA_EXT_prs2
+  all="Sierra Program Resource";
+
+STR HRC_DATA_EXT_ps
+  all="Adobe PostScript";
+
+STR HRC_DATA_EXT_psd
+  all="Adobe Photoshop image";
+
+STR HRC_DATA_EXT_psm
+  all="Borland precompiled header";
+
+STR HRC_DATA_EXT_psp
+  all="Paint Shop Pro image";
+
+STR HRC_DATA_EXT_pspbrush
+  all="Paint Shop Pro brush";
+
+STR HRC_DATA_EXT_pspdeformationmap
+  all="Paint Shop Pro deformation map";
+
+STR HRC_DATA_EXT_pspframe
+  all="Paint Shop Pro frame";
+
+STR HRC_DATA_EXT_pspgradient
+  all="Paint Shop Pro gradient";
+
+STR HRC_DATA_EXT_pspimage
+  all="Paint Shop Pro image";
+
+STR HRC_DATA_EXT_pspmask
+  all="Paint Shop Pro mask";
+
+STR HRC_DATA_EXT_psppalette
+  all="Paint Shop Pro palette";
+
+STR HRC_DATA_EXT_pspscript
+  all="Paint Shop Pro script";
+
+STR HRC_DATA_EXT_pspselection
+  all="Paint Shop Pro selection";
+
+STR HRC_DATA_EXT_pspshape
+  all="Paint Shop Pro shape";
+
+STR HRC_DATA_EXT_pspstyledline
+  all="Paint Shop Pro styled line";
+
+STR HRC_DATA_EXT_psptube
+  all="Paint Shop Pro tube";
+
+STR HRC_DATA_EXT_psq
+  all="Adobe Premiere Sequence";
+
+STR HRC_DATA_EXT_ptl
+  all="Adobe Premiere Title";
+
+STR HRC_DATA_EXT_pwl
+  all="Windows 9x User password";
+
+STR HRC_DATA_EXT_px
+  all="Paradox 3.0";
+
+STR HRC_DATA_EXT_pxp
+  all="3DStudio process";
+
+STR HRC_DATA_EXT_pxr
+  all="PIXAR image";
+
+STR HRC_DATA_EXT_py
+  all="Python source";
+
+STR HRC_DATA_EXT_pzi
+  all="PIZAZZ image";
+
+STR HRC_DATA_EXT_pzs
+  all="PIZAZZ image";
+
+STR HRC_DATA_EXT_q0
+  all="Q0 image";
+
+STR HRC_DATA_EXT_qag
+  all="Norton Destop Group";
+
+STR HRC_DATA_EXT_qdv
+  all="QDV image";
+
+STR HRC_DATA_EXT_qfx
+  all="QuickLink II Fax image";
+
+STR HRC_DATA_EXT_qry
+  all="FOXPRO query";
+
+STR HRC_DATA_EXT_r2d
+  all="Reflex 2 data";
+
+STR HRC_DATA_EXT_r8
+  all="CubiComp PictureMaker image (red)";
+
+STR HRC_DATA_EXT_ra
+  all="Real Player audio/video";
+
+STR HRC_DATA_EXT_rar
+  all="RAR archive";
+
+STR HRC_DATA_EXT_ras
+  all="Sun Raster image";
+
+STR HRC_DATA_EXT_ratdvd
+  all="ratDVD container";
+
+STR HRC_DATA_EXT_raw
+  all="RAW image/music";
+
+STR HRC_DATA_EXT_rb
+  all="Ruby source";
+
+STR HRC_DATA_EXT_rc
+  all="Resource script used by Windows programs";
+
+STR HRC_DATA_EXT_rdf
+  all="Resource Description Format (XML)";
+
+STR HRC_DATA_EXT_rec
+  all="Windows Recorder Macro";
+
+STR HRC_DATA_EXT_reg1
+  all="Program registration";
+
+STR HRC_DATA_EXT_reg2
+  all="Windows registry exported text";
+
+STR HRC_DATA_EXT_rep
+  all="Report";
+
+STR HRC_DATA_EXT_res
+  all="Compiled resource";
+
+STR HRC_DATA_EXT_resources
+  all="Compiled Visual Studio Resource";
+
+STR HRC_DATA_EXT_rex
+  all="Rexx language source";
+
+STR HRC_DATA_EXT_rgb
+  all="Intergraph image";
+
+STR HRC_DATA_EXT_rif
+  all="Fractal painter bitmapped";
+
+STR HRC_DATA_EXT_rkv
+  all="RKIVE archive";
+
+STR HRC_DATA_EXT_rlc
+  all="Image Systems Technology image";
+
+STR HRC_DATA_EXT_rle
+  all="Run Length Encoded compressed BMP";
+
+STR HRC_DATA_EXT_rm
+  all="Real Networks Video/Audio";
+
+STR HRC_DATA_EXT_rmi
+  all="Windows alternate synthesized sound format";
+
+STR HRC_DATA_EXT_rnc
+  all="Relax NG Compact Syntax Schema";
+
+STR HRC_DATA_EXT_rng
+  all="Relax NG Full Syntax Schema";
+
+STR HRC_DATA_EXT_rol
+  all="Adlib format syntesized music";
+
+STR HRC_DATA_EXT_rom
+  all="Read Only Memory (ROM) image";
+
+STR HRC_DATA_EXT_rpb
+  all="CP Backup data report";
+
+STR HRC_DATA_EXT_rpt
+  all="Report";
+
+STR HRC_DATA_EXT_rsl
+  all="Resource Library (PC Tools for Windows)";
+
+STR HRC_DATA_EXT_rtf
+  all="Rich Text Format";
+
+STR HRC_DATA_EXT_rtp
+  all="RTPatch software update package data";
+
+STR HRC_DATA_EXT_rts
+  all="Realizer executable";
+
+STR HRC_DATA_EXT_run
+  all="PC Tools for Windows batch";
+
+STR HRC_DATA_EXT_rxd
+  all="Reflex 1 data";
+
+STR HRC_DATA_EXT_s3m
+  all="S3M music";
+
+STR HRC_DATA_EXT_sa2
+  all="SA2 Adlib Module music";
+
+STR HRC_DATA_EXT_sah
+  all="SETI@Home";
+
+STR HRC_DATA_EXT_sam
+  all="Ami Pro data";
+
+STR HRC_DATA_EXT_sav
+  all="Save";
+
+STR HRC_DATA_EXT_scd1
+  all="SCODOL film recorder";
+
+STR HRC_DATA_EXT_scd2
+  all="Scodl image";
+
+STR HRC_DATA_EXT_sch
+  all="Schematron Schema";
+
+STR HRC_DATA_EXT_sci
+  all="SciFax image";
+
+STR HRC_DATA_EXT_scr1
+  all="WinCIM";
+
+STR HRC_DATA_EXT_scr2
+  all="Windows Screen Saver";
+
+STR HRC_DATA_EXT_sct
+  all="Scitex image";
+
+STR HRC_DATA_EXT_scx1
+  all="RIX image";
+
+STR HRC_DATA_EXT_scx2
+  all="Scitex image";
+
+STR HRC_DATA_EXT_sdf
+  all="Sourcer first definition";
+
+STR HRC_DATA_EXT_sdw
+  all="Ami Draw Symbol";
+
+STR HRC_DATA_EXT_sed
+  all="SED (stream editor)";
+
+STR HRC_DATA_EXT_set1
+  all="Extension used by Norton Backup for setup info";
+
+STR HRC_DATA_EXT_set2
+  all="General settings";
+
+STR HRC_DATA_EXT_sf2
+  all="Sound Font 2.0 Banks";
+
+STR HRC_DATA_EXT_sfb
+  all="HP Soft font (obsolete under Windows)";
+
+STR HRC_DATA_EXT_sfo
+  all="Bitstream font (Fontware format)";
+
+STR HRC_DATA_EXT_sfv
+  all="Checksum";
+
+STR HRC_DATA_EXT_sfx
+  all="Self Extracting archive (SFX)";
+
+STR HRC_DATA_EXT_sgi
+  all="SGI Image image";
+
+STR HRC_DATA_EXT_sgm
+  all="SGML text";
+
+STR HRC_DATA_EXT_sgml
+  all="SGML text";
+
+STR HRC_DATA_EXT_sha
+  all="UNIX ShellArchive archive";
+
+STR HRC_DATA_EXT_sha1
+  all="SHA-1 hash value";
+
+STR HRC_DATA_EXT__shW
+  all="StoryBoard project movie";
+
+STR HRC_DATA_EXT_sit
+  all="Mac StuffIt archive";
+
+STR HRC_DATA_EXT_sky
+  all="SYLK Spreadsheet (Multiplan)";
+
+STR HRC_DATA_EXT_smk
+  all="SMK movie";
+
+STR HRC_DATA_EXT_smm
+  all="Ami Pro Macro";
+
+STR HRC_DATA_EXT_smp
+  all="Adlib Sample Audio";
+
+STR HRC_DATA_EXT_snd
+  all="Mac/Amiga digitized sound";
+
+STR HRC_DATA_EXT_sng
+  all="Song music";
+
+STR HRC_DATA_EXT_spc
+  all="WordPerfect Temporary";
+
+STR HRC_DATA_EXT_spd
+  all="Bitstream font (Speedo format)";
+
+STR HRC_DATA_EXT_sql
+  all="SQL batch";
+
+STR HRC_DATA_EXT_sqz
+  all="Squeez archive";
+
+STR HRC_DATA_EXT_src
+  all="MutliEdit macro source";
+
+STR HRC_DATA_EXT_srf
+  all="Surfer image";
+
+STR HRC_DATA_EXT_sst
+  all="AVHRR image";
+
+STR HRC_DATA_EXT_stackdump
+  all="Cygwin stack dump";
+
+STR HRC_DATA_EXT_stm
+  all="Scream Tracker music";
+
+STR HRC_DATA_EXT_stn
+  all="STN image";
+
+STR HRC_DATA_EXT_sto
+  all="STO storage";
+
+STR HRC_DATA_EXT_sty1
+  all="Ami Pro Template";
+
+STR HRC_DATA_EXT_sty2
+  all="TypeSet font";
+
+STR HRC_DATA_EXT_sun
+  all="Sun Raster image";
+
+STR HRC_DATA_EXT_svg
+  all="Scalable Vector Graphics";
+
+STR HRC_DATA_EXT_svgz
+  all="Scalable Vector Graphics";
+
+STR HRC_DATA_EXT_svx
+  all="Amiga AIFF 8SFX Audio";
+
+STR HRC_DATA_EXT_swf
+  all="MacroMedia ShockWave movie";
+
+STR HRC_DATA_EXT_swg
+  all="SWAG Pascal Snippets data";
+
+STR HRC_DATA_EXT_swp
+  all="Swap";
+
+STR HRC_DATA_EXT_sxp
+  all="3DStudio process";
+
+STR HRC_DATA_EXT_sxw
+  all="Open Office XML";
+
+STR HRC_DATA_EXT_sy3
+  all="Harvard image format";
+
+STR HRC_DATA_EXT_syd
+  all="Sysedit backup";
+
+STR HRC_DATA_EXT_sym
+  all="Grapher font";
+
+STR HRC_DATA_EXT_sys
+  all="DOS/Windows device driver";
+
+STR HRC_DATA_EXT_t44
+  all="dBASE IV temporary (Sort/index)";
+
+STR HRC_DATA_EXT_tab
+  all="Text chords";
+
+STR HRC_DATA_EXT_tar
+  all="TAR archive";
+
+STR HRC_DATA_EXT_tbk
+  all="FOXPRO backup";
+
+STR HRC_DATA_EXT_tbl
+  all="Short for Table; used by many programs";
+
+STR HRC_DATA_EXT_tc
+  all="Turbo C Configuration";
+
+STR HRC_DATA_EXT_tch
+  all="Turbo C v.2.0 Help";
+
+STR HRC_DATA_EXT_tcl
+  all="TCL script";
+
+STR HRC_DATA_EXT_tdf
+  all="Speedo font";
+
+STR HRC_DATA_EXT_tdr
+  all="Arvid TDR";
+
+STR HRC_DATA_EXT_tex1
+  all="CorelTEXTURE image";
+
+STR HRC_DATA_EXT_tex2
+  all="TeX/LaTeX language source";
+
+STR HRC_DATA_EXT_tfa
+  all="Turbo Profiler areas";
+
+STR HRC_DATA_EXT_tfm
+  all="TeX/LaTeX font";
+
+STR HRC_DATA_EXT_tga
+  all="TrueVision Targa image";
+
+STR HRC_DATA_EXT_theme
+  all="Windows Design";
+
+STR HRC_DATA_EXT_thm1
+  all="PhotoMagic Thumbnail";
+
+STR HRC_DATA_EXT_thm2
+  all="Picture Publisher";
+
+STR HRC_DATA_EXT_tif
+  all="TIFF image";
+
+STR HRC_DATA_EXT_tip
+  all="TuneUp Icon Package";
+
+STR HRC_DATA_EXT_tlb
+  all="MS Typelibrary";
+
+STR HRC_DATA_EXT_tlx
+  all="Wintertree Software spellchecker";
+
+STR HRC_DATA_EXT_tmp
+  all="Temporary";
+
+STR HRC_DATA_EXT_toc
+  all="Table of contents";
+
+STR HRC_DATA_EXT_tp
+  all="Turbo Pascal Configuration";
+
+STR HRC_DATA_EXT_tph
+  all="Turbo Pascal Help";
+
+STR HRC_DATA_EXT_tpl1
+  all="Some template";
+
+STR HRC_DATA_EXT_tpl2
+  all="Turbo Pascal library";
+
+STR HRC_DATA_EXT_tpu
+  all="Turbo Pascal Unit";
+
+STR HRC_DATA_EXT_trm
+  all="Windows Terminal data";
+
+STR HRC_DATA_EXT_tru
+  all="true Basic source";
+
+STR HRC_DATA_EXT_ttf
+  all="TrueType font";
+
+STR HRC_DATA_EXT_tub
+  all="Paint Shop Pro picture tube";
+
+STR HRC_DATA_EXT_tws
+  all="Textpad workspace";
+
+STR HRC_DATA_EXT_txt
+  all="Text";
+
+STR HRC_DATA_EXT_uc2
+  all="Ultra Compressor ][ archive";
+
+STR HRC_DATA_EXT_ufa
+  all="UFA archive";
+
+STR HRC_DATA_EXT_ufo
+  all="Ulead Image with Objects";
+
+STR HRC_DATA_EXT_umod
+  all="Unreal Tournament level";
+
+STR HRC_DATA_EXT_upi
+  all="Ulead PhotoImpact Image";
+
+STR HRC_DATA_EXT_url
+  all="Windows Internet Shortcut";
+
+STR HRC_DATA_EXT_uue
+  all="UUE archive";
+
+STR HRC_DATA_EXT_v8
+  all="Covox V8 Audio";
+
+STR HRC_DATA_EXT_vbx
+  all="Visual Basic custom control";
+
+STR HRC_DATA_EXT_vcproj
+  all="VC++ Project";
+
+STR HRC_DATA_EXT_vdb
+  all="DdWeb Virus Database";
+
+STR HRC_DATA_EXT_vi
+  all="Jovian VI image";
+
+STR HRC_DATA_EXT_vid
+  all="Word$Deed image";
+
+STR HRC_DATA_EXT_vif
+  all="Verity Image Format image";
+
+STR HRC_DATA_EXT_vit
+  all="VITec image";
+
+STR HRC_DATA_EXT_viv
+  all="VIV music";
+
+STR HRC_DATA_EXT_vjsprojdata
+  all="Visual J# Project";
+
+STR HRC_DATA_EXT_vmd
+  all="Sierra VMD";
+
+STR HRC_DATA_EXT_vmm
+  all="Virtual Machines (HIEW)";
+
+STR HRC_DATA_EXT_vmo
+  all="Virtual Image Maker image";
+
+STR HRC_DATA_EXT_vob
+  all="DVD Video OBject";
+
+STR HRC_DATA_EXT_voc
+  all="Creative Audio digitized sound format";
+
+STR HRC_DATA_EXT_vol
+  all="Sierra games data";
+
+STR HRC_DATA_EXT_vom
+  all="TBAV modified COM (quarantined virus?)";
+
+STR HRC_DATA_EXT_vsd
+  all="Visio Drawing";
+
+STR HRC_DATA_EXT_vss
+  all="Visio Template";
+
+STR HRC_DATA_EXT_vst
+  all="Visio Template";
+
+STR HRC_DATA_EXT_vxd
+  all="Windows virtual device driver";
+
+STR HRC_DATA_EXT_vxe
+  all="TBAV modified EXE (quranatined virus?)";
+
+STR HRC_DATA_EXT_w44
+  all="dBase temporary (Sort/index)";
+
+STR HRC_DATA_EXT_wad
+  all="WAD - War allocation Daemon (Game data)";
+
+STR HRC_DATA_EXT_war
+  all="Web Application Archive (Tomcat, JBoss, etc.)";
+
+STR HRC_DATA_EXT_was
+  all="ProComm script source";
+
+STR HRC_DATA_EXT_wav
+  all="Windows digitized sound";
+
+STR HRC_DATA_EXT_wax
+  all="ProComm compiled script";
+
+STR HRC_DATA_EXT_wb1
+  all="Quattro Pro for Windows Spreadsheet Notebook";
+
+STR HRC_DATA_EXT_wbt1
+  all="Norton Desktop";
+
+STR HRC_DATA_EXT_wbt2
+  all="Wilsonware Batch";
+
+STR HRC_DATA_EXT_wcd
+  all="WordPerfect Macro token List";
+
+STR HRC_DATA_EXT_wch
+  all="WordPerfect Macro Facility";
+
+STR HRC_DATA_EXT_wcm
+  all="WordPerfect Macro";
+
+STR HRC_DATA_EXT_wcp
+  all="WordPerfect Product Information Description";
+
+STR HRC_DATA_EXT_wd
+  all="InfoSelect Data";
+
+STR HRC_DATA_EXT_wi
+  all="Wavelet compressed bitmap";
+
+STR HRC_DATA_EXT_wiz
+  all="Wizard";
+
+STR HRC_DATA_EXT_wk31
+  all="Lotus 123 3x spreadsheet";
+
+STR HRC_DATA_EXT_wk32
+  all="MS Works for DOS";
+
+STR HRC_DATA_EXT_wk41
+  all="Lotus 123 4x spreadsheet";
+
+STR HRC_DATA_EXT_wk42
+  all="MS Works for DOS";
+
+STR HRC_DATA_EXT_wki
+  all="Lotus 123 2x spreadsheet";
+
+STR HRC_DATA_EXT_wkq
+  all="Quattro spreadsheet";
+
+STR HRC_DATA_EXT_wks
+  all="Lotus 124 1.x spreadsheet";
+
+STR HRC_DATA_EXT_wl6
+  all="Wolfenstein data";
+
+STR HRC_DATA_EXT_wlg
+  all="Doctor Watson LOG";
+
+STR HRC_DATA_EXT_wma
+  all="Windows Media audio";
+
+STR HRC_DATA_EXT_wmf
+  all="Windows Metafile image";
+
+STR HRC_DATA_EXT_wml
+  all="WML (WAP Markup Language) text";
+
+STR HRC_DATA_EXT_wmp
+  all="Windows Magic Icon Palette";
+
+STR HRC_DATA_EXT_wnf
+  all="Corel Draw Font";
+
+STR HRC_DATA_EXT_wow
+  all="Music (8 channels)";
+
+STR HRC_DATA_EXT_wp
+  all="Word Perfect Format";
+
+STR HRC_DATA_EXT_wpg
+  all="WordPerfect vector image";
+
+STR HRC_DATA_EXT_wq1
+  all="Quattro Pro table";
+
+STR HRC_DATA_EXT_wq2
+  all="Quattro Pro table";
+
+STR HRC_DATA_EXT_wr1
+  all="Windows Write";
+
+STR HRC_DATA_EXT_wri
+  all="Windows Write (WordPad) document";
+
+STR HRC_DATA_EXT_wrk
+  all="Lotus symphony Spreadsheet";
+
+STR HRC_DATA_EXT_wrp
+  all="Amiga WARP archive";
+
+STR HRC_DATA_EXT_ws
+  all="APL Worksheet";
+
+STR HRC_DATA_EXT_wsdd
+  all="Apache Axis Web Service Deployment Descriptor (WSDD)";
+
+STR HRC_DATA_EXT_wsdl
+  all="Web Service Description Language (WSDL)";
+
+STR HRC_DATA_EXT_wsq
+  all="Wavelet-packet Scalar Quantization";
+
+STR HRC_DATA_EXT_wsz
+  all="Winamp extension package";
+
+STR HRC_DATA_EXT_xbl
+  all="eXtensible Binding Language (XML)";
+
+STR HRC_DATA_EXT_xbm
+  all="X11 BitMap image";
+
+STR HRC_DATA_EXT_xcl
+  all="Xtree for Windows Script";
+
+STR HRC_DATA_EXT_xdf
+  all="OS/2 Extended disk format image";
+
+STR HRC_DATA_EXT_xfn
+  all="Xerox 4045-Ventura Publisher Printer font";
+
+STR HRC_DATA_EXT_xfr
+  all="Ventura Publisher Bitmap Editor Font";
+
+STR HRC_DATA_EXT_xft
+  all="ChiWriter 24 pin printer font";
+
+STR HRC_DATA_EXT_xit
+  all="FastTracker 2.0 Instrument";
+
+STR HRC_DATA_EXT_xla
+  all="Microsoft Excel Document";
+
+STR HRC_DATA_EXT_xlb
+  all="Microsoft Excel Toolbar";
+
+STR HRC_DATA_EXT_xlc
+  all="Microsoft Excel Chart";
+
+STR HRC_DATA_EXT_xld
+  all="Microsoft Excel Dialog";
+
+STR HRC_DATA_EXT_xlk
+  all="Microsoft Excel archive";
+
+STR HRC_DATA_EXT_xll
+  all="Microsoft Excel Addin";
+
+STR HRC_DATA_EXT_xlm
+  all="Microsoft Excel Macro";
+
+STR HRC_DATA_EXT_xls
+  all="Microsoft Excel Spreadsheet";
+
+STR HRC_DATA_EXT_xlt1
+  all="Hiew XLAT (character settings)";
+
+STR HRC_DATA_EXT_xlt2
+  all="Microsoft Excel Template";
+
+STR HRC_DATA_EXT_xlv
+  all="Microsoft Excel Module";
+
+STR HRC_DATA_EXT_xlw
+  all="Microsoft Excel Workbook";
+
+STR HRC_DATA_EXT_xm
+  all="XM music";
+
+STR HRC_DATA_EXT_xmi
+  all="XMI music";
+
+STR HRC_DATA_EXT_xml
+  all="XML (eXtensible Markup Language) text";
+
+STR HRC_DATA_EXT_xmw
+  all="FastTracker Music";
+
+STR HRC_DATA_EXT_xnf
+  all="Standard Network";
+
+STR HRC_DATA_EXT_xpi
+  all="Mozilla/Firefox extension";
+
+STR HRC_DATA_EXT_xpm
+  all="X PixMap image";
+
+STR HRC_DATA_EXT_xpr
+  all="oXygen XML project";
+
+STR HRC_DATA_EXT_xpt
+  all="Mozilla type library";
+
+STR HRC_DATA_EXT_xq
+  all="XQuery Document";
+
+STR HRC_DATA_EXT_xqt
+  all="SuperCalc Macro sheet";
+
+STR HRC_DATA_EXT_xquery
+  all="XQuery Document";
+
+STR HRC_DATA_EXT_xrf
+  all="Cross-reference";
+
+STR HRC_DATA_EXT_xsd
+  all="XML Schema";
+
+STR HRC_DATA_EXT_xsh
+  all="ExeShield project";
+
+STR HRC_DATA_EXT_xsl
+  all="XSLT Stylesheet";
+
+STR HRC_DATA_EXT_xslt
+  all="XSLT Stylesheet";
+
+STR HRC_DATA_EXT_xsx
+  all="Microsoft XML Schema Designer";
+
+STR HRC_DATA_EXT_xtp
+  all="XTreeGold Overlay";
+
+STR HRC_DATA_EXT_xul
+  all="Mozilla XML user interface definition";
+
+STR HRC_DATA_EXT_xwd
+  all="XWD image";
+
+STR HRC_DATA_EXT_xwk1
+  all="AVS X Image";
+
+STR HRC_DATA_EXT_xwk2
+  all="LEX source code";
+
+STR HRC_DATA_EXT_xwk3
+  all="XWK archive";
+
+STR HRC_DATA_EXT_xwp
+  all="Xerox Writter text";
+
+STR HRC_DATA_EXT_xxe
+  all="XXENCODE Compressed archive";
+
+STR HRC_DATA_EXT_xxf
+  all="XXENCODE encoded (ASCII)";
+
+STR HRC_DATA_EXT_xy3
+  all="XYWrite III Text";
+
+STR HRC_DATA_EXT_y
+  all="YABBA archive";
+
+STR HRC_DATA_EXT_yc
+  all="YAC archive";
+
+STR HRC_DATA_EXT_yuv
+  all="YUV image";
+
+STR HRC_DATA_EXT_yzf
+  all="YAC archive";
+
+STR HRC_DATA_EXT_z80
+  all="ZX Spectrum Emulator by g.a.Lunter snapsot";
+
+STR HRC_DATA_EXT_zad
+  all="ZFAX Digitized voice";
+
+STR HRC_DATA_EXT_zdg
+  all="Compressed ZiffNet text document";
+
+STR HRC_DATA_EXT_zip
+  all="PKZIP archive";
+
+STR HRC_DATA_EXT_zom
+  all="Amiga ZOOM archive";
+
+STR HRC_DATA_EXT_zoo
+  all="ZOO archive";
+
+STR HRC_DATA_EXT_zuv
+  all="WinZipNT archive";
+
+STR HRC_DATA_EXT_zvd
+  all="ZyXEL voice";
+
+STR HRC_DATA_EXT__WDW
+  all="1st Reader temporary";

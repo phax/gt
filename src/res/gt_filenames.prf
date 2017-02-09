@@ -1,0 +1,161 @@
+STR HRC_DATA_NAME__classpath
+  all="Eclipse project classpath file";
+
+STR HRC_DATA_NAME__cvsignore
+  all="CVS exclusion file";
+
+STR HRC_DATA_NAME__eclipseproduct
+  all="Eclipse product definition file";
+
+STR HRC_DATA_NAME__fbprefs
+  all="FindBugs project preferences file";
+
+STR HRC_DATA_NAME__htaccess
+  all="Apache HTTP Server local configuration file";
+
+STR HRC_DATA_NAME__project
+  all="Eclipse project file";
+
+STR HRC_DATA_NAME__springBeans
+  all="SpringIDE Beans configuration file";
+
+STR HRC_DATA_NAME__springWebflow
+  all="SpringIDE WebFlow configuration file";
+
+STR HRC_DATA_NAME___sdntvt_optimize_tmp
+  all="Norton Speedisk for NT file";
+
+STR HRC_DATA_NAME_access_conf
+  all="Apache HTTP server configuration file";
+
+STR HRC_DATA_NAME_autoexec_bat
+  all="DOS/Windows startup file";
+
+STR HRC_DATA_NAME_build_xml
+  all="Apache ANT build file";
+
+STR HRC_DATA_NAME_commons_logging_properties
+  all="Apache Commons Logging configuration (Java logging framework)";
+
+STR HRC_DATA_NAME_config_sys
+  all="DOS/Windows startup file";
+
+STR HRC_DATA_NAME_configure
+  all="Shell configure script";
+
+STR HRC_DATA_NAME_descript_ion
+  all="Directory information file";
+
+STR HRC_DATA_NAME_descr_wd3
+  all="Offline Explorer download state file";
+
+STR HRC_DATA_NAME_desktop_ini
+  all="Windows Explorer directory customization file";
+
+STR HRC_DATA_NAME_dirinfo
+  all="Norton Commander directory information file";
+
+STR HRC_DATA_NAME_file_id_diz
+  all="Directory information file";
+
+STR HRC_DATA_NAME_ge_cfg
+  all="GE/GEW configuration file";
+
+STR HRC_DATA_NAME_gt_cfg
+  all="GT/GTW configuration file";
+
+STR HRC_DATA_NAME_gt_dat
+  all="GT/GTW signature and data file";
+
+STR HRC_DATA_NAME_gt2_cfg
+  all="GT2 configuration file";
+
+STR HRC_DATA_NAME_GNUmakefile
+  all="GNU Makefile";
+
+STR HRC_DATA_NAME_httpd_conf
+  all="Apache HTTP server configuration file";
+
+STR HRC_DATA_NAME_io_sys
+  all="DOS/Windows boot file";
+
+STR HRC_DATA_NAME_log4j_properties
+  all="Log4J properties (Java logging framework)";
+
+STR HRC_DATA_NAME_makefile
+  all="Makefile for *make";
+
+STR HRC_DATA_NAME_makefile_in
+  all="Makefile input";
+
+STR HRC_DATA_NAME_manifest_mf
+  all="Java JAR file manifest";
+
+STR HRC_DATA_NAME_mirorsav_fil
+  all="PC Tools Mirror configuration file";
+
+STR HRC_DATA_NAME_mirror_fil
+  all="PC Tools Mirror file";
+
+STR HRC_DATA_NAME_mscreate_dir
+  all="Specifies that this directory was created by a Microsoft product";
+
+STR HRC_DATA_NAME_msdos_sys
+  all="DOS/Windows boot file";
+
+STR HRC_DATA_NAME_pagefile_sys
+  all="Windows swap file";
+
+STR HRC_DATA_NAME_phloc_logging_default_log
+  all="phloc logging configuration file (Java logging framework)";
+
+STR HRC_DATA_NAME_pom_xml
+  all="Apache Maven 2.x POM file";
+
+STR HRC_DATA_NAME_project_xml
+  all="Apache Maven 1.x project file";
+
+STR HRC_DATA_NAME_rarreg_key
+  all="Rar/WinRar registration file";
+
+STR HRC_DATA_NAME_srm_conf
+  all="Apache HTTP server configuration file";
+
+STR HRC_DATA_NAME_startup_cmd
+  all="OS/2 startup file";
+
+STR HRC_DATA_NAME_testng_xml
+  all="TestNG configuration file";
+
+STR HRC_DATA_NAME_turboc_cfg
+  all="Turbo C(++) configuration file";
+
+STR HRC_DATA_NAME_tree_far
+  all="FAR filemanager tree file";
+
+STR HRC_DATA_NAME_WMPInfo_xml
+  all="Windows Media Player Device Information file";
+
+STR HRC_DATA_NAME_CVS_Entries
+  all="CVS Entries file";
+
+STR HRC_DATA_NAME_CVS_Repository
+  all="CVS Repository file";
+
+STR HRC_DATA_NAME_CVS_Root
+  all="CVS Root file";
+
+STR HRC_DATA_NAME_CVS_Tag
+  all="CVS Tag file";
+
+STR HRC_DATA_NAME_SVN_dir_prop_base
+  all="Subversion checkout file";
+
+STR HRC_DATA_NAME_SVN_entries
+  all="Subversion checkout file";
+
+STR HRC_DATA_NAME_SVN_format
+  all="Subversion checkout file";
+
+STR HRC_DATA_NAME_WEB_INF_web_xml
+  all="Servlet Container Web application configuration file";

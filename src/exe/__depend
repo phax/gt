@@ -1,0 +1,502 @@
+$(PATH_OBJ)/gt_exe_analyzer.dlo: \
+	./gt_exe_analyzer.cxx \
+	./gt_exe_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_analyzer.hxx \
+	./gt_exe_le.hxx \
+	./gt_exe_macro.hxx \
+	./gt_exe_ne.hxx \
+	./gt_exe_pe.hxx \
+	./gt_exe_defines.hxx \
+	../data/gtc_data.hxx \
+	../data/gtc_datatypes.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_compare.hxx \
+	../basic/gt_exception.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_table.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_exe_le.dlo: \
+	./gt_exe_le.cxx \
+	./gt_exe_le.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_table.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_exe_macro.dlo: \
+	./gt_exe_macro.cxx \
+	./gt_exe_macro.hxx \
+	../basic/gt_analyzer.hxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_exception.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	../basic/gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_exe_main.dlo: \
+	./gt_exe_main.cxx \
+	./gt_exe_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_analyzer.hxx
+
+$(PATH_OBJ)/gt_exe_ne.dlo: \
+	./gt_exe_ne.cxx \
+	./gt_exe_ne.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../data/gtc_data.hxx \
+	../data/gtc_datatypes.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_compare.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_table.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_exe_pe.dlo: \
+	./gt_exe_pe.cxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	./gt_exe_macro.hxx \
+	./gt_exe_defines.hxx \
+	../data/gtc_data.hxx \
+	../data/gtc_datatypes.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_compare.hxx \
+	../basic/gt_errormsg.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_table.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_exe_pe_cert.dlo: \
+	./gt_exe_pe_cert.cxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	../basic/gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_exe_pe_dir.dlo: \
+	./gt_exe_pe_dir.cxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_exception.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_table.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_exe_pe_export.dlo: \
+	./gt_exe_pe_export.cxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_exception.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_table.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_exe_pe_fixups.dlo: \
+	./gt_exe_pe_fixups.cxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	../basic/gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_exe_pe_import.dlo: \
+	./gt_exe_pe_import.cxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_exception.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_exe_pe_res.dlo: \
+	./gt_exe_pe_res.cxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_errormsg.hxx \
+	../basic/gt_exception.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	../basic/gt_locale.hxx
+
+$(PATH_OBJ)/gt_exe_pe_sect.dlo: \
+	./gt_exe_pe_sect.cxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	../basic/gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_exe_pe_tls.dlo: \
+	./gt_exe_pe_tls.cxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	../basic/gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_exe_analyzer.obj: \
+	./gt_exe_analyzer.cxx \
+	./gt_exe_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_analyzer.hxx \
+	./gt_exe_le.hxx \
+	./gt_exe_macro.hxx \
+	./gt_exe_ne.hxx \
+	./gt_exe_pe.hxx \
+	./gt_exe_defines.hxx \
+	../data/gtc_data.hxx \
+	../data/gtc_datatypes.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_compare.hxx \
+	../basic/gt_exception.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_table.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_exe_le.obj: \
+	./gt_exe_le.cxx \
+	./gt_exe_le.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_table.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_exe_macro.obj: \
+	./gt_exe_macro.cxx \
+	./gt_exe_macro.hxx \
+	../basic/gt_analyzer.hxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_exception.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	../basic/gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_exe_main.obj: \
+	./gt_exe_main.cxx \
+	./gt_exe_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_analyzer.hxx
+
+$(PATH_OBJ)/gt_exe_ne.obj: \
+	./gt_exe_ne.cxx \
+	./gt_exe_ne.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../data/gtc_data.hxx \
+	../data/gtc_datatypes.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_compare.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_table.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_exe_pe.obj: \
+	./gt_exe_pe.cxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	./gt_exe_macro.hxx \
+	./gt_exe_defines.hxx \
+	../data/gtc_data.hxx \
+	../data/gtc_datatypes.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_compare.hxx \
+	../basic/gt_errormsg.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_table.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_exe_pe_cert.obj: \
+	./gt_exe_pe_cert.cxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	../basic/gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_exe_pe_dir.obj: \
+	./gt_exe_pe_dir.cxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_exception.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_table.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_exe_pe_export.obj: \
+	./gt_exe_pe_export.cxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_exception.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_table.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_exe_pe_fixups.obj: \
+	./gt_exe_pe_fixups.cxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	../basic/gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_exe_pe_import.obj: \
+	./gt_exe_pe_import.cxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_exception.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc
+
+$(PATH_OBJ)/gt_exe_pe_res.obj: \
+	./gt_exe_pe_res.cxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_cmdline_params.hxx \
+	../basic/gt_stringhelper.hxx \
+	../basic/gt_errormsg.hxx \
+	../basic/gt_exception.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	../basic/gt_locale.hxx
+
+$(PATH_OBJ)/gt_exe_pe_sect.obj: \
+	./gt_exe_pe_sect.cxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	../basic/gt_stringhelper.hxx
+
+$(PATH_OBJ)/gt_exe_pe_tls.obj: \
+	./gt_exe_pe_tls.cxx \
+	./gt_exe_pe.hxx \
+	../basic/gt_analyzer.hxx \
+	../basic/gt_exe_types.hxx \
+	../basic/gt_filebuffer.hxx \
+	../basic/gt_file.hxx \
+	../basic/gt_output.hxx \
+	../basic/gt_utils.hxx \
+	../00/gt_stdafx.hxx \
+	../basic/gt_dll.hxx \
+	../basic/gt_stringloader.hxx \
+	../res/gt.hrc \
+	../res/gt_version.hrc \
+	../basic/gt_stringhelper.hxx
+
