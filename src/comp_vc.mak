@@ -315,7 +315,7 @@ LINKFLAGS += "-libpath:$(CCDIR)\lib" "-libpath:$(CCDIR)\PlatformSDK\lib" -SAFESE
 endif
 
 ifeq ($(GT_VC), 9)
-LINKFLAGS += "-libpath:$(CCDIR)\lib" "-libpath:$(WINDOWSSDKDIR)\lib" -SAFESEH
+LINKFLAGS += "-libpath:$(CCDIR)\lib" "-libpath:$(WindowsSdkDir)\lib" -SAFESEH
 endif
 
 ifeq ($(GT_VC), 6)

@@ -25,4 +25,9 @@ This application is designed to be compiled and run on Windows only.
   * Ensure `src\settings.mak` has set `GT_VC = 8`
   * Compile on the commandline by using batch file `src\_make_vs8.cmd`
   * The output is in the folder `target\8`
+      
+### Using Visual Studio 2008
+  * Ensure `src\settings.mak` has set `GT_VC = 9`
+  * Compile on the commandline by using batch file `src\_make_vs9.cmd`
+  * The output is in the folder `target\9`
   
