@@ -30,7 +30,7 @@ STR HRC_HACK
 
 STR HRC_WIN32_ERROR
   de ="Ein Windows Fehler ist aufgetreten";
-  all="A Windows error occured";
+  all="A Windows error occurred";
 
 
 // gtlib
@@ -65,7 +65,7 @@ STR HRC_GTLIB_CONFIGFILE_SYNTAX_ERROR
   all="  line %u: Syntax error\012";
 
 // %u: configuration file line number
-// %s: the content of the errornous config file
+// %s: the content of the erroneous config file
 STR HRC_GTLIB_CONFIGFILE_UNKNOWN_SWITCH
   de ="  Zeile %u: Unbekannter Parameter '%s'\012";
   all="  line %u: Unknown switch '%s'\012";
@@ -100,35 +100,35 @@ STR HRC_GTLIB_FILEBUFFER_FAILED_TO_OPEN
 //    %I64d: is an offset into the file
 STR HRC_GTLIB_FILEBUFFER_EXCEPTION_SETACTFILEPOS
   de ="Aufgetreten in\012  %s\012Fehler beim Versuch zur Dateiposition $$OUTPUT_DEC_64 zu springen\012";
-  all="Occured in\012  %s\012Error trying to set the filepointer to $$OUTPUT_DEC_64\012";
+  all="Occurred in\012  %s\012Error trying to set the file pointer to $$OUTPUT_DEC_64\012";
 
 STR HRC_GTLIB_FILEBUFFER_EXCEPTION_INCACTFILEPOS
   de ="Aufgetreten in\012  %s\012Fehler beim Versuch zur Dateiposition $$OUTPUT_DEC_64 zu springen\012";
-  all="Occured in\012  %s\012Error trying to increase the filepointer to $$OUTPUT_DEC_64\012";
+  all="Occurred in\012  %s\012Error trying to increase the file pointer to $$OUTPUT_DEC_64\012";
 
 STR HRC_GTLIB_FILEBUFFER_EXCEPTION_GETBUFFERX_EOF
   de ="Aufgetreten in\012  %s\012Fehler beim Versuch $$OUTPUT_DEC_64 Bytes über das Dateiende zu lesen\012";
-  all="Occured in\012  %s\012Error trying to read $$OUTPUT_DEC_64 bytes over EOF\012";
+  all="Occurred in\012  %s\012Error trying to read $$OUTPUT_DEC_64 bytes over EOF\012";
 
 STR HRC_GTLIB_FILEBUFFER_EXCEPTION_GETBUFFERX_SOF
   de ="Aufgetreten in\012  %s\012Fehler beim Versuch $$OUTPUT_DEC_64 Bytes vor dem Dateibeginn zu lesen\012";
-  all="Occured in\012  %s\012Error trying to read $$OUTPUT_DEC_64 bytes before SOF\012";
+  all="Occurred in\012  %s\012Error trying to read $$OUTPUT_DEC_64 bytes before SOF\012";
 
 STR HRC_GTLIB_FILEBUFFER_EXCEPTION_GETCSTRING
   de ="Aufgetreten in\012  %s\012Fehler beim Versuch einen C-String an der Position $$OUTPUT_DEC_64 zu lesen\012";
-  all="Occured in\012  %s\012Failed to read C like string at $$OUTPUT_DEC_64\012";
+  all="Occurred in\012  %s\012Failed to read C like string at $$OUTPUT_DEC_64\012";
 
 STR HRC_GTLIB_FILEBUFFER_EXCEPTION_GETPASCALSTRING
   de ="Aufgetreten in\012  %s\012Fehler beim Versuch einen Pascal-String an der Position $$OUTPUT_DEC_64 zu lesen\012";
-  all="Occured in\012  %s\012Failed to read Pascal like string at $$OUTPUT_DEC_64\012";
+  all="Occurred in\012  %s\012Failed to read Pascal like string at $$OUTPUT_DEC_64\012";
 
 STR HRC_GTLIB_FILEBUFFER_EXCEPTION_GETLINE
   de ="Aufgetreten in\012  %s\012Fehler beim Versuch eine Zeile an der Position $$OUTPUT_DEC_64 zu lesen\012";
-  all="Occured in\012  %s\012Failed to read single line at $$OUTPUT_DEC_64\012";
+  all="Occurred in\012  %s\012Failed to read single line at $$OUTPUT_DEC_64\012";
 
 STR HRC_GTLIB_FILEBUFFER_EXCEPTION_GETBUFFERX_READ
   de ="Aufgetreten in\012  %s\012Fehler beim Lesen von $$OUTPUT_DEC_64 Bytes\012";
-  all="Occured in\012  %s\012Failed to read $$OUTPUT_DEC_64 bytes\012";
+  all="Occurred in\012  %s\012Failed to read $$OUTPUT_DEC_64 bytes\012";
 
 
 STR HRC_GTLIB_PERESTYPE_CURSOR
@@ -229,7 +229,7 @@ STR HRC_GTLIB_PEDIRTYPE_1
 
 STR HRC_GTLIB_PEDIRTYPE_2
   de ="Ressource Tabelle";
-  all="Ressource Table";
+  all="Resource Table";
 
 STR HRC_GTLIB_PEDIRTYPE_3
   de ="Ausnahme Tabelle";
@@ -412,7 +412,7 @@ STR HRC_ARCLIB_ARCFLAG_COMMENT
 
 STR HRC_ARCLIB_ARCFLAG_MULTI_VOLUME
   de ="Archiv ist aufgeteilt\012";
-  all="Multivolume archive\012";
+  all="Multi-volume archive\012";
 
 STR HRC_ARCLIB_ARCFLAG_LOCKED
   de ="Archiv ist gesperrt\012";
@@ -1588,7 +1588,7 @@ STR HRC_EXELIB_PE_RES_VERSION_OS
   all="Target OS:      ";
 
 STR HRC_EXELIB_PE_RES_VERSION_OS_UNKNOWN
-  de ="unbelannt";
+  de ="unbekannt";
   all="Unknown";
 
 STR HRC_EXELIB_PE_RES_VERSION_OS_WIN16
