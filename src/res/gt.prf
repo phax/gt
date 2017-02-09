@@ -80,8 +80,8 @@ STR HRC_GTLIB_CONFIGFILE_INVALID_CHAR
 //        %u: source line number
 // second %s: the name of the file currently scanned
 STR HRC_GTLIB_ERROR_INTERNAL
-  de ="!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\012!! Interner Fehler: %s Zeile %u\012!! Bitte senden Sie '%s' an ph[at]phloc.com\012!! Danke für Ihre Unterstützung !!\012!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\012\012";
-  all="!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\012!! Internal error: %s line %u\012!! Please send '%s' to ph[at]phloc.com\012!! ThanX for your support !!\012!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\012\012";
+  de ="!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\012!! Interner Fehler: %s Zeile %u\012!! Bitte senden Sie '%s' an gt[at]helger.com\012!! Danke für Ihre Unterstützung !!\012!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\012\012";
+  all="!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\012!! Internal error: %s line %u\012!! Please send '%s' to gt[at]helger.com\012!! ThanX for your support !!\012!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\012\012";
 
 // %s: source filename
 // %u: source line number
@@ -4317,7 +4317,7 @@ STR HRC_APP_FLAG_ZHWND
 
 // other app stuff
 STR HRC_APP_HEADER
-  all=" (c) 1999-2008 by PHaX/phloc systems (ph@phloc.com)\012";
+  all=" (c) 1999-2017 by Philip Helger (gt@helger.com)\012";
 
 // %s: executable filename (e.g. gt2)
 STR HRC_APP_SYNTAX
