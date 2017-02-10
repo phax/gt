@@ -1,5 +1,5 @@
 # gt
-GetTyp/GetType - legacy file format detector
+GetTyp/GetType/GT2 - legacy file format detector
 
 ## Prerequisites for compiling
 This application is designed to be compiled and run on Windows only.
@@ -11,7 +11,7 @@ This application is designed to be compiled and run on Windows only.
       * dir.exe
       * link.exe
   * At least Visual C++ 7.1/2003/13.00 is required
-    * The Platform SDK must be installed
+  * The Platform SDK/Windows SDK must be installed
   * The following makefile parameters are available:
     * `GT_DEBUG` with the value `0` or `1` - create a binary version with debug version or not. Default is `1`. If set to `1` the 'd' character is added to created files and folders.
     * `GT_UNICODE` with the value `0` or `1` - create a binary version with unicode or not. Default is `1`. If set to `1` the 'u' character is added to created files and folders.
@@ -31,4 +31,10 @@ This application is designed to be compiled and run on Windows only.
   * Ensure `src\settings.mak` has set `GT_VC = 9`
   * Compile on the commandline by using batch file `src\_make_vs9.cmd`
   * The output is in the folder `target\9`
-  
+      
+### Using Visual Studio 2010
+  * Since that version the Platform SDK from `C:\Program Files\Microsoft SDKs\Windows` is used! 
+  * Ensure `src\settings.mak` has set `GT_VC = 10`
+  * Compile on the commandline by using batch file `src\_make_vs10.cmd`
+  * The output is in the folder `target\10`
+

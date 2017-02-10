@@ -1,5 +1,5 @@
 # VC compiler version (7, 8 or 9)
-GT_VC = 9
+GT_VC = 10
 
 ifndef GT_RELEASE
 GT_RELEASE=0

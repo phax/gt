@@ -10,6 +10,10 @@ ifeq ($(GT_VC), 9)
 CCDIR = $(VCINSTALLDIR)
 endif
 
+ifeq ($(GT_VC), 10)
+CCDIR = $(VCINSTALLDIR)
+endif
+
 CC   = cl.exe
 LINK = link.exe
 LIB  = lib.exe -nologo
@@ -69,6 +73,10 @@ CCDEBUG = -Zi -RTCcsu -GS -RTC1
 endif
 
 ifeq ($(GT_VC), 9)
+CCDEBUG = -Zi -RTCcsu -GS -RTC1
+endif
+
+ifeq ($(GT_VC), 10)
 CCDEBUG = -Zi -RTCcsu -GS -RTC1
 endif
 
@@ -192,9 +200,16 @@ endif
 
 ifeq ($(GT_VC), 9)
 COMPILER_FLAGS = $(_COMPILER_FLAGS) \
-	-EHsc \
-	-WL \
-	-Zc:forScope
+  -EHsc \
+  -WL \
+  -Zc:forScope
+endif
+
+ifeq ($(GT_VC), 10)
+COMPILER_FLAGS = $(_COMPILER_FLAGS) \
+  -EHsc \
+  -WL \
+  -Zc:forScope
 endif
 
 ######################################################################
@@ -253,6 +268,11 @@ LINK_WIN = -subsystem:windows,5.0
 LINK_CON = -subsystem:console,5.0
 endif
 
+ifeq ($(GT_VC), 10)
+LINK_WIN = -subsystem:windows,5.0
+LINK_CON = -subsystem:console,5.0
+endif
+
 ## these options disable profiling of double values???
 # -merge:.rdata=.text
 # -merge:.data=.text
@@ -283,6 +303,10 @@ LINKFLAGS += "-libpath:$(CCDIR)\lib" "-libpath:$(CCDIR)\PlatformSDK\lib" -SAFESE
 endif
 
 ifeq ($(GT_VC), 9)
+LINKFLAGS += "-libpath:$(CCDIR)\lib" "-libpath:$(WindowsSdkDir)\lib" -SAFESEH
+endif
+
+ifeq ($(GT_VC), 10)
 LINKFLAGS += "-libpath:$(CCDIR)\lib" "-libpath:$(WindowsSdkDir)\lib" -SAFESEH
 endif
 
