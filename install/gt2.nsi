@@ -26,12 +26,13 @@
 !define VER_FILE_D  ""
 !endif
 
-!define VER_FILE    "-0.36${VER_FILE_U}${VER_FILE_D}"
-!define VER_DISPLAY "0.36"
+!define VER_FILE    "-${VER_MAJOR}.${VER_MINOR}${VER_FILE_U}${VER_FILE_D}"
+!define VER_DISPLAY "${VER_MAJOR}.${VER_MINOR}"
 !define PROG_NAME   "GT2 ${VER_DISPLAY}"
 !define REG_KEY     "GT2"
 
-!define PROG_PATH            "..\nt\8"
+; Use version from VS 2005
+!define PROG_PATH            "..\target\8"
 !define ADD_REDISTRIBUTABLE  0
 
 ;--------------------------------
