@@ -127,18 +127,21 @@ bool GT_CALL EXE_MacroManager::GetMacroPos
           break;
         case _T ('j'):
         {
+          // Opcodes: 0x74, 0x75, 0xE3, 0xE8, 0xE9, 0xEB
           if (!GetJumpPos (nPos, 1))
             return false;
           break;
         }
         case _T ('k'):
         {
+          // Opcode: 0xE8
           if (!Get32BitJumpPos (nPos, 1))
             return false;
           break;
         }
         case _T ('m'):
         {
+          // Opcode: between 0xB8 and 0xBF
           if (!GetMOVJumpPos (nPos, bIsCOM))
             return false;
           break;

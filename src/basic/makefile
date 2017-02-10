@@ -53,6 +53,5 @@ dlls: \
 $(PATH_BIN)/gtbasic$(PS).dll: $(DYN_OBJS)
 	@echo Linking $@
 	$(DLL) $(LINKFLAGS) $(LINK_WIN) $^ $(DLL_FLAGS)
-#	cp $@* $(GTPATH)
 
 include $(DEPENDFILE)
