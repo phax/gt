@@ -19,6 +19,7 @@ GT 0.37
                       >< Added compile time support for Visual Studio 2012
                       >< Improved detection of several older Visual C++ versions
                       >< Added some predefined filenames
+                      >< Added compile time support for Visual Studio 2015 with UCRT
          09.02.2017   >< Added compile time support for Visual Studio 2010
                       >< Published sources on GitHub at https://github.com/phax/gt
 GT 0.36  27.08.2008   >< Added new file extensions
