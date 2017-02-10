@@ -49,8 +49,8 @@ BEGIN
     // 0x04e4 Windows Multilingual
     BLOCK "040704E4"
     BEGIN
-      VALUE "Comment",          "http://www.helger.com/\0"
-      VALUE "CompanyName",      "www.helger.com/\0"
+      VALUE "Comment",          "https://github.com/phax/gt\0"
+      VALUE "CompanyName",      "Philip Helger\0"
       VALUE "FileDescription",  GT_DESCRIPTION "\0"
       VALUE "FileVersion",      GT_VERSION_STR "\0"
       VALUE "InternalName",     GT_FILENAME _EXT "\0"
