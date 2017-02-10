@@ -1,16 +1,6 @@
 ifeq ($(GT_VC), 7)
 CCDIR = $(MSVCDir)
-endif
-
-ifeq ($(GT_VC), 8)
-CCDIR = $(VCINSTALLDIR)
-endif
-
-ifeq ($(GT_VC), 9)
-CCDIR = $(VCINSTALLDIR)
-endif
-
-ifeq ($(GT_VC), 10)
+else
 CCDIR = $(VCINSTALLDIR)
 endif
 
@@ -77,6 +67,10 @@ CCDEBUG = -Zi -RTCcsu -GS -RTC1
 endif
 
 ifeq ($(GT_VC), 10)
+CCDEBUG = -Zi -RTCcsu -GS -RTC1
+endif
+
+ifeq ($(GT_VC), 11)
 CCDEBUG = -Zi -RTCcsu -GS -RTC1
 endif
 
@@ -212,6 +206,13 @@ COMPILER_FLAGS = $(_COMPILER_FLAGS) \
   -Zc:forScope
 endif
 
+ifeq ($(GT_VC), 11)
+COMPILER_FLAGS = $(_COMPILER_FLAGS) \
+  -EHsc \
+  -WL \
+  -Zc:forScope
+endif
+
 ######################################################################
 ##
 ## wxWindows settings
@@ -273,6 +274,11 @@ LINK_WIN = -subsystem:windows,5.0
 LINK_CON = -subsystem:console,5.0
 endif
 
+ifeq ($(GT_VC), 11)
+LINK_WIN = -subsystem:windows,5.01
+LINK_CON = -subsystem:console,5.01
+endif
+
 ## these options disable profiling of double values???
 # -merge:.rdata=.text
 # -merge:.data=.text
@@ -310,6 +316,10 @@ ifeq ($(GT_VC), 10)
 LINKFLAGS += "-libpath:$(CCDIR)\lib" "-libpath:$(WindowsSdkDir)\lib" -SAFESEH
 endif
 
+ifeq ($(GT_VC), 11)
+LINKFLAGS += "-libpath:$(CCDIR)\lib" "-libpath:$(WindowsSdkDir)\lib\win8\um\x86" -SAFESEH
+endif
+
 _LINK_DYNAMIC = msvcrt$(DS).lib msvcprt$(DS).lib
 _LINK_STATIC =  libc$(DS).lib   libcp$(DS).lib
 
@@ -344,7 +354,7 @@ $(PATH_OBJ)/%$(OBJ_EXT) : %.cxx
 ######################################################################
 ##
 ## resource compiler
-## The /c flag with 1252 specifies ANSI input!
+## The /c flag with 1252 specifies ISO-8859-1 input!
 ##
 
 RC_FLAGS = \
