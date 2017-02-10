@@ -1,8 +1,9 @@
 The installation scripts are to be used by NullSoft Scriptable Install System (NSIS)
   http://nsis.sourceforge.net/
 
-1. Download the latest version (currently 2.39) and install it
-2. Right click the "gt2.nsi" file and select "Compile NSIS Script"
+1. Download the latest version and install it
+  * Tested with 2.39 and 2.45
+2. Right click the "installer-gt2*.nsi" file and select "Compile NSIS Script"
 3. Test the resulting "gt2setup-X.YY.exe" installer
 
 ----------

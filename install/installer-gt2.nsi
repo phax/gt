@@ -8,7 +8,7 @@
 
 ; build information
 !define VER_MAJOR 0
-!define VER_MINOR 36
+!define VER_MINOR 37
 !define VER_REVISION 1
 !define VER_BUILD 1
 
@@ -26,12 +26,13 @@
 !define VER_FILE_D  ""
 !endif
 
-!define VER_FILE    "-0.36${VER_FILE_U}${VER_FILE_D}"
-!define VER_DISPLAY "0.36"
+!define VER_FILE    "-${VER_MAJOR}.${VER_MINOR}${VER_FILE_U}${VER_FILE_D}"
+!define VER_DISPLAY "${VER_MAJOR}.${VER_MINOR}"
 !define PROG_NAME   "GT2 ${VER_DISPLAY}"
 !define REG_KEY     "GT2"
 
-!define PROG_PATH            "..\nt\8"
+; Use version from VS 2005
+!define PROG_PATH            "..\target\8"
 !define ADD_REDISTRIBUTABLE  0
 
 ;--------------------------------
@@ -85,8 +86,8 @@ Page custom PageReinstall PageLeaveReinstall
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
 
-!define MUI_FINISHPAGE_LINK "http://www.phloc.com"
-!define MUI_FINISHPAGE_LINK_LOCATION "http://www.phloc.com/"
+!define MUI_FINISHPAGE_LINK "https://github.com/phax/gt"
+!define MUI_FINISHPAGE_LINK_LOCATION "https://github.com/phax/gt"
 
 !define MUI_FINISHPAGE_NOREBOOTSUPPORT
 
@@ -121,9 +122,6 @@ Section "GT2 Core Files [ANSI] (required)" SecCoreA
   SectionIn 1 2 RO
   SetOutPath $INSTDIR
 
-  ; see MS KB 326922: copy to local
-  File Runtimes\msvcr71.dll
-  File Runtimes\msvcp71.dll
   File Commons\dbghelp.dll
 
   File ${PROG_PATH}\bin\gt2.exe
@@ -138,8 +136,8 @@ Section "GT2 Core Files [ANSI] (required)" SecCoreA
   File ${PROG_PATH}\bin\gtexe.dll.manifest
   File ${PROG_PATH}\bin\gtgen.dll
   File ${PROG_PATH}\bin\gtgen.dll.manifest
-  File ..\common\gt2.htm
-  File ..\common\gt2.his
+  File ..\docs\gt2.htm
+  File ..\docs\gt2.his
   File /oname=gt2.cfg gt2.default.cfg
 SectionEnd
 !endif
@@ -154,9 +152,6 @@ Section "GT2 Core Files [Unicode] (required)" SecCoreW
   ; contained in InstallType 1 and 2; ReadOnly
   SectionIn 1 2 RO
 
-  ; see MS KB 326922: copy to local
-  File Runtimes\msvcr71.dll
-  File Runtimes\msvcp71.dll
   File Commons\dbghelp.dll
 
   File ${PROG_PATH}\binu\gt2u.exe
@@ -171,8 +166,8 @@ Section "GT2 Core Files [Unicode] (required)" SecCoreW
   File ${PROG_PATH}\binu\gtexeu.dll.manifest
   File ${PROG_PATH}\binu\gtgenu.dll
   File ${PROG_PATH}\binu\gtgenu.dll.manifest
-  File ..\common\gt2.htm
-  File ..\common\gt2.his
+  File ..\docs\gt2.htm
+  File ..\docs\gt2.his
   File /oname=gt2.cfg gt2.default.cfg
 SectionEnd
 !endif
@@ -573,8 +568,6 @@ Section Uninstall
   Delete $INSTDIR\gt_pathmod.exe.manifest
   Delete $INSTDIR\gt_pathmod.exe
 
-  Delete $INSTDIR\msvcr71.dll
-  Delete $INSTDIR\msvcp71.dll
   Delete $INSTDIR\dbghelp.dll
 
   SetDetailsPrint both

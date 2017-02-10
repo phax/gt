@@ -1,5 +1,11 @@
-The free software program provided by PHaX may be freely distributed, provided that no charge above the cost of distribution is levied, and that the disclaimer below is always attached to it.
+The free software program provided by PHaX may be freely distributed, 
+provided that no charge above the cost of distribution is levied, and 
+hat the disclaimer below is always attached to it.
 The program is provided as is without any guarantees or warranty.
-Although the author has attempted to find and correct any bugs in the free software program, the author is not responsible for any damage or losses of any kind caused by the use or misuse of the program.
-The author is under no obligation to provide support, service, corrections, or upgrades to the free software program.
+Although the author has attempted to find and correct any bugs in the 
+free software program, the author is not responsible for any damage or
+ losses of any kind caused by the use or misuse of the program.
+The author is under no obligation to provide support, service, 
+corrections, or upgrades to the free software program.
+
 The author can be reached per email to gt@helger.com
