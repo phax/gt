@@ -1,6 +1,5 @@
 include ../settings.mak
 
-#GTPATH = e:/tools/.
 DEPENDFILE = __depend
 
 ##!message Building for compiler $(GT_COMPILER)

@@ -1,7 +1,3 @@
-ifeq ($(GT_VC), 6)
-CCDIR = $(MSVCDIR)
-endif
-
 ifeq ($(GT_VC), 7)
 CCDIR = $(MSVCDir)
 endif
@@ -34,16 +30,11 @@ IMPLIB_EXT = .lib
 ## Allow a static build?
 ##
 
+BUILD_STATIC = 0
+
+ifeq ($(GT_VC), 7)
 BUILD_STATIC = 1
-
-ifeq ($(GT_VC), 8)
-BUILD_STATIC = 0
 endif
-
-ifeq ($(GT_VC), 9)
-BUILD_STATIC = 0
-endif
-
 
 ######################################################################
 ##
@@ -69,10 +60,6 @@ dirs:
 ## set some global variables which are independed of the compiler!
 ifneq ($(GT_DEBUG), 0)
 
-ifeq ($(GT_VC), 6)
-CCDEBUG = -Zi  -GZ -Ge
-endif
-
 ifeq ($(GT_VC), 7)
 CCDEBUG = -Zi -GZ -Ge -RTCcsu -GS
 endif
@@ -91,10 +78,6 @@ else  # GT_DEBUG != 0
 
 CCDEBUG = -O2 -Oi -Ot -Gs -Ob2
 LINKDEBUG = -release -incremental:no
-
-ifeq ($(GT_VC), 6)
-CCDEBUG += -Og
-endif
 
 ifeq ($(GT_VC), 7)
 CCDEBUG += -Og
@@ -190,12 +173,6 @@ _COMPILER_FLAGS = \
 
 # -Gz \
 
-ifeq ($(GT_VC), 6)
-COMPILER_FLAGS = $(_COMPILER_FLAGS) \
-	-G6 \
-	-GX
-endif
-
 ifeq ($(GT_VC), 7)
 COMPILER_FLAGS = $(_COMPILER_FLAGS) \
 	-G6 \
@@ -261,11 +238,6 @@ endif
 ## linker flags
 ##
 
-ifeq ($(GT_VC), 6)
-LINK_WIN = -subsystem:windows,4.0
-LINK_CON = -subsystem:console,4.0
-endif
-
 ifeq ($(GT_VC), 7)
 LINK_WIN = -subsystem:windows,4.0
 LINK_CON = -subsystem:console,4.0
@@ -302,10 +274,6 @@ LINKFLAGS = \
 	shell32.lib \
 	$(LINKDEBUG)
 
-ifeq ($(GT_VC), 6)
-LINKFLAGS += "-libpath:$(CCDIR)\lib" oldnames.lib
-endif
-
 ifeq ($(GT_VC), 7)
 LINKFLAGS += "-libpath:$(CCDIR)\lib" "-libpath:$(CCDIR)\PlatformSDK\lib"
 endif
@@ -318,18 +286,8 @@ ifeq ($(GT_VC), 9)
 LINKFLAGS += "-libpath:$(CCDIR)\lib" "-libpath:$(WindowsSdkDir)\lib" -SAFESEH
 endif
 
-ifeq ($(GT_VC), 6)
-_LINK_DYNAMIC = msvcrt$(DS).lib msvcirt$(DS).lib
-_LINK_STATIC  = libc$(DS).lib   libci$(DS).lib
-else
 _LINK_DYNAMIC = msvcrt$(DS).lib msvcprt$(DS).lib
 _LINK_STATIC =  libc$(DS).lib   libcp$(DS).lib
-endif
-
-ifeq ($(GT_VC), 6)
-LINKFLAGS += -mapinfo:fixups \
-             -mapinfo:lines
-endif
 
 ifeq ($(GT_VC), 7)
 LINKFLAGS += -mapinfo:fixups \

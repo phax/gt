@@ -27,6 +27,7 @@ This application is designed to be compiled and run on Windows only.
   * The output is in the folder `target\8`
       
 ### Using Visual Studio 2008
+  * Since that version the Platform SDK from `C:\Program Files\Microsoft SDKs\Windows` is used! 
   * Ensure `src\settings.mak` has set `GT_VC = 9`
   * Compile on the commandline by using batch file `src\_make_vs9.cmd`
   * The output is in the folder `target\9`
