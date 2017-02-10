@@ -34,11 +34,17 @@ STR HRC_DATA_NAME___sdntvt_optimize_tmp
 STR HRC_DATA_NAME_access_conf
   all="Apache HTTP server configuration file";
 
+STR HRC_DATA_NAME_AUTHORS
+  all="Authors file";
+
 STR HRC_DATA_NAME_autoexec_bat
   all="DOS/Windows startup file";
 
 STR HRC_DATA_NAME_build_xml
   all="Apache ANT build file";
+
+STR HRC_DATA_NAME_CHANGELOG
+  all="Changelog file";
 
 STR HRC_DATA_NAME_commons_logging_properties
   all="Apache Commons Logging configuration (Java logging framework)";
@@ -85,8 +91,17 @@ STR HRC_DATA_NAME_httpd_conf
 STR HRC_DATA_NAME_io_sys
   all="DOS/Windows boot file";
 
+STR HRC_DATA_NAME_LICENSE
+  all="License file";
+
 STR HRC_DATA_NAME_log4j_properties
-  all="Log4J properties (Java logging framework)";
+  all="Log4J 1.x properties configuration (Java logging framework)";
+
+STR HRC_DATA_NAME_log4j_xml
+  all="Log4J 1.x XML configuration (Java logging framework)";
+
+STR HRC_DATA_NAME_log4j2_xml
+  all="Log4J 2.x configuration (Java logging framework)";
 
 STR HRC_DATA_NAME_makefile
   all="Makefile for *make";
@@ -109,6 +124,9 @@ STR HRC_DATA_NAME_mscreate_dir
 STR HRC_DATA_NAME_msdos_sys
   all="DOS/Windows boot file";
 
+STR HRC_DATA_NAME_NOTICE
+  all="License notice file";
+
 STR HRC_DATA_NAME_pagefile_sys
   all="Windows swap file";
 
@@ -121,8 +139,14 @@ STR HRC_DATA_NAME_pom_xml
 STR HRC_DATA_NAME_project_xml
   all="Apache Maven 1.x project file";
 
+STR HRC_DATA_NAME_rakefile
+  all="Ruby Rakefile";
+
 STR HRC_DATA_NAME_rarreg_key
   all="Rar/WinRar registration file";
+
+STR HRC_DATA_NAME_README
+  all="Read me file";
 
 STR HRC_DATA_NAME_srm_conf
   all="Apache HTTP server configuration file";

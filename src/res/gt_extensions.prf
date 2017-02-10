@@ -436,6 +436,9 @@ STR HRC_DATA_EXT_d3d
 STR HRC_DATA_EXT_daf
   all="Sony digital audio";
 
+STR HRC_DATA_EXT_dart
+  all="Dart source";
+
 STR HRC_DATA_EXT_dat
   all="Data";
 
@@ -2265,6 +2268,9 @@ STR HRC_DATA_EXT_xy3
 
 STR HRC_DATA_EXT_y
   all="YABBA archive";
+
+STR HRC_DATA_EXT_yaml
+  all="YAML file";
 
 STR HRC_DATA_EXT_yc
   all="YAC archive";
