@@ -293,7 +293,7 @@ LINKFLAGS = \
 	-nodefaultlib \
 	-nologo \
 	-out:$@ \
-	-version:0.36 \
+	-version:0.37 \
 	advapi32.lib \
 	kernel32.lib \
 	user32.lib \

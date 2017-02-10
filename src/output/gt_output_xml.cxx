@@ -236,7 +236,7 @@ void GT_CALL out_xml_init (Output_Settings *pSettings)
 
     // open default tags
     __display (_T ("<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n")
-               _T ("<gt version=\"0.36\">\n"));
+               _T ("<gt version=\"0.37\">\n"));
   }
 
   if (pSettings->m_nFlagUsage & GT_OUTPUT_SETTINGS_USE_LISTMODE)
