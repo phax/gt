@@ -11,6 +11,13 @@
 +
 
 
+GT 0.37  
+         10.02.2017   >< Added detection of Visual C++ 2012 (debug; EXE)
+                      >< Added detection of Visual C++ 2012 (debug; DLL)
+                      >< Added detection of Visual C++ 2012 (nodebug; DLL)
+                      >< Added compile time support for Visual Studio 2012
+         09.02.2017   >< Added compile time support for Visual Studio 2010
+                      >< Published sources on GitHub at https://github.com/phax/gt
 GT 0.36  27.08.2008   >< Added new file extensions
                       >< Added new file names
                       >< Updated filext.com extension list
