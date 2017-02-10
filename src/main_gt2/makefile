@@ -13,7 +13,7 @@ OBJS_GT2_STATIC = \
 	$(PATH_OBJ)/gt_mainlister$(OBJ_EXT) \
 	$(PATH_OBJ)/gt_main$(OBJ_EXT) 
 
-ifeq ($(GT_VC), 11)
+ifeq ($(CC_STDAFX_OBJ_NEEDED), 1)
 OBJS_GT2_STATIC += $(PATH_OBJ)/gt_stdafx$(OBJ_EXT)
 endif
 
@@ -22,7 +22,7 @@ OBJS_GT2_DYNAMIC = $(OBJS_GT2_STATIC:.obj=.dlo)
 OBJS_TEST = \
 	$(PATH_OBJ)/gt_test$(DLO_EXT) \
 
-ifeq ($(GT_VC), 11)
+ifeq ($(CC_STDAFX_OBJ_NEEDED), 1)
 OBJS_TEST += $(PATH_OBJ)/gt_stdafx$(DLO_EXT)
 endif
 
@@ -52,7 +52,7 @@ OBJS_PATHMOD = \
 	$(PATH_OBJ)/gt_cmdline_args$(DLO_EXT) \
 	$(PATH_OBJ)/gt_pathmod$(DLO_EXT)
 
-ifeq ($(GT_VC), 11)
+ifeq ($(CC_STDAFX_OBJ_NEEDED), 1)
 OBJS_PATHMOD += $(PATH_OBJ)/gt_stdafx$(DLO_EXT)
 endif
 

@@ -9,7 +9,7 @@ OBJS = \
 	$(PATH_OBJ)/gee_output_opcode$(OBJ_EXT) \
 	$(PATH_OBJ)/geew$(OBJ_EXT) \
 
-ifeq ($(GT_VC), 11)
+ifeq ($(CC_STDAFX_OBJ_NEEDED), 1)
 OBJS += $(PATH_OBJ)/gt_stdafx$(OBJ_EXT)
 endif
 
@@ -49,11 +49,9 @@ GEEW_STATIC_OBJS = \
 $(PATH_BIN)/geew$(PS).exe: $(GEEW_DLO_OBJS)
 	@echo Linking $@
 	$(LINK_DYNAMIC) $(LINKFLAGS) $(LINK_CON) $^
-#	cp $@* $(GTPATH)
 
 $(PATH_BIN)/geews$(PS).exe: $(GEEW_STATIC_OBJS)
 	@echo Linking $@
 	$(LINK_STATIC) $(LINKFLAGS) $(LINK_CON) $^
-#	cp $@* $(GTPATH)
 
 include $(DEPENDFILE)

@@ -19,7 +19,6 @@ RES_EXT = .res
 DLL_EXT = .dll
 IMPLIB_EXT = .lib
 
-
 ######################################################################
 ## Allow a static build?
 ##
@@ -71,6 +70,10 @@ CCDEBUG = -Zi -RTCcsu -GS -RTC1
 endif
 
 ifeq ($(GT_VC), 11)
+CCDEBUG = -Zi -RTCcsu -GS -RTC1
+endif
+
+ifeq ($(GT_VC), 14)
 CCDEBUG = -Zi -RTCcsu -GS -RTC1
 endif
 
@@ -144,10 +147,6 @@ CCINCLUDE = \
 	-I..\\app \
 	"-I$(CCDIR)\\include"
 
-ifeq ($(GT_WX), 1)
-CCINCLUDE += "-I$(WXWIN)\\include"
-endif
-
 # -c: compile only
 # -nologo: no compiler copyright
 # -W3: warning level 3
@@ -213,17 +212,11 @@ COMPILER_FLAGS = $(_COMPILER_FLAGS) \
   -Zc:forScope
 endif
 
-######################################################################
-##
-## wxWindows settings
-##
-
-ifeq ($(GT_UNICODE), 1)
-WX_SUFFIX := $(WX_SUFFIX)u
-endif
-
-ifeq ($(GT_DEBUG), 1)
-WX_SUFFIX := $(WX_SUFFIX)d
+ifeq ($(GT_VC), 14)
+COMPILER_FLAGS = $(_COMPILER_FLAGS) \
+  -EHsc \
+  -WL \
+  -Zc:forScope
 endif
 
 ######################################################################
@@ -235,7 +228,6 @@ endif
 _PCHFILE_DYNAMIC = $(PATH_OBJ)/_gt_dynamic.pch
 _PCHFILE_STATIC  = $(PATH_OBJ)/_gt_static.pch
 
-ifneq ($(GT_WX), 1)
 # the PCH include file must be the first include file!
 CC_USE_PCH = \
 	-FIgt_stdafx.hxx \
@@ -247,6 +239,14 @@ CC_USE_PCH_STATIC  = $(CC_USE_PCH) "-Fp$(_PCHFILE_STATIC)"
 
 CC_BUILD_PCH_DYNAMIC = -Ycgt_stdafx.hxx "-Fp$(_PCHFILE_DYNAMIC)"
 CC_BUILD_PCH_STATIC  = -Ycgt_stdafx.hxx "-Fp$(_PCHFILE_STATIC)"
+
+# Is the StdAfx OBJ file needed for linking? Starting from VC 11.0
+CC_STDAFX_OBJ_NEEDED = 0
+ifeq ($(GT_VC), 11)
+CC_STDAFX_OBJ_NEEDED = 1
+endif
+ifeq ($(GT_VC), 14)
+CC_STDAFX_OBJ_NEEDED = 1
 endif
 
 ######################################################################
@@ -275,6 +275,11 @@ LINK_CON = -subsystem:console,5.0
 endif
 
 ifeq ($(GT_VC), 11)
+LINK_WIN = -subsystem:windows,5.01
+LINK_CON = -subsystem:console,5.01
+endif
+
+ifeq ($(GT_VC), 14)
 LINK_WIN = -subsystem:windows,5.01
 LINK_CON = -subsystem:console,5.01
 endif
@@ -320,8 +325,19 @@ ifeq ($(GT_VC), 11)
 LINKFLAGS += "-libpath:$(CCDIR)\lib" "-libpath:$(WindowsSdkDir)\lib\win8\um\x86" -SAFESEH
 endif
 
+ifeq ($(GT_VC), 14)
+LINKFLAGS += "-libpath:$(WindowsSdkDir)\Lib\10.0.10240.0\ucrt\x86"
+LINKFLAGS += "-libpath:$(CCDIR)\lib"
+LINKFLAGS += -SAFESEH
+LINKFLAGS += "-libpath:$(WindowsSdkDir)\lib\10.0.14393.0\um\x86"
+endif
+
 _LINK_DYNAMIC = msvcrt$(DS).lib msvcprt$(DS).lib
 _LINK_STATIC =  libc$(DS).lib   libcp$(DS).lib
+ifeq ($(GT_VC), 14)
+_LINK_DYNAMIC += vcruntime$(DS).lib    ucrt$(DS).lib 
+_LINK_STATIC += libvcruntime$(DS).lib libucrt$(DS).lib 
+endif
 
 ifeq ($(GT_VC), 7)
 LINKFLAGS += -mapinfo:fixups \

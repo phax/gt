@@ -39,3 +39,10 @@ This application is designed to be compiled and run on Windows only.
   * Since that version the Platform SDK from `C:\Program Files (x86)\Windows Kits\8.0\Lib\win8\um\x64\` is used! 
   * Compile on the commandline by using batch file `src\_make_vs11.cmd`
   * The output is in the folder `target\11`
+
+### Using Visual Studio 2015
+  * The CRT was restructured 
+    * See https://blogs.msdn.microsoft.com/vcblog/2015/03/03/introducing-the-universal-crt/
+  * Please make sure to install the latest version of the Windows 10 SDK with the Universal CRT 
+    * Download from https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk
+  * The output is in the folder `target\14`

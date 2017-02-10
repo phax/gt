@@ -24,7 +24,7 @@ OBJS = \
 	$(PATH_OBJ)/gt_exe_pe_sect$(OBJ_EXT) \
 	$(PATH_OBJ)/gt_exe_pe_tls$(OBJ_EXT) \
 	
-ifeq ($(GT_VC), 11)
+ifeq ($(CC_STDAFX_OBJ_NEEDED), 1)
 OBJS += $(PATH_OBJ)/gt_stdafx$(OBJ_EXT)
 endif
 
