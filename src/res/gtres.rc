@@ -913,6 +913,8 @@ STRINGTABLE {
   HRC_DATA_NAME__cvsignore, "CVS exclusion file"
   HRC_DATA_NAME__eclipseproduct, "Eclipse product definition file"
   HRC_DATA_NAME__fbprefs, "FindBugs project preferences file"
+  HRC_DATA_NAME__gitattributes, "git attributes file"
+  HRC_DATA_NAME__gitignore, "git ignore file"
   HRC_DATA_NAME__htaccess, "Apache HTTP Server local configuration file"
   HRC_DATA_NAME__project, "Eclipse project file"
   HRC_DATA_NAME__springBeans, "SpringIDE Beans configuration file"
@@ -1034,11 +1036,11 @@ STRINGTABLE {
   HRC_EXELIB_NE_FLAGS_80x87, "80x87 instructions"
   HRC_EXELIB_NE_FLAGS_APP, "File is a Windows application"
   HRC_EXELIB_NE_FLAGS_DLL, "File is a dynamic-link library (DLL)"
-  HRC_EXELIB_NE_FLAGS_PROTMODE, "Protected mode only"
-  HRC_EXELIB_NE_IMP_NAMES_TABLE_OFS, "Absolute imported names table offset"
 }
 LANGUAGE 9,2
 STRINGTABLE {
+  HRC_EXELIB_NE_FLAGS_PROTMODE, "Protected mode only"
+  HRC_EXELIB_NE_IMP_NAMES_TABLE_OFS, "Absolute imported names table offset"
   HRC_EXELIB_NE_LINKER_VERSION, "Linker version: %d.%02d\012"
   HRC_EXELIB_NE_MODULE_REF_TABLE_OFS, "Absolute module references table offset"
   HRC_EXELIB_NE_NAMES_TABLE_OFS, "Absolute resident names table offset"
@@ -1293,11 +1295,11 @@ STRINGTABLE {
   HRC_EXELIB_PE_RES_VERSION_OS_WIN32, "32 bit Windows"
   HRC_EXELIB_PE_RES_VERSION_OS_WIN32_2K, "32 bit Windows running with Windows NT/2000"
   HRC_EXELIB_PE_RES_VERSION_OS_WINCE, "Windows CE"
-  HRC_EXELIB_PE_RES_VERSION_PRODVER, "ProductVersion: %lu.%lu.%lu.%lu\012"
-  HRC_EXELIB_PE_RES_VERSION_STRING_BIN, "%s: %lu bytes\012"
 }
 LANGUAGE 9,2
 STRINGTABLE {
+  HRC_EXELIB_PE_RES_VERSION_PRODVER, "ProductVersion: %lu.%lu.%lu.%lu\012"
+  HRC_EXELIB_PE_RES_VERSION_STRING_BIN, "%s: %lu bytes\012"
   HRC_EXELIB_PE_RES_VERSION_STRING_TEXT, "%s: '%s'\012"
   HRC_EXELIB_PE_SEG_TABLE_FLAGS, "Flags"
   HRC_EXELIB_PE_SEG_TABLE_LISTING, "Sections according to section table (section align: %08Xh):\012"
@@ -1552,11 +1554,11 @@ STRINGTABLE {
   HRC_GENLIB_IFF_FTXT, "Formatted text"
   HRC_GENLIB_IFF_GSCR, "General use musical score"
   HRC_GENLIB_IFF_HEAD, "Document header information"
-  HRC_GENLIB_IFF_HEADER, "IFF file\012"
-  HRC_GENLIB_IFF_ILBM, "InterLeaved BitMap (interleaved planar bitmap data)"
 }
 LANGUAGE 9,2
 STRINGTABLE {
+  HRC_GENLIB_IFF_HEADER, "IFF file\012"
+  HRC_GENLIB_IFF_ILBM, "InterLeaved BitMap (interleaved planar bitmap data)"
   HRC_GENLIB_IFF_PAGE, "Page break indicator"
   HRC_GENLIB_IFF_PARA, "Paragraph formatting information"
   HRC_GENLIB_IFF_PBM, "Portable bitmap"
@@ -1811,11 +1813,11 @@ STRINGTABLE {
   HRC_GENLIB_WPC_0D, "block"
   HRC_GENLIB_WPC_0E, "rectangular block"
   HRC_GENLIB_WPC_0F, "column block"
-  HRC_GENLIB_WPC_10, "printer resource (PRS)"
-  HRC_GENLIB_WPC_11, "setup"
 }
 LANGUAGE 9,2
 STRINGTABLE {
+  HRC_GENLIB_WPC_10, "printer resource (PRS)"
+  HRC_GENLIB_WPC_11, "setup"
   HRC_GENLIB_WPC_12, "prefix information"
   HRC_GENLIB_WPC_13, "printer resource (ALL)"
   HRC_GENLIB_WPC_14, "display resource (DRS)"

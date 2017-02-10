@@ -7,6 +7,8 @@ const FixedNameEntry aFixedName [] =
 { NULL,           _T (".eclipseproduct"),            HRC_DATA_NAME__eclipseproduct,            _T ("http://www.eclipse.org/") },
 { NULL,           _T (".fbprefs"),                   HRC_DATA_NAME__fbprefs,                   _T ("http://findbugs.sourceforge.net/") },
 { NULL,           _T (".htaccess"),                  HRC_DATA_NAME__htaccess,                  _T ("http://httpd.apache.org/") },
+{ NULL,           _T (".gitattributes"),             HRC_DATA_NAME__gitattributes,             _T ("https://git-scm.com/") },
+{ NULL,           _T (".gitignore"),                 HRC_DATA_NAME__gitignore,                 _T ("https://git-scm.com/") },
 { NULL,           _T (".project"),                   HRC_DATA_NAME__project,                   _T ("http://www.eclipse.org/") },
 { NULL,           _T (".springBeans"),               HRC_DATA_NAME__springBeans,               _T ("http://springide.org/") },
 { NULL,           _T (".springWebflow"),             HRC_DATA_NAME__springWebflow,             _T ("http://springide.org/") },

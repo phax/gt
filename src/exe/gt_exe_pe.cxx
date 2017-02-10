@@ -793,6 +793,15 @@ void GT_CALL EXE_PE_Lister::_CheckForCode
       if (m_aOFH.nLinkerMajor == 8 && m_aOFH.nLinkerMinor == 0)
         sSeemsToBe += _T ("8.0 / 2005");
       else
+      if (m_aOFH.nLinkerMajor == 9 && m_aOFH.nLinkerMinor == 0)
+        sSeemsToBe += _T ("9.0 / 2008");
+      else
+      if (m_aOFH.nLinkerMajor == 10 && m_aOFH.nLinkerMinor == 0)
+        sSeemsToBe += _T ("10.0 / 2010");
+      else
+      if (m_aOFH.nLinkerMajor == 11 && m_aOFH.nLinkerMinor == 0)
+        sSeemsToBe += _T ("11.0 / 2012");
+      else
       {
         // unknown
         str_append_format (sSeemsToBe, _T ("%u.%u (\?\?)"),

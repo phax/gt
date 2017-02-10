@@ -13,6 +13,12 @@ STR HRC_DATA_NAME__fbprefs
 STR HRC_DATA_NAME__htaccess
   all="Apache HTTP Server local configuration file";
 
+STR HRC_DATA_NAME__gitattributes
+  all="git attributes file";
+
+STR HRC_DATA_NAME__gitignore
+  all="git ignore file";
+
 STR HRC_DATA_NAME__project
   all="Eclipse project file";
 
