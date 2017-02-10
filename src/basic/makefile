@@ -32,6 +32,13 @@ OBJS = \
 	$(PATH_OBJ)/gt_timer$(OBJ_EXT) \
 	$(PATH_OBJ)/gt_utils$(OBJ_EXT)
 
+ifeq ($(GT_VC), 11)
+OBJS += $(PATH_OBJ)/gt_stdafx$(OBJ_EXT)
+endif
+
+# "External dependency" :)
+.PHONY: $(PATH_OBJ)/gt_stdafx$(OBJ_EXT)
+
 DYN_OBJS = $(OBJS:.obj=.dlo)
 
 objs: \

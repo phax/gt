@@ -13,10 +13,18 @@ OBJS_GT2_STATIC = \
 	$(PATH_OBJ)/gt_mainlister$(OBJ_EXT) \
 	$(PATH_OBJ)/gt_main$(OBJ_EXT) 
 
+ifeq ($(GT_VC), 11)
+OBJS_GT2_STATIC += $(PATH_OBJ)/gt_stdafx$(OBJ_EXT)
+endif
+
 OBJS_GT2_DYNAMIC = $(OBJS_GT2_STATIC:.obj=.dlo) 
 
 OBJS_TEST = \
 	$(PATH_OBJ)/gt_test$(DLO_EXT) \
+
+ifeq ($(GT_VC), 11)
+OBJS_TEST += $(PATH_OBJ)/gt_stdafx$(DLO_EXT)
+endif
 
 OBJS_DATA = \
 	$(OBJS_DYNAMIC_ARC) \
@@ -44,19 +52,22 @@ OBJS_PATHMOD = \
 	$(PATH_OBJ)/gt_cmdline_args$(DLO_EXT) \
 	$(PATH_OBJ)/gt_pathmod$(DLO_EXT)
 
+ifeq ($(GT_VC), 11)
+OBJS_PATHMOD += $(PATH_OBJ)/gt_stdafx$(DLO_EXT)
+endif
+
 objs: \
 	$(OBJS_GT2_STATIC) \
 	$(OBJS_GT2_DYNAMIC) \
 	$(OBJS_TEST)
 
+# "External dependency" :)
+.PHONY: $(PATH_OBJ)/gt_stdafx$(OBJ_EXT)
+
 EXES = \
 	$(PATH_BIN)/gt2$(PS).exe \
 	$(PATH_BIN)/gt_test$(PS).exe \
 	$(PATH_BIN)/gt_pathmod$(PS).exe
-
-ifeq ($(GT_VC), 6)
-EXES += $(PATH_BIN)/gt2s$(PS).exe
-endif
 
 ifeq ($(GT_VC), 7)
 EXES += $(PATH_BIN)/gt2s$(PS).exe
@@ -69,27 +80,17 @@ exes: $(EXES)
 $(PATH_BIN)/gt2$(PS).exe: $(OBJS_GT2_DYNAMIC) $(OBJS_DYN_APP) $(OBJS_DATA)
 	@echo Linking $@
 	$(LINK_DYNAMIC) $(LINKFLAGS) $(LINK_CON) $(LINK_FLAGS) $^
-#	cp $@* $(GTPATH)
 
 $(PATH_BIN)/gt2s$(PS).exe: $(OBJS_GT2_STATIC) $(OBJS_STATIC)
 	@echo Linking $@
 	$(LINK_STATIC) $(LINKFLAGS) $(LINK_CON) $(LINK_FLAGS) $^
-#	cp $@* $(GTPATH)
 
 $(PATH_BIN)/gt_test$(PS).exe: $(OBJS_TEST) $(OBJS_DYN_APP)
 	@echo Linking $@
 	$(LINK_DYNAMIC) $(LINKFLAGS) $(LINK_CON) $(LINK_FLAGS) $^
-#	cp $@* $(GTPATH)
-
-# Old:
-#$(PATH_BIN)/gt_pathmod$(PS).exe: $(OBJS_PATHMOD)
-#	@echo Linking $@
-#	$(LINK_DYNAMIC) $(LINKFLAGS) $(LINK_WIN) $^ "$(CCDIR)/PlatformSDK/Lib/shell32.lib"
-#	cp $@* $(GTPATH)
 
 $(PATH_BIN)/gt_pathmod$(PS).exe: $(OBJS_PATHMOD)
 	@echo Linking $@
 	$(LINK_DYNAMIC) $(LINKFLAGS) $(LINK_WIN) $^
-#	cp $@* $(GTPATH)
 
 include $(DEPENDFILE)

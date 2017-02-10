@@ -16,13 +16,7 @@ _DIRS = \
 	output \
 	app \
 	main_gt2 \
-	main_geew \
-	main_tools
-
-# CppUnit only compiled for VC 2008
-#ifeq ($(GT_VC), 9)
-#_DIRS += main_test
-#endif
+	main_geew
 
 .PHONY: dirs dep
 

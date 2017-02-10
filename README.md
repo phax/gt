@@ -37,4 +37,10 @@ This application is designed to be compiled and run on Windows only.
   * Ensure `src\settings.mak` has set `GT_VC = 10`
   * Compile on the commandline by using batch file `src\_make_vs10.cmd`
   * The output is in the folder `target\10`
+      
+### Using Visual Studio 2012
+  * Since that version the Platform SDK from `C:\Program Files (x86)\Windows Kits\8.0\Lib\win8\um\x64\` is used! 
+  * Ensure `src\settings.mak` has set `GT_VC = 11`
+  * Compile on the commandline by using batch file `src\_make_vs11.cmd`
+  * The output is in the folder `target\11`
 

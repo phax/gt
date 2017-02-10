@@ -12,6 +12,13 @@ include ../global.mak
 OBJS = \
        $(PATH_OBJ)/gtc_datares$(RES_EXT) \
        $(PATH_OBJ)/gtc_data$(OBJ_EXT) \
+       
+ifeq ($(GT_VC), 11)
+OBJS += $(PATH_OBJ)/gt_stdafx$(OBJ_EXT)
+endif
+
+# "External dependency" :)
+.PHONY: $(PATH_OBJ)/gt_stdafx$(OBJ_EXT)
 
 objs: \
 	$(OBJS) \

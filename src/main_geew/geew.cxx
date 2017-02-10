@@ -227,8 +227,9 @@ void GT_CALL Run ()
     nCmpLen = DEFAULT_CMPLEN;
   }
 
+  // FIXME permutation generation does not work - disabled!
   PermutationGenerator *pPermGen = NULL;
-  if (FileDataSeq::Instance ().size () < 10)
+  if (FileDataSeq::Instance ().size () < 10 && false)
     pPermGen = new PermutationGenerator (FileDataSeq::Instance ().size ());
 
   gtuint8* pResBuf = new gtuint8 [nCmpLen];

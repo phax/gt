@@ -13,6 +13,13 @@ OBJS = \
 	$(PATH_OBJ)/gt_arc_analyzer$(OBJ_EXT) \
 	$(PATH_OBJ)/gt_arc_main$(OBJ_EXT) \
 
+ifeq ($(GT_VC), 11)
+OBJS += $(PATH_OBJ)/gt_stdafx$(OBJ_EXT)
+endif
+
+# "External dependency" :)
+.PHONY: $(PATH_OBJ)/gt_stdafx$(OBJ_EXT)
+
 DYN_OBJS = $(OBJS:.obj=.dlo)
 
 objs: \

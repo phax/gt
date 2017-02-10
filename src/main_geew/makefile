@@ -9,6 +9,13 @@ OBJS = \
 	$(PATH_OBJ)/gee_output_opcode$(OBJ_EXT) \
 	$(PATH_OBJ)/geew$(OBJ_EXT) \
 
+ifeq ($(GT_VC), 11)
+OBJS += $(PATH_OBJ)/gt_stdafx$(OBJ_EXT)
+endif
+
+# "External dependency" :)
+.PHONY: $(PATH_OBJ)/gt_stdafx$(OBJ_EXT)
+
 ## EXE targets....
 
 exes: \
