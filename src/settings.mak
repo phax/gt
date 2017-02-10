@@ -1,5 +1,8 @@
 # VC compiler version (7, 8, 9, 10, 11)
+# Is set in the _make_*.cmd files
+ifndef GT_VC
 GT_VC = 11
+endif
 
 ifndef GT_RELEASE
 GT_RELEASE=0
