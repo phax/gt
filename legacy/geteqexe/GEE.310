@@ -1,0 +1,2093 @@
+{$define REGISTERED}  { - allow disassembly? - }
+{$define XOUT}        { - allow extended output? - }
+{$i aflags.inc}
+
+Uses
+{$ifdef WINDOWS}
+     WinDOS,
+{$else}
+  {$ifdef WIN32}
+     SysUtils,
+  {$else}
+     DOS,
+  {$endif}
+{$endif}
+{$ifndef WIN32}
+     XCrt,
+{$endif}
+     IOError, INIFile,
+     XCmdLine, XDOS, XString,
+     XEXE, XEXE_NE, XEXE_PE;
+
+type
+     TOptions = (
+      { start macros }
+      _m_c,
+      _m_f,
+      _m_j,
+      _m_k,
+      _m_m,
+      _m__,
+      { start methods }
+      _SETIP,  { - first - }
+{$ifdef REGISTERED}
+      _AAUTO,
+{$endif}
+      _ADDIP,  { - last - }
+
+      { start options }
+      _BIN,  { - first - }
+      _END,
+      _HELP,
+      _MAGIC,
+      _NOCFG,
+{$ifdef REGISTERED}
+      _NODIS,
+{$endif}
+      _NOHEAD,
+      _NOPAS,
+      _NOCON,
+      _OVER,
+      _NAME,
+      _PASLEN,
+      _STOPB,
+      _STOPE,
+      _STOPM,
+      _GOTO,
+      _DIFF,
+{$ifdef XOUT}
+      _EXT,
+{$endif}
+      _MACRO  { - last - }
+     );
+
+const
+      _V = '3.10';
+{$ifdef REGISTERED}
+  {$ifdef XOUT}
+      VERSION         = _V + 'rx ';
+  {$else}
+      VERSION         = _V + 'r Ä';
+  {$endif}
+{$else}
+  {$ifdef XOUT}
+      VERSION         = _V + 'x Ä';
+  {$else}
+      VERSION         = _V + ' ÄÄ';
+  {$endif}
+{$endif}
+      MAX_BUFFER      = 4096;
+      MAX_OPENFILES   = 10;
+      MAX_OUT:longint = 80;
+      MAX_FIRST       = 256;
+      MAGIC:byte      = 0;
+      EINRUECKEN      = '        ';
+      CFGFILE         = 'GETEQEXE.CFG';
+
+      MODUS:byte = 0;
+      MODI:array[1..4] of char = '|/-\';
+      FILES_OPENED:byte = 0;
+      PASCAL_OPENED:boolean = false;
+      OUT_FILENAME:string[30] = '_outexe.inc';
+      SEPERATOR:string[76] = 'ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ';
+
+      START_MACRO = _m_c;
+      END_MACRO   = _m__;
+
+      START_METHOD = _SETIP;
+      END_METHOD   = _ADDIP;
+
+      START_OPTION = _BIN;
+      END_OPTION   = _MACRO;
+
+type
+     TSwitch = record
+       ID:TOptions;
+       view:string[7];
+       switch:string[6];
+       cfg:boolean;
+       desc:string[50];
+     end;
+
+const
+      Commands:array [START_MACRO..END_OPTION] of TSwitch = (
+        (ID:_m_c;   view:'c'; switch:'c'; cfg:false; desc:'evaluate a long call (only EXE)'),
+        (ID:_m_f;   view:'f'; switch:'f'; cfg:false; desc:'evaluate a far jump'),
+        (ID:_m_j;   view:'j'; switch:'j'; cfg:false; desc:'evaluate a jump/call'),
+        (ID:_m_k;   view:'k'; switch:'k'; cfg:false; desc:'evaluate a 32 bit jump/call'),
+        (ID:_m_m;   view:'m'; switch:'m'; cfg:false; desc:'evaluate a MOV jump'),
+        (ID:_m__;   view:'_'; switch:'_'; cfg:false; desc:'seperator for macro commands (ignored)'),
+
+        (ID:_SETIP;  view:'SETIPn '; switch:'SETIP';  cfg:false; desc:'change IP to n'),
+{$ifdef REGISTERED}
+        (ID:_AAUTO;  view:'AAUTO  '; switch:'AAUTO';  cfg:false; desc:'evaluate and ignore all jumps (not tested)'),
+{$endif}
+        (ID:_ADDIP;  view:'ADDIPn '; switch:'ADDIP';  cfg:false; desc:'add IP to old one (subtract if n < 0)'),
+
+        (ID:_BIN;    view:'BIN    '; switch:'BIN';    cfg:true;  desc:'create binary output to STDOUT'),
+        (ID:_END;    view:'ENDn   '; switch:'END';    cfg:false; desc:'go to the end of the file - n Bytes.'),
+        (ID:_HELP;   view:'?, /H  '; switch:'HELP';   cfg:false; desc:'this help screen'),
+        (ID:_MAGIC;  view:'MAGICn '; switch:'MAGIC';  cfg:false; desc:'set the magic number for the Pascal output'),
+        (ID:_NOCFG;  view:'NOCFG  '; switch:'NOCFG';  cfg:false; desc:'do not use the configuration file'),
+{$ifdef REGISTERED}
+        (ID:_NODIS;  view:'NODIS  '; switch:'NODIS';  cfg:true;  desc:'do not disassemble'),
+{$endif}
+        (ID:_NOHEAD; view:'NOHEAD '; switch:'NOHEAD'; cfg:true;  desc:'disable output of header'),
+        (ID:_NOPAS;  view:'NOPAS  '; switch:'NOPAS';  cfg:true;  desc:'do not write to Pascal file'),
+        (ID:_NOCON;  view:'NOCON  '; switch:'NOCON';  cfg:true;  desc:'do not write to STDOUT'),
+        (ID:_OVER;   view:'OVER   '; switch:'OVER';   cfg:true;  desc:'overwrite the Pascal file without asking'),
+        (ID:_NAME;   view:'NAMEx  '; switch:'NAME';   cfg:true;  desc:'set "x" as Pascal file'),
+        (ID:_PASLEN; view:'PASLENn'; switch:'PASLEN'; cfg:false; desc:'set the length of the Pascal file to n (80)'),
+        (ID:_STOPB;  view:'STOPBn '; switch:'STOPB';  cfg:false; desc:'stop comapring after n bytes (infinite)'),
+        (ID:_STOPE;  view:'STOPEn '; switch:'STOPE';  cfg:false; desc:'stop comapring after n-th byte mismatch (infinite)'),
+        (ID:_STOPM;  view:'STOPMn '; switch:'STOPM';  cfg:false; desc:'stop comapring after n matches (infinite)'),
+        (ID:_GOTO;   view:'GOTOn  '; switch:'GOTO';   cfg:false; desc:'start comparing at filepos n (0)'),
+        (ID:_DIFF;   view:'DIFF   '; switch:'DIFF';   cfg:true;  desc:'show only NOT identical bytes'),
+{$ifdef XOUT}
+        (ID:_EXT;    view:'EXT    '; switch:'EXT';    cfg:true;  desc:'extended output'),
+{$endif}
+        (ID:_MACRO;  view:'MACROx '; switch:'MACRO';  cfg:false; desc:'execute macro commands "x"')
+      );
+
+type
+     CompareEntry = object
+       f:file;
+       EXEHeader:TEXE;
+       OldAttr:word;
+       ActBufPos:word;
+{$ifdef WIN32}
+       BytesRead:longint;
+{$else}
+       BytesRead:word;
+{$endif}
+       FName:string[80];
+       FSize:longint;
+       buf:array[1..MAX_BUFFER] of byte;
+       nTotalCompare:longint;
+
+       NE_Offset:longint;
+       PE_ImgHead:PE_ImageFileHeader;
+       PE_OptHead:PE_OptionalFileHeader;
+       NE_Head:TEXE_NE;
+
+       function ActByte:byte;
+     end;
+
+     Str10 = string[10];
+
+     JumpRec = record
+       ID:byte;
+       Offset:integer;
+     end;
+
+     Jump32Rec = record
+       ID:byte;
+       Offset:longint;
+     end;
+
+{$ifdef WIN32}
+     integer = ShortInt;
+{$endif}
+
+const
+      BUFLEN = 10;
+
+type
+     pSmallBuf = ^tSmallBuf;
+     tSmallBuf = array [1..BUFLEN] of byte;
+
+     pEntryArray = ^tEntryArray;
+     tEntryArray = array[1..MAX_OPENFILES] of CompareEntry;
+
+var
+    p:pEntryArray;
+
+    nOpenFiles:byte;
+
+{$ifdef WIN32}
+    dummy:longint;  { for blockread }
+{$else}
+    dummy:word;
+{$endif}
+
+    MinBytesRead,
+    nConstCount:word;
+
+    nOutCount,
+    nFirstEqualPos,
+    nByteErrors,
+    nBytesFound,
+    nBytesEqual:longint;
+
+    fout:text;
+
+    OldExit:pointer;
+
+    bRedirected,
+    bOnlyOneFile:boolean;
+
+    aEXEType:(ET_NONE, ET_COM, ET_EXE, ET_LE, ET_NE, ET_PE);
+
+    bSwitch:array[START_MACRO..END_OPTION] of boolean;
+
+{ switch variables }
+    nIP,
+    nCS,
+    nEOF,
+    nStart,
+    nStopBytes,
+    nStopErrors,
+    nStopMatches:longint;
+
+    sMacro:string;
+
+function IsJump (b:byte):boolean;
+{$ifdef FPC}
+begin
+  IsJump := (b in [$E3, $E8, $E9, $EB]);
+end;
+{$else}
+assembler;
+asm
+  mov al, 1
+  mov bl, b
+  cmp b, $E3  { jcxz }
+  je  @done
+  cmp b, $E8  { call }
+  je  @done
+  cmp b, $E9  { jmp }
+  je  @done
+  cmp b, $EB  { jmps }
+  je  @done
+  xor al, al
+@done:
+end;
+{$endif}
+
+function CompareEntry.ActByte:byte;
+begin
+  ActByte := buf [ActBufPos];
+end;
+
+procedure FP (s:string);
+begin
+  FastPrint (concat (' þ ', s, #13#10));
+end;
+
+procedure FinishLine;
+begin
+  FastPrint (#13#10);
+end;
+
+{$ifdef XOUT}
+procedure FastPrintX (s:string);
+begin
+  if bSwitch [_EXT] then
+    FastPrint (s);
+end;
+
+procedure FPExt (s:string);
+begin
+  if bSwitch [_EXT] then
+    FP (s);
+end;
+
+procedure FinishLineX;
+begin
+  if bSwitch [_EXT] then
+    FastPrint (#13#10);
+end;
+{$endif}
+
+function DecHex (i:byte; v:longint):string;
+const BORDER = $00010000;
+var s:string;
+begin
+  s := concat ('[', i2s (v), ' / ');
+  if (p^ [i].FSize < BORDER) and (v < BORDER) then
+    s := concat (s, hexword (v))
+  else
+    s := concat (s, hexlong (v));
+  DecHex := concat (s, 'h]');
+end;
+
+{$ifdef XOUT}
+procedure FPExtName (i:byte; s:string);
+begin
+  FPExt (concat (p^ [i].FName, ': ', s));
+end;
+
+procedure MacroPrint (s:string);
+begin
+  FPExt (concat (' - ', s))
+end;
+
+function GetAddress (s, o:word):string;
+begin
+  GetAddress := concat (hexword (s), 'h:', hexword (o), 'h');
+end;
+{$endif}
+
+procedure Error (msg:string);
+begin
+  FP (msg);
+  FP ('Aborting GetEQExe');
+  halt (10);
+end;
+
+procedure xblockread (    i:byte;
+                      var data;
+                          len:word;
+{$ifdef WIN32}
+                      var BytesRead:longint);
+{$else}
+                      var BytesRead:word);
+{$endif}
+begin
+  blockread (p^ [i].f, data, len, BytesRead);
+  CheckIOError (ioresult, p^ [i].FName);
+end;
+
+procedure xseek (i:byte; nPos:longint);
+begin
+  seek (p^ [i].f, nPos);
+  CheckIOError (ioresult, p^ [i].FName);
+end;
+
+function Data2Hex (i:byte; nPos:longint):string;
+const MAXDATA = 10;
+var buf:array[1..MAXDATA] of byte;
+    s:string;
+    j:byte;
+begin
+  xseek (i, nPos);
+  xblockread (i, buf, MAXDATA, dummy);
+  s := concat ('Bytes at position ', DecHex (i, nPos), ':');
+  for j:=1 to dummy do
+    s := concat (s, ' ', hexbyte (buf[j]));
+  Data2Hex := s;
+end;
+
+procedure ExtendedError (i:byte; nPos:longint; msg:string);
+begin
+  FP (msg);
+  Error (Data2Hex (i, nPos));
+end;
+
+procedure NoteSwitch (n:TOptions);
+begin
+  FP (concat ('/', Commands [n].view, '  ', Commands[n].desc));
+end;
+
+function Command_JMP (i:byte; nStartPos:longint; nCount:byte):longint;
+var j:byte;
+    Data:JumpRec;
+    nSave:longint;
+begin
+  for j:=1 to nCount do
+  begin
+    nSave := nStartPos;
+
+    xseek (i, nStartPos);
+    xblockread (i, Data, SizeOf (Data), dummy);
+
+    case Data.ID of
+      { call, jmp }
+      $E8,
+      $E9:begin
+            if (Data.Offset < 0) and
+               (nStartPos + Data.Offset > 0) then  { "+" because "+ -" = "-" }
+              inc (nStartPos, 3 + Data.Offset)          { 3 for the JMP }
+            else
+              inc (nStartPos, 3 + word (Data.Offset))   { 3 for the JMP }
+          end;
+      { jcxz, jmps }
+      $E3,
+      $EB:inc (nStartPos, 2 + lo (Data.Offset)); { 2 for the command length }
+    else
+      ExtendedError (i, nStartPos,
+                     concat ('File ', p^ [i].FName, ' does not have ',
+                     i2s (nCount), ' unconditional jumps/calls (only ',
+                     i2s (j - 1), ').'));
+    end;
+
+    if (nStartPos > p^ [i].FSize) then
+    begin
+      FP (concat (p^ [i].FName, ': jump ', i2s (j), ' (', hexbyte (Data.ID), 'h) goes out of file'));
+      Error (concat ('Jump to ', DecHex (i, nStartPos), '; Filesize = ', i2s (p^ [i].FSize)));
+    end;
+
+{$ifdef XOUT}
+    MacroPrint (concat ('jmp/call (', hexbyte (Data.ID), 'h) from ',
+                DecHex (i, nSave), ' to ', DecHex (i, nStartPos)));
+{$endif}
+  end;
+
+  Command_JMP := nStartPos;
+end;
+
+function Command_JMP32 (i:byte;
+                        nStartPos:longint;
+                        nCount:byte):longint;
+var j:byte;
+    Data:Jump32Rec;
+    nSave:longint;
+begin
+  for j:=1 to nCount do
+  begin
+    nSave := nStartPos;
+
+    xseek (i, nStartPos);
+    xblockread (i, Data, SizeOf (Data), dummy);
+
+    case Data.ID of
+      $E8:inc (nStartPos, 5 + Data.Offset);  { 5 for the JMP }
+    else
+      ExtendedError (i, nStartPos,
+                     concat ('File ', p^ [i].FName, ' does not have ',
+                     i2s (nCount), ' unconditional 32 bit jumps/calls (only ',
+                     i2s (j - 1), ').'));
+    end;
+
+    if (nStartPos > p^ [i].FSize) then
+    begin
+      FP (concat (p^ [i].FName, ': 32 bit jump ', i2s (j), ' (', hexbyte (Data.ID), 'h) goes out of file'));
+      Error (concat ('Jump to ', DecHex (i, nStartPos), '; Filesize = ', i2s (p^ [i].FSize)));
+    end;
+
+{$ifdef XOUT}
+    MacroPrint (concat ('32 bit jmp from ',
+                DecHex (i, nSave), ' to ', DecHex (i, nStartPos)));
+{$endif}
+  end;
+
+  Command_JMP32 := nStartPos;
+end;
+
+function Command_MOV_JMP (i:byte; nPos:longint):longint;
+var XJmp:record
+           cmd:byte;
+           nJumpPos:word;
+         end;
+begin
+  xseek (i, nPos);
+  xblockread (i, XJmp, SizeOf (XJmp), dummy);
+
+  if (XJmp.cmd < $B8) or (XJmp.cmd > $BF) then
+    ExtendedError (i, nPos,
+                   concat (p^ [i].FName,
+                   ': unsupported "MOV reg, value" command was found ',
+                   hexbyte (XJmp.cmd), 'h'));
+
+  if (aExeType = ET_COM) then
+    inc (nPos, XJmp.nJumpPos - $100)
+  else
+    inc (nPos, XJmp.nJumpPos);
+
+  if nPos > p^ [i].FSize then
+    Error (concat ('MOV jump to ', DecHex (i, nPos), ' goes out of file'));
+
+{$ifdef XOUT}
+  MacroPrint (concat ('MOV jump (', hexbyte (XJmp.cmd), 'h)',
+                      ' to ', DecHex (i, nPos)));
+{$endif}
+
+  Command_MOV_JMP := nPos;
+end;
+
+function Command_LONGCALL (i:byte; nPos:longint):longint;
+type CallRec = record
+                 ID:byte;
+                 o, s:word;
+               end;
+var Call:CallRec;
+begin
+  xseek (i, nPos);
+  xblockread (i, Call, SizeOf (Call), dummy);
+
+  if (Call.ID <> $9A) then
+    ExtendedError (i, nPos, concat (p^ [i].FName,
+                   ' does not have a long call at pos ', DecHex (i, nPos)));
+
+  nPos := p^ [i].EXEHeader.GetHeaderSize + longint (Call.s) shl 4;
+{$ifdef XOUT}
+  MacroPrint (concat ('long call (9Ah) to ', DecHex (i, nPos)));
+{$endif}
+  if nPos > p^ [i].FSize then
+    Error (concat ('Long call to ', DecHex (i, nPos), ' goes out of file'));
+
+  Command_LONGCALL := nPos;
+end;
+
+function Command_JMP_FAR (i:byte; nPos:longint):longint;
+type CallRecMem = record
+                    ID:word;
+                    ofs:word;
+                  end;
+     CallRec = record
+                 o, s:word;
+               end;
+var CallMem:CallRecMem;
+    Call:CallRec;
+begin
+  xseek (i, nPos);
+  xblockread (i, CallMem, SizeOf (CallMem), dummy);
+
+  if (CallMem.ID <> $2EFF) then
+    ExtendedError (i, nPos,
+                   concat (p^ [i].FName, ' does not contain a far call at pos ',
+                   DecHex (i, nPos)));
+
+  if (aExeType <> ET_COM) then
+    Error ('Not yet implemented for EXE file :(');
+
+  if (aExeType = ET_COM) then
+    nPos := CallMem.ofs - $0100;  { you know, COM files, ... }
+
+{$ifdef XOUT}
+  FPExtName (i, concat ('jump goes to ', DecHex (i, nPos), 'h'));
+{$endif}
+
+  xseek (i, nPos);
+  xblockread (i, Call, SizeOf (Call), dummy);
+
+  if (aExeType = ET_COM) then
+    dec (Call.s, $0010);  { only $10 because it will be mutiplied by $10
+                            later (shl 4) }
+
+{$ifdef XOUT}
+  MacroPrint (concat ('found target address ', GetAddress (Call.s, Call.o)));
+{$endif}
+
+  if (aExeType = ET_COM) then
+    nPos := longint (Call.s) shl 4 + Call.o;
+
+{$ifdef XOUT}
+  MacroPrint (concat ('far jump (2EFFh) to ', DecHex (i, nPos)));
+{$endif}
+
+  if (nPos > p^ [i].FSize) then
+    Error (concat ('Fat jump to ', DecHex (i, nPos), ' goes out of file'));
+
+  Command_JMP_FAR := nPos;
+end;
+
+procedure SetPascalFilename (s:string);
+var drive, dir, name:string;
+    p:byte;
+begin
+  drive := '';
+  p := pos (':', s);
+  if (p > 0) then
+  begin
+    if (p <> 2) then
+      Error ('The position of the ":" in the new Pascal filename is invalid');
+
+    drive := copy (s, 1, p);
+    delete (s, 1, p);
+  end;
+
+  dir := '';
+  repeat
+    p := pos ('\', s);
+    if (p > 0) then
+    begin
+{ - an error if first char is "\" but only when not directly after drive - }
+      if (p = 1) and (length (dir) > 0) then
+        Error ('An invalid backslash was found in the new Pascal filename');
+
+      dir := concat (dir, copy (s, 1, p));
+      delete (s, 1, p);
+    end;
+  until (p = 0);
+
+  if length (s) > 0 then
+    name := s
+  else
+    name := OUT_FILENAME;
+
+  OUT_FILENAME := concat (drive, dir, name);
+end;
+
+{
+x----------------------------------------------------------------------------
+----------------------START OF THE MAIN PROCEDURES--------------------------
+----------------------------------------------------------------------------
+}
+
+procedure PrintCopyright;
+begin
+  FP (SEPERATOR);
+  FP (concat ('ÄÄÄ GetEQExe ', VERSION, 'ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Copyright (c) 1997 - 99 by PHaX ÄÄÄ'));
+  FP ('ÄÄÄ phax@writeme.com ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ http://surf.to/phax ÄÄÄ');
+  FP (SEPERATOR);
+end;
+
+procedure EvaluateCommandLine;
+var TmpStr:string;
+    nMagic, TmpLong:longint;
+
+    procedure Check (n1, n2:TOptions);
+    begin
+      if (bSwitch [n1]) and (bSwitch [n2]) then
+        Error (concat ('It''s not possible to use /', Commands [n1].switch,
+                       ' and /', Commands [n2].switch, ' at the same time'));
+    end;
+
+    procedure CheckValue (n:TOptions);
+    begin
+      if (bSwitch [n]) and (cmdline.GetString (Commands [n].switch) = '') then
+        Error (concat ('Please give a value for option ', Commands [n].switch));
+    end;
+
+begin
+  CheckValue (_SETIP);
+  CheckValue (_ADDIP);
+  CheckValue (_END);
+  CheckValue (_MAGIC);
+  CheckValue (_STOPB);
+  CheckValue (_STOPE);
+  CheckValue (_STOPM);
+  CheckValue (_GOTO);
+  CheckValue (_NAME);
+  CheckValue (_PASLEN);
+  CheckValue (_MACRO);
+
+{ - check for changed IP - }
+  if bSwitch [_SETIP] then
+  begin
+    nIP := cmdline.GetInteger (Commands [_SETIP].switch);
+    if (nIP < 0) or (nIP > 65535) then
+      Error (concat ('Valid IP values are between 0 and 65535.'));
+  end;
+
+  if bSwitch [_ADDIP] then
+  begin
+    nIP := cmdline.GetInteger (Commands [_ADDIP].switch);
+    if (nIP > 65535) or (nIP < -65534) then
+      Error (concat ('Valid IP values are between -65534 and 65535.'));
+  end;
+
+{ - check counter from end of file - }
+  nEOF := cmdline.GetInteger (Commands [_END].switch);
+{ - both positive and negative is allowed - }
+  nEOF := abs (nEOF);
+
+{ - check new magic number for pascal file - }
+  nMagic := cmdline.GetInteger (Commands [_MAGIC].switch);
+
+  if (nMagic < 0) or (nMagic > 255) then
+    Error (concat ('Invalid magic number ', i2s (nMagic), ' (0 - 255).'))
+  else
+  begin
+{$ifdef XOUT}
+    FPExt (concat ('Setting magic number to [', i2s (nMagic), ' / ', HexByte (nMagic), 'h]'));
+{$endif}
+    MAGIC := nMagic;  { - set variable constant - }
+  end;
+
+{ - check for byte stop position - }
+  nStopBytes := cmdline.GetInteger (Commands [_STOPB].switch);
+
+  if (bSwitch [_STOPB]) and (nStopBytes <= 0) then
+    Error (concat ('Cannot stop after ', i2s (nStopBytes),' byte(s).'));
+
+{ - check for error stop counter - }
+  nStopErrors := cmdline.GetInteger (Commands [_STOPE].switch);
+
+  if (bSwitch [_STOPE]) and (nStopErrors <= 0) then
+    Error (concat ('Cannot stop after ', i2s (nStopErrors),' byte mismatch(es).'));
+
+{ - check for match stop position - }
+  nStopMatches := cmdline.GetInteger (Commands [_STOPM].switch);
+
+  if (bSwitch [_STOPM]) and (nStopMatches <= 0) then
+    Error (concat ('Cannot stop after ', i2s (nStopMatches),' match(es).'));
+
+{ - check for new start position - }
+  nStart := cmdline.GetInteger (Commands [_GOTO].switch);
+
+  if (bSwitch [_GOTO]) and (nStart < 0) then
+    Error (concat ('Cannot goto position ', i2s (nStart), '.'));
+
+{ - check for new pascal output file name - }
+  TmpStr := cmdline.GetString (Commands [_NAME].switch);
+  if (bSwitch [_NAME]) then
+  begin
+    if (TmpStr = '') then
+      Error ('You forgot the new Pascal filename.');
+
+    SetPascalFilename (TmpStr);
+  end;
+
+{ - check for new length of pascal output file - }
+  TmpLong := cmdline.GetInteger (Commands [_PASLEN].switch);
+  if (bSwitch [_PASLEN]) then
+  begin
+    if (TmpLong <= 0) then
+      Error (concat ('Tell me how to write ', i2s (TmpLong), ' bytes to a Pascal file.-'));
+
+    MAX_OUT := TmpLong;  { - set variable constant - }
+  end;
+
+{ get commandline strings }
+  sMacro := cmdline.GetString (Commands [_MACRO].switch);
+
+{ - if only different bytes are listed, no Pascal file should be created - }
+  if (bSwitch [_DIFF]) then
+    if (not bSwitch [_NOPAS]) then
+    begin
+      bSwitch [_NOPAS] := true;
+{$ifdef XOUT}
+      FPExt ('Disabling output of pascal file in difference mode');
+{$endif}
+    end;
+
+  if (bSwitch [_BIN]) then
+    if (not bSwitch [_NODIS]) then
+    begin
+      bSwitch [_NODIS] := true;
+{$ifdef XOUT}
+      FPExt ('Disabling disassembly in binary mode');
+{$endif}
+    end;
+
+{ - check for incompatible switch combinations - }
+  Check (_ADDIP, _SETIP);
+  Check (_ADDIP, _GOTO);
+  Check (_ADDIP, _END);
+
+  Check (_END, _GOTO);
+  Check (_END, _SETIP);
+
+{ - start position and most other options collide - }
+  Check (_GOTO, _SETIP);
+  Check (_GOTO, _END);
+
+{ - write problems when binary output and extrended output }
+{$ifdef XOUT}
+  Check (_BIN, _EXT);
+{$endif}
+  Check (_BIN, _DIFF);
+
+  Check (_NOPAS, _NOCON);  { - no output anyway - }
+  Check (_NOPAS, _PASLEN);
+
+  if (bSwitch [_NOCON]) and (bRedirected) then
+    Error ('What the heck you want to redirect?');
+end;
+
+procedure ReadConfigFile;
+var I:TINIFile;
+    sValue, Name:string;
+    Entry:TINIEntry;
+    Found:boolean;
+    j:TOptions;
+begin
+{ - check if INI file exists - }
+  if (not I.init (CFGFile)) then
+    if (not I.Init (concat (GetPath (ParamStr (0)), CFGFile))) then
+      exit;
+
+{$ifdef XOUT}
+  FastPrintX (' þ Configuration file:');
+{$endif}
+
+  while (I.GetNextEntry (Name, Entry)) do
+    if ((Name[1] = '/') or (Name[1] = '-')) and (length (Name) > 1) then
+    begin
+      delete (Name, 1, 1);
+      Name := upstring (Name);
+
+      Found := false;
+      for j := START_METHOD to END_OPTION do
+        if (Name = Commands [j].switch) then
+        begin
+          { invalid switches: /NC, ... }
+          if not Commands [j].cfg then
+          begin
+{$ifdef XOUT}
+            FinishLineX;
+{$endif}
+            I.PrintError (concat ('The switch /', Commands [j].Switch,
+                                  ' is not allowed in the configuration file'));
+          end;
+
+          if (j = _NAME) then
+          begin
+            sValue := copy (Name, length (Commands [j].switch), length (Name));
+            if (sValue = '') then
+              I.PrintError ('Please give a value for the pascal file.');
+            SetPascalFilename (sValue);
+          end;
+
+{$ifdef XOUT}
+          FastPrintX (concat (' /', Commands [j].switch));
+{$endif}
+
+          bSwitch [j] := true;
+          Found := bSwitch [j];
+        end;
+
+      if (not Found) then
+        I.PrintError (concat ('Unknown switch ', Quoted (Name)));
+    end
+    else
+      I.PrintError ('Entry is no switch (start with "-" or "/")');
+  I.done;
+
+{$ifdef XOUT}
+  FinishLineX;
+{$endif}
+end;
+
+{$ifdef XOUT}
+procedure ShowOptions;
+var i:byte;
+    j:TOptions;
+begin
+  FastPrint (' þ Commandline:');
+  for i:=1 to cmdline.GetOptionStringCount do
+    FastPrint (concat (' ', cmdline.GetOptionString (i)));
+  FinishLine;
+
+  FPExt (SEPERATOR);
+
+  for j:=START_METHOD to END_OPTION do
+    if bSwitch [j] then
+      NoteSwitch (j);
+
+  FPExt (SEPERATOR);
+end;
+{$endif}
+
+procedure ReadCommandline;
+label ExitLoop;
+var i:byte;
+    sr:XSearchRec;
+    bWildCard:boolean;
+    nCount:byte;
+    sDir, sName, sExt:string;
+    sMask:string;
+begin
+  nCount := cmdline.GetNonOptionStringCount;
+  nOpenFiles := 0;
+
+  for i:=1 to nCount do
+  begin
+    sMask := UpString (cmdline.GetNonOptionString (i));
+
+    if (pos ('.', sMask) = 0) then
+    begin
+      sMask := concat (sMask, '.*');
+      bWildCard := true;
+    end
+    else
+      bWildCard := (pos ('*', sMask) > 0) or
+                   (pos ('?', sMask) > 0);
+
+    if (bWildCard) then
+    begin
+{$ifdef XOUT}
+      FPExt (concat ('Scanning for ', Quoted (sMask)));
+{$endif}
+      { - needed because FindFirst does not recognize the path! -
+        - so I have to add the path manually - }
+      FSplit (sMask, sDir, sName, sExt);
+      if (XFindFirst (sMask, XAnyFile, sr) = 0) then
+        repeat
+          if (sr.Attr and XVolumeID = 0) and
+             (sr.Attr and XDirectory = 0) and
+             (sr.name[1] <> '.') then
+          begin
+            inc (nOpenFiles);
+            p^ [nOpenFiles].FName := ExpandPath (concat (sDir, sr.name));
+{$ifdef XOUT}
+            FPExt (concat ('Found file ', p^ [nOpenFiles].FName));
+{$endif}
+          end;
+        until (XFindNext (sr) <> 0) or
+              (nOpenFiles >= MAX_OPENFILES);
+      XFindClose (sr);  {  - for Delphi - }
+
+{$ifdef XOUT}
+      FPExt (SEPERATOR);
+{$endif}
+    end
+    else
+    begin
+      inc (nOpenFiles);
+      p^ [nOpenFiles].FName := ExpandPath (sMask);
+    end;
+
+    if (nOpenFiles >= MAX_OPENFILES) then
+      goto ExitLoop;
+  end;
+ExitLoop:
+end;
+
+procedure Syntax;
+var done:boolean;
+    c:char;
+{$ifdef WIN32}
+    s:string;
+{$endif}
+
+    procedure Help_Macro;
+    var i:TOptions;
+    begin
+      FP (SEPERATOR);
+      FP ('Macros may have the form [number][cmd [cmd [...]]][number]...');
+      FP ('a number always specifies the amount of bytes to skip, a cmd is always');
+      FP (' an action like jump or so');
+      FP ('');
+      FP ('Available macro commands (case sensitive):');
+      for i:= START_MACRO to END_MACRO do
+        NoteSwitch (i);
+      FP (SEPERATOR);
+    end;
+
+    procedure Help_Method;
+    var i:TOptions;
+    begin
+      FP (SEPERATOR);
+      FP ('Available methods:');
+      for i:= START_METHOD to END_METHOD do
+        NoteSwitch (i);
+      FP (SEPERATOR);
+    end;
+
+    procedure Help_Option;
+    var i:TOptions;
+    begin
+      FP (SEPERATOR);
+      FP ('Available options:');
+      for i:= START_OPTION to END_OPTION do
+        NoteSwitch (i);
+      FP (SEPERATOR);
+    end;
+
+begin
+  if (bRedirected) then
+  begin
+    FP ('The help system cannot work if the output is redirected ...');
+    halt (2);
+  end;
+
+  done := false;
+  FP ('Interactive GetEQExe help system:');
+
+  repeat
+    FP ('(1) options ³ (2) methods ³ (3) macros ³ (4) all together ³ (rest) exit');
+{$ifdef WIN32}
+    FastPrint (' þ Your selection: ');
+    readln (s);
+    c := s[1];
+{$else}
+    FastPrint (' þ Your selection: ( )'#8#8);
+    c := readkey;
+    FastPrint (c);
+    FinishLine;
+{$endif}
+
+    case c of
+      '1':Help_Option;
+      '2':Help_Method;
+      '3':Help_Macro;
+      '4':begin
+            Help_Option;
+            Help_Method;
+            Help_Macro;
+          end;
+    else
+      done := true;
+    end;
+
+    FP ('');
+  until done;
+
+  halt (1);
+end;
+
+procedure AssignHandles;
+var i:byte;
+begin
+  FileMode := FILEMODE_READ;
+
+  for i:=1 to nOpenFiles do
+  begin
+    assign (p^ [i].f, p^ [i].FName);
+    reset (p^ [i].f, 1);
+    CheckIOError (ioresult, p^ [i].FName);
+
+    inc (FILES_OPENED);
+    p^ [i].FSize := FileSize (p^ [i].f);
+  end;
+end;
+
+procedure DetermineFileType;
+var i:byte;
+    bPE, bNE, bLX:boolean;
+label DOSEXE;
+
+    function CheckEXE:boolean;
+    begin
+      if (p^ [i].EXEHeader.IsEXE) then
+      begin
+        if (i > 1) and
+           ((aExeType = ET_COM) or (aExeType = ET_NONE)) then
+          Error (concat (p^ [i].FName, ' is an EXE file. Other files are not.'));
+        CheckEXE := true;
+      end
+      else
+      begin
+        if (i > 1) and (aExeType <> ET_COM) then
+          Error (concat (p^ [i].FName, ' is a COM file. Other files are not.'));
+        CheckEXE := false;
+      end;
+    end;
+
+    function CheckExtID:boolean;
+    var ID:array[1..2] of word;
+    begin
+      move (p^ [i].PE_ImgHead.ID, ID, 4);
+
+      { - check for PE EXE: PE#0#0 - }
+      bPE := (ID[1] = $4550) and (ID[2] <> $0000);
+      bNE := (ID[1] = $454E);
+      bLX := (ID[1] = $584C) or (ID[1] = $454C);
+
+      CheckExtID := (bPE) or (bNE) or (bLX);
+    end;
+
+    function ReadExtHeader:boolean;
+    begin
+      { - at $003C is the offset for the NE/LE/LX/PE EXE - }
+      xseek (i, $3C);
+      { - note: NE_Offset must be a long!! - }
+      xblockread (i, p^ [i].NE_Offset, 4, dummy);
+
+      { - if the offset is smaller than the headersize -> DOS EXE - }
+      if (p^ [i].NE_Offset < p^ [i].exeheader.GetHeaderSize) then
+      begin
+        ReadExtHeader := false;
+        exit;
+      end;
+
+      { - Read PE Header - }
+      xseek (i, p^ [i].NE_Offset);
+      xblockread (i, p^ [i].PE_ImgHead, SIZEOF_PE_IMAGE_FILE_HEADER, dummy);
+      xblockread (i, p^ [i].PE_OptHead, SIZEOF_PE_OPTIONAL_FILE_HEADER, dummy);
+
+      { - Read NE Header - }
+      xseek (i, p^ [i].NE_Offset);
+      xblockread (i, p^ [i].NE_Head, NE_HEADER_SIZE, dummy);
+      p^ [i].NE_Head.init (p^ [i].NE_Offset);
+
+      ReadExtHeader := true;
+    end;
+
+begin
+  for i:=1 to nOpenFiles do
+  begin
+    xblockread (i, p^ [i].EXEHeader, EXE_HEADER_SIZE, dummy);
+
+    if (CheckEXE) and (p^ [i].EXEHeader.NEOffsetIsValid) then
+    begin
+      if (not ReadExtHeader) then
+        goto DOSEXE;
+
+      if (not CheckExtID) then
+        goto DOSEXE;
+
+      if (bNE) then
+      begin
+        if (i > 1) and (aExeType <> ET_NE) then
+          Error (concat (p^ [i].FName, ' is a new executable.'));
+        aExeType := ET_NE;
+      end;
+
+      if (bLX) then
+      begin
+        if (i > 1) and
+           ((aExeType = ET_EXE) or (aExeType = ET_PE) or (aExeType = ET_NE)) then
+          Error (concat (p^ [i].FName, ' is a linear executable. Not supported yet.'));
+        aExeType := ET_LE;
+      end;
+
+      if (bPE) then
+      begin
+        { - don't think it works - }
+        if (i > 1) and (aExeType <> ET_PE) then
+          Error (concat (p^ [i].FName, ' is a portable executable. The others are not.'));
+        aExeType := ET_PE;
+      end;
+
+    end
+    else
+    begin
+DOSEXE:
+      if (aExeType <> ET_EXE) and (i > 1) then
+        Error (concat (p^ [i].FName, ' is a standard DOS EXE. The otheres are not.'));
+      aExeType := ET_EXE;
+
+      p^ [i].NE_Offset := 0;
+    end;
+
+{$ifdef XOUT}
+    case aExeType of
+      ET_NONE: FPExtName (i, 'is a normal file');
+      ET_COM:  FPExtName (i, 'is a COM file');
+      ET_EXE:  FPExtName (i, 'is a DOS executable');
+      ET_LE:   FPExtName (i, 'is a linear executable (ignored)');
+      ET_NE:   FPExtName (i, 'is a new executable');
+      ET_PE:   FPExtName (i, 'is a portable executable');
+    end;
+{$endif}
+  end;
+
+{$ifdef XOUT}
+  FPExt (SEPERATOR);
+{$endif}
+end;
+
+procedure SearchStartPos;
+var i:byte;
+    nPos:longint;
+
+    function EvaluateMacro (i:byte;
+                            nStartPos:longint):longint;
+    var len, p:byte;
+
+        function GetNumber:Str10;
+        var j:byte;
+        begin
+          j := p - 1;
+          while IsNumberChar (sMacro [j + 1]) do
+            inc (j);
+          GetNumber := copy (sMacro, p, j - p + 1);
+        end;
+
+    var s:Str10;
+        nSkip:longint;
+    begin
+      p := 1;
+      len := length (sMacro);
+
+{$ifdef XOUT}
+      FPExtName (i, concat ('evaluating macro commands ', Quoted (sMacro),
+                        ' at ',  DecHex (i, nStartPos), ':'));
+{$endif}
+
+      while (p <= len) do
+      begin
+        case sMacro[p] of
+          '0'..'9':
+              begin
+                s := GetNumber;
+                inc (p, length (s) - 1);
+
+                nSkip := s2i (s);
+                inc (nStartPos, nSkip);
+{$ifdef XOUT}
+                FPExt (concat (' - Skipping ', i2s (nSkip), ' byte(s) - now at ', DecHex (i, nStartPos)));
+{$endif}
+              end;
+          'c':begin
+                if (aExeType = ET_COM) then
+                  Error ('Long call macro ("c") is not available for COM files.');
+                nStartPos := Command_LONGCALL (i, nStartPos);
+              end;
+          'f':nStartPos := Command_JMP_FAR (i, nStartPos);
+          'j':nStartPos := Command_JMP     (i, nStartPos, 1);
+          'k':nStartPos := Command_JMP32   (i, nStartPos, 1);
+          'm':nStartPos := Command_MOV_JMP (i, nStartPos);
+          '_':;  { just do nothing }
+        else
+          Error (concat ('Cannot evaluate this macro. ',
+                         'Error at pos ', i2s (p), ' ', Quoted (sMacro[p]), '.'));
+        end;
+        inc (p);
+      end;
+      EvaluateMacro := nStartPos;
+    end;
+
+    procedure SetStdEXEPos;
+    var nSeg, nOfs:word;
+    begin
+      nPos := p^ [i].EXEHeader.GetAbsoluteIP;  { goto CS:IP }
+      nSeg := p^ [i].EXEHeader.CS;
+      nOfs := p^ [i].EXEHeader.IP;
+{$ifdef XOUT}
+      FPExtName (i, concat ('original CS:IP = ', GetAddress (nSeg, nOfs),
+                            ' ð ', DecHex (i, nPos)));
+{$endif}
+    end;
+
+    procedure GetPEEntryPoint (    i:byte;
+                               var nRes:longint;
+                               var nRVA:longint);
+    var aOTH:PEObjectTableHandler;
+    begin
+      { - goto start offset - }
+      xseek (i, p^ [i].NE_Offset +
+                SIZEOF_PE_IMAGE_FILE_HEADER +
+                p^ [i].PE_ImgHead.OptionalHeaderSize);
+      { - init handler - }
+      aOTH.init (p^ [i].PE_ImgHead.NumberOfSections);
+      { - read the whole segment table - }
+      xblockread (i, aOTH.pBase^, aOTH.nTableSize, dummy);
+      { - get the entrypoint RVA - }
+      nRVA := p^ [i].PE_OptHead.AddressOfEntryPoint;
+      { - translate to physical offset - }
+      aOTH.GetPhysOfsByRVA (nRVA, nRes);
+      { - release the memory - }
+      aOTH.done;
+    end;
+
+    procedure SetStdPEPos;
+    var nRVA:longint;
+    begin
+      GetPEEntryPoint (i, nPos, nRVA);
+
+{$ifdef XOUT}
+      FPExtName (i, concat ('Entrypoint = ', DecHex (i, nPos), '; RVA = ', DecHex (i, nRVA)));
+{$endif}
+
+      if (nPos > p^ [i].FSize) then
+        Error (concat ('PE entrypoint exceeds filesize of ', p^ [i].FName));
+    end;
+
+    procedure SetStdNEPos;
+    var S:NE_Segment_Handler;
+    begin
+      { - init handler - }
+      S.init (p^ [i].NE_Head.GetSectorSize,
+              p^ [i].NE_Head.nSegmentCount);
+      { - goto start position of table - }
+      xseek (i, p^ [i].NE_Head.GetAbsoluteSegmentTablePos);
+      xblockread (i, S.pBase^, S.nTableSize, dummy);
+      { - calc and check entry point - }
+      nPos := S.GetEntryPoint (p^ [i].NE_Head.nCS, p^ [i].NE_Head.nIP);
+      { - cannot use case xyz of - because of longint - }
+      if (nPos = NE_SEG_ERR_NO_ENTRYPOINT) then
+      else
+        if (nPos = NE_SEG_ERR_TOO_LARGE) then
+          Error (concat (p^ [i].FName, ': CS is greater than the segment count.'))
+        else
+          if (nPos = NE_SEG_ERR_EMPTY) then
+            Error (concat (p^ [i].FName, ': segment itself is empty'))
+          else
+            if (nPos > p^ [i].FSize) then
+            begin
+              Error (concat (p^ [i].FName, ': entrypoint is out of filebounds'));
+              nPos := 0;
+            end;
+
+      S.Done;
+    end;
+
+    procedure Modify_COM_IP;
+    begin
+      { - doesnt matter wether SETIP or ADDIP - }
+      { - before, nPos was 0! - }
+      nPos := nIP;
+
+      if (nPos > p^ [i].FSize) then
+        Error (concat ('The new IP of ', i2s (nIP),
+                       ' exceeds the filesize of ', p^ [i].FName));
+
+{$ifdef XOUT}
+      FPExtName (i, concat ('Start IP = ', DecHex (i, nPos)));
+{$endif}
+    end;
+
+    function Modify_EXE_IP (var nNewIP:word):boolean;
+    begin
+      Modify_EXE_IP := false;
+
+      { - check if IP is changed - }
+      if (bSwitch [_SETIP]) then
+      begin
+        { - instead of adding the std IP, add the new one - }
+        nNewIP := nIP;
+{$ifdef XOUT}
+        FPExtName (i, concat ('setting IP to ', i2s (nIP)));
+{$endif}
+        Modify_EXE_IP := true;
+      end
+      else
+      begin
+        { - add defaut IP - }
+        nNewIP := p^ [i].EXEHeader.GetIP;
+
+        if (bSwitch [_ADDIP]) then
+        begin
+          if (nNewIP + nIP > 65535) then
+            Error (concat ('The new IP of ', p^ [i].FName, ' exceeds the maximum of 65535.'));
+
+          if (nNewIP + nIP < 0) then
+            Error (concat ('The new IP of ', p^ [i].FName, ' exceeds the minimum of 0.'));
+
+          inc (nNewIP, nIP);
+{$ifdef XOUT}
+          FPExtName (i, concat ('adding ', i2s (nIP), ' to IP'));
+{$endif}
+          Modify_EXE_IP := true;
+        end;
+      end;
+    end;
+
+    procedure ModifyCSIP;
+    var nOldIP, nNewIP:word;
+    begin
+{ check for changed CS or IP }
+      if (not bSwitch [_SETIP]) and
+         (not bSwitch [_ADDIP]) then
+        exit;
+
+      case aExeType of
+        ET_COM:Modify_COM_IP;
+        ET_EXE:if (Modify_EXE_IP (nNewIP)) then
+               begin
+                 with p^ [i].ExeHeader do
+                 begin
+                   nOldIP := IP;
+                   IP := nNewIP;
+                   nPos := GetAbsoluteIP;
+                   IP := nOldIP;
+                 end;
+{$ifdef XOUT}
+                 FPExtName (i, concat ('starting at ', DecHex (i, nPos)));
+{$endif}
+               end;
+      else
+        Error (concat ('Cannot change the IP for ', p^ [i].FName, '. It''s no COM or DOS EXE.'));
+      end;
+    end;
+
+begin
+  for i:=1 to nOpenFiles do
+  begin
+{ - check for new start position - }
+    if bSwitch [_GOTO] then
+    begin
+      nPos := nStart;
+      if (nPos > p^ [i].FSize) then
+        Error (concat ('The start position ', i2s (nStart),
+                       ' exceeds the filesize of ', p^ [i].FName));
+    end
+    else
+{ - check for going to the EOF - }
+      if bSwitch [_END] then
+      begin
+        nPos := p^ [i].FSize - nEOF;
+        if (nPos < 0) then
+          Error (concat ('The position EOF - ', i2s (nEOF),
+                         ' bytes exceeds the filesize of ', p^ [i].FName));
+{$ifdef XOUT}
+        FPExtName (i, concat ('going to EOF - ', i2s (nEOF), ' bytes = ', DecHex (i, nPos)));
+{$endif}
+      end
+      else
+      begin
+{ set nPos to the starting position }
+        case aExeType of
+          ET_NONE: nPos := 0;  { - handle stad files as std. files - }
+          ET_COM:  nPos := 0;  { - COM files start directly at 0 - }
+          ET_EXE:  SetStdEXEPos;
+          ET_LE:   nPos := 0;  { - not handled yet - }
+          ET_NE:   SetStdNEPos;
+          ET_PE:   SetStdPEPos;
+        end;
+
+        ModifyCSIP;
+
+        if bSwitch [_MACRO] then
+          nPos := EvaluateMacro (i, nPos);
+      end;
+
+{$ifdef XOUT}
+    FPExtName (i, concat ('start comparing at ', DecHex (i, nPos)));
+{$endif}
+    xseek (i, nPos);
+{ - calculate the number of bytes to compare without respect to /STOPB - }
+    p^ [i].nTotalCompare := FileSize (p^ [i].f) - FilePos (p^ [i].f);
+
+{$ifdef XOUT}
+    FPExt (SEPERATOR);
+{$endif}
+  end;
+end;
+
+procedure CheckForDiskSpace;
+var nDriveID:byte;
+begin
+  if (pos (':', OUT_FILENAME) = 2) then
+    nDriveID := ord (upcase (OUT_FILENAME[1])) - ord ('A') + 1
+  else
+    nDriveID := 0;
+
+  if (diskfree (nDriveID) = 0) then
+  begin
+    bSwitch [_NOPAS] := true;
+
+{$ifdef XOUT}
+    if (nDriveID = 0) then
+      FPExt ('Sorry, no space for writing on this drive')
+    else
+      FPExt (concat ('Sorry, no space for writing on drive ', chr (ord ('A') + nDriveID - 1), ':'));
+{$endif}
+  end;
+end;
+
+procedure OpenPascalFile;
+begin
+{ - open file for writing - }
+  FileMode := FILEMODE_WRITE;
+
+{ create pascal include file }
+  assign (fout, OUT_FILENAME);
+
+{ - check if it already exists - }
+  reset (fout);
+  if (ioresult = 0) and (not bSwitch [_OVER]) then
+    Error (concat ('The output file ', OUT_FILENAME, ' already exists.'));
+
+{ - does not exist - create a new one - }
+  rewrite (fout);
+  CheckIOError (ioresult, OUT_FILENAME);
+  write (fout, EINRUECKEN);
+
+  PASCAL_OPENED := true;
+end;
+
+procedure GetCompareLen;
+{ - just for informational purposes - }
+var nTotal:longint;
+    i:byte;
+begin
+{ - init with first size - }
+  nTotal := p^ [1].nTotalCompare;
+
+  for i:=2 to nOpenFiles do
+    if (p^ [i].nTotalCompare < nTotal) then
+      nTotal := p^ [i].nTotalCompare;
+
+{ - check if stopbyte was set - }
+  if bSwitch [_STOPB] then
+    if (nStopBytes < nTotal) then
+      nTotal := nStopBytes;
+
+{ - and tell 'em - }
+{$ifdef XOUT}
+  if (nTotal = 1) then
+    FPExt ('Comparing 1 byte total')
+  else
+    FPExt (concat ('Comparing ', i2s (nTotal), ' bytes total'));
+{$endif}
+end;
+
+{$ifdef REGISTERED}
+procedure Disassemble (b:byte);
+type TREG = string[2];
+const wREGS:array[0..7] of TREG =
+            ('ax', 'cx', 'dx', 'bx', 'sp', 'bp', 'si', 'di');
+      bREGS:array[0..7] of TREG =
+            ('al', 'cl', 'dl', 'bl', 'ah', 'ch', 'dh', 'bh');
+      sJUMP:array[0..15] of TREG =
+            ('o ', 'no',
+             'b ', 'ae',
+             'e ', 'ne',
+             'be', 'p^',
+             's ', 'ns',
+             'p ', 'np',
+             'l ', 'ge',
+             'le', 'g ');
+var s:string;
+begin
+  s := '';
+  case b of
+    $00..$05: s := 'add  ..';
+    $06: s := 'push es';
+    $07: s := 'pop  es';
+    $08..$0D: s := 'or   ..';
+    $0E: s := 'push cs';
+    $0F: s := 'pop  cs';
+
+    $10..$15: s := 'adc  ..';
+    $16: s := 'push ss';
+    $17: s := 'pop  ss';
+    $18..$1D: s := 'sbb  ..';
+    $1E: s := 'push ds';
+    $1F: s := 'pop  ds';
+
+    $20..$25: s := 'and  ..';
+    $26: s := 'es:';
+    $27: s := 'daa';
+    $28..$2D: s := 'sub  ..';
+    $2E: s := 'cs:';
+    $2F: s := 'das';
+
+    $30..$35: s := 'xor  ..';
+    $36: s := 'ss:';
+    $37: s := 'daa';
+    $38..$3D: s := 'cmp  ..';
+    $3E: s := 'ds:';
+    $3F: s := 'das';
+
+    $40..$47: s := concat ('inc  ', wREGS [b - $40]);
+    $48..$4F: s := concat ('dec  ', wREGS [b - $48]);
+
+    $50..$57: s := concat ('push ', wREGS [b - $50]);
+    $58..$5F: s := concat ('pop  ', wREGS [b - $58]);
+
+    $60: s := 'pusha';
+    $61: s := 'popa';
+    $62: s := 'bound ..';
+    $63: s := 'arpl ..';
+    $64: s := 'fs:';
+    $65: s := 'gs:';
+    $66: s := 'db  66h';
+    $67: s := 'db  67h';
+    $68: s := 'push ..';
+    $69: s := 'imul ..';
+    $6A: s := 'push ..';
+    $6B: s := 'imul ..';
+    $6C: s := 'insb';
+    $6D: s := 'insw';
+    $6E: s := 'outsb';
+    $6F: s := 'outsw';
+
+    $70..$7F: s := concat ('j', sJUMP [b - $70], ' ..');
+
+    $80..$83: s := 'add / or / adc / sbb / and / sub / xor / cmp ..';
+    $84: s := 'test ..';
+    $85: s := 'test ..';
+    $86: s := 'xchg ..';
+    $87: s := 'xchg ..';
+    $88..$8C: s := 'mov  ..';
+    $8D: s := 'lea  ..';
+    $8E: s := 'mov  ..';
+    $8F: s := 'pop  ..';
+
+    $90: s := 'nop';
+    $91..$97: s := concat ('xchg ', wREGS [b - $90], ', ax');
+    $98: s := 'cbw';
+    $99: s := 'cwd';
+    $9A: s := 'call ..';
+    $9B: s := 'fwait';
+    $9C: s := 'pushf';
+    $9D: s := 'popf';
+    $9E: s := 'sahf';
+    $9F: s := 'lahf';
+
+    $A0..$A3: s := 'mov  ..';
+    $A4: s := 'movsb';
+    $A5: s := 'movsw';
+    $A6: s := 'cmpsb';
+    $A7: s := 'cmpsw';
+    $A8: s := 'test ..';
+    $A9: s := 'test ..';
+    $AA: s := 'stosb';
+    $AB: s := 'stosw';
+    $AC: s := 'lodsb';
+    $AD: s := 'lodsw';
+    $AE: s := 'scasb';
+    $AF: s := 'scasw';
+
+    $B0..$B7: s := concat ('mov  ', bREGS [b - $B0], ', ..');
+    $B8..$BF: s := concat ('mov  ', wREGS [b - $B8], ', ..');
+
+    $C0..$C1: s := 'rol / ror / rcl / rcr / shl / shr / ? / sar ..';
+    $C2: s := 'retn ..';
+    $C3: s := 'retn';
+    $C4: s := 'les  ..';
+    $C5: s := 'lds  ..';
+    $C6..$C7: s := 'mov  ..';
+    $C8: s := 'enter ..';
+    $C9: s := 'leave';
+    $CA: s := 'retf ..';
+    $CB: s := 'retf';
+    $CC: s := 'int  3';
+    $CD: s := 'int  ..';
+    $CE: s := 'into';
+    $CF: s := 'iret';
+
+    $D0..$D3: s := 'rol / ror / rcl / rcr / shl / shr / ? / sar ..';
+    $D4: s := 'aam  ..';
+    $D5: s := 'aad  ..';
+    $D6: s := 'setalc';
+    $D7: s := 'xlat';
+    $D8..$DF: s := '; coprocessor method';
+
+    $E0: s := 'loopne ..';
+    $E1: s := 'loope ..';
+    $E2: s := 'loop ..';
+    $E3: s := 'jcxz ..';
+    $E4: s := 'in   al, ..';
+    $E5: s := 'in   ax, ..';
+    $E6: s := 'out  .., al';
+    $E7: s := 'out  .., ax';
+    $E8: s := 'call ..';
+    $E9: s := 'jmp  ..';
+    $EA: s := 'jmp  ..';
+    $EB: s := 'jmps ..';
+    $EC: s := 'in   al, dx';
+    $ED: s := 'in   ax, dx';
+    $EE: s := 'out  dx, al';
+    $EF: s := 'out  dx, ax';
+
+    $F0: s := 'lock';
+    $F1: s := '?';
+    $F2: s := 'repne';
+    $F3: s := 'repe';
+    $F4: s := 'hlt';
+    $F5: s := 'cmc';
+    $F6..$F7: s := 'test / ? / not / neg / mul / imul/ div / idiv ..';
+    $F8: s := 'clc';
+    $F9: s := 'stc';
+    $FA: s := 'cli';
+    $FB: s := 'sti';
+    $FC: s := 'cld';
+    $FD: s := 'std';
+    $FE..$FF: s := 'inc / dec / push ..';
+  else
+    Error (concat ('Unknown opcode ', hexbyte (b), 'h'));
+  end;
+  if (s > '') then
+    FastPrint (concat ('   ³ ', s));
+end;
+{$endif}
+
+procedure CompareFiles;
+label StopCompareByte, StopCompareMatch;
+var nFilePos, nAbsoluteOffset:longint;
+    nActByte:byte;
+
+    procedure ReadAllBufs;
+    var i:byte;
+        nReadPos:longint;
+    begin
+      MinBytesRead := MAX_BUFFER;
+
+    { - read all buffers - }
+      for i:=1 to nOpenFiles do
+      begin
+        nReadPos := FilePos (p^ [i].f);
+        xblockread (i, p^ [i].buf, MAX_BUFFER, p^ [i].BytesRead);
+    { - check if number of read bytes is lower than min. - }
+        if (p^ [i].BytesRead < MinBytesRead) then
+          MinBytesRead := p^ [i].BytesRead;
+
+{$ifdef XOUT}
+        FPExtName (i, concat ('read ', i2s (p^ [i].BytesRead),
+                              ' byte(s) at ', DecHex (i, nReadPos)));
+{$endif}
+
+    { - reset act file's buffer position - }
+        p^ [i].ActBufPos := 0;
+      end;
+
+{$ifdef XOUT}
+      FPExt (concat ('Now comparing ', i2s (MinBytesRead), ' byte(s)'));
+      FPExt (SEPERATOR);
+{$endif}
+    end;
+
+    function AllBufOkay:boolean;
+    var i:byte;
+    begin
+      AllBufOkay := false;
+      for i := 1 to nOpenFiles do
+        if (p^ [i].ActBufPos >= MinBytesRead) then
+          exit;
+      AllBufOkay := true;
+    end;
+
+    procedure IncBufPos;
+    var i:byte;
+    begin
+      { increase file pointer }
+      for i:=1 to nOpenFiles do
+        inc (p^ [i].ActBufPos);
+
+      inc (nConstCount);
+    end;
+
+    function ActBytesAreEqual (nOffset:longint):boolean;
+    var i:byte;
+        Data:JumpRec;
+    label Again, Next;
+    begin
+      ActBytesAreEqual := true;
+
+    { autojump evaluation }
+{$ifdef REGISTERED}
+      if bSwitch [_AAUTO] then
+        for i := 1 to nOpenFiles do
+        begin
+    Again:
+          if IsJump (p^ [i].ActByte) then
+          begin
+            move (p^ [i].buf[p^ [i].ActBufPos], Data, SizeOf (Data));
+            case p^ [i].ActByte of
+              { call, jmp }
+              $E8,
+              $E9:begin
+                    if (p^ [i].ActBufPos + 3 + word (Data.Offset) > MAX_BUFFER) then
+                      goto Next;
+                    if (Data.Offset >= $8000) and (nOffset + 3 + Data.Offset > p^ [i].FSize) then
+                      inc (p^ [i].ActBufPos, 3 + integer (Data.Offset))      { 3 for the command length }
+                    else
+                      inc (p^ [i].ActBufPos, 3 + word (Data.Offset));      { 3 for the command length }
+                  end;
+              { jcxz, jmps }
+              $E3,
+              $EB:inc (p^ [i].ActBufPos, 2 + lo (Data.Offset)); { 2 for the command length }
+            end;
+            goto Again;
+          end;
+    Next:
+        end;
+{$endif}
+
+    { normal comparison }
+      for i := 1 to nOpenFiles - 1 do
+      begin
+        if (p^ [i].ActByte <> p^ [i + 1].ActByte) then
+        begin
+          ActBytesAreEqual := false;
+          if (bSwitch [_DIFF]) then
+            inc (nBytesFound);
+          exit;
+        end;
+      end;
+
+      if (not bSwitch [_DIFF]) then
+        inc (nBytesFound);
+    end;
+
+    procedure NextMode;
+    begin
+      inc (MODUS);
+      if (MODUS > 4) then
+        MODUS := 1;
+      FastPrint (concat (MODI[MODUS], #8));
+    end;
+
+    procedure WriteEqualByte (b:byte; nPos:longint);
+    begin
+      if bSwitch [_NOCON] then
+      begin
+        NextMode;
+        exit;
+      end;
+
+      if bSwitch [_BIN] then
+      begin
+        write (chr (b));
+      end
+      else
+      begin
+        FastPrint (concat (i2sf (nPos, 5), ' (',
+                           hexlong (nPos),') ',
+                           i2sf (b, 3), ' $',
+                           hexbyte (b), ' '));
+        if (b < 32) then
+          FastPrint ('ú')
+        else
+          FastPrint (chr (b));
+
+{$ifdef REGISTERED}
+        if not bSwitch [_NODIS] then
+          Disassemble (b);
+{$endif}
+
+        FinishLine;
+      end;
+    end;
+
+    procedure WriteDifferentByte (nPos:longint);
+    var i:byte;
+
+        function ToLen (s:string; len:byte):string;
+        var strlen, i:byte;
+        begin
+          strlen := length (s);
+          for i:=strlen + 1 to len do
+            s := concat (' ', s);
+          ToLen := s;
+        end;
+
+    begin
+      if bSwitch [_NOCON] then
+      begin
+        NextMode;
+        exit;
+      end;
+
+      FastPrint (concat (i2sf (nPos, 5), ' (', hexlong (nPos),')'));
+      for i:=1 to nOpenFiles do
+        FastPrint (concat (' ³ ', ToLen (i2s (p^ [i].ActByte), 3), ' ', hexbyte (p^ [i].ActByte), 'h'));
+      FP ('');
+    end;
+
+    procedure Write2Pascal (x:byte);
+    begin
+      inc (nOutCount);
+      if (nOutCount <= MAX_OUT) then
+      begin
+        write (fout, '$', hexbyte (x));
+        if (nOutCount < MAX_OUT) then
+          write (fout, ', ');
+
+    { check for new line }
+        if (nConstCount = 14) then
+        begin
+          write (fout, #13#10, EINRUECKEN);
+          nConstCount := 0;
+        end;
+      end;
+    end;
+
+    function OneEof:boolean;
+    var i:byte;
+    begin
+      OneEof := true;
+      for i:=1 to nOpenFiles do
+        if (eof (p^ [i].f)) or (p^ [i].BytesRead < MAX_BUFFER) then
+          exit;
+      OneEof := false;
+    end;
+
+begin
+  nConstCount     := 0;
+  nAbsoluteOffset := 0;
+  nOutCount       := 0;
+  nBytesFound     := 0;
+  nBytesEqual     := 0;
+  nByteErrors     := 0;
+  nFirstEqualPos  := -1;
+
+  repeat
+    ReadAllBufs;
+
+    while AllBufOkay do
+    begin
+      IncBufpos;
+
+{ write to STDOUT }
+      nActByte := MAGIC;
+
+{ npos is the file positon from the start of the file on }
+      nFilePos := nAbsoluteOffset + p^ [1].ActBufPos;
+
+{ comparingf the current bytes of all buffers }
+      if (ActBytesAreEqual (nFilePos)) then
+      begin
+{ bytes are equal: if not show all different bytes }
+        if (not bSwitch [_DIFF]) then  { else b = 0 }
+        begin
+          nActByte := p^ [1].ActByte;
+
+          if (nBytesEqual = 0) then
+            nFirstEqualPos := nFilePos;
+
+          inc (nBytesEqual);
+          WriteEqualByte (nActByte, nFilePos);
+        end;
+      end
+      else
+      begin
+        inc (nByteErrors);
+        if (bSwitch [_DIFF]) then
+          WriteDifferentByte (nFilePos);
+      end;
+
+{ check if something should be written to the pascal file }
+      if (not bSwitch [_NOPAS]) then
+        Write2Pascal (nActByte);
+
+{ why comparing any more if no output is written?? }
+      if (nOutCount > MAX_OUT) and (bSwitch [_NOCON]) then
+        goto StopCompareMatch;
+
+{ check if there was an overflow }
+      if (bSwitch [_STOPM]) and (nBytesFound >= nStopMatches) then
+      begin
+{$ifdef XOUT}
+        FPExt (concat ('Stop comparing after match ', i2s (nStopMatches)));
+{$endif}
+StopCompareMatch:
+        exit;
+      end;
+
+      if (bSwitch [_STOPE]) and (nByteErrors >= nStopErrors) then
+      begin
+{$ifdef XOUT}
+        FPExt (concat ('Stop comparing after mismatch byte ', i2s (nStopErrors)));
+{$endif}
+        exit;
+      end;
+
+      if (bSwitch [_STOPB]) and (nFilePos >= nStopBytes) then
+      begin
+StopCompareByte:
+{$ifdef XOUT}
+        FPExt (concat ('Stop comparing after byte ', i2s (nStopBytes)));
+{$endif}
+        exit;
+      end;
+    end;  { while actpos < minbytesread }
+
+    inc (nAbsoluteOffset, MinBytesRead);
+{$ifndef REGISTERED}
+  until (OneEOF);
+{$else}
+  until (OneEof) or (bSwitch [_AAUTO]);
+{ - if AutoJump - only one buffer - because of no buffer resync - }
+
+{ - if it is a autojump, display message - }
+  if (bSwitch [_AAUTO]) then
+    FPExt ('Aborting after first buffer because of no buffer resync at AutoJump.');
+{$endif}
+end;
+
+{$f+}
+procedure CloseFiles;
+var i:byte;
+begin
+{$ifdef XOUT}
+  if (nOpenFiles > 1) then
+    FPExt (concat ('Found ', i2s (nBytesEqual), ' equal bytes'));
+{$endif}
+
+  if FILES_OPENED > 0 then
+  begin
+{$ifdef XOUT}
+    FPExt (concat ('Closing ', i2s (FILES_OPENED), ' file(s)'));
+{$endif}
+
+    { close all files }
+    for i:=1 to FILES_OPENED do
+      close (p^ [i].f);
+
+    if (PASCAL_OPENED) and (not bSwitch [_NOPAS]) then
+    begin
+      writeln (fout);  { add a newline }
+      { - if nothing was equal or first equal was out of Pascal file - }
+      if (nOutCount = 0) or (nFirstEqualPos > MAX_OUT) then
+      begin
+        erase (fout);
+{$ifdef XOUT}
+        FPExt ('Deleting Pascal file (nothing equal was found)');
+{$endif}
+      end
+      else
+      begin
+        close (fout);
+{$ifdef XOUT}
+        FPExt ('Closing Pascal file');
+{$endif}
+      end;
+    end;
+
+    FILES_OPENED := 0;
+  end;
+
+  dispose (p);
+
+{ Restore old exit procedure }
+  ExitProc := OldExit;
+end;
+{$f-}
+
+var
+    i:TOptions;
+{$ifdef MSDOS}
+    _dx:word;
+{$endif}
+begin
+  bRedirected := false;
+{$ifdef MSDOS}
+  { - check if output is redirected or not - }
+  asm
+    mov ax, $4400
+    mov bx, word ptr output  { - first 2 bytes are the handle :-) - }
+    int 21h
+    mov _dx, dx
+  end;
+  bRedirected := (_dx and $82 <> $82);
+{$endif}
+
+  p := new (pEntryArray);
+  OldExit := ExitProc;
+  ExitProc := @CloseFiles;
+  nBytesEqual := 0;
+
+  for i:=START_METHOD to END_OPTION do
+    bSwitch [i] := cmdline.IsFlag (Commands [i].switch);
+
+  EvaluateCommandLine;
+
+  if not bSwitch [_NOCFG] then
+    ReadConfigFile;
+
+  if not bSwitch [_NOHEAD] then
+    PrintCopyright;
+
+{ get all options }
+
+{$ifdef XOUT}
+  if bSwitch [_EXT] then
+    ShowOptions;
+{$endif}
+
+{ read the files in the Filenames buffer }
+  ReadCommandline;
+
+  bOnlyOneFile := (nOpenFiles = 1);
+(**
+  if bOnlyOneFile then
+  begin
+    bSwitch [_NOPAS] := true;  { - no pascal file if only one file is used - }
+{$ifdef XOUT}
+    FPExt ('Found only one file to capture startup code.');
+{$endif}
+  end;
+**)
+
+  if (nOpenFiles < 1) then
+    if (cmdline.GetNonOptionStringCount > 0) then
+      Error ('Filemask(s) matched no file.');
+
+  if (nOpenFiles < 1) or
+     (bSwitch [_HELP]) or
+     (cmdline.IsFlag ('h')) or
+     (cmdline.IsFlag ('?')) then
+    Syntax;
+
+  aExeType := ET_NONE;
+
+  AssignHandles;
+  DetermineFileType;
+  SearchStartPos;
+
+  CheckForDiskSpace;
+  if not bSwitch [_NOPAS] then
+    OpenPascalFile;
+
+  GetCompareLen;
+
+{$ifdef MSDOS}
+  SetCBreak (TRUE);
+{$endif}
+  CompareFiles;
+
+{$ifdef XOUT}
+  FPExt ('all done');
+{$endif}
+  CloseFiles;
+end.
+
