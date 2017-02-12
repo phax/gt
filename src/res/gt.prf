@@ -1057,7 +1057,7 @@ STR HRC_EXELIB_PE_CPU_HITACHI_SH3
   all="Hitachi SH3 little-endian";
 
 STR HRC_EXELIB_PE_CPU_HITACHI_SH3DSP
-  all="Hitachi SH3DSP";
+  all="Hitachi SH3 DSP";
 
 STR HRC_EXELIB_PE_CPU_HITACHI_SH3E
   all="Hitachi SH3E little-endian";
@@ -1069,13 +1069,16 @@ STR HRC_EXELIB_PE_CPU_HITACHI_SH5
   all="Hitachi SH5";
 
 STR HRC_EXELIB_PE_CPU_ARM
-  all="ARM";
+  all="ARM little endian";
 
 STR HRC_EXELIB_PE_CPU_THUMB
-  all="THUMB";
+  all="Thumb";
+
+STR HRC_EXELIB_PE_CPU_ARM_THUMB2
+  all="ARM Thumb-2 little endian";
 
 STR HRC_EXELIB_PE_CPU_AM33
-  all="AM33";
+  all="Matsushita AM33";
 
 STR HRC_EXELIB_PE_CPU_IBM_POWERPC
   all="IBM PowerPC little endian";
@@ -1110,11 +1113,23 @@ STR HRC_EXELIB_PE_CPU_CEF
 STR HRC_EXELIB_PE_CPU_EFI
   all="EFI Byte Code";
 
+STR HRC_EXELIB_PE_CPU_RISCV32
+  all="RISC-V 32-bit address space";
+
+STR HRC_EXELIB_PE_CPU_RISCV64
+  all="RISC-V 64-bit address space";
+
+STR HRC_EXELIB_PE_CPU_RISCV128
+  all="RISC-V 128-bit address space";
+
 STR HRC_EXELIB_PE_CPU_AMD64
-  all="AMD64";
+  all="x64";
 
 STR HRC_EXELIB_PE_CPU_M32R
-  all="M32R little endian";
+  all="Mitsubishi M32R little endian";
+
+STR HRC_EXELIB_PE_CPU_ARM64
+  all="ARM64 little endian";
 
 STR HRC_EXELIB_PE_CPU_CEE
   all="CEE";
@@ -1147,6 +1162,9 @@ STR HRC_EXELIB_PE_OS_98_2K
 
 STR HRC_EXELIB_PE_OS_XP
   all="Win XP";
+
+STR HRC_EXELIB_PE_OS_10
+  all="Windows 10";
 
 
 STR HRC_EXELIB_PE_SS

@@ -474,9 +474,10 @@ bool GT_CALL EXE_PE_Lister::_AnalyzeAsPE ()
             m_aIFH.nCPUType == 0x01A8 ? HRC_EXELIB_PE_CPU_HITACHI_SH5 :
             m_aIFH.nCPUType == 0x01C0 ? HRC_EXELIB_PE_CPU_ARM :
             m_aIFH.nCPUType == 0x01C2 ? HRC_EXELIB_PE_CPU_THUMB :
+            m_aIFH.nCPUType == 0x01C4 ? HRC_EXELIB_PE_CPU_ARM_THUMB2 :
             m_aIFH.nCPUType == 0x01D3 ? HRC_EXELIB_PE_CPU_AM33 :
             m_aIFH.nCPUType == 0x01F0 ? HRC_EXELIB_PE_CPU_IBM_POWERPC :
-            m_aIFH.nCPUType == 0x01F0 ? HRC_EXELIB_PE_CPU_IBM_POWERPCFP :
+            m_aIFH.nCPUType == 0x01F1 ? HRC_EXELIB_PE_CPU_IBM_POWERPCFP :
             m_aIFH.nCPUType == 0x0200 ? HRC_EXELIB_PE_CPU_INTEL_IA64 :
             m_aIFH.nCPUType == 0x0266 ? HRC_EXELIB_PE_CPU_MIPS16 :
             m_aIFH.nCPUType == 0x0268 ? HRC_EXELIB_PE_CPU_MOTOROLA :
@@ -486,8 +487,12 @@ bool GT_CALL EXE_PE_Lister::_AnalyzeAsPE ()
             m_aIFH.nCPUType == 0x0520 ? HRC_EXELIB_PE_CPU_INFINEON :
             m_aIFH.nCPUType == 0x0CEF ? HRC_EXELIB_PE_CPU_CEF :
             m_aIFH.nCPUType == 0x0EBC ? HRC_EXELIB_PE_CPU_EFI :
+            m_aIFH.nCPUType == 0x5032 ? HRC_EXELIB_PE_CPU_RISCV32 :
+            m_aIFH.nCPUType == 0x5064 ? HRC_EXELIB_PE_CPU_RISCV64 :
+            m_aIFH.nCPUType == 0x5128 ? HRC_EXELIB_PE_CPU_RISCV128 :
             m_aIFH.nCPUType == 0x8664 ? HRC_EXELIB_PE_CPU_AMD64 :
             m_aIFH.nCPUType == 0x9041 ? HRC_EXELIB_PE_CPU_M32R :
+            m_aIFH.nCPUType == 0xAA64 ? HRC_EXELIB_PE_CPU_ARM64 :
             m_aIFH.nCPUType == 0xC0EE ? HRC_EXELIB_PE_CPU_CEE :
                                         HRC_UNKNOWN;
 
@@ -502,13 +507,14 @@ bool GT_CALL EXE_PE_Lister::_AnalyzeAsPE ()
 
         {
           const resid_t nOSResId =
-            m_aOFH.nOSMajor == 0 ? HRC_EXELIB_PE_OS_V0 :
-            m_aOFH.nOSMajor == 1 ? HRC_EXELIB_PE_OS_ANY :
-            m_aOFH.nOSMajor == 3 ? HRC_EXELIB_PE_OS_NT351 :
-            m_aOFH.nOSMajor == 4 ? HRC_EXELIB_PE_OS_95_NT4 :
-            m_aOFH.nOSMajor == 5 ? HRC_EXELIB_PE_OS_98_2K :
-            m_aOFH.nOSMajor == 6 ? HRC_EXELIB_PE_OS_XP :
-                                   HRC_UNKNOWN;
+            m_aOFH.nOSMajor ==  0 ? HRC_EXELIB_PE_OS_V0 :
+            m_aOFH.nOSMajor ==  1 ? HRC_EXELIB_PE_OS_ANY :
+            m_aOFH.nOSMajor ==  3 ? HRC_EXELIB_PE_OS_NT351 :
+            m_aOFH.nOSMajor ==  4 ? HRC_EXELIB_PE_OS_95_NT4 :
+            m_aOFH.nOSMajor ==  5 ? HRC_EXELIB_PE_OS_98_2K :
+            m_aOFH.nOSMajor ==  6 ? HRC_EXELIB_PE_OS_XP :
+            m_aOFH.nOSMajor == 10 ? HRC_EXELIB_PE_OS_10 :
+                                    HRC_UNKNOWN;
 
           // resolve and print
           str_assign_from_res (sTemp, nOSResId);
