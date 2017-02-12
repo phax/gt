@@ -1,0 +1,73 @@
+GT 0.21  07.12.2000   >< added some colors on any EXE output
+                           (colors are not used if you redirect any
+                           thing with ">", "2>", "|" or when you are
+                           in listmode)
+                      >< changed output of PE Version number slightly
+         06.12.2000   >< improved commandline handling internally
+                         renamed the following switches:
+                           from              to
+                           /ee               /peexp
+                           /ei[1]            /peimp
+                           /ei2              /peimp2
+                           /er[1]            /peres
+                           /er2              /peres2
+                           /epd              /pedd
+                           /eps              /pesect
+                           /epv              /pever
+                           /epx              /peall
+                      >< replaced static methods with functions
+         05.12.2000   >< added generic EXEPack EXE detection
+                      >< added generic SEA-AXE EXE detection
+                      >< added commandline switch /nologo
+                      >< changed commandline parameter /nof to /nofooter
+                      >< added different colors (ooohh ;-)
+                      >< added commandline switch /nocolor
+                      >< added the version number string of the version
+                           where the switch was added in the syntax screen
+GT 0.20  05.12.2000
+                      >< some small code optimizations
+                      >< added output of PKLite version in header
+                      >< added generic PKLite detection
+         02.12.2000
+                      >< added Rec Small 1.05 for DOS EXEs
+         01.12.2000
+                      >< added some PKLite versions for DOS EXEs
+         29.11.2000
+                      >< improved detection of COMs in EXE overlays
+                      >< added PNG detection
+                      >< added error messages if the start of GTUI2 fails
+                      >< added PCX detection
+                      >< added very extended WPG information
+                      >< fixed typeo in DBF detection
+                      >< added field listing of DBF file
+                      >< improved DBF detection
+                      >< speed up if list mode (/l) is used
+                      >< added switch /zwpg for extended WPG listing
+                      >< added MAC paint image format
+         28.11.2000
+                      >< added output of entrypoint base address of
+                           LE EXEs
+         26.11.2000
+                      >< fixed bug in ACE listing in EXE overlays
+         24.11.2000
+                      >< added switch /cachestats to show the caching
+                           statistics at the and
+                      >< added switch /bufsizeX to set the internal
+                           buffersize to X bytes; default is 4096 bytes
+                      >< speed improvement by setting default buffersize
+                           from 32K to 4K
+                      >< added Mask 2.5 for DOS COM files
+                      >< files with an extension .EXE are also regocnized
+                           as COM files if they are no EXE files (MZ or ZM)
+         13.11.2000
+                      >< added output of JPEG comment
+                      >< added NetSafe ZIP-Prot for DOS EXEs
+                      >< added Compact 1.05 for DOS COMs
+         12.11.2000
+                      >< added EMF file detection
+                      >< added Photoshop PSD file detection
+                      >< some speed optimizations through inlining
+                      >< added Microsoft browse information file (SBR)
+                      >< improved EXE code comparison method (faster)
+                      >< improved basic format detection code (faster)
+                      >< added Microsoft workspace file (MDP)

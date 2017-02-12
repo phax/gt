@@ -1,0 +1,15 @@
+GT 0.25  11.02.2001   >< fixed small bug in string class methods
+         28.01.2001   >< added extended information on ELF files
+                      >< added some extensions
+                      >< now the extensions is also checked even if the
+                           filename is detected
+                         fixed endless loop in DPA listing
+         27.01.2001   >< added listing of DPA archives
+                      >< if no special extension is detected, the Windows
+                           registry is questioned...
+         26.01.2001   >< internal: easier output of tables
+         24.01.2001   >< added some extensions
+                      >< smaller exceptions
+         19.01.2001   >< removed some exports from gtdata.dll
+                      >< fixed bug that GTUI2 was not called correctly
+                      >< added some extensions

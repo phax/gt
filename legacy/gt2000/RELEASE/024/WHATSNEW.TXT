@@ -1,0 +1,25 @@
+GT 0.24  16.01.2001   >< internal code speedup
+                      >< fixed program termination with invalid GIF files
+                      >< improved ISC archive listing a bit
+         15.01.2001   >< enhanced C/C++ code detection a bit
+                      >< added MS map file detection
+                      >< added special name detection
+                      >< improved INI file detection (leading WS are okay)
+                      >< added special extension detection
+                      À>   BIG ThanX to Vadim Tarasov for lending me his
+                           file extensions and descriptions!
+                      >< overlay LG archives are only detected if they are
+                           at the start of the overlay
+         13.01.2001   >< added heuristic Trap 1.2x for DOS COMs/EXEs
+                      À>   ThanX to Michael Hering for the code
+         12.01.2001   >< added MP3 TAG detection
+                      >< added LockTite+ for DOS EXEs
+                      À>   ThanX to Michael Hering for supplying it to me!!
+         11.01.2001   >< internal improvements - again ;-)
+         09.01.2001   >< added output of ZIP archive comment
+                      >< fixed small bug in listing ZIP archives which
+                           contain files with a name length of 0
+                      >< saved some static variables
+                      >< changed some methods to functions
+                      >< misc size optimizations *g*
+                      >< improved filebuffer internal handling

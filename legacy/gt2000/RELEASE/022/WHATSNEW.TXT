@@ -1,0 +1,31 @@
+GT 0.22  24.12.2000   >< added a small message that the date of ZOO archives
+                           is not displayed correctly!!
+                      >< removed an 's' if only 1 file is in an archive
+                      >< small speed optimizations when listing YC and ZET
+                           archives
+         22.12.2000   >< added 32lite 0.03a for PE EXEs
+                      >< added tELock 0.60 for PE EXEs
+                      >< added tELock 0.61 for PE EXEs
+                      >< added lister for Synetic archives
+                      >< added better error messages when the config file
+                           is corrupt
+         14.12.2000   >< now RKive archives are detected only at the
+                           beginning of an overlay (if any)
+                      >< tested lister with ARJ 2.75 and ARJ32 3.08
+         13.12.2000   >< added colors in archives
+                      >< improved detection of MAC images which lead to
+                           internal error messages on binary files with
+                           a size betweeen 16 and 126 bytes
+                      >< small fix in LE non resident names table listing
+                      >< fixed bug in exceptions debug output
+                      >< improved listing of RAR archives with an recovery
+                           record
+                      >< added multi volume detection of ACE archives
+                      >< speed up overlay handling (reading a default of
+                           32 bytes at the end of the file)
+         12.12.2000   >< fixed a bug listing EXEs in overlays
+                         adapted documentation
+         09.12.2000   >< added CWC for DOS EXEs
+                      >< added N0Ps Shit Protector 0.002 for DOS COMS ;-)
+                      >< added newline after COM listing
+                      >< speed up listing of ARJ archives

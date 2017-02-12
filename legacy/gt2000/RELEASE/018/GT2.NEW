@@ -1,0 +1,36 @@
+GT 0.18  21.10.2000
+                      >< improved output of GZ archives (just skipping
+                           extension)
+                      >< added LE EXE information (object table, entry point)
+                      >< added more sophisticated timing
+         20.10.2000
+                      >< misc small improvements in the EXE handling
+         18.10.2000
+                      >< added tELock 0.42 for PE EXEs
+         17.10.2000
+                      >< more sophisticated Exception code
+                      >< improved output of footer
+                      >< added output of time needed
+         16.10.2000
+                      >< added tELock 0.51 for PE EXEs
+         14.10.2000
+                      >< added WWPack for DOS EXEs
+                      >< allowed negative IPs in macros
+                      >< added switch /epx as a substitution for
+                           /epd, /eps and /epv
+         13.10.2000
+                         made it compile under VirtualPascal 2.1
+                           (get it for free at www.vpascal.com)
+                      >< added Virtual Pascal Unit v3
+                      >< more use of exceptions
+                      >< fixed bug in LZOP archive listing
+                      >< added date and time output in LZOP archives
+                      >< added switch /nof
+                      >< ZOO archives were called ZIP archive - until now
+                      >< fixed bug in ZET listing
+         02.10.2000
+                      >< added Symantec Visual Cafe 3.0 for PE EXEs
+                      >< added Symantec Internet Tools Data File 1.0
+                      >< added Microsoft Access database file (MDB)
+                      >< decided to keep only the HTML documentation
+                         extended switch listing on /? or /h

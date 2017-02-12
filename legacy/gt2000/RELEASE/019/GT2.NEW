@@ -1,0 +1,32 @@
+GT 0.19  11.11.2000
+                      >< added AppLok 2.0 for PE EXEs
+                      >< added CryptC [by unknown] for DOS COMs
+                      >< added CrypKey Instant Stealth 5.0.161 for PE EXEs
+         10.11.2000
+                      >< added tELock 0.41c for PE EXEs
+                      >< added Visual Protect 1.1 for PE EXEs
+                      >< tested with aPack 0.99 for DOS COMs
+                      >< added aPack 0.99 -f -m for DOS COMs
+                      >< added aPack 0.99 -i -m for DOS COMs
+                      >< changed HTML documentation slightly
+                      >< tested with aPack 0.99 for DOS EXEs
+                      >< tested with aPack 0.99 -t for DOS EXEs
+                      >< tested with aPack 0.99 -x for DOS EXEs
+                      >< tested with aPack 0.99 -s for DOS EXEs
+                      >< tested with aPack 0.99 -m -s for DOS EXEs
+                      >< added aPack 0.99 -m -x for DOS EXEs
+                      >< added Virtual Pascal 2.1 for PE EXEs
+                      >< added PeX 0.99 for PE EXEs
+         31.10.2000
+                      >< added PECompact 1.33 for PE EXEs
+                      >< added PECompact 1.34 for PE EXEs
+                      >< tested with PECompact 1.40b1 for PE EXEs
+                      >< added PECompact 1.40b2 for PE EXEs
+                      >< tested with PECompact 1.40b3 for PE EXEs
+                      >< tested with PECompact 1.40b4 for PE EXEs
+                      >< tested with PECompact 1.40b5 for PE EXEs
+                      >< tested with PECompact 1.41 for PE EXEs
+         25.10.2000
+                      >< added Linux/Unix object file detection
+         23.10.2000
+                      >< some small speed opts for the PString class
