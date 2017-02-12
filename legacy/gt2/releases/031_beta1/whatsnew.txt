@@ -1,0 +1,63 @@
+GT 0.31á 02.12.2003   >< some code cleanup
+         28.11.2003   >< fixed bug in overall listing
+         27.11.2003   >< changed PE EXE size calculation so that it
+                           works with WinACE SFX archives (Petite 2.2)
+                      >< improved ACE SFX listing
+         26.11.2003   >< fixed crash with mis-aligned Win32 resource files
+                      >< fixed error in Source file detection
+                      >< added generic Shellscript detection
+         25.11.2003   >< fixed string transformation issues
+                      >< added detection of CloneCD language file
+         24.11.2003   >< finished conversion to std::string
+         23.11.2003   >< added more PE EXE CPU types
+                      >< added 777 archive feasibility tests
+                      >< started transformation to std::string
+         22.11.2003   >< small Unicode changes
+                      >< added RAR archive 64-bit support
+                      >< added RAR 3.x support
+                      >< fixed crash in ZIP lister of Unicode version
+                      >< fixed bug in RAR file comment handling
+         21.11.2003   >< added new extensions
+         18.11.2003   >< fixed small issue in AKT7 listing
+         17.11.2003   >< after a long time of doing nothing I restarted GT :)
+                      >< fixed filename listing bug in PAQ archive
+                      >< fixed crash on invalid WAVE file
+                      >< added support for Visual Studio 7.1 / .NET 2003
+                      >< started with 64-bit compatibility
+                      >< removed errmsg "Failed to init source analyzer II"
+                      >< extended supported PE EXE subsystems
+                      >< added new extensions
+         20.11.2001   >< added some extensions
+                      >< improved INI file handling
+         11.11.2001   >< try to to run GUI and Cmdline version in one EXE
+         03.11.2001   >< finished first gui version :)
+         20.10.2001   >< internal cleanups
+                      >< small fixes concerning Unicode/ANSI handling
+                      >< fixed bug that files starting with '.' were
+                         not scanned when using wildcards!
+                      >< handling exception on invalid RES files
+                      >< added TextPad workspace file detection
+                      >< implemented my own Unicode commandline handling :)
+         16.10.2001   >< improved detection of resource files (.RES)
+                      >< added listing of resource files
+         15.10.2001   >< if CRC32 in Inno header fails, listing is aborted
+                      >< changed dump format to 1.15
+                      >< added detection of NullSoftInstaller archives
+                      >< no exception when handling invalid WPG files with /zwpg
+                      >< tested with PECompact 1.45 for PEs
+                      >< added PECompact 1.46 for PEs
+                      >< added PECompact 1.50 for PEs
+                      >< added PECompact 1.55 for PEs
+                      >< tested with PECompact 1.56 for PEs
+                      >< added PECompact 1.60 for PEs
+                      >< tested with PECompact 1.65 for PEs
+                      >< added PECompact 1.66 for PEs
+                      >< added PECompact 1.67 for PEs
+         09.10.2001   >< added listing of XPA archives
+                      >< fixed bug in YC archive listing
+                      >< added a new output plugin interface: GT_Output_Status
+                      >< better handling of PE EXEs with invalid an
+                         invalid resource directory!
+                      >< fixed bug in output if the buffer is greater
+                         than the memory of the console!!
+         01.10.2001   >< added new extension

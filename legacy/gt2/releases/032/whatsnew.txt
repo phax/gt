@@ -1,0 +1,40 @@
+GT 0.32  20.01.2004   >< added support for many special extensions
+                      >< removed some duplicate code
+                      >< added ANSI to OEM conversion in stdout output
+                      >< faster output in Unicode version
+         17.01.2004   >< fixed rounding problem in double routine
+         15.01.2004   >< added errormessage on corrupt archive
+         13.01.2004   >< fixed that Unix-style textfiles were displayed as
+                           DOS text files
+                      >< rewrote archive output (MVC)
+                      >< archive output supports tables in HTML
+                      >< improved C++ source detection
+                      >< fixed bug with error messages in listmode
+                      >< fixed /allfixed, /allnetwork & /alldrives switches
+                           that did no work in 0.31
+                      >< added Mingw GCC compiler for PE EXEs
+                      >< added new SBC version 0.969
+         11.01.2004   >< added extension ".crl"
+         10.01.2004   >< added PECompact 1.68 for PE EXEs
+                      >< tested with PECompact 1.71 for PE EXEs
+                      >< tested with PECompact 1.76 for PE EXEs
+                      >< tested with PECompact 1.82 for PE EXEs
+                      >< tested with PECompact 1.84 for PE EXEs
+         09.01.2004   >< fixed Windows NT compatibility problem
+                      À> Thanks to Michael Hering for pointing it out
+                      >< fixed small issue in HTML output
+                      >< printing the LE EXE objects in a table
+                      >< fixed issue in Headtext detection
+                      >< fixed bug in LE EXE size determination
+                      >< improved HTML output using CSS
+         08.01.2004   >< added support for PE EXE export forwards
+         06.01.2004   >< improved PE resource handling
+                      >< improved PE error handling slightly
+                      >< added listing of TIP archive
+         03.01.2004   >< added new file extensions
+                      >< added generic filename handler
+                      >< extended special filename check
+                      >< added new special filenames
+                      >< changed file search algorithm
+                      >< added further NSIS detections
+                      >< added some new NSIS output

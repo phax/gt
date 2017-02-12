@@ -1,0 +1,91 @@
+GT 0.34b 29.05.2004   >< improved installation
+                      >< improved make system to handle static linkage
+                      >< made Installer Windows 98 compatible
+         28.05.2004   >< added path modification utility for installation
+                      >< improved build system to handle Windows Apps
+         24.05.2004   >< added Visual C++ 7.1 / .NET 2003 (nodebug [2]) 
+                           for PE EXEs
+                      >< added Microsoft CAB SFX for PE EXEs
+                      >< no more listmode in GEEW
+                      >< added WMV detection
+         23.05.2004   >< improved kkrunchy for PE EXE detection
+                      >< removed rare info message on comparison
+                      >< added frp 0.17 for PE EXEs
+         21.05.2004   >< added Visual C++ 6.0 (DLL) nodebug [2] for PE EXEs
+         20.05.2004   >< reenabled crash dumps.
+                      >< extended crash dump data
+                      >< installing dbghelp.dll 6.3.5.1
+                      >< added 2 new fixed names
+         19.05.2004   >< fixed crash in POIFS lister
+                      >< fixed crash on WinZIP EXE overlay archives
+         18.05.2004   >< added some POIFS (OLE2) information
+                      >< added Visual C++ 6.0 (DLL) (nodebug) for PE EXEs
+                      >< added Visual C++ 6.0 (EXE) (nodebug) for PE EXEs
+                      >< fixed bug in installer (path in registry keys)
+                      >< added number of files in archive listing total
+GT 0.34a 17.05.2004   >< created NSIS installer
+                      >< added extensions
+                      >< added new switch /outlinenums to print line 
+                           numbers to stdout
+                      >< added new switch /noerrbox to suppress
+                           the error boxes. Using stdout instead
+                      >< added some more IFF subtypes
+                      >< fixed error in IFF listing
+         12.05.2004   >< added ASProtect 1.31 b0427 for PE EXEs
+                      >< tested with ASProtect 1.23 for PE EXEs
+                      >< added some pseudo disasm engine
+                      >< added ASProtect 1.23 RC1 for PE EXEs
+         11.05.2004   >< fixed stack overflow in RAR listing
+         10.05.2004   >< added Digital Mars D 0.88 for PE EXEs
+                      >< added support for Unicode RAR filenames
+                      >< Improved HTML Output
+         05.05.2004   >< added kkrunchy for PE EXEs
+                      >< tested with PECompact 2.07 for PE EXEs
+         01.05.2004   >< added PECompact 2.02 for PE EXEs
+                      >< tested with CExe 1.0b for PE EXEs
+                      >< added EXE Stealth 2.73 for PE EXEs
+                      >< added ASPack 2.12 for PE EXEs
+                      >< added extension XSH
+                      >< improved GEEW with automatic macro resolving
+                      >< added ExeShield 2.7a for PE EXEs
+                      >< added ExeShield 2.7b for PE EXEs
+         30.04.2004   >< added some sanity checks on PE EXEs
+                      ·>   ThanX to Serge Semashko for sending me a file
+         21.04.2004   >< added PE Spin v0.3 for PE EXEs
+         20.04.2004   >< added PE Compact 200b build 100 for PE EXEs
+                      >< added EXE Shield v0.5 for PE EXEs
+                      >< added AHTeam EP Protector v0.3 for PE EXEs
+         19.04.2004   >< made version number more dynamic
+         18.04.2004   >< changed an error to an info
+                      >< scanning for NE EXEs if the DOS EXE header
+                           is corrupted
+         17.04.2004   >< Not skipping file if DOS EXE header is invalid
+         11.04.2004   >< fixed some flaws in MP3 output
+                      >< added detection of the 'UUU' MP3 tag
+                      >< file attrs are not displayed in overlay mode
+                      >< fixed bug in ID3 header handling
+                      >< added experimental "more" feature
+                      >< added new switch /outpauseX to pause after
+                           every X lines
+                      >< added correct handling of dynamic indentation
+                           in HTML output
+                      >< less outputted HTML characters
+                      >< added some special filenames
+         10.04.2004   >< more string resources
+                      >< fixed some output flaws
+         05.04.2004   >< more string resources
+         04.04.2004   >< further improved RIFF listing
+         03.04.2004   >< more string resources
+                      >< fixed bug in RIFF listing
+         02.04.2004   >< more string resources
+         29.03.2004   >< more string resources
+         27.03.2004   >< added Borland C++ 1999 for PE DLLs
+                      >< added Borland C++ 1999 for PE EXEs
+         26.03.2004   >< bugfix in indentation
+         24.03.2004   >< supporting indentation in stdout output
+                      >< moved more strings to resource
+                      >< fixed HTML table output
+                      >< PE DLLs without entrypoint are analysed
+                           by heuristics
+                      >< added new crashdump code
+         23.03.2004   >< added output indentation support

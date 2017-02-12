@@ -1,0 +1,108 @@
+GT 0.33  21.03.2004   >< started documentation
+                      >< renamed /headline to /status
+                      >< fixed some formatting bugs
+                      >< list mode output can now easily be grep'd
+                      >< renamed configuration file to gt2.cfg
+                      >< added file extension
+                      >< fixed bug in VersionInfo lister
+                      >< added foovar2000 playlist file
+         20.03.2004   >< added FSG 1.0 for PE EXEs
+                      >< added FSG 1.1 for PE EXEs
+                      >< added FSG 1.2 for PE EXEs
+                      >< added FSG 1.3 for PE EXEs
+                      >< added FSG 1.31 for PE EXEs
+                      >< added FSG 1.33 for PE EXEs
+                      >< removed some stupid newlines
+                      >< added some new extensions
+                      >< added PHP file detection
+                      >< added XML file detection
+                      >< improved output if /noarcs is used
+                      >< added Visual C++ 7.0/2002 for PE EXEs
+                      >< fixed problem with PE subsystem 0
+                      >< fixed HTML color output
+                      >< added new headline macro $F
+                      >< fixed PE EXE resource table listing
+                      >< added PowerBasic 7 for PE EXEs
+                      >< fixed some printf format errors
+         14.03.2004   >< moved more strings to resource file
+                      >< added version resource
+                      >< extended PE EXE version resource lister
+                      >< improved PE EXE string resource lister
+                      >< added some debug heapchecks
+                      >< fixed strange crash in PE import listing
+                      >< added new switch /flushoutput to disable
+                           output caching. Allows better usage with
+                           the 'more' command
+                      >< added multilanguage VersionInfo listing
+                      >< added more resource types
+         13.03.2004   >< added UPXShit 0.06 for PE EXEs
+                      >< moved more strings to resource file
+         06.03.2004   >< internal code cleanup
+                      >< using table code for .NET EXEs
+         03.03.2004   >< added new extension
+         01.03.2004   >< fixed rebasing check
+                      >< fixed PE DLL name export listing
+         29.02.2004   >< started cleaning up internal object model
+                      >< added EXE rebasing information
+                      >< Improved RIFF listing
+                      >< Fixed stack overflow
+         27.02.2004   >< fixed an assertion in string lookup
+                      >< created a new tool gt_peinfo to perform
+                           some special lookup function on PE EXEs
+         24.02.2004   >< improved XPT listing - less exceptions
+         23.02.2004   >< rewrote Source code detection engine
+                      >< added Perl package detection
+                      >< added new switch /headline to format your
+                           console headline using the macros $D
+                           (detected), $T (total) and $P (percentage)
+                           Example: "/headlineGT rate: $D/$T (=$P)"
+                      >< added MS Typelibrary file detection
+                      >< added extended OBJ file listing
+                      >< fixed potential buffer overflow in stdout
+                           output and HTML output
+         22.02.2004   >< fixed bug in LIB file listing
+                      >< fixed bug in ID3 listing
+                      >< fixed bug in RIFF listing
+                      >< fixed bug in generic headtext listing
+                      >< avoiding potential crash in stdout module
+         21.02.2004   >< added MS debug information file detection
+                      >< added MS SQL Server database file detection
+                      >< added Cobol data file detection
+                      >< added Cobol index file detection
+         20.02.2004   >< improved ID3v2 support
+                      >< finished generic engine recoding
+                      >< added DVD IFO file detection
+                      >< added some extensions
+                      >< added MPC file detection
+                      >< added APETag detection (MPC tagging)
+                      >< added APE file detection
+                      >< added Canon digital movie thumbnail image
+                      >< added Lotus Screen Cám files
+         19.02.2004   >< continued generic engine recoding
+                      >< fixed bug in TTF Unicode name listing
+                      >< better internal handling of /wf switch
+                      >< experimenting with dynamic console
+                      >< added ID3v2 support
+         18.02.2004   >< improved build system slightly
+                      >< some internal cleanup (its really terrible to see
+                         how much crap is deep inside the code)
+                      >< improved error and exception strings
+                      >< further generic engine recoding
+                      >< added console exception handler (Ctrl+C, Close)
+         15.02.2004   >< continued recoding non-EXE engine
+                      >< improved & fixed DBF detection
+                      >< added support for DBF index files (MDX)
+         13.02.2004   >< started recoding non-EXE engine
+         12.02.2004   >< improved internal console writing process
+                      >< added output of line numbers
+         06.02.2004   >< fixed display plroblem in ARJ listing
+                      >< changed internal table handling
+         01.02.2004   >< improved internal string handling
+                      >< no conversion to OEM if output is redirected
+                      +>   ThanX to Veit Kanngiesser for the hint!!
+                      >< added listing of BIX archives
+                      >< improved internal naming
+                      >< added listing of BOA archives
+                      >< added listing of BSArc 1.9x archives
+                      >< added listing of BSArc 2.0 archives
+         31.01.2004   >< using more strings from resource

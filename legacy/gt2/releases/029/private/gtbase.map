@@ -1,0 +1,623 @@
+ gtbase
+
+ Timestamp is 3af8ee75 (Wed May 09 09:15:01 2001)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00007cd8H .text                   CODE
+ 0001:00007ce0 000000e0H .text$x                 CODE
+ 0002:00000000 00000104H .idata$5                DATA
+ 0002:00000108 0000072cH .rdata                  DATA
+ 0002:00000838 00000044H .rdata$r                DATA
+ 0002:0000087c 00000148H .xdata$x                DATA
+ 0002:000009c4 00000050H .idata$2                DATA
+ 0002:00000a14 00000014H .idata$3                DATA
+ 0002:00000a28 00000104H .idata$4                DATA
+ 0002:00000b2c 00000372H .idata$6                DATA
+ 0002:00000ea0 00003523H .edata                  DATA
+ 0003:00000000 00000110H .data                   DATA
+ 0003:00000110 000019b8H .bss                    DATA
+ 0004:00000000 00000018H .CRT$XCU                DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:00000000       ?_getmem@@YGXIAAPAD@Z      10001000 f i gtlib.obj
+ 0001:00000020       ?_freemem@@YGXPAD@Z        10001020 f i gtlib.obj
+ 0001:00000040       ?_enlargemem@@YGXAAPADII@Z 10001040 f i gtlib.obj
+ 0001:00000060       ?_inthis@ADLP_String@@AAEHPBD@Z 10001060 f i gtlib.obj
+ 0001:00000090       ?_align@ADLP_String@@AAEII@Z 10001090 f i gtlib.obj
+ 0001:000000b0       ?_realloc@ADLP_String@@AAEXXZ 100010b0 f i gtlib.obj
+ 0001:000000d0       ?_alloc@ADLP_String@@AAEXH@Z 100010d0 f i gtlib.obj
+ 0001:00000110       ?_resize@ADLP_String@@AAEXI@Z 10001110 f i gtlib.obj
+ 0001:00000160       ?_set@ADLP_String@@AAEXPBD@Z 10001160 f i gtlib.obj
+ 0001:000001e0       ?_append@ADLP_String@@AAEXPBD@Z 100011e0 f i gtlib.obj
+ 0001:00000270       ?_append@ADLP_String@@AAEXPBDI@Z 10001270 f i gtlib.obj
+ 0001:000002f0       ?_set_at@ADLP_String@@AAEXIPBDI@Z 100012f0 f i gtlib.obj
+ 0001:00000320       ??0GT_TableField@@QAE@XZ   10001320 f i gtlib.obj
+ 0001:00000320       ??0ADLP_String@@QAE@XZ     10001320 f i gtlib.obj
+ 0001:00000340       ??0ADLP_String@@QAE@ABV0@@Z 10001340 f i gtlib.obj
+ 0001:000003b0       ??0ADLP_String@@QAE@PBD@Z  100013b0 f i gtlib.obj
+ 0001:00000430       ??0ADLP_String@@QAE@PBDI@Z 10001430 f i gtlib.obj
+ 0001:000004b0       ??1ADLP_String@@UAE@XZ     100014b0 f i gtlib.obj
+ 0001:000004b0       ??1GT_TableField@@QAE@XZ   100014b0 f i gtlib.obj
+ 0001:000004e0       ?Allocate@ADLP_String@@QAEXI@Z 100014e0 f i gtlib.obj
+ 0001:00000570       ?CheckAllocate@ADLP_String@@QAEXXZ 10001570 f i gtlib.obj
+ 0001:000005a0       ?ReleaseMemory@ADLP_String@@QAEXXZ 100015a0 f i gtlib.obj
+ 0001:000005d0       ?Clear@ADLP_String@@QAEXXZ 100015d0 f i gtlib.obj
+ 0001:000005f0       ?AsChar@ADLP_String@@QBEDXZ 100015f0 f i gtlib.obj
+ 0001:00000610       ?AsUChar@ADLP_String@@QBEEXZ 10001610 f i gtlib.obj
+ 0001:00000630       ?AsUInt@ADLP_String@@QBEIXZ 10001630 f i gtlib.obj
+ 0001:00000630       ?AsInt@ADLP_String@@QBEHXZ 10001630 f i gtlib.obj
+ 0001:00000630       ?AsUShort@ADLP_String@@QBEGXZ 10001630 f i gtlib.obj
+ 0001:00000630       ?AsShort@ADLP_String@@QBEFXZ 10001630 f i gtlib.obj
+ 0001:00000650       ?AsLong@ADLP_String@@QBEJXZ 10001650 f i gtlib.obj
+ 0001:00000650       ?AsULong@ADLP_String@@QBEKXZ 10001650 f i gtlib.obj
+ 0001:00000670       ?AsFloat@ADLP_String@@QBEMXZ 10001670 f i gtlib.obj
+ 0001:00000670       ?AsDouble@ADLP_String@@QBENXZ 10001670 f i gtlib.obj
+ 0001:00000690       ??4ADLP_String@@QAEAAV0@E@Z 10001690 f i gtlib.obj
+ 0001:000006a0       ??YADLP_String@@QAEXPBD@Z  100016a0 f i gtlib.obj
+ 0001:00000730       ??7ADLP_String@@QBEHXZ     10001730 f i gtlib.obj
+ 0001:00000730       ?IsEmpty@ADLP_String@@QBEHXZ 10001730 f i gtlib.obj
+ 0001:00000740       ??AADLP_String@@QBEDG@Z    10001740 f i gtlib.obj
+ 0001:00000760       ??AADLP_String@@QAEAADG@Z  10001760 f i gtlib.obj
+ 0001:00000780       ??AADLP_String@@QBEDI@Z    10001780 f i gtlib.obj
+ 0001:00000780       ??RADLP_String@@QBEDI@Z    10001780 f i gtlib.obj
+ 0001:00000790       ??AADLP_String@@QAEAADI@Z  10001790 f i gtlib.obj
+ 0001:000007a0       ?Len@ADLP_String@@QBEHXZ   100017a0 f i gtlib.obj
+ 0001:000007b0       ??BADLP_String@@QBEPBDXZ   100017b0 f i gtlib.obj
+ 0001:000007b0       ?GetStr@ADLP_String@@QBEPBDXZ 100017b0 f i gtlib.obj
+ 0001:000007b0       ?GetBuf@ADLP_String@@QBEPADXZ 100017b0 f i gtlib.obj
+ 0001:000007c0       ?Erase@ADLP_String@@QAEAAV1@XZ 100017c0 f i gtlib.obj
+ 0001:000007f0       ?IsAllocated@ADLP_String@@QBEHXZ 100017f0 f i gtlib.obj
+ 0001:00000800       ?IsValidInteger@ADLP_String@@QBEHXZ 10001800 f i gtlib.obj
+ 0001:00000810       ?IsValidDouble@ADLP_String@@QBEHXZ 10001810 f i gtlib.obj
+ 0001:00000820       ?DelFirst@ADLP_String@@QAEXI@Z 10001820 f i gtlib.obj
+ 0001:00000840       ?DelLast@ADLP_String@@QAEXI@Z 10001840 f i gtlib.obj
+ 0001:00000860       ?LastChar@ADLP_String@@QBEDXZ 10001860 f i gtlib.obj
+ 0001:00000880       ?Search@ADLP_String@@QBEID@Z 10001880 f i gtlib.obj
+ 0001:000008c0       ?Search@ADLP_String@@QBEIPBD@Z 100018c0 f i gtlib.obj
+ 0001:00000900       ?SearchAt@ADLP_String@@QBEIID@Z 10001900 f i gtlib.obj
+ 0001:00000940       ?SearchAt@ADLP_String@@QBEIIPBD@Z 10001940 f i gtlib.obj
+ 0001:00000990       ??_EADLP_String@@UAEPAXI@Z 10001990 f i gtlib.obj
+ 0001:00000a10       ??7PFileSearch@@QAEHXZ     10001a10 f i gtlib.obj
+ 0001:00000a20       ??BPFileSearch@@QAEPAXXZ   10001a20 f i gtlib.obj
+ 0001:00000a30       ?IsValidDirectory@PFileSearch@@QBEHXZ 10001a30 f i gtlib.obj
+ 0001:00000a60       ?IsValidFile@PFileSearch@@QBEHXZ 10001a60 f i gtlib.obj
+ 0001:00000a90       ??0PFileSearch@@QAE@ABV0@@Z 10001a90 f i gtlib.obj
+ 0001:00000ac0       ??4PFileSearch@@QAEAAV0@ABV0@@Z 10001ac0 f i gtlib.obj
+ 0001:00000af0       ??_EPFileSearch@@UAEPAXI@Z 10001af0 f i gtlib.obj
+ 0001:00000b50       ??4PRegistry@@QAEAAV0@ABV0@@Z 10001b50 f i gtlib.obj
+ 0001:00000b60       ??0PTimer@@QAE@XZ          10001b60 f i gtlib.obj
+ 0001:00000b70       ??4PTimer@@QAEAAV0@ABV0@@Z 10001b70 f i gtlib.obj
+ 0001:00000b90       ??0GT_ConfigFile@@QAE@ABV0@@Z 10001b90 f i gtlib.obj
+ 0001:00000bd0       ??4GT_ConfigFile@@QAEAAV0@ABV0@@Z 10001bd0 f i gtlib.obj
+ 0001:00000c20       ??_EGT_ConfigFile@@UAEPAXI@Z 10001c20 f i gtlib.obj
+ 0001:00000ca0       ?GetText@GT_Exception@@QBEABVADLP_String@@XZ 10001ca0 f i gtlib.obj
+ 0001:00000cb0       ??0GT_Exception@@QAE@ABV0@@Z 10001cb0 f i gtlib.obj
+ 0001:00000d80       ??4GT_Exception@@QAEAAV0@ABV0@@Z 10001d80 f i gtlib.obj
+ 0001:00000db0       ??1GT_Exception@@QAE@XZ    10001db0 f i gtlib.obj
+ 0001:00000e00       ?_GetCachedByte@GT_FileBuffer@@ABEEH@Z 10001e00 f i gtlib.obj
+ 0001:00000e10       ?_GetNonCachedByte@GT_FileBuffer@@ABEEH@Z 10001e10 f i gtlib.obj
+ 0001:00000e70       ?GetActFilePos@GT_FileBuffer@@QBEJXZ 10001e70 f i gtlib.obj
+ 0001:00000e80       ?SetToEOF@GT_FileBuffer@@QAEXXZ 10001e80 f i gtlib.obj
+ 0001:00000e90       ?GetOffset@GT_FileBuffer@@QBEJXZ 10001e90 f i gtlib.obj
+ 0001:00000ea0       ?IncOffset@GT_FileBuffer@@QAEXJ@Z 10001ea0 f i gtlib.obj
+ 0001:00000ec0       ?GetFileSize@GT_FileBuffer@@QBEJXZ 10001ec0 f i gtlib.obj
+ 0001:00000ed0       ?GetTotalFileSize@GT_FileBuffer@@QBEJXZ 10001ed0 f i gtlib.obj
+ 0001:00000ee0       ?GetBufferSize@GT_FileBuffer@@QBEJXZ 10001ee0 f i gtlib.obj
+ 0001:00000ef0       ?GetLastBuffer@GT_FileBuffer@@QBEPAEXZ 10001ef0 f i gtlib.obj
+ 0001:00000f00       ?GetLastBuffer@GT_FileBuffer@@QBEPAEJ@Z 10001f00 f i gtlib.obj
+ 0001:00000f20       ?GetLastBufferSize@GT_FileBuffer@@QBEJXZ 10001f20 f i gtlib.obj
+ 0001:00000f30       ?IsText@GT_FileBuffer@@QBEHXZ 10001f30 f i gtlib.obj
+ 0001:00000f40       ?IsUnixText@GT_FileBuffer@@QBEHXZ 10001f40 f i gtlib.obj
+ 0001:00000f50       ?Is7Bit@GT_FileBuffer@@QBEHXZ 10001f50 f i gtlib.obj
+ 0001:00000f60       ?IsEOF@GT_FileBuffer@@QBEHXZ 10001f60 f i gtlib.obj
+ 0001:00000f80       ?GetListProc@GT_FileBuffer@@QBEP6GHPBDJQAX@ZXZ 10001f80 f i gtlib.obj
+ 0001:00000f90       ?GetpFileName@GT_FileBuffer@@QBEPBDXZ 10001f90 f i gtlib.obj
+ 0001:00000fa0       ?GetFileName@GT_FileBuffer@@QBEABVADLP_String@@XZ 10001fa0 f i gtlib.obj
+ 0001:00000fb0       ?GetpBaseName@GT_FileBuffer@@QBEPBDXZ 10001fb0 f i gtlib.obj
+ 0001:00000fc0       ?GetBaseName@GT_FileBuffer@@QBEABVADLP_String@@XZ 10001fc0 f i gtlib.obj
+ 0001:00000fd0       ?GetChar@GT_FileBuffer@@QAEHJAAD@Z 10001fd0 f i gtlib.obj
+ 0001:00001090       ?GetChar@GT_FileBuffer@@QAEDJ@Z 10002090 f i gtlib.obj
+ 0001:00001120       ?GetChar@GT_FileBuffer@@QAEDXZ 10002120 f i gtlib.obj
+ 0001:00001120       ?GetByte@GT_FileBuffer@@QAEEXZ 10002120 f i gtlib.obj
+ 0001:000011b0       ?GetWord@GT_FileBuffer@@QAEGXZ 100021b0 f i gtlib.obj
+ 0001:00001250       ?GetLong@GT_FileBuffer@@QAEJXZ 10002250 f i gtlib.obj
+ 0001:000012f0       ?GetBufferX@GT_FileBuffer@@QAEXPAXJ@Z 100022f0 f i gtlib.obj
+ 0001:00001310       ?GetBuffer@GT_FileBuffer@@QAEHPAXJ@Z 10002310 f i gtlib.obj
+ 0001:00001330       ?GetString@GT_FileBuffer@@QAEHAAVADLP_String@@J@Z 10002330 f i gtlib.obj
+ 0001:000013e0       ?GetUntil@GT_FileBuffer@@QAEHEPAXHAAH@Z 100023e0 f i gtlib.obj
+ 0001:00001400       ?GetUntil@GT_FileBuffer@@QAEHJEPAXH@Z 10002400 f i gtlib.obj
+ 0001:00001420       ?GetUntil@GT_FileBuffer@@QAEHEPAXJ@Z 10002420 f i gtlib.obj
+ 0001:00001440       ?SkipUntil@GT_FileBuffer@@QAEHE@Z 10002440 f i gtlib.obj
+ 0001:00001460       ??0GT_FileBuffer@@QAE@ABV0@@Z 10002460 f i gtlib.obj
+ 0001:000015b0       ??4GT_FileBuffer@@QAEAAV0@ABV0@@Z 100025b0 f i gtlib.obj
+ 0001:00001660       ??_EGT_FileBuffer@@UAEPAXI@Z 10002660 f i gtlib.obj
+ 0001:000016c0       ??0GT_Table@@QAE@II@Z      100026c0 f i gtlib.obj
+ 0001:00001750       ??0GT_TableColumn@@QAE@XZ  10002750 f i gtlib.obj
+ 0001:00001790       ??1GT_TableColumn@@UAE@XZ  10002790 f i gtlib.obj
+ 0001:00001820       ??1GT_Table@@UAE@XZ        10002820 f i gtlib.obj
+ 0001:00001840       ?SetPrintOffset@GT_Table@@QAEXI@Z 10002840 f i gtlib.obj
+ 0001:00001850       ?AddColumn@GT_Table@@QAEXIHW4GT_TableColumnType@@PBD@Z 10002850 f i gtlib.obj
+ 0001:00001890       ?Init@GT_TableColumn@@QAEXIIHW4GT_TableColumnType@@PBD@Z 10002890 f i gtlib.obj
+ 0001:00001960       ?AddValue@GT_Table@@QAEXIJ@Z 10002960 f i gtlib.obj
+ 0001:00001990       ?AddValue@GT_Table@@QAEXIPBD@Z 10002990 f i gtlib.obj
+ 0001:000019c0       ??0GT_Table@@QAE@ABV0@@Z   100029c0 f i gtlib.obj
+ 0001:000019f0       ??4GT_Table@@QAEAAV0@ABV0@@Z 100029f0 f i gtlib.obj
+ 0001:00001a20       ??_EGT_Table@@UAEPAXI@Z    10002a20 f i gtlib.obj
+ 0001:00001a90       ??_EGT_TableColumn@@UAEPAXI@Z 10002a90 f i gtlib.obj
+ 0001:00001af0       ??0GT_DateTime@@QAE@XZ     10002af0 f i gtlib.obj
+ 0001:00001b10       ??4GT_DateTime@@QAEAAV0@ABV0@@Z 10002b10 f i gtlib.obj
+ 0001:00001cb0       ?GT_Flags_Register@@YGXPAUGT_FlagBool@@@Z 10002cb0 f   gtlib.obj
+ 0001:00001cf0       ?GT_Flags_Register@@YGXPAUGT_FlagNumber@@@Z 10002cf0 f   gtlib.obj
+ 0001:00001d30       ?GT_Flags_Register@@YGXPAUGT_FlagString@@@Z 10002d30 f   gtlib.obj
+ 0001:00001d70       ?GT_Flags_SetToDefault@@YGXXZ 10002d70 f   gtlib.obj
+ 0001:00001dd0       ?GT_Flags_SetFlag@@YGHPBD@Z 10002dd0 f   gtlib.obj
+ 0001:00001eb0       ?GT_Flags_GetAsString@@YG?AVADLP_String@@XZ 10002eb0 f   gtlib.obj
+ 0001:00002050       ?GT_Flags_IsSetBool@@YGHPBD@Z 10003050 f   gtlib.obj
+ 0001:000020b0       ?GT_Flags_IsNotSetBool@@YGHPBD@Z 100030b0 f   gtlib.obj
+ 0001:00002110       ??0GT_ConfigFile@@QAE@HH@Z 10003110 f   gtlib.obj
+ 0001:00002280       ??1GT_ConfigFile@@UAE@XZ   10003280 f   gtlib.obj
+ 0001:000022b0       ?_ShowConfigFileError@GT_ConfigFile@@AAEXPBDJPAX@Z 100032b0 f   gtlib.obj
+ 0001:00002310       ?Read@GT_ConfigFile@@QAEHXZ 10003310 f   gtlib.obj
+ 0001:000025b0       ?GT_Error_ShowInternalError@@YGXPBD0H@Z 100035b0 f   gtlib.obj
+ 0001:000025e0       ??0GT_Exception@@QAA@PBDJ0ZZ 100035e0 f   gtlib.obj
+ 0001:000026c0       ?Print@GT_Exception@@QBEXXZ 100036c0 f   gtlib.obj
+ 0001:000027f0       ?RegisterDefaultPlugin@@YGXP6A?AW4GT_ListResult@@PAVGT_FileBuffer@@@Z@Z 100037f0 f   gtlib.obj
+ 0001:00002840       ?GT_GetPEResTypeString@@YGXHAAPAD@Z 10003840 f   gtlib.obj
+ 0001:00002870       ?GT_GetPEDataDirectoryName@@YGXHAAPAD@Z 10003870 f   gtlib.obj
+ 0001:000028a0       ??0GT_FileBuffer@@QAE@PBDJP6GH0JQAX@ZJ1@Z 100038a0 f   gtlib.obj
+ 0001:00002a00       ?_Open@GT_FileBuffer@@AAE?AW4P_OpenReturnCode@@XZ 10003a00 f   gtlib.obj
+ 0001:00002a90       ?Init@GT_FileBuffer@@QAE?AW4P_OpenReturnCode@@XZ 10003a90 f   gtlib.obj
+ 0001:00002b50       ??1GT_FileBuffer@@UAE@XZ   10003b50 f   gtlib.obj
+ 0001:00002bf0       ?_InitBuffer@GT_FileBuffer@@AAEXXZ 10003bf0 f   gtlib.obj
+ 0001:00002cc0       ?_DetermineIfText@GT_FileBuffer@@AAEXXZ 10003cc0 f   gtlib.obj
+ 0001:00002d80       ?_Read@GT_FileBuffer@@ABEKPAXJ@Z 10003d80 f   gtlib.obj
+ 0001:00002db0       ?_SeekTo@GT_FileBuffer@@ABEHJ@Z 10003db0 f   gtlib.obj
+ 0001:00002de0       ?SetActFilePos@GT_FileBuffer@@QAEXJ@Z 10003de0 f   gtlib.obj
+ 0001:00002e30       ?IncActFilePos@GT_FileBuffer@@QAEXJ@Z 10003e30 f   gtlib.obj
+ 0001:00002e80       ?GetFileNameExtension@GT_FileBuffer@@QBEPBDXZ 10003e80 f   gtlib.obj
+ 0001:00002ea0       ?CallListProc@GT_FileBuffer@@QBEXJ@Z 10003ea0 f   gtlib.obj
+ 0001:00002ed0       ?GetByte@GT_FileBuffer@@QAEHJAAE@Z 10003ed0 f   gtlib.obj
+ 0001:00002f90       ?GetByte@GT_FileBuffer@@QAEEJ@Z 10003f90 f   gtlib.obj
+ 0001:00003020       ?GetWord@GT_FileBuffer@@QAEHJAAG@Z 10004020 f   gtlib.obj
+ 0001:000030d0       ?GetWord@GT_FileBuffer@@QAEGJ@Z 100040d0 f   gtlib.obj
+ 0001:00003170       ?GetLong@GT_FileBuffer@@QAEHJAAJ@Z 10004170 f   gtlib.obj
+ 0001:00003210       ?GetLong@GT_FileBuffer@@QAEJJ@Z 10004210 f   gtlib.obj
+ 0001:000032b0       ?GetBufferX@GT_FileBuffer@@QAEXJPAXJ@Z 100042b0 f   gtlib.obj
+ 0001:00003410       ?GetBuffer@GT_FileBuffer@@QAEHJPAXJ@Z 10004410 f   gtlib.obj
+ 0001:000034e0       ?GetString@GT_FileBuffer@@QAEHJAAVADLP_String@@J@Z 100044e0 f   gtlib.obj
+ 0001:00003590       ?GetCString@GT_FileBuffer@@QAEXAAVADLP_String@@JJ@Z 10004590 f   gtlib.obj
+ 0001:00003690       ?GetPascalString@GT_FileBuffer@@QAEXAAVADLP_String@@J@Z 10004690 f   gtlib.obj
+ 0001:000037f0       ?GetUntil@GT_FileBuffer@@QAEHJEPAXHAAH@Z 100047f0 f   gtlib.obj
+ 0001:00003880       ?SkipUntil@GT_FileBuffer@@QAEHJE@Z 10004880 f   gtlib.obj
+ 0001:00003930       ?Find@GT_FileBuffer@@QAEHEJJ@Z 10004930 f   gtlib.obj
+ 0001:00003970       ?Find@GT_FileBuffer@@QAEHPBDJJ@Z 10004970 f   gtlib.obj
+ 0001:00003a40       ?iFind@GT_FileBuffer@@QAEHPBDJJ@Z 10004a40 f   gtlib.obj
+ 0001:00003b80       ?Compare@GT_FileBuffer@@QAEHJJE@Z 10004b80 f   gtlib.obj
+ 0001:00003bc0       ?Compare@GT_FileBuffer@@QAEHJJPBD@Z 10004bc0 f   gtlib.obj
+ 0001:00003c00       ?iCompare@GT_FileBuffer@@QAEHJJPBD@Z 10004c00 f   gtlib.obj
+ 0001:00003c40       ?FillStruct@GT_FileBuffer@@QAEXPAU_GT_Output_FilenameStruct@@@Z 10004c40 f   gtlib.obj
+ 0001:00003ca0       ?GT_OutputCanBeUsed@@YGHXZ 10004ca0 f   gtlib.obj
+ 0001:00003d00       ?Print@GT_Table@@QBEXXZ    10004d00 f   gtlib.obj
+ 0001:00004010       ?SetDOSTime@GT_DateTime@@QAEXJ@Z 10005010 f   gtlib.obj
+ 0001:00004060       ?SetWindowsTime@GT_DateTime@@QAEXN@Z 10005060 f   gtlib.obj
+ 0001:000040f0       ?SetUnixTime@GT_DateTime@@QAEXJ@Z 100050f0 f   gtlib.obj
+ 0001:000043a0       ?DateToBuffer@GT_DateTime@@QAEXPADH@Z 100053a0 f   gtlib.obj
+ 0001:00004400       ?TimeToBuffer@GT_DateTime@@QAEXPAD@Z 10005400 f   gtlib.obj
+ 0001:00004430       ?GetYear@GT_DateTime@@QBEHXZ 10005430 f   gtlib.obj
+ 0001:00004440       ?GetMonth@GT_DateTime@@QBEHXZ 10005440 f   gtlib.obj
+ 0001:00004450       ?GetDay@GT_DateTime@@QBEHXZ 10005450 f   gtlib.obj
+ 0001:00004460       ?GetHour@GT_DateTime@@QBEHXZ 10005460 f   gtlib.obj
+ 0001:00004470       ?GetMin@GT_DateTime@@QBEHXZ 10005470 f   gtlib.obj
+ 0001:00004480       ?GetSec@GT_DateTime@@QBEHXZ 10005480 f   gtlib.obj
+ 0001:00004490       ??0GT_Compare@@QAE@PAEEHPAVGT_FileBuffer@@P6IXPAU_EXEEntry@@01@Z@Z 10005490 f   gtlib.obj
+ 0001:000044c0       ?ExplicitMatches@GT_Compare@@QAE?AW4GT_CompareError@@PAEH@Z 100054c0 f   gtlib.obj
+ 0001:00004530       ?Matches@GT_Compare@@QAE?AW4GT_CompareError@@PAU_EXEEntry@@@Z 10005530 f   gtlib.obj
+ 0001:00004610       ??_E?$GT_Sequence@U_GT_DefaultPlugin@@@@UAEPAXI@Z 10005610 f i gtlib.obj
+ 0001:00004610       ??_G?$GT_Sequence@U_GT_DefaultPlugin@@@@UAEPAXI@Z 10005610 f i gtlib.obj
+ 0001:00004660       ??_G?$GT_Sequence@PAUGT_FlagBool@@@@UAEPAXI@Z 10005660 f i gtlib.obj
+ 0001:00004660       ??_E?$GT_Sequence@PAUGT_FlagBool@@@@UAEPAXI@Z 10005660 f i gtlib.obj
+ 0001:000046b0       ??_E?$GT_Sequence@PAUGT_FlagNumber@@@@UAEPAXI@Z 100056b0 f i gtlib.obj
+ 0001:000046b0       ??_G?$GT_Sequence@PAUGT_FlagNumber@@@@UAEPAXI@Z 100056b0 f i gtlib.obj
+ 0001:00004700       ??_G?$GT_Sequence@PAUGT_FlagString@@@@UAEPAXI@Z 10005700 f i gtlib.obj
+ 0001:00004700       ??_E?$GT_Sequence@PAUGT_FlagString@@@@UAEPAXI@Z 10005700 f i gtlib.obj
+ 0001:00004750       ?addLast@?$GT_Sequence@PAUGT_FlagString@@@@QAEXABQAUGT_FlagString@@@Z 10005750 f i gtlib.obj
+ 0001:00004750       ?addLast@?$GT_Sequence@U_GT_DefaultPlugin@@@@QAEXABU_GT_DefaultPlugin@@@Z 10005750 f i gtlib.obj
+ 0001:00004750       ?addLast@?$GT_Sequence@PAUGT_FlagBool@@@@QAEXABQAUGT_FlagBool@@@Z 10005750 f i gtlib.obj
+ 0001:00004750       ?addLast@?$GT_Sequence@PAUGT_FlagNumber@@@@QAEXABQAUGT_FlagNumber@@@Z 10005750 f i gtlib.obj
+ 0001:000047a0       ?addFirst@?$GT_Sequence@PAUGT_FlagBool@@@@QAEXABQAUGT_FlagBool@@@Z 100057a0 f i gtlib.obj
+ 0001:000047a0       ?addFirst@?$GT_Sequence@U_GT_DefaultPlugin@@@@QAEXABU_GT_DefaultPlugin@@@Z 100057a0 f i gtlib.obj
+ 0001:000047a0       ?addFirst@?$GT_Sequence@PAUGT_FlagNumber@@@@QAEXABQAUGT_FlagNumber@@@Z 100057a0 f i gtlib.obj
+ 0001:000047a0       ?addFirst@?$GT_Sequence@PAUGT_FlagString@@@@QAEXABQAUGT_FlagString@@@Z 100057a0 f i gtlib.obj
+ 0001:000047f0       ?_FindFlag@@YIPAUGT_FlagString@@AAV?$GT_Sequence@PAUGT_FlagString@@@@PBD@Z 100057f0 f i gtlib.obj
+ 0001:00004830       ??0Cursor@?$GT_Sequence@PAUGT_FlagBool@@@@QAE@ABV1@@Z 10005830 f i gtlib.obj
+ 0001:00004850       ??0Cursor@?$GT_Sequence@PAUGT_FlagNumber@@@@QAE@ABV1@@Z 10005850 f i gtlib.obj
+ 0001:00004870       ?setFirst@Cursor@?$GT_Sequence@PAUGT_FlagBool@@@@UAEXXZ 10005870 f i gtlib.obj
+ 0001:00004870       ?setFirst@Cursor@?$GT_Sequence@PAUGT_FlagNumber@@@@UAEXXZ 10005870 f i gtlib.obj
+ 0001:00004880       ?setNext@Cursor@?$GT_Sequence@PAUGT_FlagBool@@@@UAEXXZ 10005880 f i gtlib.obj
+ 0001:00004880       ?setNext@Cursor@?$GT_Sequence@PAUGT_FlagNumber@@@@UAEXXZ 10005880 f i gtlib.obj
+ 0001:00004890       ?isValid@Cursor@?$GT_Sequence@PAUGT_FlagNumber@@@@UBEHXZ 10005890 f i gtlib.obj
+ 0001:00004890       ?isValid@Cursor@?$GT_Sequence@PAUGT_FlagBool@@@@UBEHXZ 10005890 f i gtlib.obj
+ 0001:000048a0       ?element@Cursor@?$GT_Sequence@PAUGT_FlagNumber@@@@UAEABQAUGT_FlagNumber@@XZ 100058a0 f i gtlib.obj
+ 0001:000048a0       ?element@Cursor@?$GT_Sequence@PAUGT_FlagBool@@@@UAEABQAUGT_FlagBool@@XZ 100058a0 f i gtlib.obj
+ 0001:00004920       ?_insert@ADLP_String@@AAEXPBDII@Z 10005920 f   plib.obj
+ 0001:00004b70       ??0ADLP_String@@QAE@D@Z    10005b70 f   plib.obj
+ 0001:00004b70       ??0ADLP_String@@QAE@E@Z    10005b70 f   plib.obj
+ 0001:00004bb0       ??0ADLP_String@@QAE@F@Z    10005bb0 f   plib.obj
+ 0001:00004c50       ??0ADLP_String@@QAE@G@Z    10005c50 f   plib.obj
+ 0001:00004cf0       ??0ADLP_String@@QAE@H@Z    10005cf0 f   plib.obj
+ 0001:00004d90       ??0ADLP_String@@QAE@I@Z    10005d90 f   plib.obj
+ 0001:00004e30       ??0ADLP_String@@QAE@J@Z    10005e30 f   plib.obj
+ 0001:00004ed0       ??0ADLP_String@@QAE@K@Z    10005ed0 f   plib.obj
+ 0001:00004f70       ??0ADLP_String@@QAE@NPBD@Z 10005f70 f   plib.obj
+ 0001:00005020       ??YADLP_String@@QAEXD@Z    10006020 f   plib.obj
+ 0001:00005020       ??YADLP_String@@QAEXE@Z    10006020 f   plib.obj
+ 0001:00005090       ??YADLP_String@@QAEXABV0@@Z 10006090 f   plib.obj
+ 0001:00005120       ??YADLP_String@@QAEXF@Z    10006120 f   plib.obj
+ 0001:000051c0       ??YADLP_String@@QAEXG@Z    100061c0 f   plib.obj
+ 0001:00005260       ??YADLP_String@@QAEXH@Z    10006260 f   plib.obj
+ 0001:00005300       ??YADLP_String@@QAEXI@Z    10006300 f   plib.obj
+ 0001:000053a0       ??YADLP_String@@QAEXJ@Z    100063a0 f   plib.obj
+ 0001:00005440       ??YADLP_String@@QAEXK@Z    10006440 f   plib.obj
+ 0001:000054e0       ??YADLP_String@@QAEXN@Z    100064e0 f   plib.obj
+ 0001:00005580       ??YADLP_String@@QAEX_J@Z   10006580 f   plib.obj
+ 0001:00005620       ??4ADLP_String@@QAEAAV0@D@Z 10006620 f   plib.obj
+ 0001:00005680       ??4ADLP_String@@QAEAAV0@PBD@Z 10006680 f   plib.obj
+ 0001:00005730       ??4ADLP_String@@QAEAAV0@ABV0@@Z 10006730 f   plib.obj
+ 0001:000057d0       ??4ADLP_String@@QAEAAV0@F@Z 100067d0 f   plib.obj
+ 0001:00005860       ??4ADLP_String@@QAEAAV0@G@Z 10006860 f   plib.obj
+ 0001:000058f0       ??4ADLP_String@@QAEAAV0@H@Z 100068f0 f   plib.obj
+ 0001:00005980       ??4ADLP_String@@QAEAAV0@I@Z 10006980 f   plib.obj
+ 0001:00005a10       ??4ADLP_String@@QAEAAV0@J@Z 10006a10 f   plib.obj
+ 0001:00005aa0       ??4ADLP_String@@QAEAAV0@K@Z 10006aa0 f   plib.obj
+ 0001:00005b30       ??4ADLP_String@@QAEAAV0@N@Z 10006b30 f   plib.obj
+ 0001:00005bc0       ??4ADLP_String@@QAEAAV0@_J@Z 10006bc0 f   plib.obj
+ 0001:00005c50       ?Insert@ADLP_String@@QAEAAV1@ABV1@I@Z 10006c50 f   plib.obj
+ 0001:00005c80       ?Insert@ADLP_String@@QAEAAV1@PBDI@Z 10006c80 f   plib.obj
+ 0001:00005cc0       ?Insert@ADLP_String@@QAEAAV1@DI@Z 10006cc0 f   plib.obj
+ 0001:00005cf0       ?Erase@ADLP_String@@QAEAAV1@I@Z 10006cf0 f   plib.obj
+ 0001:00005d10       ?Erase@ADLP_String@@QAEAAV1@II@Z 10006d10 f   plib.obj
+ 0001:00005d70       ?Cut@ADLP_String@@QAE?AV1@II@Z 10006d70 f   plib.obj
+ 0001:00005ea0       ?Copy@ADLP_String@@QBE?AV1@II@Z 10006ea0 f   plib.obj
+ 0001:00005fb0       ?EraseLeadingChars@ADLP_String@@QAEXD@Z 10006fb0 f   plib.obj
+ 0001:00006010       ?EraseTrailingChars@ADLP_String@@QAEXD@Z 10007010 f   plib.obj
+ 0001:00006060       ?IsUpper@ADLP_String@@QBEHXZ 10007060 f   plib.obj
+ 0001:00006090       ?IsLower@ADLP_String@@QBEHXZ 10007090 f   plib.obj
+ 0001:000060c0       ?IsAlpha@ADLP_String@@QBEHXZ 100070c0 f   plib.obj
+ 0001:00006100       ?IsNumeric@ADLP_String@@QBEHXZ 10007100 f   plib.obj
+ 0001:00006130       ?IsAlphaNumeric@ADLP_String@@QBEHXZ 10007130 f   plib.obj
+ 0001:00006170       ?ToUpper@ADLP_String@@QAEXXZ 10007170 f   plib.obj
+ 0001:000061b0       ?ToLower@ADLP_String@@QAEXXZ 100071b0 f   plib.obj
+ 0001:000061f0       ?GetCharCount@ADLP_String@@QBEID@Z 100071f0 f   plib.obj
+ 0001:00006220       ?GetStrCount@ADLP_String@@QBEIPBD@Z 10007220 f   plib.obj
+ 0001:00006270       ?Set@ADLP_String@@QAEXPBDI@Z 10007270 f   plib.obj
+ 0001:00006320       ?Append@ADLP_String@@QAEXNPBD@Z 10007320 f   plib.obj
+ 0001:000063c0       ?Append@ADLP_String@@QAEXDI@Z 100073c0 f   plib.obj
+ 0001:00006460       ?Append@ADLP_String@@QAEXPADI@Z 10007460 f   plib.obj
+ 0001:000065b0       ?Append@ADLP_String@@QAEXABV1@I@Z 100075b0 f   plib.obj
+ 0001:00006640       ?AppendHexByte@ADLP_String@@QAEXE@Z 10007640 f   plib.obj
+ 0001:000066e0       ?AppendHexWord@ADLP_String@@QAEXG@Z 100076e0 f   plib.obj
+ 0001:00006780       ?AppendHexLong@ADLP_String@@QAEXK@Z 10007780 f   plib.obj
+ 0001:00006820       ?ReplaceAllChar@ADLP_String@@QAEIDD@Z 10007820 f   plib.obj
+ 0001:00006870       ?ReplaceAllChar@ADLP_String@@QAEIDPBD@Z 10007870 f   plib.obj
+ 0001:00006a90       ?ReplaceAllStr@ADLP_String@@QAEIPBD0@Z 10007a90 f   plib.obj
+ 0001:00006cc0       ?ADLP_IsValidInteger@@YAHPBD@Z 10007cc0 f   plib.obj
+ 0001:00006d10       ?ADLP_IsValidDouble@@YAHPBD@Z 10007d10 f   plib.obj
+ 0001:00006d90       ?ADLP_Mask@@YAXPBDAAVADLP_String@@H@Z 10007d90 f   plib.obj
+ 0001:00006ed0       ?ADLP_Unmask@@YAXPBDAAVADLP_String@@@Z 10007ed0 f   plib.obj
+ 0001:00007010       ?ADLP_Unmask@@YAXABVADLP_String@@AAV1@@Z 10008010 f   plib.obj
+ 0001:00007130       _P_align@8                 10008130 f   plib.obj
+ 0001:00007150       _P_atol@4                  10008150 f   plib.obj
+ 0001:00007180       _P_otol@8                  10008180 f   plib.obj
+ 0001:000071f0       _P_xcton@8                 100081f0 f   plib.obj
+ 0001:00007240       _P_ctob@12                 10008240 f   plib.obj
+ 0001:000072d0       _P_xtol@4                  100082d0 f   plib.obj
+ 0001:00007510       _P_lowerc@4                10008510 f   plib.obj
+ 0001:00007530       _P_upperc@4                10008530 f   plib.obj
+ 0001:00007550       _P_ltoc4@8                 10008550 f   plib.obj
+ 0001:00007570       _P_unicode2ansi@12         10008570 f   plib.obj
+ 0001:000075b0       _P_swap_byte@4             100085b0 f   plib.obj
+ 0001:000075e0       _P_splitdouble@16          100085e0 f   plib.obj
+ 0001:00007630       _PError_ShowErrorMessage   10008630 f   plib.obj
+ 0001:000076a0       _PError_ShowLastWin32Error@4 100086a0 f   plib.obj
+ 0001:00007710       _PError_ShowWin32Error@8   10008710 f   plib.obj
+ 0001:00007780       ??0PFileSearch@@QAE@XZ     10008780 f   plib.obj
+ 0001:000077d0       ??1PFileSearch@@UAE@XZ     100087d0 f   plib.obj
+ 0001:00007810       ?FindFirst@PFileSearch@@QAEXPBD@Z 10008810 f   plib.obj
+ 0001:00007880       ?FindNext@PFileSearch@@QAEXXZ 10008880 f   plib.obj
+ 0001:000078b0       ?FindClose@PFileSearch@@QAEXXZ 100088b0 f   plib.obj
+ 0001:000078e0       ?GetFilename@PFileSearch@@QBEPBDXZ 100088e0 f   plib.obj
+ 0001:00007910       ?GetFilesize@PFileSearch@@QBEJXZ 10008910 f   plib.obj
+ 0001:00007930       ?GetAttr@PFileSearch@@QBEHXZ 10008930 f   plib.obj
+ 0001:00007950       ?IsDirectory@PFileSearch@@QBEHXZ 10008950 f   plib.obj
+ 0001:00007970       ?GetCurrentUserString@PRegistry@@SIHPBD0JPAD@Z 10008970 f   plib.obj
+ 0001:000079e0       ?GetClassesRootString@PRegistry@@SIHPBD0JPAD@Z 100089e0 f   plib.obj
+ 0001:00007a50       ?Start@PTimer@@QAEXXZ      10008a50 f   plib.obj
+ 0001:00007a70       ?Stop@PTimer@@QAEXXZ       10008a70 f   plib.obj
+ 0001:00007a90       ?GetSeconds@PTimer@@QBENXZ 10008a90 f   plib.obj
+ 0001:00007aa0       ??3@YAXPAX@Z               10008aa0 f   msvcrt:MSVCRT.dll
+ 0001:00007aa6       ??_M@YGXPAXIHP6EX0@Z@Z     10008aa6 f   msvcrt:ehvecdtr.obj
+ 0001:00007b26       ?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z 10008b26 f   msvcrt:ehvecdtr.obj
+ 0001:00007b9a       ??_L@YGXPAXIHP6EX0@Z1@Z    10008b9a f   msvcrt:ehvecctr.obj
+ 0001:00007c1c       ??2@YAPAXI@Z               10008c1c f   msvcrt:MSVCRT.dll
+ 0001:00007c22       ___CxxFrameHandler         10008c22 f   msvcrt:MSVCRT.dll
+ 0001:00007c28       __onexit                   10008c28 f   msvcrt:atonexit.obj
+ 0001:00007c54       _atexit                    10008c54 f   msvcrt:atonexit.obj
+ 0001:00007c66       ??_Etype_info@@UAEPAXI@Z   10008c66 f i msvcrt:ti_inst.obj
+ 0001:00007c66       ??_Gtype_info@@UAEPAXI@Z   10008c66 f i msvcrt:ti_inst.obj
+ 0001:00007c82       __CxxThrowException@8      10008c82 f   msvcrt:MSVCRT.dll
+ 0001:00007c88       __ftol                     10008c88 f   msvcrt:MSVCRT.dll
+ 0001:00007c90       __alloca_probe             10008c90 f   msvcrt:chkstk.obj
+ 0001:00007c90       __chkstk                   10008c90 f   msvcrt:chkstk.obj
+ 0001:00007cc0       __except_handler3          10008cc0 f   msvcrt:MSVCRT.dll
+ 0001:00007cc6       ?terminate@@YAXXZ          10008cc6 f   msvcrt:MSVCRT.dll
+ 0001:00007ccc       ___dllonexit               10008ccc f   msvcrt:MSVCRT.dll
+ 0001:00007cd2       ??1type_info@@UAE@XZ       10008cd2 f   msvcrt:MSVCRT.dll
+ 0002:00000000       __imp__RegQueryValueExA@24 10009000     advapi32:ADVAPI32.dll
+ 0002:00000004       __imp__RegOpenKeyExA@20    10009004     advapi32:ADVAPI32.dll
+ 0002:00000008       __imp__RegCloseKey@4       10009008     advapi32:ADVAPI32.dll
+ 0002:0000000c       \177ADVAPI32_NULL_THUNK_DATA 1000900c     advapi32:ADVAPI32.dll
+ 0002:00000010       __imp__SetFilePointer@16   10009010     kernel32:KERNEL32.dll
+ 0002:00000014       __imp__GetModuleFileNameA@12 10009014     kernel32:KERNEL32.dll
+ 0002:00000018       __imp__GetFileSize@8       10009018     kernel32:KERNEL32.dll
+ 0002:0000001c       __imp__ReadFile@20         1000901c     kernel32:KERNEL32.dll
+ 0002:00000020       __imp__GetLastError@0      10009020     kernel32:KERNEL32.dll
+ 0002:00000024       __imp__CreateFileA@28      10009024     kernel32:KERNEL32.dll
+ 0002:00000028       __imp__CloseHandle@4       10009028     kernel32:KERNEL32.dll
+ 0002:0000002c       __imp__lstrlenA@4          1000902c     kernel32:KERNEL32.dll
+ 0002:00000030       __imp__lstrcpyA@8          10009030     kernel32:KERNEL32.dll
+ 0002:00000034       __imp__FileTimeToDosDateTime@12 10009034     kernel32:KERNEL32.dll
+ 0002:00000038       __imp__FindClose@4         10009038     kernel32:KERNEL32.dll
+ 0002:0000003c       __imp__WriteFile@20        1000903c     kernel32:KERNEL32.dll
+ 0002:00000040       __imp__SetConsoleTextAttribute@8 10009040     kernel32:KERNEL32.dll
+ 0002:00000044       __imp__GetConsoleScreenBufferInfo@8 10009044     kernel32:KERNEL32.dll
+ 0002:00000048       __imp__GetStdHandle@4      10009048     kernel32:KERNEL32.dll
+ 0002:0000004c       __imp__LocalFree@4         1000904c     kernel32:KERNEL32.dll
+ 0002:00000050       __imp__OutputDebugStringA@4 10009050     kernel32:KERNEL32.dll
+ 0002:00000054       __imp__FormatMessageA@28   10009054     kernel32:KERNEL32.dll
+ 0002:00000058       __imp__FindFirstFileA@8    10009058     kernel32:KERNEL32.dll
+ 0002:0000005c       __imp__FindNextFileA@8     1000905c     kernel32:KERNEL32.dll
+ 0002:00000060       \177KERNEL32_NULL_THUNK_DATA 10009060     kernel32:KERNEL32.dll
+ 0002:00000064       __imp__free                10009064     msvcrt:MSVCRT.dll
+ 0002:00000068       __imp__realloc             10009068     msvcrt:MSVCRT.dll
+ 0002:0000006c       __imp__memmove             1000906c     msvcrt:MSVCRT.dll
+ 0002:00000070       __imp__atoi                10009070     msvcrt:MSVCRT.dll
+ 0002:00000074       __imp__atol                10009074     msvcrt:MSVCRT.dll
+ 0002:00000078       __imp__atof                10009078     msvcrt:MSVCRT.dll
+ 0002:0000007c       __imp__malloc              1000907c     msvcrt:MSVCRT.dll
+ 0002:00000080       __imp__strchr              10009080     msvcrt:MSVCRT.dll
+ 0002:00000084       __imp__strstr              10009084     msvcrt:MSVCRT.dll
+ 0002:00000088       __imp_??3@YAXPAX@Z         10009088     msvcrt:MSVCRT.dll
+ 0002:0000008c       __imp__fclose              1000908c     msvcrt:MSVCRT.dll
+ 0002:00000090       __imp_??2@YAPAXI@Z         10009090     msvcrt:MSVCRT.dll
+ 0002:00000094       __imp____CxxFrameHandler   10009094     msvcrt:MSVCRT.dll
+ 0002:00000098       __imp__strncmp             10009098     msvcrt:MSVCRT.dll
+ 0002:0000009c       __imp__fopen               1000909c     msvcrt:MSVCRT.dll
+ 0002:000000a0       __imp__fgets               100090a0     msvcrt:MSVCRT.dll
+ 0002:000000a4       __imp__vsprintf            100090a4     msvcrt:MSVCRT.dll
+ 0002:000000a8       __imp__fflush              100090a8     msvcrt:MSVCRT.dll
+ 0002:000000ac       __imp__fprintf             100090ac     msvcrt:MSVCRT.dll
+ 0002:000000b0       __imp___iob                100090b0     msvcrt:MSVCRT.dll
+ 0002:000000b4       __imp__strrchr             100090b4     msvcrt:MSVCRT.dll
+ 0002:000000b8       __imp__sprintf             100090b8     msvcrt:MSVCRT.dll
+ 0002:000000bc       __imp___CxxThrowException@8 100090bc     msvcrt:MSVCRT.dll
+ 0002:000000c0       __imp___strnicmp           100090c0     msvcrt:MSVCRT.dll
+ 0002:000000c4       __imp___itoa               100090c4     msvcrt:MSVCRT.dll
+ 0002:000000c8       __imp___ltoa               100090c8     msvcrt:MSVCRT.dll
+ 0002:000000cc       __imp___i64toa             100090cc     msvcrt:MSVCRT.dll
+ 0002:000000d0       __imp__toupper             100090d0     msvcrt:MSVCRT.dll
+ 0002:000000d4       __imp__tolower             100090d4     msvcrt:MSVCRT.dll
+ 0002:000000d8       __imp___ftol               100090d8     msvcrt:MSVCRT.dll
+ 0002:000000dc       __imp__clock               100090dc     msvcrt:MSVCRT.dll
+ 0002:000000e0       __imp___except_handler3    100090e0     msvcrt:MSVCRT.dll
+ 0002:000000e4       __imp_?terminate@@YAXXZ    100090e4     msvcrt:MSVCRT.dll
+ 0002:000000e8       __imp____dllonexit         100090e8     msvcrt:MSVCRT.dll
+ 0002:000000ec       __imp___onexit             100090ec     msvcrt:MSVCRT.dll
+ 0002:000000f0       __imp_??1type_info@@UAE@XZ 100090f0     msvcrt:MSVCRT.dll
+ 0002:000000f4       \177MSVCRT_NULL_THUNK_DATA 100090f4     msvcrt:MSVCRT.dll
+ 0002:000000f8       __imp__wvsprintfA@12       100090f8     user32:USER32.dll
+ 0002:000000fc       __imp__wsprintfA           100090fc     user32:USER32.dll
+ 0002:00000100       \177USER32_NULL_THUNK_DATA 10009100     user32:USER32.dll
+ 0002:00000108       ??_C@_09PLOL@?9?9error?9?9?$AA@ 10009108     gtlib.obj
+ 0002:00000114       ??_C@_08NPHI@password?$AA@ 10009114     gtlib.obj
+ 0002:00000120       ??_C@_08MNBO@extender?$AA@ 10009120     gtlib.obj
+ 0002:0000012c       ??_C@_07JJAP@sticker?$AA@  1000912c     gtlib.obj
+ 0002:00000134       ??_C@_09ELOB@protector?$AA@ 10009134     gtlib.obj
+ 0002:00000140       ??_C@_09GPBF@converter?$AA@ 10009140     gtlib.obj
+ 0002:0000014c       ??_C@_06BJLO@linker?$AA@   1000914c     gtlib.obj
+ 0002:00000154       ??_C@_08HHAG@compiler?$AA@ 10009154     gtlib.obj
+ 0002:00000160       ??_C@_09NFCL@encrypter?$AA@ 10009160     gtlib.obj
+ 0002:0000016c       ??_C@_06CDJN@packer?$AA@   1000916c     gtlib.obj
+ 0002:00000174       ??_C@_04KKCM@code?$AA@     10009174     gtlib.obj
+ 0002:0000017c       ??_C@_08GKAE@Reserved?$AA@ 1000917c     gtlib.obj
+ 0002:00000188       ??_C@_0BE@GLMI@COM?$CL?5Runtime?5Header?$AA@ 10009188     gtlib.obj
+ 0002:0000019c       ??_C@_0BI@DBIF@Delay?5Import?5Descriptor?$AA@ 1000919c     gtlib.obj
+ 0002:000001b4       ??_C@_0BF@COCJ@Import?5Address?5Table?$AA@ 100091b4     gtlib.obj
+ 0002:000001cc       ??_C@_0BD@KFDL@Bound?5Import?5Table?$AA@ 100091cc     gtlib.obj
+ 0002:000001e0       ??_C@_0BC@PAHO@Load?5Config?5Table?$AA@ 100091e0     gtlib.obj
+ 0002:000001f4       ??_C@_09KPL@TLS?5Table?$AA@ 100091f4     gtlib.obj
+ 0002:00000200       ??_C@_0L@INGL@Global?5Ptr?$AA@ 10009200     gtlib.obj
+ 0002:0000020c       ??_C@_0N@BFCG@Architecture?$AA@ 1000920c     gtlib.obj
+ 0002:0000021c       ??_C@_0L@JHPA@Debug?5data?$AA@ 1000921c     gtlib.obj
+ 0002:00000228       ??_C@_0BG@LNEG@Base?5relocation?5Table?$AA@ 10009228     gtlib.obj
+ 0002:00000240       ??_C@_0BC@FGLM@Certificate?5Table?$AA@ 10009240     gtlib.obj
+ 0002:00000254       ??_C@_0BA@MIGL@Exception?5Table?$AA@ 10009254     gtlib.obj
+ 0002:00000264       ??_C@_0BA@NNKG@Ressource?5Table?$AA@ 10009264     gtlib.obj
+ 0002:00000274       ??_C@_0N@DEDF@Import?5Table?$AA@ 10009274     gtlib.obj
+ 0002:00000284       ??_C@_0N@EIH@Export?5Table?$AA@ 10009284     gtlib.obj
+ 0002:00000294       ??_C@_04JKFK@HTML?$AA@     10009294     gtlib.obj
+ 0002:0000029c       ??_C@_0O@BHA@Animated?5Icon?$AA@ 1000929c     gtlib.obj
+ 0002:000002ac       ??_C@_0BA@POPF@Animated?5Cursor?$AA@ 100092ac     gtlib.obj
+ 0002:000002bc       ??_C@_03DCHD@VXD?$AA@      100092bc     gtlib.obj
+ 0002:000002c0       ??_C@_0M@CEEA@Plug?8n?8Play?$AA@ 100092c0     gtlib.obj
+ 0002:000002cc       ??_C@_0P@KGNF@Dialog?5Include?$AA@ 100092cc     gtlib.obj
+ 0002:000002dc       ??_C@_07MNFD@Version?$AA@  100092dc     gtlib.obj
+ 0002:000002e4       ??_C@_0L@IGPE@Group?5Icon?$AA@ 100092e4     gtlib.obj
+ 0002:000002f0       ??_C@_00A@?$AA@            100092f0     gtlib.obj
+ 0002:000002f4       ??_C@_0N@OPID@Group?5Cursor?$AA@ 100092f4     gtlib.obj
+ 0002:00000304       ??_C@_0O@DEPC@Message?5Table?$AA@ 10009304     gtlib.obj
+ 0002:00000314       ??_C@_06LGJH@RCData?$AA@   10009314     gtlib.obj
+ 0002:0000031c       ??_C@_0M@BGGO@Accelerator?$AA@ 1000931c     gtlib.obj
+ 0002:00000328       ??_C@_04CLJC@Font?$AA@     10009328     gtlib.obj
+ 0002:00000330       ??_C@_0P@LACI@Font?5Directory?$AA@ 10009330     gtlib.obj
+ 0002:00000340       ??_C@_06PINC@String?$AA@   10009340     gtlib.obj
+ 0002:00000348       ??_C@_06FPEO@Dialog?$AA@   10009348     gtlib.obj
+ 0002:00000350       ??_C@_04PAPL@Menu?$AA@     10009350     gtlib.obj
+ 0002:00000358       ??_C@_04JNBP@Icon?$AA@     10009358     gtlib.obj
+ 0002:00000360       ??_C@_06KLJN@Bitmap?$AA@   10009360     gtlib.obj
+ 0002:00000368       ??_C@_06KIBG@Cursor?$AA@   10009368     gtlib.obj
+ 0002:00000370       ??_7ADLP_String@@6B@       10009370     gtlib.obj
+ 0002:00000378       __real@0000000000000000    10009378     gtlib.obj
+ 0002:00000380       ??_7PFileSearch@@6B@       10009380     gtlib.obj
+ 0002:00000384       ??_7GT_ConfigFile@@6B@     10009384     gtlib.obj
+ 0002:00000388       ??_7GT_FileBuffer@@6B@     10009388     gtlib.obj
+ 0002:0000038c       ??_7GT_Table@@6B@          1000938c     gtlib.obj
+ 0002:00000390       ??_7GT_TableColumn@@6B@    10009390     gtlib.obj
+ 0002:00000394       ??_7?$GT_Sequence@PAUGT_FlagBool@@@@6B@ 10009394     gtlib.obj
+ 0002:00000398       ??_7?$GT_Sequence@PAUGT_FlagNumber@@@@6B@ 10009398     gtlib.obj
+ 0002:0000039c       ??_7?$GT_Sequence@PAUGT_FlagString@@@@6B@ 1000939c     gtlib.obj
+ 0002:000003a0       ??_C@_02NDMB@?5?9?$AA@     100093a0     gtlib.obj
+ 0002:000003a4       ??_C@_0BE@DOBA@?$FLGetModuleFileName?$FN?$AA@ 100093a4     gtlib.obj
+ 0002:000003b8       ??_C@_0L@FBPO@gt2000?4cfg?$AA@ 100093b8     gtlib.obj
+ 0002:000003c4       ??_C@_02MMAH@rt?$AA@       100093c4     gtlib.obj
+ 0002:000003c8       ??_C@_0EB@KFFC@Software?2Microsoft?2Windows?2Curre@ 100093c8     gtlib.obj
+ 0002:0000040c       ??_C@_07EELO@AppData?$AA@  1000940c     gtlib.obj
+ 0002:00000414       ??_C@_0CH@IEPI@Error?5in?5the?5configuration?5file?5@ 10009414     gtlib.obj
+ 0002:0000043c       ??_C@_0BO@FGHO@?5?5line?5?$CFd?3?5Invalid?5character?6?$AA@ 1000943c     gtlib.obj
+ 0002:0000045c       ??_C@_0CH@CNLE@?5?5Config?5file?5?$CIline?5?$CFd?$CJ?3?5Syntax?5@ 1000945c     gtlib.obj
+ 0002:00000484       ??_C@_0CA@GCJF@?5?5line?5?$CFd?3?5Unknown?5switch?5?8?$CFs?8?6?$AA@ 10009484     gtlib.obj
+ 0002:000004a8       ??_C@_0KB@MNII@?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB?$CB@ 100094a8     gtlib.obj
+ 0002:0000054c       ??_C@_0BB@LJJ@phax?$EAwriteme?4com?$AA@ 1000954c     gtlib.obj
+ 0002:00000560       ??_C@_0BP@KOHB@Exception?5in?5?$CFs?5line?5?$CFd?3?6?5?5?$CFs?6?$AA@ 10009560     gtlib.obj
+ 0002:00000580       ??_7?$GT_Sequence@U_GT_DefaultPlugin@@@@6B@ 10009580     gtlib.obj
+ 0002:00000584       ??_C@_0BE@GMLN@Failed?5to?5open?5?8?$CFs?8?$AA@ 10009584     gtlib.obj
+ 0002:00000598       ??_C@_0BF@GBNJ@gtlib_filebuffer?4cxx?$AA@ 10009598     gtlib.obj
+ 0002:000005b0       ??_C@_0CK@PFDG@?$CFs?5?9?5Trying?5to?5set?5the?5filepoint@ 100095b0     gtlib.obj
+ 0002:000005dc       ??_C@_0CP@HGKN@?$CFs?5?9?5Trying?5to?5increase?5the?5file@ 100095dc     gtlib.obj
+ 0002:0000060c       ??_C@_0BO@ELID@?$CFs?5?9?5Failed?5to?5read?5?$CFld?5bytes?$AA@ 1000960c     gtlib.obj
+ 0002:0000062c       ??_C@_0CJ@LJIC@?$CFs?5?9?5Trying?5to?5read?5?$CFld?5bytes?5be@ 1000962c     gtlib.obj
+ 0002:00000658       ??_C@_0CH@CPOL@?$CFs?5?9?5Trying?5to?5read?5?$CFld?5bytes?5ov@ 10009658     gtlib.obj
+ 0002:00000680       ??_C@_0CJ@IKN@?$CFs?5?9?5Failed?5to?5read?5C?5like?5strin@ 10009680     gtlib.obj
+ 0002:000006ac       ??_C@_0CO@BLFF@?$CFs?5?9?5Failed?5to?5read?5Pascal?5like?5@ 100096ac     gtlib.obj
+ 0002:000006dc       ??_C@_01FCOA@?5?$AA@       100096dc     gtlib.obj
+ 0002:000006e0       ??_C@_03IOFJ@?$CFXh?$AA@   100096e0     gtlib.obj
+ 0002:000006e4       ??_C@_07HEBB@?$CF?$CF0?$CFdXh?$AA@ 100096e4     gtlib.obj
+ 0002:000006ec       ??_C@_02MECO@?$CFd?$AA@    100096ec     gtlib.obj
+ 0002:000006f0       ??_C@_05BOPK@?$CF?$CF?$CFdd?$AA@ 100096f0     gtlib.obj
+ 0002:000006f8       ??_C@_06IMOF@?$CF?$CF0?$CFdd?$AA@ 100096f8     gtlib.obj
+ 0002:00000700       ??_C@_01BJG@?6?$AA@        10009700     gtlib.obj
+ 0002:00000704       ??_C@_06LPNL@?$CF?$CF?9?$CFds?$AA@ 10009704     gtlib.obj
+ 0002:0000070c       ??_C@_0P@MMOD@?$CF02d?4?$CF02d?4?$CF02d?$AA@ 1000970c     gtlib.obj
+ 0002:0000071c       ??_C@_0P@LLBM@?$CF02d?4?$CF02d?4?$CF04d?$AA@ 1000971c     gtlib.obj
+ 0002:0000072c       ??_C@_0P@INAO@?$CF02d?3?$CF02d?3?$CF02d?$AA@ 1000972c     gtlib.obj
+ 0002:0000073c       ??_C@_0BD@ODKJ@?5?5Found?5?$CFs?5?8?$CFs?$CFs?8?6?$AA@ 1000973c     gtlib.obj
+ 0002:00000750       ??_C@_02CPJP@?5?$DP?$AA@   10009750     gtlib.obj
+ 0002:00000754       ??_7Cursor@?$GT_Sequence@PAUGT_FlagBool@@@@6B@ 10009754     gtlib.obj
+ 0002:00000764       ??_7Cursor@?$GT_Sequence@PAUGT_FlagNumber@@@@6B@ 10009764     gtlib.obj
+ 0002:000007a0       ??_C@_03FMLL@?$CFud?$AA@   100097a0     plib.obj
+ 0002:000007a4       ??_C@_03JFOM@?$CFld?$AA@   100097a4     plib.obj
+ 0002:000007a8       ??_C@_03IAD@?$CFul?$AA@    100097a8     plib.obj
+ 0002:000007ac       ??_C@_02JBAA@?$CFf?$AA@    100097ac     plib.obj
+ 0002:000007b0       ??_C@_05MKCL@?$CF02Xh?$AA@ 100097b0     plib.obj
+ 0002:000007b8       ??_C@_05CGFM@?$CF04Xh?$AA@ 100097b8     plib.obj
+ 0002:000007c0       ??_C@_05POLD@?$CF08Xh?$AA@ 100097c0     plib.obj
+ 0002:000007c8       ??_C@_04NCKB@?$CF08s?$AA@  100097c8     plib.obj
+ 0002:000007d0       ??_C@_0O@LNFP@?$CFs?5?$CI?$CFld?$CJ?3?6?$CFs?6?$AA@ 100097d0     plib.obj
+ 0002:000007e0       ??_C@_0BI@GIAN@A?5Windows?5error?5occured?$AA@ 100097e0     plib.obj
+ 0002:000007f8       __real@3f50624dd2f1a9fc    100097f8     plib.obj
+ 0002:00000830       ??_7type_info@@6B@         10009830     msvcrt:ti_inst.obj
+ 0002:00000838       ??_R1A@?0A@A@type_info@@8  10009838     msvcrt:ti_inst.obj
+ 0002:00000850       ??_R2type_info@@8          10009850     msvcrt:ti_inst.obj
+ 0002:00000858       ??_R3type_info@@8          10009858     msvcrt:ti_inst.obj
+ 0002:00000868       ??_R4type_info@@6B@        10009868     msvcrt:ti_inst.obj
+ 0002:00000990       __CT??_R0?AVGT_Exception@@@8??0GT_Exception@@QAE@ABV0@@Z44 10009990     gtlib.obj
+ 0002:000009ac       __CTA1?AVGT_Exception@@    100099ac     gtlib.obj
+ 0002:000009b4       __TI1?AVGT_Exception@@     100099b4     gtlib.obj
+ 0002:000009c4       __IMPORT_DESCRIPTOR_ADVAPI32 100099c4     advapi32:ADVAPI32.dll
+ 0002:000009d8       __IMPORT_DESCRIPTOR_KERNEL32 100099d8     kernel32:KERNEL32.dll
+ 0002:000009ec       __IMPORT_DESCRIPTOR_MSVCRT 100099ec     msvcrt:MSVCRT.dll
+ 0002:00000a00       __IMPORT_DESCRIPTOR_USER32 10009a00     user32:USER32.dll
+ 0002:00000a14       __NULL_IMPORT_DESCRIPTOR   10009a14     advapi32:ADVAPI32.dll
+ 0003:00000000       ?GT_EXE_PE_RESTYPE@@3PAPADA 1000e000     gtlib.obj
+ 0003:00000060       ?GT_EXE_PE_DATADIRECTORY_NAMES@@3PAPADA 1000e060     gtlib.obj
+ 0003:000000cc       ??_R0?AVGT_Exception@@@8   1000e0cc     gtlib.obj
+ 0003:000000f0       ??_R0?AVtype_info@@@8      1000e0f0     msvcrt:ti_inst.obj
+ 0003:00000510       ?gbNotReadLocalConfigFile@@3HA 1000e510     gtlib.obj
+ 0003:00000514       ?gbPE_Imports@@3HA         1000e514     gtlib.obj
+ 0003:00000518       ?gbAllNetworkDrives@@3HA   1000e518     gtlib.obj
+ 0003:0000051c       ?gbAllDrives@@3HA          1000e51c     gtlib.obj
+ 0003:00000520       ?gbHelp@@3HA               1000e520     gtlib.obj
+ 0003:00000524       ?aStringFlags@@3V?$GT_Sequence@PAUGT_FlagString@@@@A 1000e524     gtlib.obj
+ 0003:00000534       ?gbCacheStats@@3HA         1000e534     gtlib.obj
+ 0003:00000538       ?gbAllFixedDrives@@3HA     1000e538     gtlib.obj
+ 0003:0000053c       ?gbColors@@3HA             1000e53c     gtlib.obj
+ 0003:00001540       ?gbListIdentified@@3HA     1000f540     gtlib.obj
+ 0003:00001544       ?gbScanFileName@@3HA       1000f544     gtlib.obj
+ 0003:00001548       ?gnCodeToleranceEXE@@3JA   1000f548     gtlib.obj
+ 0003:0000154c       ?aDefaultPlugins@@3V?$GT_Sequence@U_GT_DefaultPlugin@@@@A 1000f54c     gtlib.obj
+ 0003:0000155c       ?gnCodeTolerancePE@@3JA    1000f55c     gtlib.obj
+ 0003:00001560       ?gbPE_SectionTable@@3HA    1000f560     gtlib.obj
+ 0003:00001564       ?gbListArchives@@3HA       1000f564     gtlib.obj
+ 0003:00001568       ?gnCodeToleranceNE@@3JA    1000f568     gtlib.obj
+ 0003:0000156c       ?gbPE_All@@3HA             1000f56c     gtlib.obj
+ 0003:00001570       ?gbListMode@@3HA           1000f570     gtlib.obj
+ 0003:00001574       ?gnNumberOfRIFFEntries@@3JA 1000f574     gtlib.obj
+ 0003:00001578       ?gbPE_Exports@@3HA         1000f578     gtlib.obj
+ 0003:0000157c       ?gbPE_RessourceStrings@@3HA 1000f57c     gtlib.obj
+ 0003:00001580       ?gnCodeToleranceSYS@@3JA   1000f580     gtlib.obj
+ 0003:00001584       ?gsPluginOut@@3VADLP_String@@A 1000f584     gtlib.obj
+ 0003:00001598       ?gbGTUI2@@3HA              1000f598     gtlib.obj
+ 0003:0000159c       ?aBoolFlags@@3V?$GT_Sequence@PAUGT_FlagBool@@@@A 1000f59c     gtlib.obj
+ 0003:000015ac       ?gbOverlays@@3HA           1000f5ac     gtlib.obj
+ 0003:000015b0       ?gbNotReadGlobalConfigFile@@3HA 1000f5b0     gtlib.obj
+ 0003:000015b4       ?gbPE_ImportFunctions@@3HA 1000f5b4     gtlib.obj
+ 0003:000015b8       ?gbListUnknown@@3HA        1000f5b8     gtlib.obj
+ 0003:000015bc       ?gbWaitAfterLastFile@@3HA  1000f5bc     gtlib.obj
+ 0003:000015c0       ?gbListOpts@@3HA           1000f5c0     gtlib.obj
+ 0003:000015c4       ?gbScanFileExtension@@3HA  1000f5c4     gtlib.obj
+ 0003:000015c8       ?gbXWPG@@3HA               1000f5c8     gtlib.obj
+ 0003:000015cc       ?aNumberFlags@@3V?$GT_Sequence@PAUGT_FlagNumber@@@@A 1000f5cc     gtlib.obj
+ 0003:000015dc       ?gbPE_DataDirectory@@3HA   1000f5dc     gtlib.obj
+ 0003:000015e0       ?gbPE_Version@@3HA         1000f5e0     gtlib.obj
+ 0003:000015e4       ?gbShowLogo@@3HA           1000f5e4     gtlib.obj
+ 0003:000015e8       ?gbPE_Ressources@@3HA      1000f5e8     gtlib.obj
+ 0003:000015ec       ?gbScanSubfolder@@3HA      1000f5ec     gtlib.obj
+ 0003:000015f0       ?gnHWND@@3JA               1000f5f0     gtlib.obj
+ 0003:000015f4       ?gbShowFooter@@3HA         1000f5f4     gtlib.obj
+ 0003:000015f8       ?gnMaxBufferSize@@3JA      1000f5f8     gtlib.obj
+ 0003:000015fc       ?nFileBuffer_CacheHits@@3JA 1000f5fc     gtlib.obj
+ 0003:00001600       ?nFileBuffer_PartialCacheHits@@3JA 1000f600     gtlib.obj
+ 0003:00001604       ?nFileBuffer_CacheMisses@@3JA 1000f604     gtlib.obj
+ 0003:00001608       ?out_init@@3P6AXPAU_GT_Output_Settings@@@ZA 1000f608     gtlib.obj
+ 0003:0000160c       ?out_close@@3P6AXXZA       1000f60c     gtlib.obj
+ 0003:00001610       ?out_append@@3P6AXPBD@ZA   1000f610     gtlib.obj
+ 0003:00001614       ?out_color_append@@3P6AXW4GT_Color@@PBD@ZA 1000f614     gtlib.obj
+ 0003:00001618       ?out_format@@3P6AXPBDZZA   1000f618     gtlib.obj
+ 0003:0000161c       ?out_color_format@@3P6AXW4GT_Color@@PBDZZA 1000f61c     gtlib.obj
+ 0003:00001620       ?out_flush@@3P6AXXZA       1000f620     gtlib.obj
+ 0003:00001624       ?out_filename@@3P6AXPAU_GT_Output_FilenameStruct@@@ZA 1000f624     gtlib.obj
+ 0003:00001ac0       ___onexitend               1000fac0     <common>
+ 0003:00001ac4       ___onexitbegin             1000fac4     <common>
+
+ entry point at        0000:00000000
+
+ Static symbols
+
+ 0001:000048b0       _$E4                       100058b0 f   plib.obj
+ 0001:000048e0       _$E2                       100058e0 f   plib.obj
+ 0001:00001b30       _$E8                       10002b30 f   gtlib.obj
+ 0001:00001b60       _$E6                       10002b60 f   gtlib.obj
+ 0001:00001bb0       _$E13                      10002bb0 f   gtlib.obj
+ 0001:00001be0       _$E11                      10002be0 f   gtlib.obj
+ 0001:00001c30       _$E18                      10002c30 f   gtlib.obj
+ 0001:00001c60       _$E16                      10002c60 f   gtlib.obj
+ 0001:00002700       _$E23                      10003700 f   gtlib.obj
+ 0001:00002730       _$E21                      10003730 f   gtlib.obj
+ 0001:00002770       _$E28                      10003770 f   gtlib.obj
+ 0001:000027a0       _$E26                      100037a0 f   gtlib.obj
+ 0001:00007b84       ?ArrayUnwindFilter@@YAHPAU_EXCEPTION_POINTERS@@@Z 10008b84 f   msvcrt:ehvecdtr.obj
+
+ 1168 bytes saved through ICF
+

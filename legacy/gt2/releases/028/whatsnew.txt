@@ -1,0 +1,35 @@
+GT 0.28  17.04.2001   >< added UPX 1.02 for Delphi/C Builder PE EXEs
+                      >< added UPX 1.03 for Delphi/C Builder PE EXEs
+                      >< tested with UPX 1.04 for Delphi/C Builder PE EXEs
+                         UPX 1.05 refuses to work with TLS callbacks :(
+                      >< tested with UPX 1.06 for Delphi/C Builder PE EXEs
+                      >< tested with UPX 1.07 for Delphi/C Builder PE EXEs
+                      >< tested with UPX 1.01 for Delphi/C Builder PE EXEs
+                      >< tested with UPX 1.00 for Delphi/C Builder PE EXEs
+                      >< tested with UPX 0.993 for Delphi/C Builder PE EXEs
+                      >< tested with UPX 0.992 for Delphi/C Builder PE EXEs
+                      >< tested with UPX 0.991 for Delphi/C Builder PE EXEs
+                      >< tested with UPX 0.99 for Delphi/C Builder PE EXEs
+                      >< tested with UPX 0.94 for Delphi/C Builder PE EXEs
+                      >< tested with UPX 0.93 for Delphi/C Builder PE EXEs
+                      >< tested with UPX 0.92 for Delphi/C Builder PE EXEs
+                      >< tested with UPX 0.90 for Delphi/C Builder PE EXEs
+                      >< tested with UPX 0.89.6 for Delphi/C Builder PE EXEs
+                      >< added UPX 0.84 for Delphi/C Builder PE EXEs
+                      >< tested with UPX 0.82 for Delphi/C Builder PE EXEs
+                      >< tested with UPX 0.81 for Delphi/C Builder PE EXEs
+                      >< added UPX 0.61 for PE EXEs
+                      >< added UPX 0.61 for PE DLLs
+                      >< added UPX 0.51 for PE DLLs
+                      >< tested with UPX 0.50 for PE DLLs
+                      >< tested with UPX 0.50 for PE EXEs
+                      >< tested with UPX 0.80 for PE DLLs
+                      >< tested with UPX 0.80 for PE EXEs
+         15.04.2001   >< added crash logging
+                      >< stripping relocations from GT executables
+                      >< fixed random crash in WAV analyzer
+                      >< added detection of SBC archive - not listed
+                      >< improved C++ detection slightly
+         14.04.2001   >< added extension "ae"
+         13.04.2001   >< changed to Windows API file IO routines
+                      >< removed parameter /bio

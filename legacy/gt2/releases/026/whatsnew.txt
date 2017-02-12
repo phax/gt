@@ -1,0 +1,42 @@
+GT 0.26  02.04.2001   >< tested with UPX 1.04 for PE EXEs
+                      >< tested with UPX 1.04 for PE DLLs
+                      >< added UPX 1.04 for SYS files
+                      >< added UPX 1.04 for DOS EXEs
+                      >< tested with UPX 1.03 for DOS EXEs
+                      >< added UPX 1.04 for DOS COMs
+                      >< tested with UPX 1.05 for DOS COMs
+                      >< tested with UPX 1.05 for DOS EXEs
+                      >< tested/added UPX 1.05 for PE EXEs
+                      >< tested/added UPX 1.05 for PE DLLs
+                      >< tested with UPX 1.05 for SYS files
+                      >< added output of sectionname to which the entrypoint
+                           of a PE EXE belongs to
+                      >< changed output of PE EXE info slightly
+                      >< tested with UPX 1.06 for DOS COMs
+                      >< tested with UPX 1.06 for DOS EXEs
+                      >< tested with UPX 1.06 for PE EXEs
+                      >< tested with UPX 1.06 for PE DLLs
+                      >< tested with UPX 1.06 for SYS files
+                      >< tested with UPX 1.07 for DOS COMs
+                      >< tested with UPX 1.07 for DOS EXEs
+                      >< tested with UPX 1.07 for PE EXEs
+                      >< tested with UPX 1.07 for PE DLLs
+                      >< tested with UPX 1.07 for SYS files
+                      >< added parameter /ftsX to set the fault tolerance
+                           when comparing SYS files code
+         01.04.2001   >< added switch /alldrives to scan all drives
+                      >< played a little bit with the footer format
+                      >< fixed crash if headtext exceeded 256 chars
+         31.03.2001   >< reimplemented WAV file listing (more flexible)
+         22.03.2001   >< added name of section in output of PE data directory
+         16.03.2001   >< added overlay detection in WAV files
+                      >< fixed small bug in generic MS linker string
+         10.03.2001   >< added UPX 1.03 for PE DLLs
+                      >< more safe internal startup code library
+                      >< added detection of SYS modifier
+                      >< tested with UPX 1.03 for SYS files
+         09.03.2001   >< tested with UPX 1.03 for COM files
+                      >< added UPX 1.03 for PE EXEs
+         02.03.2001   >< optimized archive listing
+                      >< more compile time assertions - they rule ;-)
+         01.03.2001   >< added compile time assertions

@@ -1,0 +1,44 @@
+GT 0.30  29.09.2001   >< extended PE EXE section table information
+         15.09.2001   >< improved internal String class
+                      >< new Dump format 1.14
+                      >< no PE export table if the Export directory is
+                         present but nothing is exported
+                      >< a maximum of 64K export entries are listed
+         07.09.2001   >< removed Windows 9x incompatibility
+                      >< added MS 7.0 linker "detection"
+                      >< added detection of .NET executables
+         22.07.2001   >< added teLock 0.85 for PE EXEs
+                      >< added teLock 0.90 for PE EXEs
+         05.07.2001   >< better detection for Armadillo 1.80b3 for PE EXEs
+                      >< added Armadillo 1.80 for PE EXEs
+                      >< added Armadillo 1.90b2 for PE EXEs
+                      >< added Armadillo 1.90b3 for PE EXEs
+                      >< added Armadillo 1.90b4 for PE EXEs
+                      >< added Armadillo 1.91c for PE EXEs
+                      >< added Armadillo 2.00b1 for PE EXEs
+         02.07.2001   >< tested with ARJ 2.76
+                      >< tested with ARJ32 3.09
+         30.06.2001   >< rewrote commandline handling
+                      >< fixed a bug in gt_listdll
+         29.06.2001   >< fixed some more problems with unicode
+                      >< merged default plugins to one DLL - less files ;-)
+                      >< made gt_listdll unicode compatible
+         28.06.2001   >< fixed some bugs in the string class
+                      >< added output of BMP resolution (if available)
+                      >< fixed some signed/unsigned mismatches
+         18.06.2001   >< another unicode bugfix
+                      >< added Nero 5 image detection
+         12.06.2001   >< more unicode bug fixes (char instead of wchar_t)
+         04.06.2001   >< fixed bug in STI archive lister
+                      >< added installShield package file detection
+                      >< fixed bug in filebuffer method (Unicode version)
+         03.06.2001   >< fixed output in unicode version
+         01.06.2001   >< further unicode changes
+         29.05.2001   >< further unicode changes
+         28.05.2001   >< further unicode changes
+         25.05.2001   >< continued moving string to resource file
+                      >< small improvements in all parts of the code ;-)
+                      >< added comments...
+                      >< added some extensions
+         24.05.2001   >< started moving strings to ressource file
+                      >< created special string ressource DLL

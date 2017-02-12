@@ -1,0 +1,417 @@
+ gtparc
+
+ Timestamp is 3af8ee7d (Wed May 09 09:15:09 2001)
+
+ Preferred load address is 10000000
+
+ Start         Length     Name                   Class
+ 0001:00000000 00006d46H .text                   CODE
+ 0001:00006d50 00000383H .text$x                 CODE
+ 0002:00000000 000000ecH .idata$5                DATA
+ 0002:000000f0 00000de4H .rdata                  DATA
+ 0002:00000ed8 00000044H .rdata$r                DATA
+ 0002:00000f1c 00000494H .xdata$x                DATA
+ 0002:000013b0 00000028H .idata$2                DATA
+ 0002:000013d8 00000014H .idata$3                DATA
+ 0002:000013ec 000000ecH .idata$4                DATA
+ 0002:000014d8 0000070aH .idata$6                DATA
+ 0002:00001bf0 00000051H .edata                  DATA
+ 0003:00000000 00000340H .data                   DATA
+ 0003:00000340 00000250H .bss                    DATA
+
+  Address         Publics by Value              Rva+Base     Lib:Object
+
+ 0001:00000000       ??0GT_ArchiveAnalyzer@@QAE@PAVGT_FileBuffer@@@Z 10001000 f   gt_archiver.obj
+ 0001:00000070       ?IsHAArchive@GT_ArchiveAnalyzer@@ABEHH@Z 10001070 f   gt_archiver.obj
+ 0001:00000200       ?GetPacker@GT_ArchiveAnalyzer@@AAEXH@Z 10001200 f   gt_archiver.obj
+ 0001:00000b00       ?ListArchiveName@GT_ArchiveAnalyzer@@QBEXXZ 10001b00 f   gt_archiver.obj
+ 0001:00000b50       ?ListArchive@GT_ArchiveAnalyzer@@QAEHXZ 10001b50 f   gt_archiver.obj
+ 0001:00001610       ?CheckForOverlay@GT_ArchiveAnalyzer@@QBEXXZ 10002610 f   gt_archiver.obj
+ 0001:00001630       ??0GT_BasicArchiveLister@@QAE@PAVGT_FileBuffer@@H@Z 10002630 f   gt_archiver.obj
+ 0001:00001670       ?ShowHeader@GT_BasicArchiveLister@@UAEXXZ 10002670 f   gt_archiver.obj
+ 0001:000016d0       ?ShowFile@GT_BasicArchiveLister@@UAEXJJNPBDHW4P_DateTimeType@@H@Z 100026d0 f   gt_archiver.obj
+ 0001:00001870       ?ShowOverall@GT_BasicArchiveLister@@UAEXXZ 10002870 f   gt_archiver.obj
+ 0001:00001990       ?ListFiles@GT_BasicArchiveLister@@UAEXXZ 10002990 f   gt_archiver.obj
+ 0001:000019a0       ?ListFiles@GT_777ArchiveLister@@UAEXXZ 100029a0 f   gt_archiver.obj
+ 0001:00001bb0       ?ListFiles@GT_ACEArchiveLister@@UAEXXZ 10002bb0 f   gt_archiver.obj
+ 0001:00001dc0       ?ListFiles@GT_AINArchiveLister@@UAEXXZ 10002dc0 f   gt_archiver.obj
+ 0001:00001e40       ?ListFiles@GT_AKT7ArchiveLister@@UAEXXZ 10002e40 f   gt_archiver.obj
+ 0001:00002080       ?ListFiles@GT_AKT9ArchiveLister@@UAEXXZ 10003080 f   gt_archiver.obj
+ 0001:00002250       ?ListFiles@GT_AMGArchiveLister@@UAEXXZ 10003250 f   gt_archiver.obj
+ 0001:00002410       ?ListFiles@GT_ARCArchiveLister@@UAEXXZ 10003410 f   gt_archiver.obj
+ 0001:00002500       ?ListFiles@GT_ARGArchiveLister@@UAEXXZ 10003500 f   gt_archiver.obj
+ 0001:00002590       ?ListFiles@GT_ARJArchiveLister@@UAEXXZ 10003590 f   gt_archiver.obj
+ 0001:000029c0       ?ListFiles@GT_ARQArchiveLister@@UAEXXZ 100039c0 f   gt_archiver.obj
+ 0001:00002b10       ?ListFiles@GT_ARXArchiveLister@@UAEXXZ 10003b10 f   gt_archiver.obj
+ 0001:00002c10       ?ListFiles@GT_ASDArchiveLister@@UAEXXZ 10003c10 f   gt_archiver.obj
+ 0001:00002d10       ?ListFiles@GT_BLIArchiveLister@@UAEXXZ 10003d10 f   gt_archiver.obj
+ 0001:00002ef0       ?ListFiles@GT_CABArchiveLister@@UAEXXZ 10003ef0 f   gt_archiver.obj
+ 0001:00003020       ?ListFiles@GT_DPAArchiveLister@@UAEXXZ 10004020 f   gt_archiver.obj
+ 0001:00003100       ?ListFiles@GT_GZArchiveLister@@UAEXXZ 10004100 f   gt_archiver.obj
+ 0001:00003220       ?ListFiles@GT_HAArchiveLister@@UAEXXZ 10004220 f   gt_archiver.obj
+ 0001:000033b0       ?ListFiles@GT_IDSKAArchiveLister@@UAEXXZ 100043b0 f   gt_archiver.obj
+ 0001:00003400       ??0GT_IMPArchiveLister@@QAE@PAVGT_FileBuffer@@H@Z 10004400 f   gt_archiver.obj
+ 0001:000034a0       ?load_fixed_codes@GT_IMPArchiveLister@@IAEXPAEJ@Z 100044a0 f   gt_archiver.obj
+ 0001:000035a0       ?make_codes@GT_IMPArchiveLister@@IAEXPAKPAEH@Z 100045a0 f   gt_archiver.obj
+ 0001:00003640       ?make_decode_tables@GT_IMPArchiveLister@@IAEHPAHQAY01HPAKPAEHH@Z 10004640 f   gt_archiver.obj
+ 0001:000037b0       ?load_hcodes@GT_IMPArchiveLister@@IAEHPAEHHJ@Z 100047b0 f   gt_archiver.obj
+ 0001:00003b50       ?expand_lz@GT_IMPArchiveLister@@IAEHPAEHH@Z 10004b50 f   gt_archiver.obj
+ 0001:00004570       ?ListFiles@GT_IMPArchiveLister@@UAEXXZ 10005570 f   gt_archiver.obj
+ 0001:00004a10       ?ListFiles@GT_INSArchiveLister@@UAEXXZ 10005a10 f   gt_archiver.obj
+ 0001:00004bc0       ?ListFiles@GT_ISCArchiveLister@@UAEXXZ 10005bc0 f   gt_archiver.obj
+ 0001:00004e70       ?ListFiles@GT_LGArchiveLister@@UAEXXZ 10005e70 f   gt_archiver.obj
+ 0001:00005000       ?ListFiles@GT_LZHArchiveLister@@UAEXXZ 10006000 f   gt_archiver.obj
+ 0001:00005630       ?ListFiles@GT_LZOArchiveLister@@UAEXXZ 10006630 f   gt_archiver.obj
+ 0001:00005770       ?ListFiles@GT_NEROArchiveLister@@UAEXXZ 10006770 f   gt_archiver.obj
+ 0001:00005830       ?ListFiles@GT_PAQArchiveLister@@UAEXXZ 10006830 f   gt_archiver.obj
+ 0001:00005930       ?ListFiles@GT_PPZArchiveLister@@UAEXXZ 10006930 f   gt_archiver.obj
+ 0001:000059e0       ?ListFiles@GT_RARArchiveLister@@UAEXXZ 100069e0 f   gt_archiver.obj
+ 0001:00005c70       ?ListFiles@GT_SBCArchiveLister@@UAEXXZ 10006c70 f   gt_archiver.obj
+ 0001:00005d30       ?ListFiles@GT_STIArchiveLister@@UAEXXZ 10006d30 f   gt_archiver.obj
+ 0001:00006060       ?ListFiles@GT_SYNArchiveLister@@UAEXXZ 10007060 f   gt_archiver.obj
+ 0001:00006110       ?ListFiles@GT_TARArchiveLister@@UAEXXZ 10007110 f   gt_archiver.obj
+ 0001:00006220       ?ListFiles@GT_YCArchiveLister@@UAEXXZ 10007220 f   gt_archiver.obj
+ 0001:00006390       ?ListFiles@GT_ZETArchiveLister@@UAEXXZ 10007390 f   gt_archiver.obj
+ 0001:00006620       ?ListFiles@GT_ZIPArchiveLister@@UAEXXZ 10007620 f   gt_archiver.obj
+ 0001:000068b0       ?ListFiles@GT_ZOOArchiveLister@@UAEXXZ 100078b0 f   gt_archiver.obj
+ 0001:00006a20       ??1?$GT_Sequence@VADLP_String@@@@UAE@XZ 10007a20 f i gt_archiver.obj
+ 0001:00006a70       ??_G?$GT_Sequence@VADLP_String@@@@UAEPAXI@Z 10007a70 f i gt_archiver.obj
+ 0001:00006a70       ??_E?$GT_Sequence@VADLP_String@@@@UAEPAXI@Z 10007a70 f i gt_archiver.obj
+ 0001:00006ad0       ?addLast@?$GT_Sequence@VADLP_String@@@@QAEXABVADLP_String@@@Z 10007ad0 f i gt_archiver.obj
+ 0001:00006b70       ??0?$GT_Entry@VADLP_String@@@@QAE@PAV0@ABVADLP_String@@0@Z 10007b70 f i gt_archiver.obj
+ 0001:00006c10       ??1?$GT_Entry@VADLP_String@@@@QAE@XZ 10007c10 f i gt_archiver.obj
+ 0001:00006c40       _GT_RunDefaultPlugin       10007c40 f   gtplug_default_archive.obj
+ 0001:00006cd0       ??3@YAXPAX@Z               10007cd0 f   msvcrt:MSVCRT.dll
+ 0001:00006cd6       ___CxxFrameHandler         10007cd6 f   msvcrt:MSVCRT.dll
+ 0001:00006ce0       ??_Etype_info@@UAEPAXI@Z   10007ce0 f i msvcrt:ti_inst.obj
+ 0001:00006ce0       ??_Gtype_info@@UAEPAXI@Z   10007ce0 f i msvcrt:ti_inst.obj
+ 0001:00006cfc       ??2@YAPAXI@Z               10007cfc f   msvcrt:MSVCRT.dll
+ 0001:00006d02       __ftol                     10007d02 f   msvcrt:MSVCRT.dll
+ 0001:00006d10       __chkstk                   10007d10 f   msvcrt:chkstk.obj
+ 0001:00006d10       __alloca_probe             10007d10 f   msvcrt:chkstk.obj
+ 0001:00006d40       ??1type_info@@UAE@XZ       10007d40 f   msvcrt:MSVCRT.dll
+ 0002:00000000       __imp__strrchr             10009000     msvcrt:MSVCRT.dll
+ 0002:00000004       __imp__free                10009004     msvcrt:MSVCRT.dll
+ 0002:00000008       __imp____CxxFrameHandler   10009008     msvcrt:MSVCRT.dll
+ 0002:0000000c       __imp_??2@YAPAXI@Z         1000900c     msvcrt:MSVCRT.dll
+ 0002:00000010       __imp___ftol               10009010     msvcrt:MSVCRT.dll
+ 0002:00000014       __imp__sprintf             10009014     msvcrt:MSVCRT.dll
+ 0002:00000018       __imp__memmove             10009018     msvcrt:MSVCRT.dll
+ 0002:0000001c       __imp_??3@YAXPAX@Z         1000901c     msvcrt:MSVCRT.dll
+ 0002:00000020       __imp__malloc              10009020     msvcrt:MSVCRT.dll
+ 0002:00000024       __imp__strncmp             10009024     msvcrt:MSVCRT.dll
+ 0002:00000028       __imp_??1type_info@@UAE@XZ 10009028     msvcrt:MSVCRT.dll
+ 0002:0000002c       \177MSVCRT_NULL_THUNK_DATA 1000902c     msvcrt:MSVCRT.dll
+ 0002:00000030       __imp_??_7ADLP_String@@6B@ 10009030     gtbase:gtbase.dll
+ 0002:00000034       __imp_??1ADLP_String@@UAE@XZ 10009034     gtbase:gtbase.dll
+ 0002:00000038       __imp_?IncActFilePos@GT_FileBuffer@@QAEXJ@Z 10009038     gtbase:gtbase.dll
+ 0002:0000003c       __imp_?GetByte@GT_FileBuffer@@QAEEJ@Z 1000903c     gtbase:gtbase.dll
+ 0002:00000040       __imp_?GetUntil@GT_FileBuffer@@QAEHJEPAXHAAH@Z 10009040     gtbase:gtbase.dll
+ 0002:00000044       __imp_?SkipUntil@GT_FileBuffer@@QAEHJE@Z 10009044     gtbase:gtbase.dll
+ 0002:00000048       __imp_?GetBuffer@GT_FileBuffer@@QAEHJPAXJ@Z 10009048     gtbase:gtbase.dll
+ 0002:0000004c       __imp_?SetActFilePos@GT_FileBuffer@@QAEXJ@Z 1000904c     gtbase:gtbase.dll
+ 0002:00000050       __imp_?GetWord@GT_FileBuffer@@QAEGJ@Z 10009050     gtbase:gtbase.dll
+ 0002:00000054       __imp_?Compare@GT_FileBuffer@@QAEHJJPBD@Z 10009054     gtbase:gtbase.dll
+ 0002:00000058       __imp_?GetLong@GT_FileBuffer@@QAEJJ@Z 10009058     gtbase:gtbase.dll
+ 0002:0000005c       __imp_?out_append@@3P6AXPBD@ZA 1000905c     gtbase:gtbase.dll
+ 0002:00000060       __imp_?out_format@@3P6AXPBDZZA 10009060     gtbase:gtbase.dll
+ 0002:00000064       __imp_?out_color_append@@3P6AXW4GT_Color@@PBD@ZA 10009064     gtbase:gtbase.dll
+ 0002:00000068       __imp_?CallListProc@GT_FileBuffer@@QBEXJ@Z 10009068     gtbase:gtbase.dll
+ 0002:0000006c       __imp_?out_color_format@@3P6AXW4GT_Color@@PBDZZA 1000906c     gtbase:gtbase.dll
+ 0002:00000070       __imp__P_splitdouble@16    10009070     gtbase:gtbase.dll
+ 0002:00000074       __imp_?DateToBuffer@GT_DateTime@@QAEXPADH@Z 10009074     gtbase:gtbase.dll
+ 0002:00000078       __imp_?SetDOSTime@GT_DateTime@@QAEXJ@Z 10009078     gtbase:gtbase.dll
+ 0002:0000007c       __imp_?SetWindowsTime@GT_DateTime@@QAEXN@Z 1000907c     gtbase:gtbase.dll
+ 0002:00000080       __imp_?SetUnixTime@GT_DateTime@@QAEXJ@Z 10009080     gtbase:gtbase.dll
+ 0002:00000084       __imp_?GT_Error_ShowInternalError@@YGXPBD0H@Z 10009084     gtbase:gtbase.dll
+ 0002:00000088       __imp_?GetString@GT_FileBuffer@@QAEHJAAVADLP_String@@J@Z 10009088     gtbase:gtbase.dll
+ 0002:0000008c       __imp_?_alloc@ADLP_String@@AAEXH@Z 1000908c     gtbase:gtbase.dll
+ 0002:00000090       __imp__PError_ShowErrorMessage 10009090     gtbase:gtbase.dll
+ 0002:00000094       __imp_?GetBufferX@GT_FileBuffer@@QAEXJPAXJ@Z 10009094     gtbase:gtbase.dll
+ 0002:00000098       __imp_??YADLP_String@@QAEXABV0@@Z 10009098     gtbase:gtbase.dll
+ 0002:0000009c       __imp_?_set_at@ADLP_String@@AAEXIPBDI@Z 1000909c     gtbase:gtbase.dll
+ 0002:000000a0       __imp_?GetPascalString@GT_FileBuffer@@QAEXAAVADLP_String@@J@Z 100090a0     gtbase:gtbase.dll
+ 0002:000000a4       __imp_??4ADLP_String@@QAEAAV0@ABV0@@Z 100090a4     gtbase:gtbase.dll
+ 0002:000000a8       __imp_??YADLP_String@@QAEXD@Z 100090a8     gtbase:gtbase.dll
+ 0002:000000ac       __imp_?Append@ADLP_String@@QAEXPADI@Z 100090ac     gtbase:gtbase.dll
+ 0002:000000b0       __imp_?GetCString@GT_FileBuffer@@QAEXAAVADLP_String@@JJ@Z 100090b0     gtbase:gtbase.dll
+ 0002:000000b4       __imp_?Erase@ADLP_String@@QAEAAV1@I@Z 100090b4     gtbase:gtbase.dll
+ 0002:000000b8       __imp_?ReplaceAllChar@ADLP_String@@QAEIDD@Z 100090b8     gtbase:gtbase.dll
+ 0002:000000bc       __imp_?_resize@ADLP_String@@AAEXI@Z 100090bc     gtbase:gtbase.dll
+ 0002:000000c0       __imp_?AppendHexWord@ADLP_String@@QAEXG@Z 100090c0     gtbase:gtbase.dll
+ 0002:000000c4       __imp_??4ADLP_String@@QAEAAV0@PBD@Z 100090c4     gtbase:gtbase.dll
+ 0002:000000c8       __imp__P_swap_byte@4       100090c8     gtbase:gtbase.dll
+ 0002:000000cc       __imp__P_ltoc4@8           100090cc     gtbase:gtbase.dll
+ 0002:000000d0       __imp__P_otol@8            100090d0     gtbase:gtbase.dll
+ 0002:000000d4       __imp__P_align@8           100090d4     gtbase:gtbase.dll
+ 0002:000000d8       __imp_?out_flush@@3P6AXXZA 100090d8     gtbase:gtbase.dll
+ 0002:000000dc       __imp_?out_filename@@3P6AXPAU_GT_Output_FilenameStruct@@@ZA 100090dc     gtbase:gtbase.dll
+ 0002:000000e0       __imp_?FillStruct@GT_FileBuffer@@QAEXPAU_GT_Output_FilenameStruct@@@Z 100090e0     gtbase:gtbase.dll
+ 0002:000000e4       __imp_?GT_Flags_IsNotSetBool@@YGHPBD@Z 100090e4     gtbase:gtbase.dll
+ 0002:000000e8       \177gtbase_NULL_THUNK_DATA 100090e8     gtbase:gtbase.dll
+ 0002:000000f0       ??_C@_06HCIJ@_last_?$AA@   100090f0     gt_archiver.obj
+ 0002:000000f8       ??_C@_03FOJF@ZPK?$AA@      100090f8     gt_archiver.obj
+ 0002:000000fc       ??_C@_03EKGB@ZOO?$AA@      100090fc     gt_archiver.obj
+ 0002:00000100       ??_C@_03JFLD@ZIP?$AA@      10009100     gt_archiver.obj
+ 0002:00000104       ??_C@_03NABB@ZET?$AA@      10009104     gt_archiver.obj
+ 0002:00000108       ??_C@_02GONE@YZ?$AA@       10009108     gt_archiver.obj
+ 0002:0000010c       ??_C@_02DJIL@YC?$AA@       1000910c     gt_archiver.obj
+ 0002:00000110       ??_C@_03PLCO@XPA?$AA@      10009110     gt_archiver.obj
+ 0002:00000114       ??_C@_02COHM@XL?$AA@       10009114     gt_archiver.obj
+ 0002:00000118       ??_C@_03JICF@XIE?$AA@      10009118     gt_archiver.obj
+ 0002:0000011c       ??_C@_03KOCK@UHA?$AA@      1000911c     gt_archiver.obj
+ 0002:00000120       ??_C@_03GMIB@UFA?$AA@      10009120     gt_archiver.obj
+ 0002:00000124       ??_C@_03IBGI@UC2?$AA@      10009124     gt_archiver.obj
+ 0002:00000128       ??_C@_03JAL@TAR?$AA@       10009128     gt_archiver.obj
+ 0002:0000012c       ??_C@_04PLOB@SZIP?$AA@     1000912c     gt_archiver.obj
+ 0002:00000134       ??_C@_07HJCL@Synetic?$AA@  10009134     gt_archiver.obj
+ 0002:0000013c       ??_C@_04DINJ@SWAG?$AA@     1000913c     gt_archiver.obj
+ 0002:00000144       ??_C@_08IFPI@Stirling?$AA@ 10009144     gt_archiver.obj
+ 0002:00000150       ??_C@_03IJHL@SQZ?$AA@      10009150     gt_archiver.obj
+ 0002:00000154       ??_C@_05DOLK@SQWEZ?$AA@    10009154     gt_archiver.obj
+ 0002:0000015c       ??_C@_03HGON@SOF?$AA@      1000915c     gt_archiver.obj
+ 0002:00000160       ??_C@_03IEGK@SKY?$AA@      10009160     gt_archiver.obj
+ 0002:00000164       ??_C@_03INAD@SBX?$AA@      10009164     gt_archiver.obj
+ 0002:00000168       ??_C@_03IPHC@SBC?$AA@      10009168     gt_archiver.obj
+ 0002:0000016c       ??_C@_03LHGK@SAR?$AA@      1000916c     gt_archiver.obj
+ 0002:00000170       ??_C@_03DCJK@RNC?$AA@      10009170     gt_archiver.obj
+ 0002:00000174       ??_C@_09BNJN@RKive?5?$CI2?$CJ?$AA@ 10009174     gt_archiver.obj
+ 0002:00000180       ??_C@_09CGGC@RKive?5?$CI1?$CJ?$AA@ 10009180     gt_archiver.obj
+ 0002:0000018c       ??_C@_03OEOK@RAX?$AA@      1000918c     gt_archiver.obj
+ 0002:00000190       ??_C@_03OFHM@RAR?$AA@      10009190     gt_archiver.obj
+ 0002:00000194       ??_C@_07CPEA@old?5RAR?$AA@ 10009194     gt_archiver.obj
+ 0002:0000019c       ??_C@_03HBPF@QFC?$AA@      1000919c     gt_archiver.obj
+ 0002:000001a0       ??_C@_01KGCH@Q?$AA@        100091a0     gt_archiver.obj
+ 0002:000001a4       ??_C@_04PLLD@PPMZ?$AA@     100091a4     gt_archiver.obj
+ 0002:000001ac       ??_C@_03LHIB@PHP?$AA@      100091ac     gt_archiver.obj
+ 0002:000001b0       ??_C@_03EBFB@PAR?$AA@      100091b0     gt_archiver.obj
+ 0002:000001b4       ??_C@_06LLNJ@oPAQue?$AA@   100091b4     gt_archiver.obj
+ 0002:000001bc       ??_C@_08HENK@IBM?5Pack?$AA@ 100091bc     gt_archiver.obj
+ 0002:000001c8       ??_C@_04LCLM@Nero?$AA@     100091c8     gt_archiver.obj
+ 0002:000001d0       ??_C@_03KONJ@MSC?$AA@      100091d0     gt_archiver.obj
+ 0002:000001d4       ??_C@_03OKMC@MAR?$AA@      100091d4     gt_archiver.obj
+ 0002:000001d8       ??_C@_03KBNF@LZO?$AA@      100091d8     gt_archiver.obj
+ 0002:000001dc       ??_C@_03PEDA@LZH?$AA@      100091dc     gt_archiver.obj
+ 0002:000001e0       ??_C@_03KBP@LZA?$AA@       100091e0     gt_archiver.obj
+ 0002:000001e4       ??_C@_08JHGP@Links?5LS?$AA@ 100091e4     gt_archiver.obj
+ 0002:000001f0       ??_C@_03KFKN@LIM?$AA@      100091f0     gt_archiver.obj
+ 0002:000001f4       ??_C@_02LFHO@LG?$AA@       100091f4     gt_archiver.obj
+ 0002:000001f8       ??_C@_03GBC@JRC?$AA@       100091f8     gt_archiver.obj
+ 0002:000001fc       ??_C@_03FEKD@JAR?$AA@      100091fc     gt_archiver.obj
+ 0002:00000200       ??_C@_03OGID@ISC?$AA@      10009200     gt_archiver.obj
+ 0002:00000204       ??_C@_03NMAO@INS?$AA@      10009204     gt_archiver.obj
+ 0002:00000208       ??_C@_03BIEI@IMP?$AA@      10009208     gt_archiver.obj
+ 0002:0000020c       ??_C@_04KLNL@Inno?$AA@     1000920c     gt_archiver.obj
+ 0002:00000214       ??_C@_09LFAP@Hyper?52?46?$AA@ 10009214     gt_archiver.obj
+ 0002:00000220       ??_C@_09EKLG@Hyper?52?45?$AA@ 10009220     gt_archiver.obj
+ 0002:0000022c       ??_C@_03JLLB@HQX?$AA@      1000922c     gt_archiver.obj
+ 0002:00000230       ??_C@_03NKEE@HPA?$AA@      10009230     gt_archiver.obj
+ 0002:00000234       ??_C@_03KFKA@HAP?$AA@      10009234     gt_archiver.obj
+ 0002:00000238       ??_C@_02BAKG@HA?$AA@       10009238     gt_archiver.obj
+ 0002:0000023c       ??_C@_04LMDK@GZip?$AA@     1000923c     gt_archiver.obj
+ 0002:00000244       ??_C@_06FBOJ@FINISH?$AA@   10009244     gt_archiver.obj
+ 0002:0000024c       ??_C@_03GIKF@ESP?$AA@      1000924c     gt_archiver.obj
+ 0002:00000250       ??_C@_03IBFC@ELI?$AA@      10009250     gt_archiver.obj
+ 0002:00000254       ??_C@_03DGNA@DWC?$AA@      10009254     gt_archiver.obj
+ 0002:00000258       ??_C@_03CKL@DPA?$AA@       10009258     gt_archiver.obj
+ 0002:0000025c       ??_C@_04HJMF@CPAC?$AA@     1000925c     gt_archiver.obj
+ 0002:00000264       ??_C@_06HJBB@COMP16?$AA@   10009264     gt_archiver.obj
+ 0002:0000026c       ??_C@_03CKJ@COD?$AA@       1000926c     gt_archiver.obj
+ 0002:00000270       ??_C@_03GBEG@CHZ?$AA@      10009270     gt_archiver.obj
+ 0002:00000274       ??_C@_03DPHA@CAB?$AA@      10009274     gt_archiver.obj
+ 0002:00000278       ??_C@_02IKNG@BZ?$AA@       10009278     gt_archiver.obj
+ 0002:0000027c       ??_C@_03NEHO@BSN?$AA@      1000927c     gt_archiver.obj
+ 0002:00000280       ??_C@_03NFCD@BSA?$AA@      10009280     gt_archiver.obj
+ 0002:00000284       ??_C@_03HEMK@BS2?$AA@      10009284     gt_archiver.obj
+ 0002:00000288       ??_C@_03FAHE@BOA?$AA@      10009288     gt_archiver.obj
+ 0002:0000028c       ??_C@_03DPDD@BLI?$AA@      1000928c     gt_archiver.obj
+ 0002:00000290       ??_C@_03HANE@BIX?$AA@      10009290     gt_archiver.obj
+ 0002:00000294       ??_C@_03CDND@ASD?$AA@      10009294     gt_archiver.obj
+ 0002:00000298       ??_C@_03JEJA@AR7?$AA@      10009298     gt_archiver.obj
+ 0002:0000029c       ??_C@_03GCON@ARX?$AA@      1000929c     gt_archiver.obj
+ 0002:000002a0       ??_C@_03MJOM@ARS?$AA@      100092a0     gt_archiver.obj
+ 0002:000002a4       ??_C@_03JMMC@ARQ?$AA@      100092a4     gt_archiver.obj
+ 0002:000002a8       ??_C@_03DECE@ARK?$AA@      100092a8     gt_archiver.obj
+ 0002:000002ac       ??_C@_03JOLD@ARJ?$AA@      100092ac     gt_archiver.obj
+ 0002:000002b0       ??_C@_03GBAK@ARI?$AA@      100092b0     gt_archiver.obj
+ 0002:000002b4       ??_C@_03MKMA@ARG?$AA@      100092b4     gt_archiver.obj
+ 0002:000002b8       ??_C@_03GAJM@ARC?$AA@      100092b8     gt_archiver.obj
+ 0002:000002bc       ??_C@_03HEGI@AMG?$AA@      100092bc     gt_archiver.obj
+ 0002:000002c0       ??_C@_04NOK@AKT9?$AA@      100092c0     gt_archiver.obj
+ 0002:000002c8       ??_C@_04KHHN@AKT8?$AA@     100092c8     gt_archiver.obj
+ 0002:000002d0       ??_C@_04KGCA@AKT7?$AA@     100092d0     gt_archiver.obj
+ 0002:000002d8       ??_C@_03NAON@AIN?$AA@      100092d8     gt_archiver.obj
+ 0002:000002dc       ??_C@_03ODON@ACE?$AA@      100092dc     gt_archiver.obj
+ 0002:000002e0       ??_C@_03KNAF@777?$AA@      100092e0     gt_archiver.obj
+ 0002:000002e4       ??_C@_06BACP@_none_?$AA@   100092e4     gt_archiver.obj
+ 0002:00000370       ??_C@_05BGJG@?9sw1?9?$AA@  10009370     gt_archiver.obj
+ 0002:00000378       ??_C@_05GKFI@HLSQZ?$AA@    10009378     gt_archiver.obj
+ 0002:00000380       ??_C@_07EBIJ@PHILIPP?$AA@  10009380     gt_archiver.obj
+ 0002:00000388       ??_C@_05BAAH@?9ah0?9?$AA@  10009388     gt_archiver.obj
+ 0002:00000390       ??_C@_07KLEN@ChfLZ_2?$AA@  10009390     gt_archiver.obj
+ 0002:00000398       ??_C@_07DMPF@JRchive?$AA@  10009398     gt_archiver.obj
+ 0002:000003a0       ??_C@_05NIJH@?$BKJar?$BL?$AA@ 100093a0     gt_archiver.obj
+ 0002:000003a8       ??_C@_07EMNP@idska32?$AA@  100093a8     gt_archiver.obj
+ 0002:000003b0       ??_C@_0BK@MBA@?$CIThis?5file?5must?5be?5conver?$AA@ 100093b0     gt_archiver.obj
+ 0002:000003cc       ??_C@_0L@NCFE@Dirk?5Paehl?$AA@ 100093cc     gt_archiver.obj
+ 0002:000003d8       ??_C@_07JDGG@DSIGDCC?$AA@  100093d8     gt_archiver.obj
+ 0002:000003e0       ??_C@_0BA@OCEF@Blink?5by?5D?4T?4S?4?$AA@ 100093e0     gt_archiver.obj
+ 0002:000003f0       ??_C@_05JMCH@?9lh1?9?$AA@  100093f0     gt_archiver.obj
+ 0002:000003f8       ??_C@_0P@OILA@?$AN?$CIC?$CJ?5STEPANYUK?$AA@ 100093f8     gt_archiver.obj
+ 0002:00000408       ??_C@_07NKLG@?$CK?$CKACE?$CK?$CK?$AA@ 10009408     gt_archiver.obj
+ 0002:00000410       ??_C@_05CHGH@ustar?$AA@    10009410     gt_archiver.obj
+ 0002:00000418       ??_C@_01BJG@?6?$AA@        10009418     gt_archiver.obj
+ 0002:0000041c       ??_C@_0CA@DHFM@?5at?5?$CIrelative?$CJ?5offset?5?$CFd?1?$CF04Xh?6?$AA@ 1000941c     gt_archiver.obj
+ 0002:0000043c       ??_C@_0BB@LIBI@Found?5?$CFs?5archive?$AA@ 1000943c     gt_archiver.obj
+ 0002:00000450       ??_C@_0BL@MBAC@No?5lister?5is?5implemented?6?6?$AA@ 10009450     gt_archiver.obj
+ 0002:0000046c       ??_7GT_ZOOArchiveLister@@6B@ 1000946c     gt_archiver.obj
+ 0002:0000047c       ??_7GT_ZIPArchiveLister@@6B@ 1000947c     gt_archiver.obj
+ 0002:0000048c       ??_7GT_ZETArchiveLister@@6B@ 1000948c     gt_archiver.obj
+ 0002:0000049c       ??_7GT_YCArchiveLister@@6B@ 1000949c     gt_archiver.obj
+ 0002:000004ac       ??_7GT_TARArchiveLister@@6B@ 100094ac     gt_archiver.obj
+ 0002:000004bc       ??_7GT_SYNArchiveLister@@6B@ 100094bc     gt_archiver.obj
+ 0002:000004cc       ??_7GT_STIArchiveLister@@6B@ 100094cc     gt_archiver.obj
+ 0002:000004dc       ??_7GT_SBCArchiveLister@@6B@ 100094dc     gt_archiver.obj
+ 0002:000004ec       ??_7GT_RARArchiveLister@@6B@ 100094ec     gt_archiver.obj
+ 0002:000004fc       ??_7GT_PPZArchiveLister@@6B@ 100094fc     gt_archiver.obj
+ 0002:0000050c       ??_7GT_PAQArchiveLister@@6B@ 1000950c     gt_archiver.obj
+ 0002:0000051c       ??_7GT_NEROArchiveLister@@6B@ 1000951c     gt_archiver.obj
+ 0002:0000052c       ??_7GT_LZOArchiveLister@@6B@ 1000952c     gt_archiver.obj
+ 0002:0000053c       ??_7GT_LZHArchiveLister@@6B@ 1000953c     gt_archiver.obj
+ 0002:0000054c       ??_7GT_LGArchiveLister@@6B@ 1000954c     gt_archiver.obj
+ 0002:0000055c       ??_7GT_ISCArchiveLister@@6B@ 1000955c     gt_archiver.obj
+ 0002:0000056c       ??_7GT_INSArchiveLister@@6B@ 1000956c     gt_archiver.obj
+ 0002:0000057c       ??_7GT_IDSKAArchiveLister@@6B@ 1000957c     gt_archiver.obj
+ 0002:0000058c       ??_7GT_HAArchiveLister@@6B@ 1000958c     gt_archiver.obj
+ 0002:0000059c       ??_7GT_GZArchiveLister@@6B@ 1000959c     gt_archiver.obj
+ 0002:000005ac       ??_7GT_DPAArchiveLister@@6B@ 100095ac     gt_archiver.obj
+ 0002:000005bc       ??_7GT_CABArchiveLister@@6B@ 100095bc     gt_archiver.obj
+ 0002:000005cc       ??_7GT_BLIArchiveLister@@6B@ 100095cc     gt_archiver.obj
+ 0002:000005dc       ??_7GT_ASDArchiveLister@@6B@ 100095dc     gt_archiver.obj
+ 0002:000005ec       ??_7GT_ARXArchiveLister@@6B@ 100095ec     gt_archiver.obj
+ 0002:000005fc       ??_7GT_ARQArchiveLister@@6B@ 100095fc     gt_archiver.obj
+ 0002:0000060c       ??_7GT_ARJArchiveLister@@6B@ 1000960c     gt_archiver.obj
+ 0002:0000061c       ??_7GT_ARGArchiveLister@@6B@ 1000961c     gt_archiver.obj
+ 0002:0000062c       ??_7GT_ARCArchiveLister@@6B@ 1000962c     gt_archiver.obj
+ 0002:0000063c       ??_7GT_AKT9ArchiveLister@@6B@ 1000963c     gt_archiver.obj
+ 0002:0000064c       ??_7GT_AKT7ArchiveLister@@6B@ 1000964c     gt_archiver.obj
+ 0002:0000065c       ??_7GT_AMGArchiveLister@@6B@ 1000965c     gt_archiver.obj
+ 0002:0000066c       ??_7GT_AINArchiveLister@@6B@ 1000966c     gt_archiver.obj
+ 0002:0000067c       ??_7GT_ACEArchiveLister@@6B@ 1000967c     gt_archiver.obj
+ 0002:0000068c       ??_7GT_777ArchiveLister@@6B@ 1000968c     gt_archiver.obj
+ 0002:0000069c       ??_7GT_BasicArchiveLister@@6B@ 1000969c     gt_archiver.obj
+ 0002:000006ac       ??_C@_0CK@CIAI@?5Original?5?5?5?5Packed?5?5?5Perc?4?5?5?5?$CFs@ 100096ac     gt_archiver.obj
+ 0002:000006d8       ??_C@_00A@?$AA@            100096d8     gt_archiver.obj
+ 0002:000006dc       ??_C@_0L@EPCC@?5?5?5?5?5Date?5?$AA@ 100096dc     gt_archiver.obj
+ 0002:000006e8       ??_C@_0CA@JMNL@?5?$CF8i?5?5?$CF8i?5?5?$CF3d?4?$CF01d?$CF?$CF?5?5?$CFs?5?$CFs?$CFs?6?$AA@ 100096e8     gt_archiver.obj
+ 0002:00000708       ??_C@_0L@PNFB@invalid?5?5?5?$AA@ 10009708     gt_archiver.obj
+ 0002:00000718       __real@0000000000000000    10009718     gt_archiver.obj
+ 0002:00000720       ??_C@_0M@KBAG@?5?$FLpassword?$FN?$AA@ 10009720     gt_archiver.obj
+ 0002:0000072c       ??_C@_0BO@KAFO@?5?$CF8i?5?5?$CF8i?5?5?$CF3d?4?$CF01d?$CF?$CF?5?5?$CFs?5?$CFs?6?$AA@ 1000972c     gt_archiver.obj
+ 0002:0000074c       ??_C@_0L@LJKB@?5?5?5?5?5?5?5?5?5?5?$AA@ 1000974c     gt_archiver.obj
+ 0002:00000758       __real@4059000000000000    10009758     gt_archiver.obj
+ 0002:00000760       ??_C@_0BA@MFDD@gt_archiver?4cxx?$AA@ 10009760     gt_archiver.obj
+ 0002:00000770       ??_C@_0CI@DII@Warning?3?5the?5archive?5may?5be?5inco@ 10009770     gt_archiver.obj
+ 0002:00000798       ??_C@_0DN@BJGI@Error?3?5found?5unexpected?5value?5?$CIi@ 10009798     gt_archiver.obj
+ 0002:000007d8       ??_C@_0CI@DMHK@Error?3?5found?5unexpected?5end?5of?5a@ 100097d8     gt_archiver.obj
+ 0002:00000800       ??_C@_08KFGC@?$CFd?5files?$AA@ 10009800     gt_archiver.obj
+ 0002:0000080c       ??_C@_06DMBJ@1?5file?$AA@  1000980c     gt_archiver.obj
+ 0002:00000814       ??_C@_0CJ@DIHC@This?5type?5of?5archive?5cannot?5be?5l@ 10009814     gt_archiver.obj
+ 0002:00000840       ??_C@_0BM@OJP@?$FLcontinued?5on?5next?5volume?$FN?6?$AA@ 10009840     gt_archiver.obj
+ 0002:0000085c       ??_C@_0BO@OPCO@?$FLcontinued?5from?5last?5volume?$FN?6?$AA@ 1000985c     gt_archiver.obj
+ 0002:0000087c       ??_C@_0N@HBNL@?5?$FLdirectory?$FN?$AA@ 1000987c     gt_archiver.obj
+ 0002:0000088c       ??_C@_0CA@DJIM@Error?3?5failed?5to?5read?5filename?6?$AA@ 1000988c     gt_archiver.obj
+ 0002:000008ac       ??_C@_0BL@GLGO@?5?5Archive?5version?3?5?$CFd?4?$CFd?6?6?$AA@ 100098ac     gt_archiver.obj
+ 0002:000008c8       ??_C@_0BH@DIHG@?5?5?$CFd?5files?5in?5archive?6?$AA@ 100098c8     gt_archiver.obj
+ 0002:000008e0       ??_C@_0CF@LDHJ@Error?3?5failed?5to?5read?5global?5hea@ 100098e0     gt_archiver.obj
+ 0002:00000908       ??_C@_0BM@FFFA@?5?5?$CFd?5bytes?5archive?5comment?6?$AA@ 10009908     gt_archiver.obj
+ 0002:00000924       ??_C@_0BK@PILJ@?5?5Archive?5version?3?5?$CFd?4?$CFd?6?$AA@ 10009924     gt_archiver.obj
+ 0002:00000940       ??_C@_0BP@PDBE@Unknown?5compression?5method?5?$CFd?6?$AA@ 10009940     gt_archiver.obj
+ 0002:00000960       ??_C@_0N@LBLN@?5?5?$FLcomment?$FN?6?$AA@ 10009960     gt_archiver.obj
+ 0002:00000970       ??_C@_0CE@PPDD@Cannot?5find?5end?5of?5archive?5comme@ 10009970     gt_archiver.obj
+ 0002:00000994       ??_C@_0CA@HAML@?5?5Original?5archive?5name?3?5?8?$CFs?8?6?6?$AA@ 10009994     gt_archiver.obj
+ 0002:000009b4       ??_C@_0N@MFNL@unknown?3?5?$CFd?6?$AA@ 100099b4     gt_archiver.obj
+ 0002:000009c4       ??_C@_0O@FNBI@3?403?5?9?53?408a?6?$AA@ 100099c4     gt_archiver.obj
+ 0002:000009d4       ??_C@_06GBKO@3?400a?6?$AA@ 100099d4     gt_archiver.obj
+ 0002:000009dc       ??_C@_05KNI@ARJZ?6?$AA@    100099dc     gt_archiver.obj
+ 0002:000009e4       ??_C@_0O@JGLC@2?463?5?9?52?475a?6?$AA@ 100099e4     gt_archiver.obj
+ 0002:000009f4       ??_C@_05FHL@2?462?6?$AA@   100099f4     gt_archiver.obj
+ 0002:000009fc       ??_C@_0N@HLOB@2?455?5?9?52?460?6?$AA@ 100099fc     gt_archiver.obj
+ 0002:00000a0c       ??_C@_0BD@IMOI@2?442?$CIc?$CJ?5?9?52?450?$CIa?$CJ?6?$AA@ 10009a0c     gt_archiver.obj
+ 0002:00000a20       ??_C@_05JKKJ@2?441?6?$AA@  10009a20     gt_archiver.obj
+ 0002:00000a28       ??_C@_05JBJM@2?439?6?$AA@  10009a28     gt_archiver.obj
+ 0002:00000a30       ??_C@_05DCGC@2?430?6?$AA@  10009a30     gt_archiver.obj
+ 0002:00000a38       ??_C@_05HGNO@2?421?6?$AA@  10009a38     gt_archiver.obj
+ 0002:00000a40       ??_C@_0M@MDF@prior?52?421?6?$AA@ 10009a40     gt_archiver.obj
+ 0002:00000a4c       ??_C@_0BE@7?5?5Archive?5version?3?5?$AA@ 10009a4c     gt_archiver.obj
+ 0002:00000a60       ??_C@_0CG@FELE@Error?3?5failed?5to?5read?5archive?5he@ 10009a60     gt_archiver.obj
+ 0002:00000a88       ??_C@_0L@JIFH@gt_arq?4hxx?$AA@ 10009a88     gt_archiver.obj
+ 0002:00000a94       ??_C@_0BN@NMD@Error?3?5Unsupported?5version?4?6?$AA@ 10009a94     gt_archiver.obj
+ 0002:00000ab4       ??_C@_0BJ@KFFD@Archive?5version?5?$CFd?4?$CF02i?6?$AA@ 10009ab4     gt_archiver.obj
+ 0002:00000ad0       ??_C@_0BM@BMEH@?5?5Archive?5version?3?5?$CFd?4?$CF02d?6?$AA@ 10009ad0     gt_archiver.obj
+ 0002:00000aec       ??_C@_0DH@KDHB@Seems?5like?5the?5archive?5was?5rippe@ 10009aec     gt_archiver.obj
+ 0002:00000b24       ??_7GT_IMPArchiveLister@@6B@ 10009b24     gt_archiver.obj
+ 0002:00000b34       ??_C@_0BD@LCML@Unknown?5method?5?$CFd?6?$AA@ 10009b34     gt_archiver.obj
+ 0002:00000b48       ??_C@_0CC@HMCB@LZ77?5multimedia?5is?5not?5supported@ 10009b48     gt_archiver.obj
+ 0002:00000b6c       ??_C@_0CM@INJ@Burrows?9Wheeler?5Transform?5is?5not@ 10009b6c     gt_archiver.obj
+ 0002:00000b98       ??_C@_0BI@KHC@?5?5archive?5is?5encrypted?6?$AA@ 10009b98     gt_archiver.obj
+ 0002:00000bb0       ??_C@_0CC@FHCJ@?5?5this?5is?5a?5multi?5volume?5archive@ 10009bb0     gt_archiver.obj
+ 0002:00000bd4       ??_C@_0BN@HFDF@?5?5archive?5comment?5was?5found?6?$AA@ 10009bd4     gt_archiver.obj
+ 0002:00000bf4       ??_C@_0CA@BKDH@?5?5CRC16?5check?5on?5header?5failed?6?$AA@ 10009bf4     gt_archiver.obj
+ 0002:00000c14       ??_C@_04ENNO@?5?9?$DO?5?$AA@ 10009c14     gt_archiver.obj
+ 0002:00000c1c       ??_C@_0BK@FMCL@Found?5an?5invalid?5offset?$CB?6?$AA@ 10009c1c     gt_archiver.obj
+ 0002:00000c38       ??_C@_0CJ@NNFF@?5?5Cannot?5list?5the?5names?5of?5this?5@ 10009c38     gt_archiver.obj
+ 0002:00000c64       ??_C@_01KMMP@?$CJ?$AA@     10009c64     gt_archiver.obj
+ 0002:00000c68       ??_C@_02NDAK@?5?$CI?$AA@   10009c68     gt_archiver.obj
+ 0002:00000c6c       ??_C@_0BM@HGEB@?5?5Unknown?5header?5format?5?$CFd?6?$AA@ 10009c6c     gt_archiver.obj
+ 0002:00000c88       ??_C@_07KHOP@VGA?5ROM?$AA@ 10009c88     gt_archiver.obj
+ 0002:00000c90       ??_C@_0M@KFNP@System?5BIOS?$AA@ 10009c90     gt_archiver.obj
+ 0002:00000c9c       ??_C@_0L@ELNH@VSA?5driver?$AA@ 10009c9c     gt_archiver.obj
+ 0002:00000ca8       ??_C@_0BA@GDGO@EXT?5System?5BIOS?$AA@ 10009ca8     gt_archiver.obj
+ 0002:00000cb8       ??_C@_0L@DJIA@ACPI?5table?$AA@ 10009cb8     gt_archiver.obj
+ 0002:00000cc4       ??_C@_0P@HJPJ@CPU?5micro?5code?$AA@ 10009cc4     gt_archiver.obj
+ 0002:00000cd4       ??_C@_0M@GFAO@EPA?5pattern?$AA@ 10009cd4     gt_archiver.obj
+ 0002:00000ce0       ??_C@_0M@CIGJ@LOGO?5BitMap?$AA@ 10009ce0     gt_archiver.obj
+ 0002:00000cec       ??_C@_07IOKC@NCR?5ROM?$AA@ 10009cec     gt_archiver.obj
+ 0002:00000cf4       ??_C@_0BB@DLDP@AHA?1BusLogic?5ROM?$AA@ 10009cf4     gt_archiver.obj
+ 0002:00000d08       ??_C@_0CB@IPKM@Error?3?5found?5unknown?5token?5?8?$CFs?8?6@ 10009d08     gt_archiver.obj
+ 0002:00000d2c       ??_C@_05GPAB@total?$AA@    10009d2c     gt_archiver.obj
+ 0002:00000d34       ??_C@_0BI@HGJO@Archive?5version?3?5?$CFd?4?$CFd?6?$AA@ 10009d34     gt_archiver.obj
+ 0002:00000d4c       ??_C@_0CJ@OEAG@?$FLunknown?5token?5type?5?$CF02Xh?5for?5?$CFd@ 10009d4c     gt_archiver.obj
+ 0002:00000d78       ??_C@_0BD@EDNB@?$FLrecovery?5record?$FN?6?$AA@ 10009d78     gt_archiver.obj
+ 0002:00000d8c       ??_C@_0BA@EJKM@?$FLfile?5comment?$FN?6?$AA@ 10009d8c     gt_archiver.obj
+ 0002:00000d9c       ??_C@_0BD@FHCJ@?$FLarchive?5comment?$FN?6?$AA@ 10009d9c     gt_archiver.obj
+ 0002:00000db0       ??_C@_02JJJH@?6?6?$AA@     10009db0     gt_archiver.obj
+ 0002:00000db4       ??_C@_08NLNB@?5?$CI0?4830?$CJ?$AA@ 10009db4     gt_archiver.obj
+ 0002:00000dc0       ??_C@_08PNME@?5?$CI0?4700?$CJ?$AA@ 10009dc0     gt_archiver.obj
+ 0002:00000dcc       ??_C@_08CNOK@?5?$CI0?4800?$CJ?$AA@ 10009dcc     gt_archiver.obj
+ 0002:00000dd8       ??_C@_08JHNB@?5?$CI0?4835?$CJ?$AA@ 10009dd8     gt_archiver.obj
+ 0002:00000de4       ??_C@_0BG@JAFN@?5?5Archive?5version?3?5?$CFd?$AA@ 10009de4     gt_archiver.obj
+ 0002:00000dfc       ??_C@_0L@PFCJ@?$FLDisk?5?$CFd?$FN?6?$AA@ 10009dfc     gt_archiver.obj
+ 0002:00000e08       ??_7?$GT_Sequence@VADLP_String@@@@6B@ 10009e08     gt_archiver.obj
+ 0002:00000e0c       ??_C@_0DA@HGCN@The?5date?5displayed?5is?5invalid?5?$CIi@ 10009e0c     gt_archiver.obj
+ 0002:00000e3c       ??_C@_0DF@NMCL@Error?3?5?$CFd?5file?$CIs?$CJ?5are?5too?5much?5i@ 10009e3c     gt_archiver.obj
+ 0002:00000e74       ??_C@_0DA@FAEF@Error?3?5?$CFd?5file?$CIs?$CJ?5are?5not?5in?5the@ 10009e74     gt_archiver.obj
+ 0002:00000ea4       ??_C@_03HHKO@?$CFs?6?$AA@  10009ea4     gt_archiver.obj
+ 0002:00000ea8       ??_C@_0BF@NPHB@Archive?5version?3?5?$CFd?6?$AA@ 10009ea8     gt_archiver.obj
+ 0002:00000ec0       ??_C@_06BMKO@noarcs?$AA@   10009ec0     gtplug_default_archive.obj
+ 0002:00000ec8       ??_C@_02LEFD@ni?$AA@       10009ec8     gtplug_default_archive.obj
+ 0002:00000ed0       ??_7type_info@@6B@         10009ed0     msvcrt:ti_inst.obj
+ 0002:00000ed8       ??_R1A@?0A@A@type_info@@8  10009ed8     msvcrt:ti_inst.obj
+ 0002:00000ef0       ??_R2type_info@@8          10009ef0     msvcrt:ti_inst.obj
+ 0002:00000ef8       ??_R3type_info@@8          10009ef8     msvcrt:ti_inst.obj
+ 0002:00000f08       ??_R4type_info@@6B@        10009f08     msvcrt:ti_inst.obj
+ 0002:000013b0       __IMPORT_DESCRIPTOR_MSVCRT 1000a3b0     msvcrt:MSVCRT.dll
+ 0002:000013c4       __IMPORT_DESCRIPTOR_gtbase 1000a3c4     gtbase:gtbase.dll
+ 0002:000013d8       __NULL_IMPORT_DESCRIPTOR   1000a3d8     msvcrt:MSVCRT.dll
+ 0003:00000000       ?GTArchive_Info@@3PAUGTArchive_InfoEntry@@A 1000b000     gt_archiver.obj
+ 0003:000002f8       ??_R0?AVGT_Exception@@@8   1000b2f8     gt_archiver.obj
+ 0003:00000320       ??_R0?AVtype_info@@@8      1000b320     msvcrt:ti_inst.obj
+ 0003:00000340       ?sTemp@@3PADA              1000b340     gt_archiver.obj
+ 0003:00000588       ?nTotalArchives@GT_ArchiveAnalyzer@@2JA 1000b588     gt_archiver.obj
+ 0003:0000058c       ?nDamagedArchives@GT_ArchiveAnalyzer@@2JA 1000b58c     gt_archiver.obj
+
+ entry point at        0000:00000000
+
+ Static symbols
+

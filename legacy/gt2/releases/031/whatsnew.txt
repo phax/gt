@@ -1,0 +1,151 @@
+GT 0.31  02.01.2004   >< changed internal dir structure slightly
+                      >< listing members of LIB files
+         01.01.2004   >< added check for DOS EXE entrypoint
+                      >< added PELock 1.06 for PE EXEs
+                      >< added Armadillo 2.00b2 for PE EXEs
+                      >< tested with Armadillo 2.00b3 for PE EXEs
+                      >< added Armadillo 2.00 for PE EXEs
+                      >< each tool has its own config file now
+                      >< added Armadillo 2.01b1 for PE EXEs
+                      >< tested with Armadillo 2.01 for PE EXEs
+                      >< added Armadillo 2.10b2 for PE EXEs
+                      >< tested with Armadillo 2.10 for PE EXEs
+                      >< tested with Armadillo 2.20b1 for PE EXEs
+                      >< tested with Armadillo 2.20 for PE EXEs
+                      >< added Armadillo 2.50b1a for PE EXEs
+                      >< added Armadillo 2.50b3 for PE EXEs
+                      >< added Armadillo 2.50 for PE EXEs
+                      >< fixed bug in listmode output
+                      >< added Armadillo 2.51 for PE EXEs
+                      >< added Armadillo 2.51 for PE DLLs
+                      >< added Armadillo 2.52b2 for PE EXEs
+                      >< added Armadillo 2.52 for PE EXEs
+                      >< added Armadillo 2.52 for PE DLLs
+                      >< added Armadillo 3.40 (DEMO) for PE EXEs
+                      >< added Armadillo 3.50b1 (DEMO) for PE EXEs
+                      >< added Armadillo 3.50 (DEMO) for PE EXEs
+         31.12.2003   >< added yoda's Crypter 1.2 for PE EXEs
+                      >< added yoda's Crypter 1.1 for PE EXEs
+                      >< added UPX$HiT 0.0.1 for PE EXEs
+                      >< added Xtreme Protector 1.06 for PE EXEs
+                      >< fixed crash in geew
+                      >< fixed bug in macro engine
+                      >< added tELock 0.92a for PE EXEs
+                      >< added tELock 0.92a for PE DLLs
+                      >< added tELock 0.95 for PE EXEs
+                      >< added tELock 0.95 for PE DLLs
+                      >< added tELock 0.96 for PE EXEs
+                      >< added tELock 0.96 for PE DLLs
+                      >< added tELock 0.98 for PE EXEs
+                      >< added tELock 0.98 for PE DLLs
+                      >< added Xtreme Protector 1.07 for PE EXEs
+         28.12.2003   >< created a common application framework for many
+                           executables based on the GT code
+                      >< made some flags common for all apps
+                      >< added output runtime length check
+                      >< smaller code due to intelligent string res handler
+                      >< moved more strings to .rc file
+                      >< added heuristic to determine endless loops
+         27.12.2003   >< added PE EXE section flags
+                      >< changed output color handling
+                      >< fixed bug in fixup listing for UPX DLLs
+                      >< fixed bug in fixup listing for ASPack DLLs
+                      >< fixed bug in geew concerning last ',' ;-)
+         26.12.2003   >< added PE EXE fixup listing
+                      >< added new flag /pefixup to enable PE fixup listing
+                      >< added small PE EXE TLS info
+                      >< fixed bug in ZIP listing
+                      >< fixed bug in AMG listing
+         19.12.2003   >< removed /zwpg flag - always on
+         15.12.2003   >< fixed bug in RIFF listing with new string
+         14.12.2003   >< fixes crash in corrupted ZIP listing
+                      >< fixed problems with complex LZH files
+         13.12.2003   >< fixed crash in release version overlay listing
+         12.12.2003   >< fixed bugs in RAR archive listing
+                      >< added support for RAR extended time attributes
+                      >< fixed assertion
+         10.12.2003   >< worked on the outputter
+                      >< added new switch -outhtml to create HTML
+                      >< cleaned up the build system
+         07.12.2003   >< fixed 64-bit issue
+                      >< tested with UPX 1.21
+                      >< fixed bug in listmode
+                      >< tested with UPX 1.22
+                      >< tested with UPX 1.08
+                      >< tested with UPX 1.20
+                      >< tested with UPX 1.23
+                      >< tested with UPX 1.24
+                      >< added UPX detection from header
+                      >< improved Nero listing
+                      >< removed switch -zriffX
+                      >< nicer code
+                      >< merged gtstr.dll and gtbase.dll to gtbasic.dll
+                      >< added Visual Studio 7.1 / .NET 2003 for PE EXEs
+                      >< added JDPack 1.01 for PE EXEs
+                      >< added JDProtect 0.90b for PE EXEs
+                      >< added support for HKI ZIP archives
+         04.12.2003   >< widened archive listing size fields
+         02.12.2003   >< fixed crash in resource listing
+         01.12.2003   >< some code cleanup
+         28.11.2003   >< fixed bug in overall listing
+         27.11.2003   >< changed PE EXE size calculation so that it
+                           works with WinACE SFX archives (Petite 2.2)
+                      >< improved ACE SFX listing
+         26.11.2003   >< fixed crash with mis-aligned Win32 resource files
+                      >< fixed error in Source file detection
+                      >< added generic Shellscript detection
+         25.11.2003   >< fixed string transformation issues
+                      >< added detection of CloneCD language file
+         24.11.2003   >< finished conversion to std::string
+         23.11.2003   >< added more PE EXE CPU types
+                      >< added 777 archive feasibility tests
+                      >< started transformation to std::string
+         22.11.2003   >< small Unicode changes
+                      >< added RAR archive 64-bit support
+                      >< added RAR 3.x support
+                      >< fixed crash in ZIP lister of Unicode version
+                      >< fixed bug in RAR file comment handling
+         21.11.2003   >< added new extensions
+         18.11.2003   >< fixed small issue in AKT7 listing
+         17.11.2003   >< after a long time of doing nothing I restarted GT :)
+                      >< fixed filename listing bug in PAQ archive
+                      >< fixed crash on invalid WAVE file
+                      >< added support for Visual Studio 7.1 / .NET 2003
+                      >< started with 64-bit compatibility
+                      >< removed errmsg "Failed to init source analyzer II"
+                      >< extended supported PE EXE subsystems
+                      >< added new extensions
+         20.11.2001   >< added some extensions
+                      >< improved INI file handling
+         11.11.2001   >< try to to run GUI and Cmdline version in one EXE
+         03.11.2001   >< finished first gui version :)
+         20.10.2001   >< internal cleanups
+                      >< small fixes concerning Unicode/ANSI handling
+                      >< fixed bug that files starting with '.' were
+                         not scanned when using wildcards!
+                      >< handling exception on invalid RES files
+                      >< added TextPad workspace file detection
+                      >< implemented my own Unicode commandline handling :)
+         16.10.2001   >< improved detection of resource files (.RES)
+                      >< added listing of resource files
+         15.10.2001   >< if CRC32 in Inno header fails, listing is aborted
+                      >< changed dump format to 1.15
+                      >< added detection of NullSoftInstaller archives
+                      >< no exception when handling invalid WPG files with /zwpg
+                      >< tested with PECompact 1.45 for PEs
+                      >< added PECompact 1.46 for PEs
+                      >< added PECompact 1.50 for PEs
+                      >< added PECompact 1.55 for PEs
+                      >< tested with PECompact 1.56 for PEs
+                      >< added PECompact 1.60 for PEs
+                      >< tested with PECompact 1.65 for PEs
+                      >< added PECompact 1.66 for PEs
+                      >< added PECompact 1.67 for PEs
+         09.10.2001   >< added listing of XPA archives
+                      >< fixed bug in YC archive listing
+                      >< added a new output plugin interface: GT_Output_Status
+                      >< better handling of PE EXEs with invalid an
+                         invalid resource directory!
+                      >< fixed bug in output if the buffer is greater
+                         than the memory of the console!!
+         01.10.2001   >< added new extension

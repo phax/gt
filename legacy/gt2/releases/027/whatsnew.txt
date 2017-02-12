@@ -1,0 +1,26 @@
+GT 0.27  13.04.2001   >< played a little bit with the LZH archive lister
+                      >< added overlay detection of LZH archives ;-)
+                      >< added extension AWD
+                      >< better PDF detection
+                      >< fixed bug in internal search method
+         12.04.2001   >< fixed other bug which prevented GT from detecting
+                           startup code sequences which started less than
+                           80 bytes before the end of the file
+                      >< tested with R-CRYPT 0.93 (32 bit)
+         11.04.2001   >< added parameter /noovr to disable overlay detection
+                      >< when using /alldrives the headline changes when GT
+                           starts scanning on a new drive
+         10.04.2001   >< added REC/Small 1.05b for DOS EXEs
+                      >< added REC/Small/AV 1.05b for DOS EXEs
+                      >< added REC/Small/AV 1.05 for DOS EXEs
+                      >< added REC/Small/AV 1.00 for DOS EXEs
+                      >< fixed bug that prevented special signatures detections
+         09.04.2001   >< added teLock 0.80 for PE EXEs
+                      >< added RCC II/286 1.18 (hard) for DOS COM files
+                      >< added RCC II/286 1.18 (mild) for DOS COM files
+                      >< added RCC II/286 1.17 (hard) for DOS COM files
+                      >< added RCC II/286 1.17 (mild) for DOS COM files
+                      >< added new extension "cue"
+         04.04.2001   >< added switch /listopts to see which params are used!
+                      >< added new extension
+                      >< played a little bit with the LZH lister

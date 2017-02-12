@@ -1,0 +1,30 @@
+GT 0.29  09.05.2001   >< improved internal exception handling
+         08.05.2001   >< compiles faster
+         06.05.2001   >< made EXE default plugin DLL
+                      >< fixed spelling error
+                      >< made generic default plugin DLL
+         05.05.2001   >< heavy internal changes
+                      >< made archive default plugin DLL
+         04.05.2001   >< changed output plugin functions...
+                      >< some internal improvements
+                      >< changed start of GTUI2
+         30.04.2001   >< fixed overflow (=crash) on long export strings in PE EXEs
+         29.04.2001   >< now the error printing routine is independent of RTL
+                      >< internal improvements so that it compiles faster
+                      >< replaced some %f with %d.%02d - know what I mean ;-)
+                      >< fixed small bug in GIF output
+                      >< made gtbase dll which encapsulates basic classes
+                      >< fixed bug in DBF lister
+         28.04.2001   >< added commandline switch /allfixed to scan only fixed drives
+                      >< added commandline switch /allnetwork to scan only network drives
+                      >< some internal simplifications
+         27.04.2001   >< fixed bug in output plugin - init did not work
+         26.04.2001   >< fixed some typeos when gtpout could not be loaded
+                      >< made output routines a plugin!
+         25.04.2001   >< played a bit with the rebase parameters
+                      >< improved crash dump format
+         24.04.2001   >< added generic output plugin support
+         18.04.2001   >< added Crunch 2.0.0.2 for PE EXEs
+                      >< tested with WWPack 1.20beta2 for PE EXEs
+                      >< tested with WWPack 1.20 for PE EXEs
+                      >< fixed crash in PE Resource table lister

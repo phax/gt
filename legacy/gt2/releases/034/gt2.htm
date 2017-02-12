@@ -1,0 +1,426 @@
+<html>
+<head>
+<title>GT2 documentation</title>
+<style type="text/css">
+<!--
+/* style sheets rule!! */
+/* these are copyright (c) 1999-2004 by PHaX !! */
+/* Optimized for Mozilla */
+
+body
+{
+  background-color:#ffffff;
+  color:#000000;
+  font-family:Arial,Helvetica;
+  font-size:12px;
+}
+
+body h1, body h2, body h3, body h4, body h5, body h6
+{
+  border-left-width:1mm;
+  padding-left:2mm;
+  padding-right:2mm;
+  padding-top:2mm;
+  padding-bottom:2mm;
+
+  border:1px solid grey;
+  background-color:#E0E0E0;
+  padding:4px;
+}
+
+h1 { font-size:24pt; }
+h2 { font-size:18pt; }
+h3 { font-size:12pt; }
+
+table
+{
+  margin-top:2mm;
+  margin-bottom:2mm;
+}
+
+/* a ganz global ... */
+a
+{
+  text-decoration:hover;
+  font-weight:600;
+  color:red;
+}
+
+div
+{
+  font-size:14px;
+}
+
+/* definitions for table fields */
+td, th
+{
+  vertical-align:top;
+  font-size:12px;
+}
+
+/* general highligthing */
+.highlight
+{
+  background-color:#a0e0a0;
+}
+
+/* copyright text */
+.copyright
+{
+  font-size:10pt;
+  text-align:center;
+  background-color:#f0f0f0;
+  padding:4px;
+  margin-top:5mm;
+}
+
+/* error/warnings */
+.warning
+{
+  color:#f05050;
+}
+
+/* informational */
+.info
+{
+  color:#5050f0;
+}
+
+/* code */
+*.code
+{
+  font-family:Courier;
+}
+
+/* comment */
+*.comment
+{
+  color:#00b000;
+}
+
+.borded
+{
+  border-left-width:1mm;
+  padding-left:2mm;
+  padding-right:2mm;
+  padding-top:2mm;
+  padding-bottom:2mm;
+
+  border:1px solid grey;
+  background-color:#E0E0E0;
+  padding:4px;
+}
+
+.borded_l
+{
+  border-left-width:1mm;
+  padding-left:2mm;
+  padding-right:2mm;
+  padding-top:2mm;
+  padding-bottom:2mm;
+
+  border:1px solid grey;
+  background-color:#f0f0f0;
+  padding:4px;
+}
+
+/* end of style sheet definition */
+-->
+</style>
+</head>
+<body>
+<h1>GT2 0.34</h1>
+<h3>(c) 1999-2004 by <a href="mailto:coding@helger.com?subject=GT2">PHaX</a> (coding@helger.com)</h3>
+<h3><a href="http://philip.helger.com/gt/">http://philip.helger.com/gt/</a></h3>
+
+<!-- start of TOC -->
+<h2>Table of Content</h2>
+<div class="borded">
+1. <a href="#1">Introduction</a><br>
+1.1 <a href="#11">Disclaimer</a><br>
+1.2 <a href="#12">What is GT2</a><br>
+1.3 <a href="#13">Where to find GT2</a><br>
+2. <a href="#2">Reference</a><br>
+2.1 <a href="#21">Commandline switches</a><br>
+2.2 <a href="#22">Configuration file</a><br>
+</div>
+<!-- end of TOC -->
+
+<br>
+
+<!-- start of Introduction -->
+<a name="1"></a>
+<h1>1. Introduction</h1>
+<!-- start of Disclaimer -->
+<a name="11"></a>
+<h3>1.1 Disclaimer</h1>
+<div class="borded">
+The free software program provided by <a href="mailto:coding@helger.com?subject=GT2">PHaX</a> may be freely distributed, provided that no charge above the cost of distribution is levied, and that the disclaimer below is always attached to it.<br>
+The program is provided as is without any guarantees or warranty.<br>
+Although the author has attempted to find and correct any bugs in the free software program, the author is not responsible for any damage or losses of any kind caused by the use or misuse of the program.<br>
+The author is under no obligation to provide support, service, corrections, or upgrades to the free software program.<br>
+The author can be reached per email to <span class="code"><a href="mailto:coding@helger.com?subject=GT2">coding@helger.com</a></span>
+</div>
+<!-- end of Disclaimer -->
+<!-- start of What's it -->
+<a name="12"></a>
+<h3>1.2 What is GT2</h1>
+<div class="borded">
+GT2 is a file detection utility that detects all kind of file types according to their binary signature.<br>
+<div class="borded_l"><b>Example:</b> GT will recognize your ZIP file even if it is named &quot;testfile.avi&quot; if the first 4 bytes in the file are PK\x03\x04 - whatever this mean ;-)</div>
+It is different from standard Windows filetype detection since it does not consider the file's extension by default.<br>
+So if you ever stumble across a file that you don't know what it is, run GT2 on it and you will hopefull know what it is.
+</div>
+<!-- end of What's it -->
+<!-- start of Where to find -->
+<a name="13"></a>
+<h3>1.3 Where to find GT2</h1>
+<div class="borded">
+GT2 does not create a start menu entry because it is not (yet) an interactive application. It can be accessed from the commandline by typing &quot;gt2&quot; or by selecting &quot;Detect with GT2...&quot; from the Windows Explorer context menu.
+</div>
+<!-- end of Where to find -->
+<!-- end of Introduction -->
+
+<br>
+
+<!-- start of Reference -->
+<a name="2"></a>
+<h1>2. Reference</h1>
+Author's note: This reference is just at the beginning. It will take some versions until is contains most of the details, but at least I started :)
+<!-- start of Cmdline switches -->
+<a name="21"></a>
+<h3>2.1 Commandline switches</h3>
+<div class="borded_l">
+The following table contains an overview of the supported commandline switches and an short explanation what it does. A commandline switch can be at any position within the commandline as long as it starts with a slash '/' or a minus '-' character. The commandline switch names are case sensitive: /s is different from /S.<br>
+<span class="info">If you want to scan a file that starts with a '-' character, you can scan it by prefixing the files name with &quot;.\&quot;</span>
+<table>
+<tbody>
+  <tr>
+    <th>Switch</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>/?</td>
+    <td>Show an overview of all available commandline switches.</td>
+  </tr>
+  <tr>
+    <td>/alldrives</td>
+    <td>Scans all drives (both fixed drives and network drives) for the filemask(s) you specified on the commandline. This flag automatically starts at your drive C: and scans all directories for the given filemasks, continues with your next drive until it handled all drives.<br>
+If you use this switch, your filemask may not contain any directory (e.g. images\*.gif) nor any direct drive name (e.g. c:\*.tmp).<br>
+This switch implies the subdirectory switch (/s).<br>
+<span class="warning">Note: Currently the file system is scanned for each mask you pass. So if you want to scan for some files it will take some extra time, because each drive is scanned more than once.<br>
+This issue will only be fixed on demand (if somebody except me is using this switch).</span></td>
+  </tr>
+  <tr>
+    <td>/allfixed</td>
+    <td>Scans all fixed drives. Fixed means that the disk cannot be removed from the drive. The rest is according to /alldrives above.</td>
+  </tr>
+  <tr>
+    <td>/allnetwork</td>
+    <td>Scans all network drives. Network means that the drive is a remote (network) drive. The rest is according to /alldrives above.</td>
+  </tr>
+  <tr>
+    <td>/bufsize##</td>
+    <td>Set the internal pre-read buffer size to ##.<br>
+<span class="warning">Be careful when using this switch because changing it to a value that is too small GT2 will probably fail to detect some files whereas setting it to a value that is too large the execution speed will decrease.</span><br>
+The default value is 4096 bytes.</td>
+  </tr>
+  <tr>
+    <td>/cachestats</td>
+    <td>Show caching information after all information was printed. This switch has only informational purposes and does not alter anything. I used it to determine the best buffersize (see /bufsize).</td>
+  </tr>
+  <tr>
+    <td>/exemod</td>
+    <td>This switch applies only to EXE files. By default the complete EXE information is listed but with this switch only the modifier/compressor/etc. are printed.<br>
+<span class="info">To list the modifieres of all EXE files in the current directory, you can use the following command:<br>
+<span class="code">gt2 *.exe /l /exemod</span></span></td>
+  </tr>
+  <tr>
+    <td>/flushoutput</td>
+    <td>By default, all output of a file is cached and than printed at once, because this is faster than printing each character separately. If you pass this switch, the internal output caching is disabled and each output is printed directly to the desired output device.<br>
+<span class="warning">This switch will heavily decrease the application speed if you scan many files.</span></td>
+  </tr>
+  <tr>
+    <td>/fte##</td>
+    <td>This is a very high sophisticated switch that applies only to DOS executables (for NE EXEs, PE EXEs or SYS files see below). If sets the signature comparison engine tolerance to ##.<br>
+This switch may be helpful if you have a DOS EXE file that is modified/packed by a program that is not recognized by GT. It will increase the scanning tolerance and may give you at least a hint what it could be.<br>
+The default value is 3</td>
+  </tr>
+  <tr>
+    <td>/ftn##</td>
+    <td>This is a very high sophisticated switch that applies only to NE executables (for DOS EXEs see above, for PE EXEs and SYS files see below). If sets the signature comparison engine tolerance to ##.<br>
+This switch may be helpful if you have a NE EXE file that is modified/packed by a program that is not recognized by GT. It will increase the scanning tolerance and may give you at least a hint what it could be.<br>
+The default value is 3</td>
+  </tr>
+  <tr>
+    <td>/ftp##</td>
+    <td>This is a very high sophisticated switch that applies only to PE executables (for DOS EXEs and NE EXEs see above, SYS files see below). If sets the signature comparison engine tolerance to ##.<br>
+This switch may be helpful if you have a PE EXE file that is modified/packed by a program that is not recognized by GT. It will increase the scanning tolerance and may give you at least a hint what it could be.<br>
+The default value is 3</td>
+  </tr>
+  <tr>
+    <td>/fts##</td>
+    <td>This is a very high sophisticated switch that applies only to SYS files  (for DOS EXEs, NE EXEs and PE EXEs see above). If sets the signature comparison engine tolerance to ##.<br>
+This switch may be helpful if you have a SYS file that is modified/packed by a program that is not recognized by GT. It will increase the scanning tolerance and may give you at least a hint what it could be.<br>
+The default value is 1</td>
+  </tr>
+  <tr>
+    <td>/l</td>
+    <td>Switch to listmode. By default the application lists more information when possible (e.g. listing a ZIP files content). This output can be prevented by using this switch.</td>
+  </tr>
+  <tr>
+    <td>/listopts</td>
+    <td>When this switch is used, all used switches, both from configuration file and from commandline are printed and the application exits. No file detection ís done, just for informational purposes.</td>
+  </tr>
+  <tr>
+    <td>/ncg</td>
+    <td>Do not evaluate the configuration file in the executable directory.</td>
+  </tr>
+  <tr>
+    <td>/ncl</td>
+    <td>Do not evaluate the configuration file your profile directory.</td>
+  </tr>
+  <tr>
+    <td>/ni</td>
+    <td>Do not display identified files.<br>
+The opposite switch is /nu.<br>
+<span class="info">When using both /ni and /nu just a summary is printed. So if /nologo and /nofooter are passed too, no output is done while scanning!</span></td>
+  </tr>
+  <tr>
+    <td>/noarcs</td>
+    <td>Do not list the contents of archives if the application stumbles across one it can list. This switch applies to &quot;archive-only&quot; files and to archives in EXE overlays.</td>
+  </tr>
+  <tr>
+    <td>/nocolor</td>
+    <td>Do not use any colors. Simply use the commandline colors.</td>
+  </tr>
+  <tr>
+    <td>/noerrbox</td>
+    <td>Do not show Message boxes in case of an unexpected error. Write the error to the console as well.</td>
+  </tr>
+  <tr>
+    <td>/nofooter</td>
+    <td>Do not display the footer that summarizes the found information. If you don't like it, just put it in the configuration file.</td>
+  </tr>
+  <tr>
+    <td>/nologo</td>
+    <td>Do not display the copyright logo at the beginning. If you don't like it, just put it in the configuration file.</td>
+  </tr>
+  <tr>
+    <td>/noovr</td>
+    <td>Do not analyze any overlays. An overlay is any data that is appended to the original data.</td>
+  </tr>
+  <tr>
+    <td>/noscanext</td>
+    <td>Do not analyze the file's extension.<br>
+By default the extension of the file is matched to an internal list of known extensions if it could not be identified.</td>
+  </tr>
+  <tr>
+    <td>/noscanname</td>
+    <td>Do not analyze the file's name.<br>
+By default the name of the file is matched to an internal list of special names if it could not be identified.</td>
+  </tr>
+  <tr>
+    <td>/nu</td>
+    <td>Do not display unidentified files.<br>
+The opposite switch is /ni.<br>
+<span class="info">When using both /ni and /nu just a summary is printed. So if /nologo and /nofooter are passed too, no output is done!</span></td>
+  </tr>
+  <tr>
+    <td>/outhtml</td>
+    <td>Write HTML output instead of normal plain text. The result is written to stdout and needs to be redirected manually.<br>
+<span class="info">Here's an example call how to create an HTML representation of the identification results of all files in the current directory:<br>
+<span class="code">gt2 * /outhtml &gt; result.htm</span></span><br>
+<span class="warning">This switch is experimental and creates stupid HTML but it can be viewed in any common browser.</span></td>
+  </tr>
+  <tr>
+    <td>/outlinenums</td>
+    <td>Write a line number before each printed line. This flag affects only the standard output. If HTML output is selected via /outhtml this flag is ignored.</td>
+  </tr>
+  <tr>
+    <td>/outpause##</td>
+    <td>Pause after each ## lines of output. Only values &gt; 0 are valid. This flag affects only the standard output. If HTML output is selected via /outhtml this flag is ignored.</td>
+  </tr>
+  <tr>
+    <td>/peall</td>
+    <td>Shortcut for /pesect /pedd and /pever.</td>
+  </tr>
+  <tr>
+    <td>/pedd</td>
+    <td>List the data directory of PE EXEs.</td>
+  </tr>
+  <tr>
+    <td>/pefixup</td>
+    <td>List the fixup directory of PE EXEs.</td>
+  </tr>
+  <tr>
+    <td>/peimp</td>
+    <td>List the imported DLLs of PE EXEs.</td>
+  </tr>
+  <tr>
+    <td>/peimp2</td>
+    <td>List the imported DLLs and the imported functions of PE EXEs.</td>
+  </tr>
+  <tr>
+    <td>/peres</td>
+    <td>List the resource directory of PE EXEs.</td>
+  </tr>
+  <tr>
+    <td>/peres2</td>
+    <td>List the resource directory and the contents of the stringtable of PE EXEs.</td>
+  </tr>
+  <tr>
+    <td>/pesect</td>
+    <td>List the segment table of PE EXEs.</td>
+  </tr>
+  <tr>
+    <td>/pever</td>
+    <td>List the version information of PE EXEs.</td>
+  </tr>
+  <tr>
+    <td>/s</td>
+    <td>Search the given filemasks in the current directory and all subdirectories.</td>
+  </tr>
+  <tr>
+    <td>/status##</td>
+    <td>This switch lets you customize the status bar while scanning. The string ## can contain the following macros, that are updated after every file is scanned.<br>
+$D number of successfully identified (detected) files<br>
+$T number of total files found so far<br>
+$P current identification percentage (includes the '%' sign)<br>
+$F current filename<br>
+<span class="info">To scan all files in the current directory and all subdirectories, while displaying the identification percentage and the current filename, use e.g. the following command:<br>
+<span class="code">gt2 * /s &quot;/status$P [$F]&quot;</span></span></td>
+  </tr>
+  <tr>
+    <td>/wf</td>
+    <td>Wait for a key to be pressed after the wrok is done.<br>
+This maybe helpful if you use this application as a Shell extension.</td>
+  </tr>
+</tbody>
+</table>
+</div>
+<!-- end of Cmdline switches -->
+<!-- start of Configuration file -->
+<a name="22"></a>
+<h3>2.2 Configuration file</h3>
+<div class="borded_l">
+The configuration file is a very handy thing that helps you applying common commandline switches. Every switch that can be passed on the commandline can also be written in the configuration file.<br>
+The configuration file is called <span class="code">gt2.cfg</span> and needs to be located in the same directory as the executable file.<br>
+The following is an example how the configuration file can look like:<br>
+<div class="borded"><span class="code">
+<span class="comment">;</span><br>
+<span class="comment">; GT2 configuration file</span><br>
+<span class="comment">;</span><br>
+<br>
+/fte0  <span class="comment">; EXE</span><br>
+/ftn0  <span class="comment">; NE</span><br>
+/ftp0  <span class="comment">; PE</span><br>
+/fts0  <span class="comment">; SYS</span><br>
+/nofooter</div>
+</span></div>
+<!-- emd of Configuration file -->
+<!-- end of Reference -->
+
+<div class="copyright">This page is copyright (c) 2004 by <a href="mailto:coding@helger.com?subject=GT2">PHaX</a></div>
+
+</body>
