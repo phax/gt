@@ -623,10 +623,16 @@ bool GT_CALL EXE_PE_Lister::_AnalyzeAsPE ()
         if (m_aOFH.nDLLCharacteristics & 0x0002) aTable.AddStr (0, HRC_EXELIB_PE_DLL_CHAR_PROCESS_TERM);
         if (m_aOFH.nDLLCharacteristics & 0x0004) aTable.AddStr (0, HRC_EXELIB_PE_DLL_CHAR_THREAD_INIT);
         if (m_aOFH.nDLLCharacteristics & 0x0008) aTable.AddStr (0, HRC_EXELIB_PE_DLL_CHAR_THREAD_TERM);
+        if (m_aOFH.nDLLCharacteristics & 0x0020) aTable.AddStr (0, HRC_EXELIB_PE_DLL_CHAR_HIGH_ENTROPY_VA);
+        if (m_aOFH.nDLLCharacteristics & 0x0040) aTable.AddStr (0, HRC_EXELIB_PE_DLL_CHAR_DYNAMIC_BASE);
+        if (m_aOFH.nDLLCharacteristics & 0x0080) aTable.AddStr (0, HRC_EXELIB_PE_DLL_CHAR_FORCE_INTEGRITY);
+        if (m_aOFH.nDLLCharacteristics & 0x0100) aTable.AddStr (0, HRC_EXELIB_PE_DLL_CHAR_NX_COMPAT);
         if (m_aOFH.nDLLCharacteristics & 0x0200) aTable.AddStr (0, HRC_EXELIB_PE_DLL_CHAR_NO_ISOLATION);
         if (m_aOFH.nDLLCharacteristics & 0x0400) aTable.AddStr (0, HRC_EXELIB_PE_DLL_CHAR_NO_SEH);
         if (m_aOFH.nDLLCharacteristics & 0x0800) aTable.AddStr (0, HRC_EXELIB_PE_DLL_CHAR_NO_BIND);
+        if (m_aOFH.nDLLCharacteristics & 0x1000) aTable.AddStr (0, HRC_EXELIB_PE_DLL_CHAR_APPCONTAINER);
         if (m_aOFH.nDLLCharacteristics & 0x2000) aTable.AddStr (0, HRC_EXELIB_PE_DLL_CHAR_WDM_DRIVER);
+        if (m_aOFH.nDLLCharacteristics & 0x4000) aTable.AddStr (0, HRC_EXELIB_PE_DLL_CHAR_GUARD_CF);
         if (m_aOFH.nDLLCharacteristics & 0x8000) aTable.AddStr (0, HRC_EXELIB_PE_DLL_CHAR_TERMINAL_SERVER_AWARE);
 
         out_append (rc (HRC_EXELIB_PE_DLL_CHAR));
@@ -807,6 +813,9 @@ void GT_CALL EXE_PE_Lister::_CheckForCode
       else
       if (m_aOFH.nLinkerMajor == 11 && m_aOFH.nLinkerMinor == 0)
         sSeemsToBe += _T ("11.0 / 2012");
+      else
+      if (m_aOFH.nLinkerMajor == 14 && m_aOFH.nLinkerMinor == 0)
+        sSeemsToBe += _T ("14.0 / 2015");
       else
       {
         // unknown

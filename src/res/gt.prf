@@ -1338,21 +1338,39 @@ STR HRC_EXELIB_PE_DLL_CHAR_THREAD_TERM
   de ="Hat eine Thread Terminierungsroutine";
   all="Has a thread termination routine";
 
+STR HRC_EXELIB_PE_DLL_CHAR_HIGH_ENTROPY_VA
+  all="Image can handle a high entropy 64-bit virtual address space";
+  
+STR HRC_EXELIB_PE_DLL_CHAR_DYNAMIC_BASE
+  all="DLL can be relocated at load time";
+
+STR HRC_EXELIB_PE_DLL_CHAR_FORCE_INTEGRITY
+  all="Code Integrity checks are enforced";
+
+STR HRC_EXELIB_PE_DLL_CHAR_NX_COMPAT
+  all="Image is NX compatible";
+
 STR HRC_EXELIB_PE_DLL_CHAR_NO_ISOLATION
   de ="Keine Isolation";
-  all="No isolation";
+  all="Isolation aware, but do not isolate the image";
 
 STR HRC_EXELIB_PE_DLL_CHAR_NO_SEH
   de ="Kein Structured Exception Handling (SEH)";
-  all="No structured exception handling (SEH)";
+  all="Does not use structured exception (SE) handling. No SE handler may be called in this image";
 
 STR HRC_EXELIB_PE_DLL_CHAR_NO_BIND
   de ="Anwendung nicht binden";
-  all="Do not bind image";
+  all="Do not bind the image";
+
+STR HRC_EXELIB_PE_DLL_CHAR_APPCONTAINER
+  all="Image must execute in an AppContainer";
 
 STR HRC_EXELIB_PE_DLL_CHAR_WDM_DRIVER
   de ="WDM Treiber";
-  all="WDM driver";
+  all="A WDM driver";
+
+STR HRC_EXELIB_PE_DLL_CHAR_GUARD_CF
+  all="Image supports Control Flow Guard";
 
 STR HRC_EXELIB_PE_DLL_CHAR_TERMINAL_SERVER_AWARE
   de ="Kann mit Terminal Server umgehen";

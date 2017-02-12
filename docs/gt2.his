@@ -12,7 +12,8 @@
 
 
 GT 0.37  
-         12.02.2017   >< PE EXE Machine Types updated
+         12.02.2017   >< PE EXE Machine Types extended
+                      >< PE DLL Characteristics extended
          10.02.2017   >< Added detection of Visual C++ 2012 (debug; EXE)
                       >< Added detection of Visual C++ 2012 (debug; DLL)
                       >< Added detection of Visual C++ 2012 (nodebug; EXE)
