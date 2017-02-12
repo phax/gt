@@ -23,3 +23,8 @@ call _make_vs11.cmd GT_DEBUG=0 GT_UNICODE=0
 call _make_vs11.cmd GT_DEBUG=0 GT_UNICODE=1
 call _make_vs11.cmd GT_DEBUG=1 GT_UNICODE=0
 call _make_vs11.cmd GT_DEBUG=1 GT_UNICODE=1
+
+call _make_vs14.cmd GT_DEBUG=0 GT_UNICODE=0
+call _make_vs14.cmd GT_DEBUG=0 GT_UNICODE=1
+call _make_vs14.cmd GT_DEBUG=1 GT_UNICODE=0
+call _make_vs14.cmd GT_DEBUG=1 GT_UNICODE=1
