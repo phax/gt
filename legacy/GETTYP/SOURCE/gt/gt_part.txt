@@ -1,0 +1,643 @@
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ Modifier                             Copyright (c)                              ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ DOS Executable                                                                  ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ 624 1.0                            ³ Kim Holviala                               ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ ABKprot 1.00                       ³ fds0ft                                     ³
+ ³ Ady's Glue 1.10                    ³ Ady                                        ³
+ ³ AdFlt2                             ³ Elicz                                      ³
+ ³ AEP 1.00                           ³ Ke Jia-Hann                                ³
+ ³ AinEXE 2.1                         ³ Transas Marine                             ³
+ ³ AinEXE 2.22                        ³ Transas Marine                             ³
+ ³ AinEXE 2.23                        ³ Transas Marine                             ³
+ ³ Alec 1.6                           ³ rANDOM                                     ³
+ ³ Aluwain 8.03                       ³ Tequila                                    ³
+ ³ Aluwain 8.09                       ³ Tequila                                    ³
+ ³ AntiUPC 1.02                       ³ Hold                                       ³
+ ³ aPack 0.58                         ³ Jibz                                       ³
+ ³ aPack 0.58 - 0.74 (1)              ³ Jibz                                       ³
+ ³ aPack 0.58 - 0.74 (2)              ³ Jibz                                       ³
+ ³ aPack 0.61                         ³ Jibz                                       ³
+ ³ aPack 0.66                         ³ Jibz                                       ³
+ ³ aPack 0.69                         ³ Jibz                                       ³
+ ³ aPack 0.73 - 0.74                  ³ Jibz                                       ³
+ ³ aPack 0.73 - 0.74 -d               ³ Jibz                                       ³
+ ³ aPack 0.73 - 0.74 -m               ³ Jibz                                       ³
+ ³ aPack 0.82                         ³ Jibz                                       ³
+ ³ aPack 0.82 -d                      ³ Jibz                                       ³
+ ³ aPack 0.82 -m -p                   ³ Jibz                                       ³
+ ³ aPack 0.90 - 0.99 -m [EXE]         ³ Jibz                                       ³
+ ³ aPack 0.90 - 0.99 [EXE]            ³ Jibz                                       ³
+ ³ aPack 0.90 - 0.99 -d/-s [EXE]      ³ Jibz                                       ³
+ ³ aPack 0.90 - 0.99 -d/-s -m [EXE]   ³ Jibz                                       ³
+ ³ aPack 0.90 -m -p                   ³ Jibz                                       ³
+ ³ aPack 0.90 -m -x                   ³ Jibz                                       ³
+ ³ aPack 0.96 -i -m                   ³ Jibz                                       ³
+ ³ aPack 0.96 -m                      ³ Jibz                                       ³
+ ³ aPack 0.98 - 0.99 [COM]            ³ Jibz                                       ³
+ ³ aPack 0.98 - 0.99 -t [EXE]         ³ Jibz                                       ³
+ ³ aPack 0.98 - 0.99 -x [EXE]         ³ Jibz                                       ³
+ ³ aPack 0.98 -f -m [COM]             ³ Jibz                                       ³
+ ³ aPack 0.98 -i -m [COM]             ³ Jibz                                       ³
+ ³ aPack 0.99 -f -m [COM]             ³ Jibz                                       ³
+ ³ aPack 0.99 -i -m [COM]             ³ Jibz                                       ³
+ ³ ARJ SFX archive                    ³ Robert K. Jung                             ³
+ ³ AVPack 1.2x                        ³ Andrei Volkov                              ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Batch Compiler 1.0                 ³ Leviathan                                  ³
+ ³ BINLock 1.0                        ³ Hit-BBS                                    ³
+ ³ BITLOK 3.1                         ³ Yellow Rose Software Workgroup             ³
+ ³ Borland C++ 3.0                    ³ Borland                                    ³
+ ³ Borland C++ (TR.EXE)               ³ Borland                                    ³
+ ³ Borland PE loader                  ³ Borland                                    ³
+ ³ BUNNY 4.1 Installation             ³ Manfred Bunjes                             ³
+ ³ BUNNY 4.1 Manipulation             ³ Manfred Bunjes                             ³
+ ³ BUNNY 4.1 Password                 ³ Manfred Bunjes                             ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ C-Crypt 1.02                       ³ De'FeinD/uCT                               ³
+ ³ CC286x<sup>2</sup> 2.1             ³ Dark Stalker                               ³
+ ³ CC 2.61b                           ³ UniHackers Group                           ³
+ ³ Ciphator 4.6                       ³ Marquis de Soire                           ³
+ ³ Com Cryptor BTS 9.12               ³ Jozsef Hidasi                              ³
+ ³ COM2EXE                            ³ cINOgEN                                    ³
+ ³ COM2EXE                            ³ COMSEC                                     ³
+ ³ COM2EXE                            ³ DblStar Software                           ³
+ ³ COM2EXE                            ³ Fabrice Bellard                            ³
+ ³ COM2EXE                            ³ HENDR­X                                    ³
+ ³ COM2EXE                            ³ kaot                                       ³
+ ³ COM2EXE                            ³ PHaX                                       ³
+ ³ COM2EXE                            ³ ROSE                                       ³
+ ³ COM2EXE                            ³ Stefan Esser                               ³
+ ³ COM2EXE                            ³ Trills and Technologies                    ³
+ ³ COM2TXT 1.00                       ³ Nide Naoyuki                               ³
+ ³ COM2TXT 1.03 - 1.12                ³ Nide Naoyuki                               ³
+ ³ COM2TXT 1.20 - 1.41                ³ Nide Naoyuki                               ³
+ ³ COM4MAIL                           ³ Krasilnikov                                ³
+ ³ COMCRYPT                           ³ unknwon                                    ³
+ ³ ComLock 0.10                       ³ BoRZoM                                     ³
+ ³ Compact 1.05                       ³ Klaus Peichl                               ³
+ ³ Compact 4.5                        ³ Prominence Computer Services Ltd.          ³
+ ³ Compact 5.1                        ³ Prominence Computer Services Ltd.          ³
+ ³ ComprEXE 1.0                       ³ Tom Torfs                                  ³
+ ³ ComProt 1.0 beta                   ³ BiZ0n                                      ³
+ ³ ComProtector 1.0                   ³ Marco Ruhmann                              ³
+ ³ Comt 0.10d                         ³ Alexander Pruss                            ³
+ ³ COP 1.0                            ³ Jack A. Orman                              ³
+ ³ CrackStop 1.0                      ³ Stefan Esser                               ³
+ ³ CrackStop 1.0b                     ³ Stefan Esser                               ³
+ ³ CrackStop 1.01                     ³ Stefan Esser                               ³
+ ³ CrackStop 1.02                     ³ Stefan Esser                               ³
+ ³ CrackStop 1.03                     ³ Stefan Esser                               ³
+ ³ CrackStop 1.03a                    ³ Stefan Esser                               ³
+ ³ Cruncher 1.0                       ³ ???                                        ³
+ ³ Cruncher 1.0                       ³ Ori Berger                                 ³
+ ³ CryEXE 4.0                         ³ Iosco Capitolino                           ³
+ ³ CRYPACK 3.0                        ³ George Stark                               ³
+ ³ Crypt 1.20                         ³ Eclipse                                    ³
+ ³ Crypt 1.21                         ³ Eclipse                                    ³
+ ³ Crypt 1.7                          ³ Dismember                                  ³
+ ³ Crypt.Trivial.173                  ³ SMT                                        ³
+ ³ CryptC [by unknown]                ³ ???                                        ³
+ ³ Crypta 2.0                         ³ Iosco Capitolino                           ³
+ ³ Crypta II 3.0                      ³ Iosco Capitolino                           ³
+ ³ CRYPTCOM                           ³ ???                                        ³
+ ³ CRYPTCOM 1.1                       ³ Frank Baumgartner                          ³
+ ³ CryptEXE 1.0                       ³ Dimitriy Borisov                           ³
+ ³ CryptExe 1.04                      ³ DoP                                        ³
+ ³ CrypteXeC 0.9á                     ³ ByteWorx Team                              ³
+ ³ CrypteXeC 1.01                     ³ ByteWorx Team                              ³
+ ³ CSV 1.0                            ³ Moshe                                      ³
+ ³ CWC 3.01                           ³ Michael Devore                             ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ DarkStop 1.0                       ³ Dark Destroyer                             ³
+ ³ dEEP-CRyPTeR 0.1á                  ³ PLaSMoiD                                   ³
+ ³ Diet 1.00                          ³ Teddy Matsumoto                            ³
+ ³ Diet 1.10 - 1.20                   ³ Teddy Matsumoto                            ³
+ ³ Diet 1.43 - 1.44                   ³ Teddy Matsumoto                            ³
+ ³ Diet 1.44 - 1.45f                  ³ Teddy Matsumoto                            ³
+ ³ Diet 1.45f                         ³ Teddy Matsumoto                            ³
+ ³ Docmaker 1.20                      ³ Jack Orman                                 ³
+ ³ DOS32 3.3                          ³ Adam Seychell                              ³
+ ³ DOS Extender                       ³ Doug Hoffmann                              ³
+ ³ DOS Extender Loader                ³ Doug Hoffmann                              ³
+ ³ DPMI loader DJ Delorie             ³ DJ Delorie                                 ³
+ ³ DShield                            ³ Ben Castricum                              ³
+ ³ DS-CRP 1.28                        ³ Dark Stalker                               ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ EEXE 1.12 - 1.13                   ³ Fernando Papa Bundzyn                      ³
+ ³ EFP 1.23                           ³ Alexei Bulushev                            ³
+ ³ Elite 2.00                         ³ Codeblasters                               ³
+ ³ Elite x                            ³ Codeblasters                               ³
+ ³ Encryptor 1.00á                    ³ Gaston B. / Dark Stalker                   ³
+ ³ ENcryptCOM 3.01                    ³ Stewart Moss                               ³
+ ³ EPW 1.2                            ³ Farpoint Software                          ³
+ ³ EPW 1.30                           ³ Farpoint Software                          ³
+ ³ EXE2COM 1.02                       ³ DoP                                        ³
+ ³ EXE2COM 2.00                       ³ Paul Shpilsher                             ³
+ ³ EXETOCOM                           ³ ???                                        ³
+ ³ ExeCode 1.0                        ³ Bal zs Scheidler                           ³
+ ³ EXEGuard 1.3                       ³ Ivanov Vadim                               ³
+ ³ EXEHigh 1.01                       ³ NoddegamrA                                 ³
+ ³ ExeLock 1.00                       ³ JON Software                               ³
+ ³ EXELOCK 666 1.03                   ³ STiLLSON                                   ³
+ ³ EXELOCK 666 1.04                   ³ STiLLSON                                   ³
+ ³ EXELOCK 666 1.05                   ³ STiLLSON                                   ³
+ ³ EXE Manager 3.0                    ³ Solar Designer / TorNad0                   ³
+ ³ EXE Manager 3.2                    ³ Solar Designer                             ³
+ ³ EXEPACK 3.65                       ³ Microsoft                                  ³
+ ³ EXEPACK 3.69                       ³ Microsoft                                  ³
+ ³ EXEPACK 4.00                       ³ Microsoft                                  ³
+ ³ EXEPACK 4.03                       ³ Microsoft                                  ³
+ ³ EXEPACK 4.06                       ³ Microsoft                                  ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ fds-cp 0.4                         ³ fds0ft                                     ³
+ ³ File Analyser 1.4 Encryp.          ³ Vadim Tarasov                              ³
+ ³ FFSE 0.4 E/F/+                     ³ Zenix                                      ³
+ ³ FFSE 0.4 R                         ³ Zenix                                      ³
+ ³ FFSE 0.5                           ³ Zenix                                      ³
+ ³ F-Xlock 1.16                       ³ Frisk Software                             ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Gardian Angel 1.0                  ³ ???                                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ HackStop 0.98                      ³ ROSE                                       ³
+ ³ HackStop 0.99                      ³ ROSE                                       ³
+ ³ HackStop 1.00                      ³ ROSE                                       ³
+ ³ HackStop 1.02á                     ³ ROSE                                       ³
+ ³ HackStop 1.12                      ³ ROSE                                       ³
+ ³ HackStop 1.13á                     ³ ROSE                                       ³
+ ³ HackStop 1.14                      ³ ROSE                                       ³
+ ³ HackStop 1.15                      ³ ROSE                                       ³
+ ³ HackStop 1.17á                     ³ ROSE                                       ³
+ ³ HackStop 1.17ás                    ³ ROSE                                       ³
+ ³ HackStop 1.17                      ³ ROSE                                       ³
+ ³ HackStop 1.18                      ³ ROSE                                       ³
+ ³ HackStop 1.19 b195                 ³ ROSE                                       ³
+ ³ HackStop 1.19 b197                 ³ ROSE                                       ³
+ ³ HackStop 1.19 b198                 ³ ROSE                                       ³
+ ³ HackStop 1.19 b204                 ³ ROSE                                       ³
+ ³ HackStop 1.19 b206                 ³ ROSE                                       ³
+ ³ HackStop 1.19 b217                 ³ ROSE                                       ³
+ ³ HackStop > 1.10                    ³ ROSE                                       ³
+ ³ HelpCOM 1.2                        ³ Geoff Friesen                              ³
+ ³ HelpEXE 1.2                        ³ Geoff Friesen                              ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ IBM CRP                            ³ ??? / Dark Stalker                         ³
+ ³ Ice 1.00                           ³ Keith P. Graham                            ³
+ ³ iLUCRYPT 4.014 - 4.015             ³ Christian Schwarz                          ³
+ ³ iLUCRYPT 4.019                     ³ Christian Schwarz                          ³
+ ³ Immun 1.2                          ³ Jens Bleuel                                ³
+ ³ Immun 1.2 registered               ³ Jens Bleuel                                ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Jam 2.11                           ³ Eugen Vasilchenko                          ³
+ ³ Jam 2.21                           ³ Eugen Vasilchenko                          ³
+ ³ JMCryptExe 0.7 i/j                 ³ JauMing Tseng                              ³
+ ³ jmt-cp 0.5a/fds-cp 0.4a            ³ JauMing Tseng / fds0ft                     ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Kartz 0.3                          ³ Tai Pan                                    ³
+ ³ Khrome Crypt 0.3                   ³ Teraphy                                    ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Lamer Stop 1.0á                    ³ ???                                        ³
+ ³ LC 3.00                            ³ ???                                        ³
+ ³ LGLZ 1.03b - 1.04d                 ³ George Lyapko                              ³
+ ³ LockProg 0.5a                      ³ Myrlochar                                  ³
+ ³ LZExe 0.90                         ³ Fabrice Bellard                            ³
+ ³ LZExe 0.91 / 1.00                  ³ Fabrice Bellard                            ³
+ ³ LZExe 0.91á                        ³ Fabrice Bellard                            ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Mask 2.3                           ³ José M. L. Lopes                           ³
+ ³ Mask 2.5                           ³ José M. L. Lopes                           ³
+ ³ MCLOCK 1.33                        ³ ??? / Dark Stalker                         ³
+ ³ MegaLite 1.20                      ³ ThE KiLLeR                                 ³
+ ³ Mess /E                            ³ Stonehead                                  ³
+ ³ Mess 1.07                          ³ Stonehead                                  ³
+ ³ Mess 1.14                          ³ Stonehead                                  ³
+ ³ Mess 1.15                          ³ Stonehead                                  ³
+ ³ Mess 1.17                          ³ Stonehead                                  ³
+ ³ Mess 1.20                          ³ Stonehead                                  ³
+ ³ Microsoft C (1988)                 ³ Microsoft                                  ³
+ ³ Microsoft C++ (1990/92)            ³ Microsoft                                  ³
+ ³ MINI                               ³ Albert Sen                                 ³
+ ³ MSCC 1.0ás                         ³ Mad Scientist                              ³
+ ³ Mr.HDKiLLeR Prot. 1.1a             ³ mR.HDKiLLeR & eMX                          ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ NetRun 3.10                        ³ Jim Tucker                                 ³
+ ³ NetSafe ZIP-Prot                   ³ NetSafe                                    ³
+ ³ NetSend 1.00                       ³ Jim Tucker                                 ³
+ ³ NoClip 4.1                         ³ ???                                        ³
+ ³ N0Ps Shit Protector 0.002          ³ Cyber Cop                                  ³
+ ³ NTShell 4.0                        ³ ???                                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ OptLink Pass 1                     ³ SLR                                        ³
+ ³ OptLink Pass 2                     ³ SLR                                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Pack 1.0                           ³ TurboPower Software                        ³
+ ³ Pack 2.01                          ³ NoddegamrA                                 ³
+ ³ PackWin 1.0á - 2.02                ³ Yellow Rose Workgroup                      ³
+ ³ PassCOM 2.0                        ³ Black Wolf Enterprises                     ³
+ ³ PassEXE 2.0                        ³ Black Wolf Enterprises                     ³
+ ³ PCC 1.2                            ³ Mark DeSmet                                ³
+ ³ PCrypt 3.50                        ³ MERLiN                                     ³
+ ³ PGMPAK 0.13                        ³ Todor Todorov                              ³
+ ³ PGMPAK 0.14/0.15                   ³ Todor Todorov                              ³
+ ³ Pirate Stop 1.05                   ³ Trills and Technologies 1998               ³
+ ³ PK Smart 1.0b                      ³ Puchkov Sergey and Alex                    ³
+ ³ PK Tiny 1.62                       ³ Thomas Moenkemeier                         ³
+ ³ PKLite 1.00                        ³ PKWARE                                     ³
+ ³ PKLite 1.03                        ³ PKWARE                                     ³
+ ³ PKLite 1.05                        ³ PKWARE                                     ³
+ ³ PKLite 1.12 / 1.20                 ³ PKWARE                                     ³
+ ³ PKLite 1.13                        ³ PKWARE                                     ³
+ ³ PKLite 1.14                        ³ PKWARE                                     ³
+ ³ PKLite 1.15                        ³ PKWARE                                     ³
+ ³ PKLite 1.50                        ³ PKWARE                                     ³
+ ³ PKLite 2.00á                       ³ PKWARE                                     ³
+ ³ PKLite 2.00á -e                    ³ PKWARE                                     ³
+ ³ PKLite 2.01                        ³ PKWARE                                     ³
+ ³ PKLite x.x                         ³ PKWARE                                     ³
+ ³ PMODE/W 1.20                       ³ Daredevil & Trans                          ³
+ ³ PMODE/W 1.21                       ³ Daredevil & Trans                          ³
+ ³ PMODE/W 1.33                       ³ Daredevil & Trans                          ³
+ ³ PowerBasic 2.10                    ³ ???                                        ³
+ ³ PPS                                ³ ROSE                                       ³
+ ³ ProtEXE 2.11                       ³ Tom Torfs                                  ³
+ ³ ProtEXE 3.0                        ³ Tom Torfs                                  ³
+ ³ ProPack 2.08 -m1                   ³ Rob Northen Computing                      ³
+ ³ ProPack 2.08 -m2                   ³ Rob Northen Computing                      ³
+ ³ ProPack 2.14 -m1                   ³ Rob Northen Computing                      ³
+ ³ ProPack 2.14 -m2                   ³ Rob Northen Computing                      ³
+ ³ Protect! 3.0                       ³ Jeremy Lilley                              ³
+ ³ Protect! 3.1                       ³ Jeremy Lilley                              ³
+ ³ Protect! 4.0                       ³ Jeremy Lilley                              ³
+ ³ Protect! 6.0                       ³ Jeremy Lilley                              ³
+ ³ PW 1.0                             ³ Udo Kemle & Klaus Oberpichler              ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Quick Basic                        ³ Microsoft                                  ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ R-Crypt 0.91                       ³ ROSE                                       ³
+ ³ RCC II/286 1.13h                   ³ ROSE                                       ³
+ ³ RCC II/286 1.13m                   ³ ROSE                                       ³
+ ³ RCC II/286 1.14h                   ³ ROSE                                       ³
+ ³ RCC II/286 1.14m                   ³ ROSE                                       ³
+ ³ RCC II/286 1.15h                   ³ ROSE                                       ³
+ ³ RCC II/286 1.15m                   ³ ROSE                                       ³
+ ³ RCC II/286 1.16h                   ³ ROSE                                       ³
+ ³ RCC II/286 1.16m                   ³ ROSE                                       ³
+ ³ RC 386 0.51                        ³ ROSE                                       ³
+ ³ REC 0.14                           ³ ROSE                                       ³
+ ³ REC 0.27                           ³ ROSE                                       ³
+ ³ REC 0.28                           ³ ROSE                                       ³
+ ³ REC 0.32                           ³ ROSE                                       ³
+ ³ REC 0.33a                          ³ ROSE                                       ³
+ ³ REC 0.38                           ³ ROSE                                       ³
+ ³ REC Small 1.01                     ³ ROSE                                       ³
+ ³ REC Small 1.02                     ³ ROSE                                       ³
+ ³ REC Small 1.02a                    ³ ROSE                                       ³
+ ³ REC Small 1.03                     ³ ROSE                                       ³
+ ³ REC Small 1.05                     ³ ROSE                                       ³
+ ³ RELOC 1.00                         ³ ???                                        ³
+ ³ RERP 0.02                          ³ ROSE                                       ³
+ ³ RJ Crush 1.10                      ³ Ronald J. Skinner                          ³
+ ³ RoseTiny 0.95                      ³ ROSE                                       ³
+ ³ RoseTiny 1.02                      ³ ROSE                                       ³
+ ³ RUE 1.32                           ³ ROSE                                       ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ SEA AXE 2.00                       ³ System Enhancement Associates              ³
+ ³ Scram 0.7c1 - 0.8a1                ³ bushwoelie & ACP                           ³
+ ³ SCRAMB 1.20                        ³ B.U.G.                                     ³
+ ³ SCRAMBLE 0.2 beta3                 ³ Tiny Spaceman Software                     ³
+ ³ Scrunch 1.02                       ³ Graeme W. McRae                            ³
+ ³ SCRb2e                             ³ Graeme W. McRae                            ³
+ ³ Scrypt 1.2                         ³ SMT                                        ³
+ ³ Secure 2.1b                        ³ ???                                        ³
+ ³ SelfEnc 1.0                        ³ Daniel Arndt                               ³
+ ³ SENs debug protection              ³ SEN Kemerovo                               ³
+ ³ Shadow 1.0 beta                    ³ Tailgunner                                 ³
+ ³ Shield 1.70                        ³ V Communications                           ³
+ ³ Shrink 1.0                         ³ Thomas G. Hanlin III                       ³
+ ³ Shrink 2.0                         ³ Kevin Tseng                                ³
+ ³ SnoopStop 1.15                     ³ Trills and Technology                      ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ $pirit 1.5                         ³ Night $pirit                               ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Stone's Comrypt                    ³ Stone                                      ³
+ ³ SuckStop 1.08                      ³ kaot                                       ³
+ ³ SuckStop 1.10                      ³ kaot                                       ³
+ ³ SuckStop 1.11                      ³ kaot                                       ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ TinyProg 1.0                       ³ Tranzoa                                    ³
+ ³ TinyProg 3.3 - 3.9                 ³ Tranzoa                                    ³
+ ³ TinyProt 1.0e                      ³ Igor Hakszer                               ³
+ ³ TinyXor 0.1                        ³ dR.No                                      ³
+ ³ TLink                              ³ Borland                                    ³
+ ³ TPack 0.5á -m1                     ³ Tuscon                                     ³
+ ³ TPack 0.5á -m2                     ³ Tuscon                                     ³
+ ³ TPC's COM scrambler 1.0            ³ T.P.C.                                     ³
+ ³ Trap 1.13                          ³ Christoph Gabler                           ³
+ ³ Trap 1.14a                         ³ Christoph Gabler                           ³
+ ³ Trap 1.15                          ³ Christoph Gabler                           ³
+ ³ Trap 1.16á1                        ³ Christoph Gabler                           ³
+ ³ Trap 1.16á2                        ³ Christoph Gabler                           ³
+ ³ Trap 1.16 - 1.17                   ³ Christoph Gabler                           ³
+ ³ Trap 1.18                          ³ Christoph Gabler                           ³
+ ³ Trap 1.19                          ³ Christoph Gabler                           ³
+ ³ Trap 1.20                          ³ Christoph Gabler                           ³
+ ³ Trap 1.21                          ³ Christoph Gabler                           ³
+ ³ Turbo Assembler                    ³ Borland                                    ³
+ ³ Turbo Basic                        ³ Borland                                    ³
+ ³ Turbo C 1.0 (1987)                 ³ Borland                                    ³
+ ³ Turbo C 2.0 (1988)                 ³ Borland                                    ³
+ ³ Turbo C++ 3.0                      ³ Borland                                    ³
+ ³ Turbo Pascal 3                     ³ Borland                                    ³
+ ³ Turbo Pascal 4 (1)                 ³ Borland                                    ³
+ ³ Turbo Pascal 4 (2)                 ³ Borland                                    ³
+ ³ Turbo Pascal 5                     ³ Borland                                    ³
+ ³ Turbo Pascal 6                     ³ Borland                                    ³
+ ³ Turbo/Borland Pascal 7             ³ Borland                                    ³
+ ³ Turbo Prolog 1986                  ³ Borland                                    ³
+ ³ TurboChainer 1.03                  ³ TWT                                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ UC2X 2.4                           ³ Ad Infinitum Programs                      ³
+ ³ UComCry                            ³ UniquE                                     ³
+ ³ UNP x                              ³ Ben Castricum                              ³
+ ³ uN-uPC 1.10                        ³ cINOgEN                                    ³
+ ³ Un2pack 2                          ³ ğdatağ                                     ³
+ ³ UPX 0.20                           ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.30 [EXE]                     ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.30 - 0.40 [COM]              ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.40 - 0.51 [EXE]              ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.51 - 0.72 [COM]              ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.62 [EXE]                     ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.70 [EXE]                     ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.71 - 0.72 [EXE]              ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.81 - 0.84 [EXE]              ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.82 - 0.84 [COM]              ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.92 - 1.02 [COM]              ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.90 - 1.02 [EXE]              ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ USCC 1.3                           ³ Dark Destroyer                             ³
+ ³ Username 3.00                      ³ Jordi Mas                                  ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ V-Load 0.9á                        ³ ONYX                                       ³
+ ³ Vaccine 1.03 - 1.10                ³ Rustam M. Abdrakhimov                      ³
+ ³ Virus Self Destructor 2            ³ Wojciech Wysznacki                         ³
+ ³ VSS                                ³ ROSE                                       ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Watcom C (1994)                    ³ Watcom Inc.                                ³
+ ³ Watcom C (1995)                    ³ Watcom Inc.                                ³
+ ³ WordPerfect EXEPack                ³ WordPerfect Inc.                           ³
+ ³ WWPack 3.00 - 3.05                 ³ Rafal Wierzbicki & Piotr Warezak           ³
+ ³ WWPack Mutator 1.1c                ³ Stefan Esser                               ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ X3                                 ³ Dark Stalker                               ³
+ ³ XcomOR 0.99a                       ³ madmax!                                    ³
+ ³ XcomOR 0.99f/g                     ³ madmax!                                    ³
+ ³ XcomOR 0.99h                       ³ madmax!                                    ³
+ ³ XcomOR 0.99i                       ³ madmax!                                    ³
+ ³ XLOADER 2.00                       ³ CyberMan and ST!LLS0N                      ³
+ ³ XorCopy 1.0                        ³ Deimos                                     ³
+ ³ XoReR 1.0                          ³ dR.No                                      ³
+ ³ XoReR 2.0                          ³ dR.No                                      ³
+ ³ XoReR 2.1                          ³ dR.No                                      ³
+ ³ XPack 1.0j                         ³ JauMing Tseng                              ³
+ ³ XPack 1.0m - 1.20                  ³ JauMing Tseng                              ³
+ ³ XPack 1.29 - 1.30                  ³ JauMing Tseng                              ³
+ ³ XPack 1.31 - 1.66                  ³ JauMing Tseng                              ³
+ ³ XPack 1.31                         ³ JauMing Tseng                              ³
+ ³ XPack 1.33                         ³ JauMing Tseng                              ³
+ ³ XPack 1.34                         ³ JauMing Tseng                              ³
+ ³ XPack 1.36                         ³ JauMing Tseng                              ³
+ ³ XPack 1.39                         ³ JauMing Tseng                              ³
+ ³ XPack 1.40                         ³ JauMing Tseng                              ³
+ ³ XPack 1.44                         ³ JauMing Tseng                              ³
+ ³ XPack 1.45                         ³ JauMing Tseng                              ³
+ ³ XPack 1.52 - 1.60                  ³ JauMing Tseng                              ³
+ ³ XPack 1.64                         ³ JauMing Tseng                              ³
+ ³ XPack 1.52 - 1.64                  ³ JauMing Tseng                              ³
+ ³ XPack 1.65b2                       ³ JauMing Tseng                              ³
+ ³ XPack 1.65b3/b4                    ³ JauMing Tseng                              ³
+ ³ XPack 1.66                         ³ JauMing Tseng                              ³
+ ³ XPack 1.67                         ³ JauMing Tseng                              ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ YifPress 1.0                       ³ Yiftah Niv                                 ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Zortech 2.00 library (1)           ³ Zortech                                    ³
+ ³ Zortech 2.00 library (2)           ³ Zortech                                    ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ unknown by GyikSoft 1              ³ GyikSoft                                   ³
+ ³ unknown by GyikSoft 2              ³ GyikSoft                                   ³
+ ³ unknown by JVP                     ³ JVP                                        ³
+ ³ unknown by Mr.Wicked               ³ Mr. Wicked                                 ³
+ ³ unknown by Synopsis                ³ Synopsis                                   ³
+ ³ unknown by RAO                     ³ RAO                                        ³
+ ³ unknown virus 1 !!!                ³ ???                                        ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ SYS DOS device drivers                                                          ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ device driver                      ³ ???                                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ SysPack 0.1                        ³ ???                                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ UPX 0.20 - 0.40                    ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.51 - 0.72                    ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.81 - 1.02                    ³ Markus Oberhumer & Laszlo Molnar           ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ PE Portable executables                                                         ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Alloy 1.04.14.2000                 ³ Prakash Gautam                             ³
+ ³ AppLok 95 2.0                      ³ Prakash Gautam                             ³
+ ³ Armadillo 1.80                     ³ Chad Nelson                                ³
+ ³ ASPack 1.01b                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.02b                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.04b                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.05b                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.061b                      ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.061b [DLL]                ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.07b                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.07b [DLL]                 ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.08                        ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.081                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.082                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.083                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.084                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 2.000                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 2.001                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 2.100                       ³ Alexey Solodovnikov                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ BJFNT 1.1                          ³ Marquis de Soire                           ³
+ ³ BJFNT 1.2                          ³ Marquis de Soire                           ³
+ ³ BJFNT 1.3                          ³ Marquis de Soire                           ³
+ ³ Borland C++ Win32 (1994)           ³ Borland                                    ³
+ ³ Borland C++ Win32 (1995)           ³ Borland                                    ³
+ ³ Borland Delphi 3                   ³ Borland                                    ³
+ ³ Borland Delphi 4                   ³ Borland                                    ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Cexe 1.0a                          ³ Tinyware Inc.                              ³
+ ³ CodeCrypt 0.14b                    ³ defiler                                    ³
+ ³ CodeCrypt 0.15b                    ³ defiler                                    ³
+ ³ CodeCrypt 0.16b - 0.161b           ³ defiler                                    ³
+ ³ CodeCrypt 0.163b                   ³ defiler                                    ³
+ ³ CodeCrypt 0.164b                   ³ defiler                                    ³
+ ³ CodeSafe 2.0                       ³ Zhang Dehua                                ³
+ ³ CodeSafe 3.0                       ³ Zhang Dehua                                ³
+ ³ CrypKey Instant Stealth 5.0.161    ³ Kenonic Control Ltd.                       ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Ding Boys PE-lock 0.07             ³ Ding Boy                                   ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ EXE Protector 1.37a                ³ Eyhab Hillail                              ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Harlequin Dylan 1.2                ³ Harlequin Group                            ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Lcc-win 32 1.3                     ³ Jacob Navia                                ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ NeoLite 1.0 - 1.01                 ³ Neoworx                                    ³
+ ³ NeoLite 1.04                       ³ Neoworx                                    ³
+ ³ NeoLite 2.00                       ³ Neoworx                                    ³
+ ³ NFO 1.0                            ³ bart                                       ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ PCPEC [alpha]                      ³ The+Q, Plushmm & MrNop                     ³
+ ³ PE password encryptor              ³ SMT                                        ³
+ ³ PEBundle 0.03                      ³ Jeremy Collake                             ³
+ ³ PEBundle 0.05                      ³ Jeremy Collake                             ³
+ ³ PEBundle 0.05wtd                   ³ Jeremy Collake                             ³
+ ³ PEBundle 0.06                      ³ Jeremy Collake                             ³
+ ³ PEBundle 0.12wtd                   ³ Jeremy Collake                             ³
+ ³ PEBundle 0.14wtd                   ³ Jeremy Collake                             ³
+ ³ PEBundle 0.15wtd                   ³ Jeremy Collake                             ³
+ ³ PECompact 0.92                     ³ Jeremy Collake                             ³
+ ³ PECompact 0.977                    ³ Jeremy Collake                             ³
+ ³ PECompact 0.978                    ³ Jeremy Collake                             ³
+ ³ PECompact 0.978.1                  ³ Jeremy Collake                             ³
+ ³ PECompact 0.978.4                  ³ Jeremy Collake                             ³
+ ³ PECompact 0.98                     ³ Jeremy Collake                             ³
+ ³ PECompact 0.99                     ³ Jeremy Collake                             ³
+ ³ PECompact 1.00                     ³ Jeremy Collake                             ³
+ ³ PECompact 1.10b1                   ³ Jeremy Collake                             ³
+ ³ PECompact 1.10b2                   ³ Jeremy Collake                             ³
+ ³ PECompact 1.10b3                   ³ Jeremy Collake                             ³
+ ³ PECompact 1.10b4                   ³ Jeremy Collake                             ³
+ ³ PECompact 1.10b5                   ³ Jeremy Collake                             ³
+ ³ PECompact 1.10b6                   ³ Jeremy Collake                             ³
+ ³ PECompact 1.10b7                   ³ Jeremy Collake                             ³
+ ³ PECompact 1.10b8                   ³ Jeremy Collake                             ³
+ ³ PECompact 1.20 - 1.20.1            ³ Jeremy Collake                             ³
+ ³ PECompact 1.22                     ³ Jeremy Collake                             ³
+ ³ PECompact 1.23b3 - 1.24.1          ³ Jeremy Collake                             ³
+ ³ PECompact 1.24.2 - 1.24.3          ³ Jeremy Collake                             ³
+ ³ PECompact 1.25                     ³ Jeremy Collake                             ³
+ ³ PECompact 1.26b1 - 1.26b2          ³ Jeremy Collake                             ³
+ ³ PECompact 1.33                     ³ Jeremy Collake                             ³
+ ³ PECompact 1.34 - 1.40b1            ³ Jeremy Collake                             ³
+ ³ PECompact 1.40b2 - 1.40b4          ³ Jeremy Collake                             ³
+ ³ PECompact 1.40b5 - 1.40b6          ³ Jeremy Collake                             ³
+ ³ PECompact 1.40 - 1.41              ³ Jeremy Collake                             ³
+ ³ Petite 1.2                         ³ Ian Luck                                   ³
+ ³ Petite 1.3                         ³ Ian Luck                                   ³
+ ³ Petite 1.4                         ³ Ian Luck                                   ³
+ ³ Petite 2.0                         ³ Ian Luck                                   ³
+ ³ Petite 2.1                         ³ Ian Luck                                   ³
+ ³ Petite 2.2 [PE DLL]                ³ Ian Luck                                   ³
+ ³ Petite 2.2 [PE EXE]                ³ Ian Luck                                   ³
+ ³ PELOCKnt 2.01                      ³ Marquis                                    ³
+ ³ PELOCKnt 2.02á                     ³ Marquis                                    ³
+ ³ PELOCKnt 2.03                      ³ Marquis                                    ³
+ ³ PELOCKnt 2.04                      ³ Marquis                                    ³
+ ³ PeX 0.99                           ³ bart^CrackPl                               ³
+ ³ PE-Crypt32 1.0                     ³ random and acpizer                         ³
+ ³ PE-Crypt32 1.1                     ³ random and acpizer                         ³
+ ³ PE-Crypt32 1.2                     ³ random and acpizer                         ³
+ ³ PE-Prot 0.9                        ³ Christoph Gabler                           ³
+ ³ PKLite32 1.1                       ³ PKWARE                                     ³
+ ³ Private EXE 2.0a                   ³ Midstream                                  ³
+ ³ Private EXE 2.2                    ³ Midstream                                  ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ SecuPack 1.5                       ³ SC - Soft                                  ³
+ ³ Shrinker 3.2                       ³ A.S.M. Inc                                 ³
+ ³ Shrinker 3.4                       ³ A.S.M. Inc                                 ³
+ ³ SPEC beta 3                        ³ hayras                                     ³
+ ³ Stone's PE Crypter 1.0             ³ Stone                                      ³
+ ³ Stone's PE Crypter 1.13            ³ Stone                                      ³
+ ³ Symantec Visual Cafe 3.0           ³ Symantec                                   ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ tELock 0.41c                       ³ tHE EGOiSTE                                ³
+ ³ tELock 0.42                        ³ tHE EGOiSTE                                ³
+ ³ tELock 0.51                        ³ tHE EGOiSTE                                ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ UnHack32 1.1                       ³ Black Panther                              ³
+ ³ UnHack32 1.2                       ³ Black Panther                              ³
+ ³ UPX 0.51 [PE]                      ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.62 [PE]                      ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.62 [PE DLL]                  ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.70 [PE]                      ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.70 [PE DLL]                  ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.71 - 0.72 [PE]               ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.71 - 0.72 [PE DLL]           ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.81 - 0.84 [PE]               ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.81 - 0.84 [PE DLL]           ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.89.6 - 1.02 [PE]             ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.89.6 [PE DLL]                ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.92 - 0.94 [PE DLL]           ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.99/1.00 - 1.02 [PE DLL]      ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.99.1 - 0.99.3[PE DLL]        ³ Markus Oberhumer & Laszlo Molnar           ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ VGCrypt 0.75                       ³ Virogen                                    ³
+ ³ Virtual Pascal 2.1                 ³ vpascal.com                                ³
+ ³ Visual C 2.0                       ³ Microsoft                                  ³
+ ³ Visual C++ 3.1                     ³ Microsoft                                  ³
+ ³ Visual C++ 4.2 (DLL)               ³ Microsoft                                  ³
+ ³ Visual C++ 4.2 (EXE - 1)           ³ Microsoft                                  ³
+ ³ Visual C++ 4.2 (EXE - 2)           ³ Microsoft                                  ³
+ ³ Visual C++ 4.2 (EXE - 3)           ³ Microsoft                                  ³
+ ³ Visual C++ 4.2 (EXE - 4)           ³ Microsoft                                  ³
+ ³ Visual C++ 5.0                     ³ Microsoft                                  ³
+ ³ Visual C++ 5.0 (debug)             ³ Microsoft                                  ³
+ ³ Visual C++ 5.0 (no debug)          ³ Microsoft                                  ³
+ ³ Visual C++ 5.0 SP3                 ³ Microsoft                                  ³
+ ³ Visual C++ 5.0 SP3 (debug)         ³ Microsoft                                  ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ WWPack32 1.0                       ³ Rafal Wierzbicki & Piotr Warezak           ³
+ ³ WWPack32 1.09                      ³ Rafal Wierzbicki & Piotr Warezak           ³
+ ³ WWPack32 1.10 - 1.11               ³ Rafal Wierzbicki & Piotr Warezak           ³
+ ³ WWPack32 1.12                      ³ Rafal Wierzbicki & Piotr Warezak           ³
+ ³ WinKript 1.00                      ³ MrCrimson                                  ³
+ ³ Winzip SFX                         ³ Nico Mak Computing                         ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ NE New executables                                                              ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Borland C++ Win16 (1991)           ³ Borland                                    ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ PC Guard 1.50 for Win16            ³ Blagoje Ceklic                             ³
+ ³ PKLite 2.01                        ³ PKWARE                                     ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Shrinker 3.2                       ³ A.S.M. Inc                                 ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Winzip SFX                         ³ Nico Mak Computing                         ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ LE Linear executables                                                           ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ UPX 0.05 [LE]                      ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.20 - 0.40 [LE]               ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.50 - 0.61 [LE]               ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.62 [LE]                      ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.62 - 0.72 [LE]               ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.81 - 0.83 [LE]               ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.84 [LE]                      ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.89.6 [LE]                    ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.90 [LE]                      ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.92 - 0.94 [LE]               ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.99 - 1.01 [LE]               ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 1.02 [LE]                      ³ Markus Oberhumer & Laszlo Molnar           ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Watcom C++ 1994/1995               ³ Watcom Inc.                                ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+

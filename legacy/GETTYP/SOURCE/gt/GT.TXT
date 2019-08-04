@@ -1,0 +1,1690 @@
+
+
+         ÜÛÛÛÛÛÛ  ÛÛÛÛÛÛÛ  ÛÛÛÛÛÛÛÛ  ÛÛÛÛÛÛÛÛ   ÛÛ    ÛÛ  ÛÛÛÛÛÛÜ
+         ÛÛß      ÛÛ          ÛÛ        ÛÛ      ßÛÜ  ÜÛß  ÛÛ    ÛÛ
+         ÛÛ       ÛÛ          ÛÛ        ÛÛ       ÛÛ  ÛÛ   ÛÛ    ÛÛ
+         ÛÛ  ÛÛÜ  ÛÛÛÛÛ       ÛÛ        ÛÛ        ÛÛÛÛ    ÛÛÛÛÛÛß
+         ÛÛ    Û  ÛÛ          ÛÛ        ÛÛ         ÛÛ     ÛÛ
+         ÛÛ    Û  ÛÛ          ÛÛ        ÛÛ        ÛÛ      ÛÛ
+         ßÛÛÛÛÛß  ÛÛÛÛÛÛÛ     ÛÛ        ÛÛ       ÛÛ       ÛÛ
+
+
+Current version: 2.60 / 13.12.2000 / 68.762 Bytes
+                 UPX 1.01
+
+ÉÍÄÄÄÄÄÄÄÍ»
+º Content ÈÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍÍÍ»
+º ÀÄÂÄ 1 Introduction                  º
+ÈÍ» ³  ÃÄ 1.1 Synopsis                 ³
+  º ³  ÃÄ 1.2 Synopsis examples        ³
+  ³ ³  ÃÄ 1.3 System requirements      ³
+  ³ ³  ÀÄ 1.4 Package information      ³
+  ³ ÃÄ 2 Commandline options           ³
+  ³ ÃÄ 3 The configuration file GT.CFG ³
+  ³ ÃÄ 4 Output format description     ³
+  ³ ÃÄ 5 Detected file formats         ³
+  ³ ³  ÃÄ 5.1 Archives                 ³
+  ³ ³  ÃÄ 5.2 Images                   ³
+  ³ ³  ÃÄ 5.3 Executables              ³
+  ³ ³  ÀÄ 5.4 The rest                 ³
+  ³ ÃÄ 6 Future plans                  ³
+  ³ ÃÄ 7 Known bugs                    ³
+  ³ ÃÄ 8 Error handling                ³
+  ³ ÃÄ 9 ThanX go to                   ³
+  º ÀÄ 10 Contact the author           º
+  ÈÍÍÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍÍÍ¼
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ 1 Introcduction ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+GetTyp is a file format detection program for DOS. It detects several formats
+without looking at the filename. It searches the code for special strings and
+byte code to identify the fileformat.
+
+The author disclaims all warranties as to this software, whether expressed or
+implied, including without limitation any implied warranties of
+merchantability or fitness for a particular purpose. See the accompanying
+documentation for further disclaimers and information.
+
+ÉÍÍÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍÍÍ»
+º                  GetTyp is FREEWARE!                          º
+º That means you can do whatever you want with the ENTIRE       º
+º package. You can copy as the ENTIRE package as often as you   º
+º want on how many computers you want for as long as you want   º
+º                                                               º
+º                                                               º
+³                    o k a y ? ? ? ?                            ³
+ÈÍÍÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍÍÍ¼
+
+There is also a mailing list running at eGroups.
+
+Check out the WebSite
+  http://www.egroups.com/list/gettyp
+
+or subscribe by sending an eMail to
+  gettyp-subscribe@egroups.com
+
+I will send all released version (and some beta releases) to this group.
+
+  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+  ³ 1.1 Synopsis ³
+  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  Synopsis: GT [filemask1 [filemask2 [...]]] [options] [> filename]
+
+For some examples see [1.2 Synopsis examples].
+
+If no filemask is specified, "*.*" is used as default value. You can also
+pass a path and a drive.
+
+  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+  ³ 1.2 Synopsis examples: ³
+  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  GT
+    - scan all files in the current directory
+
+  GT *.PAS
+    - scan all .PAS files in the current directory
+
+  GT *.EXE *.COM /NX /NA
+    - scan all .EXE and .COM files in the current directory and do not
+      use XMS and do not list files in archives if any found
+
+  GT C:\WINDOWS\*.DLL
+    - scan all .DLL files on drive C: in the directory \WINDOWS
+
+  GT /s
+    - scan all files in the current directory and in all subdirectories
+
+  GT *.TXT /s
+    - scan all .TXT files in the current directory and in all subdirectories
+
+  GT *.TXT /FILEtexts.txt
+    - scan all .TXT files in the current directory and save the result to
+      the file "texts.txt"
+
+  GT *.EXE *.DLL *.SYS > GT.NFO
+    - scan all .EXE, .DLL and .SYS files in the current directory and write
+      the results to the file GT.NFO
+
+  GT a* b*
+    - is equivalent to:
+      GT a*.* b*.*
+      if you want to scan the files "a*" without extension, type:
+      GT a*.
+
+  ...
+
+  Note: GT *.EXE *.COM /F /NX  is equivalent to:
+        GT /nX /f *.cOM *.eXe
+        GT /F *.Com /Nx *.ExE
+        GT *.COM /f /nx *.exE  and so on ...
+
+  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+  ³ 1.3 System requirements ³
+  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+GetTyp needs at least a Intel 80286 or higher. It needs at least 250 KB of
+conventional memory. GetTyp uses XMS it finds but this is only necessary
+when handling recursive EXE overlays. If no XMS is available it uses
+conventional memory instead. GetTyp does not use EMS.
+
+  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+  ³ 1.4 Package information ³
+  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+This package should contain the following files:
+
+  GT.EXE       -  the main executable (this is the important one!)
+  GT.CFG       -  the configuration file (not needed, but useful)
+  GT.TXT       -  the documentation file
+  GT.HTM       -  the documentation in HTML
+  GT.HIS       -  internal history of GetTyp
+  GT_EXE.TXT   -  identifier comparison (GetTyp, ExeScan, ChkEXE)
+  GTSETUP.EXE  -  small setup program to setup your gt.cfg
+  FILE_ID.DIZ  -  small description file
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ 2 Commandline options ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ÚÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ /Cn     ³ Set the maximum length of the internal EXE compare buffer.     ³
+³         ³ The default value is 80 but some modifier have a (much) shorter³
+³         ³ startup code so this is only the maximum.                      ³
+³         ³ You can use this switch in the configuration file.             ³
+³         ³ Possible values are between 5 and 80, default is 80.           ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /F      ³ Displays only a result if the file was identified by GetTyp.   ³
+³         ³ If this switch is not used, GetTyp displays one message out of ³
+³         ³ the following list:                                            ³
+³         ³   Textfile                                                     ³
+³         ³   Textfile (UNIX format)                                       ³
+³         ³   Binary file                                                  ³
+³         ³ and additionally:                                              ³
+³         ³   File may be 7 bit only                                       ³
+³         ³ This is only a suggestion, because GetTyp analyzes only the    ³
+³         ³ first 4KB of each file.                                        ³
+³         ³ If you want if every time, you can include this switch in the  ³
+³         ³ configuration file GT.CFG.                                     ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /H, /?  ³ Displays a screen with the syntax and exits with errorcode 1.  ³
+³         ³ This switch is not allowed in the configuration file.          ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /I      ³ Displays some internal information.                            ³
+³         ³ This switch is not allowed in the configuration file.          ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /L      ³ Simple file listing.                                           ³
+³         ³ Prints only the filename, the size and the type of the file.   ³
+³         ³ This may be helpful if scanning whole drives.                  ³
+³         ³ If you want if every time, you can include this switch in the  ³
+³         ³ configuration file GT.CFG.                                     ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /Mn     ³ Stop after n identified files.                                 ³
+³         ³ n must be greater 0 or an error message will occur.            ³
+³         ³ If you want if every time, you can include this switch in the  ³
+³         ³ configuration file GT.CFG.                                     ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /NA     ³ Do NOT list the files in an archive (if possible):             ³
+³         ³ If an archive is found GetTyp will only note the type of the   ³
+³         ³ archive, but will not list its contents.                       ³
+³         ³ If you want if every time, you can include this switch in the  ³
+³         ³ configuration file GT.CFG.                                     ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /NC     ³ Do not use the configuration file.                             ³
+³         ³ The configuration file will be ignored...                      ³
+³         ³ This switch is not allowed in the configuration file ;-)       ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /ND     ³ Do not show directories as identified.                         ³
+³         ³ Otherwise GT will identify directories as files of the type    ³
+³         ³ [directory]. If you don't want this use this switch.           ³
+³         ³ If you want if every time, you can include this switch in the  ³
+³         ³ configuration file GT.CFG.                                     ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /NH     ³ Do not use heuristics in EXE/COM startup code detection.       ³
+³         ³ If you don't use this switch, GT may display EXE/COM modifier  ³
+³         ³ which end with (?) or (??). This means that GT is not sure and ³
+³         ³ found 1 or 2 different bytes. If you use this switch, GT only  ³
+³         ³ displays entries where it is sure.                             ³
+³         ³ If you want if every time, you can include this switch in the  ³
+³         ³ configuration file GT.CFG.                                     ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /NL     ³ Do not use long filenames.                                     ³
+³         ³ This switch will disable the usage of long filenames under     ³
+³         ³ Windows 95/98. Use this if any problems occur...               ³
+³         ³ This switch may be used in the configuration file.             ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /NS     ³ Normally GetTyp prints out a small summary about the files     ³
+³         ³ found, the files identified, the time it took and some info    ³
+³         ³ about the archives found.                                      ³
+³         ³ If you use this switch GetTyp will not display it.             ³
+³         ³ If you want if every time, you can include this switch in the  ³
+³         ³ configuration file GT.CFG.                                     ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /NX     ³ Do not use extended memory (XMS).                              ³
+³         ³ Normally GetTyp uses some XMS if it handles EXE overlays or    ³
+³         ³ EXE2COM converted COM files. If /NX is used, GetTyp tries to   ³
+³         ³ allocate conventional memory but this may cause a heap over-   ³
+³         ³ flow one difficult files like ARJ.EXE.                         ³
+³         ³ If you want if every time, you can include this switch in the  ³
+³         ³ configuration file GT.CFG.                                     ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /OUTfoo ³ Save the output to the file "foo".                             ³
+³         ³ Normally GetTyp prints the results to the screen but if you    ³
+³         ³ use this switch, you can redirect all the output to a file.    ³
+³         ³ This is especially helpful when calling GetTyp from an external³
+³         ³ tool which cannot redirect the out via ">".                    ³
+³         ³ This switch is not allowed in the configuration file.          ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /OVER   ³ Overwrite the file specified with /OUT.                        ³
+³         ³ Normally GetTyp would not print the results to a file if this  ³
+³         ³ file already exists. With this switch you force GetTyp to      ³
+³         ³ write the results to the file "foo" even if it exists.         ³
+³         ³ If you want if every time, you can include this switch in the  ³
+³         ³ configuration file GT.CFG.                                     ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /P      ³ Pause after every 24 lines of output and displays a message    ³
+³         ³ called "Press any key to continue, P to disable pause".        ³
+³         ³ If you press "p" then GetTyp won't prompt you for a key until  ³
+³         ³ it finishes.                                                   ³
+³         ³ You may also use MORE.COM (because GetTyp writes to STDOUT)    ³
+³         ³ but this may take a long time because MORE waits until all     ³
+³         ³ output has finished.                                           ³
+³         ³ If you want if every time, you can include this switch in the  ³
+³         ³ configuration file GT.CFG.                                     ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /S      ³ Search subdirectories.                                         ³
+³         ³ If you use this switch, GetTyp will scan all subdirectories of ³
+³         ³ the current directory - otherwise it does not ;-)              ³
+³         ³ This may be very helpful if you want to scan a whole drive.    ³
+³         ³ If you want if every time, you can include this switch in the  ³
+³         ³ configuration file GT.CFG.                                     ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /ZA     ³ Enable search for ARI archives                                 ³
+³         ³ Normally GetTyp wont search for ARI archives because there is y ³
+³         ³ no appropriate method to detect it :( Since there were so many ³
+³         ³ misdetections I made a special switch.                         ³
+³         ³ If you want if every time, you can include this switch in the  ³
+³         ³ configuration file GT.CFG.                                     ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ Only available for registered users:                                     ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /XO     ³ Extended object file listing.                                  ³
+³         ³ GetTyp can list lots of information about an object files but  ³
+³         ³ this may not be interesting for most of the people and because ³
+³         ³ it's really a lot of crap I decided to make an extra switch    ³
+³         ³ for it.                                                        ³
+³         ³ If you want if every time, you can include this switch in the  ³
+³         ³ configuration file GT.CFG.                                     ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /ZE     ³ Show extended EXE header anyway.                               ³
+³         ³ GetTyp normally displays only the identified compiler (if any) ³
+³         ³ on PE/NE executables. If you use this switch GT will also dis- ³
+³         ³ play the further information - only for professionals!         ³
+³         ³ If you want if every time, you can include this switch in the  ³
+³         ³ configuration file GT.CFG.                                     ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /ZH     ³ Supress output of header.                                      ³
+³         ³ GetTyp wont display the first three lines.                     ³
+³         ³ If you want if every time, you can include this switch in the  ³
+³         ³ configuration file GT.CFG.                                     ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /ZN     ³ Show only not identified files.                                ³
+³         ³ GetTyp will only show the files that can't be identified.      ³
+³         ³ This is mainly an internal switch.                             ³
+³         ³ If you want if every time, you can include this switch in the  ³
+³         ³ configuration file GT.CFG.                                     ³
+ÃÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ /ZS     ³ Show only final statistics.                                    ³
+³         ³ GetTyp will only display the final statistics and no further   ³
+³         ³ output. Mainly used internaly for information.                 ³
+³         ³ This switch may be used in the configuration file.             ³
+ÀÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ 3 The configuration file GT.CFG ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+What's the configuration file:
+  The configuration file allows you to customize your version a little bit.
+  You can set standard switches. Nearly all switches are allowed, except
+  /?, /H, /I and /NC.
+  Standard files to scan are not allowed.
+  For a list of all switches see [Introduction].
+
+Comments:
+  Empty lines and lines starting with a semicolon (;) are interpreted
+  as comments; spaces and tabs are ignored.
+
+Errors:
+  If something is wrong in the configuration file, GetTyp will halt,
+  an tell you what's wrong and in which line the error was detected.
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ 4 Output format description ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ - [TEST\CHECK.PAS] -----
+ - Pascal source: program "Check"
+ -
+
+"CHECK.PAS"   -  the filename of the researched file
+"Pascal ..."  -  the type of the detected file (here: Pascal source code)
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ 5 Detected file formats ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ÚÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³  92/74 ³ archive formats ³
+³  15    ³ image formats   ³
+³ 248    ³ EXE modifier    ³
+³ 165    ³ COM modifier    ³
+³  29    ³ compiler        ³
+³  99    ³ PE modifier     ³
+³  18    ³ PE compiler     ³
+ÀÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+  ³ 5.1 Archives ³
+  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+                  Ú Detect this type of archive
+                  ³  Ú List the files in the archive (incl. size and %)
+                  ³  ³  Ú List date and time of the archived files
+                  ³  ³  ³  Ú Identify password encrypted files
+                  ³  ³  ³  ³  Ú Identify file comments
+                  ³  ³  ³  ³  ³  Ú Identify SFX archives
+                  ³  ³  ³  ³  ³  ³  Ú List SFX archives
+                  ³  ³  ³  ³  ³  ³  ³
+ ³ Archive        ³  ³  ³  ³  ³  ³  ³   Copyright
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÄÁÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ 777 0.04b1   ³ +  +  -  +  -  ?  ? ³ 1997-98 by Igor Pavlov              ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ ACE 1.1      ³ +  +  +  +  -  +  + ³ 1997 by Marcel Lemke                ³
+ ³ AIN 2.21     ³ +  -  -  -  -  ?  - ³ 1993-94 by Transas Marine (UK) Ltd. ³
+ ³ AKT 0.5C     ³ +  +  +  -  -  +  + ³ 1998-99 by TRTi/Agyhalal            ³
+ ³ AKT 0.5Db2   ³ +  +  +  -  -  +  + ³ 1998-99 by TRTi/Agyhalal            ³
+ ³ AMG 2.2      ³ +  +  +  +  +  ?  ? ³ 1993 by Milen Georgiev              ³
+ ³ AR 1.1       ³ +  +  +  -  -  +  + ³ by Haruhiko Okumura                 ³
+ ³ AR7 1.2      ³ +  -  -  -  -  ?  - ³ by Timothy R. Erickson              ³
+ ³ ARC > 6.00   ³ +  +  -  -  +  +  + ³ 1985-91 by System Enhancement Ass.  ³
+ ³ ARG 1.01á    ³ +  +  +  -  -  ?  ? ³ 1994 by Igor Pavlov                 ³
+ ³ ARHANGEL     ³ +  +  +  -  -  +  + ³ 1997-98 by George Lyapko            ³
+ ³ ARI > 2.15   ³ +  +  +  -  -  ?  ? ³ 1997 by A. Ratushnyak / RAO Inc.    ³
+ ³ ARJ > 2.41   ³ +  +  +  +  +  +  + ³ 1990-97 by ARJ Software Inc.        ³
+ ³ ARQ 3.2      ³ +  +  -  +  -  ?  ? ³ 1993-1997 by DC Micro Development   ³
+ ³ ARS 2.1      ³ +  -  -  -  -  +  - ³ by Oleg Stepanyuk                   ³
+ ³ ARX 1.0      ³ +  +  +  -  -  ?  ? ³ 1994 by Michael A. Kosior           ³
+ ³ ASD 0.13     ³ +  +  +  -  -  ?  ? ³ 1996 by Topologi Software           ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ BinHex       ³ +  -  -  -  -  ?  - ³ by Apple                            ³
+ ³ BIX 1.00b2   ³ +  +  -  -  -  ?  ? ³ 1998 by Igor Pavlov                 ³
+ ³ BLINK > 2.50 ³ +  +  +  -  -  ?  ? ³ 1998 by D.T.S.                      ³
+ ³ BOA 0.58     ³ +  +  -  -  -  ?  ? ³ 1997-98 by Ian Sutton               ³
+ ³ BS2 2.0      ³ +  +  -  -  -  ?  ? ³ 1992 by ???                         ³
+ ³ BSA 1.95     ³ +  +  +  -  -  +  + ³ 1992 by Serg Babitchew              ³
+ ³ BSArc 2.00   ³ +  +  +  -  -  +  + ³ 1992-1994 by PTS Ltd.               ³
+ ³ BZip 0.21    ³ +  -  -  -  -  ?  - ³   GNU public license                ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Cabinet      ³ +  +  +  -  -  ?  ? ³ by Microsoft                        ³
+ ³ CHARC 1.2    ³ +  +  -  -  -  ?  ? ³ 1990 by S. Tchernivetzky            ³
+ ³ CODEC 3.21   ³ +  +  -  -  -  ?  ? ³ by Telvox Teleinformatica           ³
+ ³ COMP16       ³ +  -  -  -  -  ?  - ³ by Joseph M. Orost                  ³
+ ³ Compress 5.0 ³ +  +  -  -  -  ?  ? ³ by Microsoft                        ³
+ ³ CrossePAC    ³ +  -  -  -  -  ?  - ³ by Digital Strategies               ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ DPA 1.1a     ³ +  +  -  -  -  ?  ? ³ by Dirk Paehl                       ³
+ ³ DWC 5.10     ³ +  +  -  -  -  +  + ³ 1990 by Dean W. Cooper              ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ ELI 5750     ³ +  +  +  -  -  ?  ? ³ 5750 by Jules Revsin                ³
+ ³ ESP 1.92     ³ +  -  -  -  -  +  - ³ 1997 by GyikSoft                    ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Finish 2.6   ³ +  +  -  -  -  ?  ? ³ 1992 by ImagiSOFT                   ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ GZip 1.2.4   ³ +  +  -  -  -  ?  ? ³   GNU public license                ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ HA 0.999á    ³ +  +  -  -  -  ?  ? ³ 1995 by Harri Hirvola               ³
+ ³ HAP 3.00     ³ +  +  +  -  -  ?  ? ³ 1992 by Hamarsoft                   ³
+ ³ HPA          ³ +  -  -  -  -  ?  - ³ 1997 by HPA                         ³
+ ³ Hyper 2.5    ³ +  +  +  -  -  +  + ³ 1990 by Peter Sawatzki              ³
+ ³ Hyper 2.6    ³ +  +  +  -  -  +  + ³ 1992 by Peter Sawatzki              ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ ICE 1.14     ³ +  +  +  -  -  +  + ³ 1988-89 by Yoshi                    ³
+ ³ IMP > 1.01   ³ +  +  +  -  -  ?  - ³ 1998-2000 Technelysium              ³
+ ³ ISC          ³ +  -  -  -  -  ?  ? ³ 1990-97 by Stirling Technologies    ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ JAR > 1.01   ³ +  -  -  -  -  ?  - ³ by Robert Jung                      ³
+ ³ JRC 1.10     ³ +  +  -  -  -  ?  ? ³ 1992-95 by JAYAR Systems            ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ LHA > 2.13   ³ +  +  +  -  -  +  + ³ 1988-92 by Haruyasu Yoshizaki       ³
+ ³ Limit 1.2    ³ +  +  -  -  -  ?  ? ³ 1994 by J. Y. Lim                   ³
+ ³ Links LS     ³ +  +  -  -  -  ?  ? ³ by Access Software                  ³
+ ³ LZA          ³ +  +  +  -  -  +  + ³ 1999 by The African Chief           ³
+ ³ LZOP         ³ +  +  -  -  -  ?  ? ³ 1996-98 by Markus F. X. J. Oberhumer³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ MAR 1.0      ³ +  +  -  -  -  ?  ? ³ by Micrognosis                      ³
+ ³ MSXIE 1.4    ³ +  +  -  -  -  ?  ? ³ 1995-97 by MercurySoft              ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ PACK         ³ +  +  -  -  -  ?  ? ³ by IBM                              ³
+ ³ PAK 2.51     ³ +  +  -  -  -  ?  ? ³ 1988-90 by NoGate Consulting        ³
+ ³ PAQ          ³ +  +  -  -  -  ?  ? ³ 1996-98 by Dmitry Dvoinikov         ³
+ ³ PAR          ³ +  -  -  -  -  ?  - ³ by Philipp Druyts                   ³
+ ³ PHP 1.0      ³ +  +  +  -  -  ?  ? ³ 1997-98 by PHaX                     ³
+ ³ PKZIP 2.04 g ³ +  +  +  +  +  +  + ³ 1989-93 by PKWARE Inc.              ³
+ ³ PPMZ 8.1     ³ +  -  -  -  -  ?  - ³ 1995 by Charles Bloom               ³
+ ³ ProPack 2.14 ³ +  +  -  -  -  ?  ? ³ 1991-92 by Rob Northen Computing    ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Q > 0.90     ³ +  +  +  -  -  ?  ? ³ 1993-95 by Cinematronics            ³
+ ³ QFC          ³ +  +  +  -  -  ?  ? ³ 1993-98 by George G. Lyapko         ³
+ ³ Quark 1.00b  ³ +  +  +  -  -  ?  ? ³ 1993 by Robert Kunz                 ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ RAR < 1.50   ³ +  +  +  +  +  +  + ³ 1993-97 by Eugene Roshal            ³
+ ³ RAR > 1.50   ³ +  +  +  +  +  +  + ³ 1993-97 by Eugene Roshal            ³
+ ³ RAX 1.02     ³ +  +  +  +  -  +  + ³ 1998 by GeCAD srl                   ³
+ ³ RKive 1.4    ³ +  -  -  -  -  ?  - ³ 1996 by Malcolm Taylor              ³
+ ³ RKive 1.92   ³ +  -  -  -  -  ?  - ³ 1996-97 by Malcolm Taylor           ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ SAR 1.0      ³ +  +  -  -  -  ?  ? ³ 1993 by Streamline Design           ³
+ ³ SBX > 1.2    ³ +  +  -  -  -  ?  ? ³ 1997 by SpinnerBaker Software       ³
+ ³ SKY 1.15     ³ +  +  +  -  -  +  + ³ 1995-97 by SkyTech                  ³
+ ³ SQWEZ 2.3    ³ +  +  +  -  -  +  + ³ 1995 by JM Software                 ³
+ ³ SQZ 1.08.3   ³ +  +  +  -  +  +  + ³ by Jonas I. Hammarberg              ³
+ ³ SWG          ³ +  +  -  -  -  ?  ? ³ by SoftWare Archival Group          ³
+ ³ Synetic      ³ +  +  -  -  -  ?  ? ³ by Synetic Software                 ³
+ ³ SZip > 1.05  ³ +  -  -  -  -  ?  - ³ 1997 by Michael Schindler           ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ TAR          ³ +  +  -  -  -  ?  ? ³   GNU public license                ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ UC II 3.05   ³ +  -  -  -  -  +  - ³ 1991-95 by Ad Infinitum Software    ³
+ ³ UFA 0.00     ³ +  +  -  +  -  ?  ? ³ 1996 by Igor Pavlov                 ³
+ ³ UFA 0.01/0.02³ +  +  -  +  -  ?  ? ³ 1996-97 by Igor Pavlov              ³
+ ³ UFA 0.03/0.04³ +  +  -  +  -  ?  ? ³ 1996-98 by Igor Pavlov              ³
+ ³ UHARC 0.2    ³ +  -  -  -  -  ?  - ³ 1997 by Uwe Herklotz                ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ XLink 2.02   ³ +  +  -  -  -  +  + ³ 1994, 95 by J. E. Hoffmann          ³
+ ³ xpa 1.0.2    ³ +  +  -  -  -  ?  ? ³ 1999 by jauming tseng               ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ YAC          ³ +  +  +  -  -  ?  ? ³ 1995 by Aleksandras Surna           ³
+ ³ YamazakiZippe³ +  -  -  -  -  +  - ³ 1997-98 by Binary Technologies      ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ ZET 0.10     ³ +  +  -  -  -  ?  ? ³ 1994 by Oleg V. Zaimkin             ³
+ ³ ZOO > 2.01   ³ +  +  -  -  -  ?  ? ³   GNU public license                ³
+ ³ ZPack 1.0    ³ +  +  +  -  -  ?  ? ³ 1992 by SpeedSOFT                   ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ "EX_"        ³ +  +  -  -  -  ?  ? ³ 1990-95 by Stirling Technologies    ³
+ ³ "LIB"        ³ +  +  -  -  -  ?  ? ³   used with installSHIELD           ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  ÚÄÄÄÄÄÄÄÄÄÄÄÄ¿
+  ³ 5.2 Images ³
+  ÀÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+                         Ú Get further image information
+                         ³  Ú Get image resolution
+                         ³  ³  Ú Get color depth
+                         ³  ³  ³
+ ³ Image type            ³  ³  ³    Copyright
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÁÄÄÁÄÄÁÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ BMF 0.3             ³ +  +  -  ³ by Dimitri Shkarin                     ³
+ ³ BMP (Win, OS/2)     ³ +  +  +  ³ ---                                    ³
+ ³ CDR (6/7/8)         ³ +  -  -  ³ by Corel Inc.                          ³
+ ³ DIB                 ³ +  +  +  ³ ---                                    ³
+ ³ RLE                 ³ +  +  +  ³ ---                                    ³
+ ³ GIF (+GIFLITE)      ³ +  +  +  ³ by Compuserve                          ³
+ ³ IFF ILBM            ³ +  +  +  ³ ???                                    ³
+ ³ JPG/JFIF            ³ +  +  +  ³ ???                                    ³
+ ³ PCD                 ³ -  -  -  ³ by Kodak                               ³
+ ³ PCX                 ³ +  +  +  ³ by ZSoft                               ³
+ ³ PNG                 ³ +  +  +  ³ ???                                    ³
+ ³ RAS                 ³ +  +  +  ³ by Sun                                 ³
+ ³ TIFF                ³ +  +  -  ³ by Aldus/Microsoft                     ³
+ ³ WMF                 ³ -  -  -  ³ by Microsoft                           ³
+ ³ WPG                 ³ -  -  -  ³ by WordPerfect                         ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ GetTyp detects the following 40 IFF subtypes:
+   Copyright notice and license
+   Annotation or comment
+   Document formatting information
+   Footer information of a document
+   Header information of a document
+   Page break indicator
+   Paragraph formatting information
+   Deluxe Print page definition
+   Tab positions
+   Text for a paragraph
+   File version
+   Formatted text
+   Pro-write word processing
+   Amiga Contiguous Bitmap (Microsoft Basic for the Amiga)
+   IFF Deep (24-bit color image)
+   2D object standard format (vector data)
+   Raster font
+   Vector font
+   InterLeaved Bitmap (interleaved planar bitmap data)
+   Portable bitmap
+   Macintosh picture
+   24-bit color image (Impulse)
+   12-bit color image (Impulse)
+   Turbo3d renderung data (3D objects)
+   YUV image data (V-Lab)
+   Animated bitmap
+   Cel animations
+   Super smooth animation (ProDAD)
+   Deluxe Video Construction Set video
+   8-bit sampled voice
+   Audio interchange file format
+   Sampled sound
+   Uhuru Sound Software Macintosh voice
+   General use musical score
+   Simple musical score
+   MIDI music data
+   Uhuru Sound Software musical score
+   Bitmap header
+   Color table
+   image data
+
+
+  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+  ³ 5.3 Executables ³
+  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ Modifier                             Copyright (c)                              ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ DOS Executable                                                                  ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ 624 1.0                            ³ Kim Holviala                               ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ ABKprot 1.00                       ³ fds0ft                                     ³
+ ³ Ady's Glue 1.10                    ³ Ady                                        ³
+ ³ AdFlt2                             ³ Elicz                                      ³
+ ³ AEP 1.00                           ³ Ke Jia-Hann                                ³
+ ³ AinEXE 2.1                         ³ Transas Marine                             ³
+ ³ AinEXE 2.22                        ³ Transas Marine                             ³
+ ³ AinEXE 2.23                        ³ Transas Marine                             ³
+ ³ Alec 1.6                           ³ rANDOM                                     ³
+ ³ Aluwain 8.03                       ³ Tequila                                    ³
+ ³ Aluwain 8.09                       ³ Tequila                                    ³
+ ³ AntiUPC 1.02                       ³ Hold                                       ³
+ ³ aPack 0.58                         ³ Jibz                                       ³
+ ³ aPack 0.58 - 0.74 (1)              ³ Jibz                                       ³
+ ³ aPack 0.58 - 0.74 (2)              ³ Jibz                                       ³
+ ³ aPack 0.61                         ³ Jibz                                       ³
+ ³ aPack 0.66                         ³ Jibz                                       ³
+ ³ aPack 0.69                         ³ Jibz                                       ³
+ ³ aPack 0.73 - 0.74                  ³ Jibz                                       ³
+ ³ aPack 0.73 - 0.74 -d               ³ Jibz                                       ³
+ ³ aPack 0.73 - 0.74 -m               ³ Jibz                                       ³
+ ³ aPack 0.82                         ³ Jibz                                       ³
+ ³ aPack 0.82 -d                      ³ Jibz                                       ³
+ ³ aPack 0.82 -m -p                   ³ Jibz                                       ³
+ ³ aPack 0.90 - 0.99 -m [EXE]         ³ Jibz                                       ³
+ ³ aPack 0.90 - 0.99 [EXE]            ³ Jibz                                       ³
+ ³ aPack 0.90 - 0.99 -d/-s [EXE]      ³ Jibz                                       ³
+ ³ aPack 0.90 - 0.99 -d/-s -m [EXE]   ³ Jibz                                       ³
+ ³ aPack 0.90 -m -p                   ³ Jibz                                       ³
+ ³ aPack 0.90 -m -x                   ³ Jibz                                       ³
+ ³ aPack 0.96 -i -m                   ³ Jibz                                       ³
+ ³ aPack 0.96 -m                      ³ Jibz                                       ³
+ ³ aPack 0.98 - 0.99 [COM]            ³ Jibz                                       ³
+ ³ aPack 0.98 - 0.99 -t [EXE]         ³ Jibz                                       ³
+ ³ aPack 0.98 - 0.99 -x [EXE]         ³ Jibz                                       ³
+ ³ aPack 0.98 -f -m [COM]             ³ Jibz                                       ³
+ ³ aPack 0.98 -i -m [COM]             ³ Jibz                                       ³
+ ³ aPack 0.99 -f -m [COM]             ³ Jibz                                       ³
+ ³ aPack 0.99 -i -m [COM]             ³ Jibz                                       ³
+ ³ ARJ SFX archive                    ³ Robert K. Jung                             ³
+ ³ AVPack 1.2x                        ³ Andrei Volkov                              ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Batch Compiler 1.0                 ³ Leviathan                                  ³
+ ³ BINLock 1.0                        ³ Hit-BBS                                    ³
+ ³ BITLOK 3.1                         ³ Yellow Rose Software Workgroup             ³
+ ³ Borland C++ 3.0                    ³ Borland                                    ³
+ ³ Borland C++ (TR.EXE)               ³ Borland                                    ³
+ ³ Borland PE loader                  ³ Borland                                    ³
+ ³ BUNNY 4.1 Installation             ³ Manfred Bunjes                             ³
+ ³ BUNNY 4.1 Manipulation             ³ Manfred Bunjes                             ³
+ ³ BUNNY 4.1 Password                 ³ Manfred Bunjes                             ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ C-Crypt 1.02                       ³ De'FeinD/uCT                               ³
+ ³ CC286x<sup>2</sup> 2.1             ³ Dark Stalker                               ³
+ ³ CC 2.61b                           ³ UniHackers Group                           ³
+ ³ Ciphator 4.6                       ³ Marquis de Soire                           ³
+ ³ Com Cryptor BTS 9.12               ³ Jozsef Hidasi                              ³
+ ³ COM2EXE                            ³ cINOgEN                                    ³
+ ³ COM2EXE                            ³ COMSEC                                     ³
+ ³ COM2EXE                            ³ DblStar Software                           ³
+ ³ COM2EXE                            ³ Fabrice Bellard                            ³
+ ³ COM2EXE                            ³ HENDR­X                                    ³
+ ³ COM2EXE                            ³ kaot                                       ³
+ ³ COM2EXE                            ³ PHaX                                       ³
+ ³ COM2EXE                            ³ ROSE                                       ³
+ ³ COM2EXE                            ³ Stefan Esser                               ³
+ ³ COM2EXE                            ³ Trills and Technologies                    ³
+ ³ COM2TXT 1.00                       ³ Nide Naoyuki                               ³
+ ³ COM2TXT 1.03 - 1.12                ³ Nide Naoyuki                               ³
+ ³ COM2TXT 1.20 - 1.41                ³ Nide Naoyuki                               ³
+ ³ COM4MAIL                           ³ Krasilnikov                                ³
+ ³ COMCRYPT                           ³ unknwon                                    ³
+ ³ ComLock 0.10                       ³ BoRZoM                                     ³
+ ³ Compact 1.05                       ³ Klaus Peichl                               ³
+ ³ Compact 4.5                        ³ Prominence Computer Services Ltd.          ³
+ ³ Compact 5.1                        ³ Prominence Computer Services Ltd.          ³
+ ³ ComprEXE 1.0                       ³ Tom Torfs                                  ³
+ ³ ComProt 1.0 beta                   ³ BiZ0n                                      ³
+ ³ ComProtector 1.0                   ³ Marco Ruhmann                              ³
+ ³ Comt 0.10d                         ³ Alexander Pruss                            ³
+ ³ COP 1.0                            ³ Jack A. Orman                              ³
+ ³ CrackStop 1.0                      ³ Stefan Esser                               ³
+ ³ CrackStop 1.0b                     ³ Stefan Esser                               ³
+ ³ CrackStop 1.01                     ³ Stefan Esser                               ³
+ ³ CrackStop 1.02                     ³ Stefan Esser                               ³
+ ³ CrackStop 1.03                     ³ Stefan Esser                               ³
+ ³ CrackStop 1.03a                    ³ Stefan Esser                               ³
+ ³ Cruncher 1.0                       ³ ???                                        ³
+ ³ Cruncher 1.0                       ³ Ori Berger                                 ³
+ ³ CryEXE 4.0                         ³ Iosco Capitolino                           ³
+ ³ CRYPACK 3.0                        ³ George Stark                               ³
+ ³ Crypt 1.20                         ³ Eclipse                                    ³
+ ³ Crypt 1.21                         ³ Eclipse                                    ³
+ ³ Crypt 1.7                          ³ Dismember                                  ³
+ ³ Crypt.Trivial.173                  ³ SMT                                        ³
+ ³ CryptC [by unknown]                ³ ???                                        ³
+ ³ Crypta 2.0                         ³ Iosco Capitolino                           ³
+ ³ Crypta II 3.0                      ³ Iosco Capitolino                           ³
+ ³ CRYPTCOM                           ³ ???                                        ³
+ ³ CRYPTCOM 1.1                       ³ Frank Baumgartner                          ³
+ ³ CryptEXE 1.0                       ³ Dimitriy Borisov                           ³
+ ³ CryptExe 1.04                      ³ DoP                                        ³
+ ³ CrypteXeC 0.9á                     ³ ByteWorx Team                              ³
+ ³ CrypteXeC 1.01                     ³ ByteWorx Team                              ³
+ ³ CSV 1.0                            ³ Moshe                                      ³
+ ³ CWC 3.01                           ³ Michael Devore                             ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ DarkStop 1.0                       ³ Dark Destroyer                             ³
+ ³ dEEP-CRyPTeR 0.1á                  ³ PLaSMoiD                                   ³
+ ³ Diet 1.00                          ³ Teddy Matsumoto                            ³
+ ³ Diet 1.10 - 1.20                   ³ Teddy Matsumoto                            ³
+ ³ Diet 1.43 - 1.44                   ³ Teddy Matsumoto                            ³
+ ³ Diet 1.44 - 1.45f                  ³ Teddy Matsumoto                            ³
+ ³ Diet 1.45f                         ³ Teddy Matsumoto                            ³
+ ³ Docmaker 1.20                      ³ Jack Orman                                 ³
+ ³ DOS32 3.3                          ³ Adam Seychell                              ³
+ ³ DOS Extender                       ³ Doug Hoffmann                              ³
+ ³ DOS Extender Loader                ³ Doug Hoffmann                              ³
+ ³ DPMI loader DJ Delorie             ³ DJ Delorie                                 ³
+ ³ DShield                            ³ Ben Castricum                              ³
+ ³ DS-CRP 1.28                        ³ Dark Stalker                               ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ EEXE 1.12 - 1.13                   ³ Fernando Papa Bundzyn                      ³
+ ³ EFP 1.23                           ³ Alexei Bulushev                            ³
+ ³ Elite 2.00                         ³ Codeblasters                               ³
+ ³ Elite x                            ³ Codeblasters                               ³
+ ³ Encryptor 1.00á                    ³ Gaston B. / Dark Stalker                   ³
+ ³ ENcryptCOM 3.01                    ³ Stewart Moss                               ³
+ ³ EPW 1.2                            ³ Farpoint Software                          ³
+ ³ EPW 1.30                           ³ Farpoint Software                          ³
+ ³ EXE2COM 1.02                       ³ DoP                                        ³
+ ³ EXE2COM 2.00                       ³ Paul Shpilsher                             ³
+ ³ EXETOCOM                           ³ ???                                        ³
+ ³ ExeCode 1.0                        ³ Bal zs Scheidler                           ³
+ ³ EXEGuard 1.3                       ³ Ivanov Vadim                               ³
+ ³ EXEHigh 1.01                       ³ NoddegamrA                                 ³
+ ³ ExeLock 1.00                       ³ JON Software                               ³
+ ³ EXELOCK 666 1.03                   ³ STiLLSON                                   ³
+ ³ EXELOCK 666 1.04                   ³ STiLLSON                                   ³
+ ³ EXELOCK 666 1.05                   ³ STiLLSON                                   ³
+ ³ EXE Manager 3.0                    ³ Solar Designer / TorNad0                   ³
+ ³ EXE Manager 3.2                    ³ Solar Designer                             ³
+ ³ EXEPACK 3.65                       ³ Microsoft                                  ³
+ ³ EXEPACK 3.69                       ³ Microsoft                                  ³
+ ³ EXEPACK 4.00                       ³ Microsoft                                  ³
+ ³ EXEPACK 4.03                       ³ Microsoft                                  ³
+ ³ EXEPACK 4.06                       ³ Microsoft                                  ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ fds-cp 0.4                         ³ fds0ft                                     ³
+ ³ File Analyser 1.4 Encryp.          ³ Vadim Tarasov                              ³
+ ³ FFSE 0.4 E/F/+                     ³ Zenix                                      ³
+ ³ FFSE 0.4 R                         ³ Zenix                                      ³
+ ³ FFSE 0.5                           ³ Zenix                                      ³
+ ³ F-Xlock 1.16                       ³ Frisk Software                             ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Gardian Angel 1.0                  ³ ???                                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ HackStop 0.98                      ³ ROSE                                       ³
+ ³ HackStop 0.99                      ³ ROSE                                       ³
+ ³ HackStop 1.00                      ³ ROSE                                       ³
+ ³ HackStop 1.02á                     ³ ROSE                                       ³
+ ³ HackStop 1.12                      ³ ROSE                                       ³
+ ³ HackStop 1.13á                     ³ ROSE                                       ³
+ ³ HackStop 1.14                      ³ ROSE                                       ³
+ ³ HackStop 1.15                      ³ ROSE                                       ³
+ ³ HackStop 1.17á                     ³ ROSE                                       ³
+ ³ HackStop 1.17ás                    ³ ROSE                                       ³
+ ³ HackStop 1.17                      ³ ROSE                                       ³
+ ³ HackStop 1.18                      ³ ROSE                                       ³
+ ³ HackStop 1.19 b195                 ³ ROSE                                       ³
+ ³ HackStop 1.19 b197                 ³ ROSE                                       ³
+ ³ HackStop 1.19 b198                 ³ ROSE                                       ³
+ ³ HackStop 1.19 b204                 ³ ROSE                                       ³
+ ³ HackStop 1.19 b206                 ³ ROSE                                       ³
+ ³ HackStop 1.19 b217                 ³ ROSE                                       ³
+ ³ HackStop > 1.10                    ³ ROSE                                       ³
+ ³ HelpCOM 1.2                        ³ Geoff Friesen                              ³
+ ³ HelpEXE 1.2                        ³ Geoff Friesen                              ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ IBM CRP                            ³ ??? / Dark Stalker                         ³
+ ³ Ice 1.00                           ³ Keith P. Graham                            ³
+ ³ iLUCRYPT 4.014 - 4.015             ³ Christian Schwarz                          ³
+ ³ iLUCRYPT 4.019                     ³ Christian Schwarz                          ³
+ ³ Immun 1.2                          ³ Jens Bleuel                                ³
+ ³ Immun 1.2 registered               ³ Jens Bleuel                                ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Jam 2.11                           ³ Eugen Vasilchenko                          ³
+ ³ Jam 2.21                           ³ Eugen Vasilchenko                          ³
+ ³ JMCryptExe 0.7 i/j                 ³ JauMing Tseng                              ³
+ ³ jmt-cp 0.5a/fds-cp 0.4a            ³ JauMing Tseng / fds0ft                     ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Kartz 0.3                          ³ Tai Pan                                    ³
+ ³ Khrome Crypt 0.3                   ³ Teraphy                                    ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Lamer Stop 1.0á                    ³ ???                                        ³
+ ³ LC 3.00                            ³ ???                                        ³
+ ³ LGLZ 1.03b - 1.04d                 ³ George Lyapko                              ³
+ ³ LockProg 0.5a                      ³ Myrlochar                                  ³
+ ³ LZExe 0.90                         ³ Fabrice Bellard                            ³
+ ³ LZExe 0.91 / 1.00                  ³ Fabrice Bellard                            ³
+ ³ LZExe 0.91á                        ³ Fabrice Bellard                            ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Mask 2.3                           ³ José M. L. Lopes                           ³
+ ³ Mask 2.5                           ³ José M. L. Lopes                           ³
+ ³ MCLOCK 1.33                        ³ ??? / Dark Stalker                         ³
+ ³ MegaLite 1.20                      ³ ThE KiLLeR                                 ³
+ ³ Mess /E                            ³ Stonehead                                  ³
+ ³ Mess 1.07                          ³ Stonehead                                  ³
+ ³ Mess 1.14                          ³ Stonehead                                  ³
+ ³ Mess 1.15                          ³ Stonehead                                  ³
+ ³ Mess 1.17                          ³ Stonehead                                  ³
+ ³ Mess 1.20                          ³ Stonehead                                  ³
+ ³ Microsoft C (1988)                 ³ Microsoft                                  ³
+ ³ Microsoft C++ (1990/92)            ³ Microsoft                                  ³
+ ³ MINI                               ³ Albert Sen                                 ³
+ ³ MSCC 1.0ás                         ³ Mad Scientist                              ³
+ ³ Mr.HDKiLLeR Prot. 1.1a             ³ mR.HDKiLLeR & eMX                          ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ NetRun 3.10                        ³ Jim Tucker                                 ³
+ ³ NetSafe ZIP-Prot                   ³ NetSafe                                    ³
+ ³ NetSend 1.00                       ³ Jim Tucker                                 ³
+ ³ NoClip 4.1                         ³ ???                                        ³
+ ³ N0Ps Shit Protector 0.002          ³ Cyber Cop                                  ³
+ ³ NTShell 4.0                        ³ ???                                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ OptLink Pass 1                     ³ SLR                                        ³
+ ³ OptLink Pass 2                     ³ SLR                                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Pack 1.0                           ³ TurboPower Software                        ³
+ ³ Pack 2.01                          ³ NoddegamrA                                 ³
+ ³ PackWin 1.0á - 2.02                ³ Yellow Rose Workgroup                      ³
+ ³ PassCOM 2.0                        ³ Black Wolf Enterprises                     ³
+ ³ PassEXE 2.0                        ³ Black Wolf Enterprises                     ³
+ ³ PCC 1.2                            ³ Mark DeSmet                                ³
+ ³ PCrypt 3.50                        ³ MERLiN                                     ³
+ ³ PGMPAK 0.13                        ³ Todor Todorov                              ³
+ ³ PGMPAK 0.14/0.15                   ³ Todor Todorov                              ³
+ ³ Pirate Stop 1.05                   ³ Trills and Technologies 1998               ³
+ ³ PK Smart 1.0b                      ³ Puchkov Sergey and Alex                    ³
+ ³ PK Tiny 1.62                       ³ Thomas Moenkemeier                         ³
+ ³ PKLite 1.00                        ³ PKWARE                                     ³
+ ³ PKLite 1.03                        ³ PKWARE                                     ³
+ ³ PKLite 1.05                        ³ PKWARE                                     ³
+ ³ PKLite 1.12 / 1.20                 ³ PKWARE                                     ³
+ ³ PKLite 1.13                        ³ PKWARE                                     ³
+ ³ PKLite 1.14                        ³ PKWARE                                     ³
+ ³ PKLite 1.15                        ³ PKWARE                                     ³
+ ³ PKLite 1.50                        ³ PKWARE                                     ³
+ ³ PKLite 2.00á                       ³ PKWARE                                     ³
+ ³ PKLite 2.00á -e                    ³ PKWARE                                     ³
+ ³ PKLite 2.01                        ³ PKWARE                                     ³
+ ³ PKLite x.x                         ³ PKWARE                                     ³
+ ³ PMODE/W 1.20                       ³ Daredevil & Trans                          ³
+ ³ PMODE/W 1.21                       ³ Daredevil & Trans                          ³
+ ³ PMODE/W 1.33                       ³ Daredevil & Trans                          ³
+ ³ PowerBasic 2.10                    ³ ???                                        ³
+ ³ PPS                                ³ ROSE                                       ³
+ ³ ProtEXE 2.11                       ³ Tom Torfs                                  ³
+ ³ ProtEXE 3.0                        ³ Tom Torfs                                  ³
+ ³ ProPack 2.08 -m1                   ³ Rob Northen Computing                      ³
+ ³ ProPack 2.08 -m2                   ³ Rob Northen Computing                      ³
+ ³ ProPack 2.14 -m1                   ³ Rob Northen Computing                      ³
+ ³ ProPack 2.14 -m2                   ³ Rob Northen Computing                      ³
+ ³ Protect! 3.0                       ³ Jeremy Lilley                              ³
+ ³ Protect! 3.1                       ³ Jeremy Lilley                              ³
+ ³ Protect! 4.0                       ³ Jeremy Lilley                              ³
+ ³ Protect! 6.0                       ³ Jeremy Lilley                              ³
+ ³ PW 1.0                             ³ Udo Kemle & Klaus Oberpichler              ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Quick Basic                        ³ Microsoft                                  ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ R-Crypt 0.91                       ³ ROSE                                       ³
+ ³ RCC II/286 1.13h                   ³ ROSE                                       ³
+ ³ RCC II/286 1.13m                   ³ ROSE                                       ³
+ ³ RCC II/286 1.14h                   ³ ROSE                                       ³
+ ³ RCC II/286 1.14m                   ³ ROSE                                       ³
+ ³ RCC II/286 1.15h                   ³ ROSE                                       ³
+ ³ RCC II/286 1.15m                   ³ ROSE                                       ³
+ ³ RCC II/286 1.16h                   ³ ROSE                                       ³
+ ³ RCC II/286 1.16m                   ³ ROSE                                       ³
+ ³ RC 386 0.51                        ³ ROSE                                       ³
+ ³ REC 0.14                           ³ ROSE                                       ³
+ ³ REC 0.27                           ³ ROSE                                       ³
+ ³ REC 0.28                           ³ ROSE                                       ³
+ ³ REC 0.32                           ³ ROSE                                       ³
+ ³ REC 0.33a                          ³ ROSE                                       ³
+ ³ REC 0.38                           ³ ROSE                                       ³
+ ³ REC Small 1.01                     ³ ROSE                                       ³
+ ³ REC Small 1.02                     ³ ROSE                                       ³
+ ³ REC Small 1.02a                    ³ ROSE                                       ³
+ ³ REC Small 1.03                     ³ ROSE                                       ³
+ ³ REC Small 1.05                     ³ ROSE                                       ³
+ ³ RELOC 1.00                         ³ ???                                        ³
+ ³ RERP 0.02                          ³ ROSE                                       ³
+ ³ RJ Crush 1.10                      ³ Ronald J. Skinner                          ³
+ ³ RoseTiny 0.95                      ³ ROSE                                       ³
+ ³ RoseTiny 1.02                      ³ ROSE                                       ³
+ ³ RUE 1.32                           ³ ROSE                                       ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ SEA AXE 2.00                       ³ System Enhancement Associates              ³
+ ³ Scram 0.7c1 - 0.8a1                ³ bushwoelie & ACP                           ³
+ ³ SCRAMB 1.20                        ³ B.U.G.                                     ³
+ ³ SCRAMBLE 0.2 beta3                 ³ Tiny Spaceman Software                     ³
+ ³ Scrunch 1.02                       ³ Graeme W. McRae                            ³
+ ³ SCRb2e                             ³ Graeme W. McRae                            ³
+ ³ Scrypt 1.2                         ³ SMT                                        ³
+ ³ Secure 2.1b                        ³ ???                                        ³
+ ³ SelfEnc 1.0                        ³ Daniel Arndt                               ³
+ ³ SENs debug protection              ³ SEN Kemerovo                               ³
+ ³ Shadow 1.0 beta                    ³ Tailgunner                                 ³
+ ³ Shield 1.70                        ³ V Communications                           ³
+ ³ Shrink 1.0                         ³ Thomas G. Hanlin III                       ³
+ ³ Shrink 2.0                         ³ Kevin Tseng                                ³
+ ³ SnoopStop 1.15                     ³ Trills and Technology                      ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ $pirit 1.5                         ³ Night $pirit                               ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Stone's Comrypt                    ³ Stone                                      ³
+ ³ SuckStop 1.08                      ³ kaot                                       ³
+ ³ SuckStop 1.10                      ³ kaot                                       ³
+ ³ SuckStop 1.11                      ³ kaot                                       ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ TinyProg 1.0                       ³ Tranzoa                                    ³
+ ³ TinyProg 3.3 - 3.9                 ³ Tranzoa                                    ³
+ ³ TinyProt 1.0e                      ³ Igor Hakszer                               ³
+ ³ TinyXor 0.1                        ³ dR.No                                      ³
+ ³ TLink                              ³ Borland                                    ³
+ ³ TPack 0.5á -m1                     ³ Tuscon                                     ³
+ ³ TPack 0.5á -m2                     ³ Tuscon                                     ³
+ ³ TPC's COM scrambler 1.0            ³ T.P.C.                                     ³
+ ³ Trap 1.13                          ³ Christoph Gabler                           ³
+ ³ Trap 1.14a                         ³ Christoph Gabler                           ³
+ ³ Trap 1.15                          ³ Christoph Gabler                           ³
+ ³ Trap 1.16á1                        ³ Christoph Gabler                           ³
+ ³ Trap 1.16á2                        ³ Christoph Gabler                           ³
+ ³ Trap 1.16 - 1.17                   ³ Christoph Gabler                           ³
+ ³ Trap 1.18                          ³ Christoph Gabler                           ³
+ ³ Trap 1.19                          ³ Christoph Gabler                           ³
+ ³ Trap 1.20                          ³ Christoph Gabler                           ³
+ ³ Trap 1.21                          ³ Christoph Gabler                           ³
+ ³ Turbo Assembler                    ³ Borland                                    ³
+ ³ Turbo Basic                        ³ Borland                                    ³
+ ³ Turbo C 1.0 (1987)                 ³ Borland                                    ³
+ ³ Turbo C 2.0 (1988)                 ³ Borland                                    ³
+ ³ Turbo C++ 3.0                      ³ Borland                                    ³
+ ³ Turbo Pascal 3                     ³ Borland                                    ³
+ ³ Turbo Pascal 4 (1)                 ³ Borland                                    ³
+ ³ Turbo Pascal 4 (2)                 ³ Borland                                    ³
+ ³ Turbo Pascal 5                     ³ Borland                                    ³
+ ³ Turbo Pascal 6                     ³ Borland                                    ³
+ ³ Turbo/Borland Pascal 7             ³ Borland                                    ³
+ ³ Turbo Prolog 1986                  ³ Borland                                    ³
+ ³ TurboChainer 1.03                  ³ TWT                                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ UC2X 2.4                           ³ Ad Infinitum Programs                      ³
+ ³ UComCry                            ³ UniquE                                     ³
+ ³ UNP x                              ³ Ben Castricum                              ³
+ ³ uN-uPC 1.10                        ³ cINOgEN                                    ³
+ ³ Un2pack 2                          ³ ğdatağ                                     ³
+ ³ UPX 0.20                           ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.30 [EXE]                     ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.30 - 0.40 [COM]              ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.40 - 0.51 [EXE]              ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.51 - 0.72 [COM]              ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.62 [EXE]                     ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.70 [EXE]                     ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.71 - 0.72 [EXE]              ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.81 - 0.84 [EXE]              ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.82 - 0.84 [COM]              ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.92 - 1.02 [COM]              ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.90 - 1.02 [EXE]              ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ USCC 1.3                           ³ Dark Destroyer                             ³
+ ³ Username 3.00                      ³ Jordi Mas                                  ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ V-Load 0.9á                        ³ ONYX                                       ³
+ ³ Vaccine 1.03 - 1.10                ³ Rustam M. Abdrakhimov                      ³
+ ³ Virus Self Destructor 2            ³ Wojciech Wysznacki                         ³
+ ³ VSS                                ³ ROSE                                       ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Watcom C (1994)                    ³ Watcom Inc.                                ³
+ ³ Watcom C (1995)                    ³ Watcom Inc.                                ³
+ ³ WordPerfect EXEPack                ³ WordPerfect Inc.                           ³
+ ³ WWPack 3.00 - 3.05                 ³ Rafal Wierzbicki & Piotr Warezak           ³
+ ³ WWPack Mutator 1.1c                ³ Stefan Esser                               ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ X3                                 ³ Dark Stalker                               ³
+ ³ XcomOR 0.99a                       ³ madmax!                                    ³
+ ³ XcomOR 0.99f/g                     ³ madmax!                                    ³
+ ³ XcomOR 0.99h                       ³ madmax!                                    ³
+ ³ XcomOR 0.99i                       ³ madmax!                                    ³
+ ³ XLOADER 2.00                       ³ CyberMan and ST!LLS0N                      ³
+ ³ XorCopy 1.0                        ³ Deimos                                     ³
+ ³ XoReR 1.0                          ³ dR.No                                      ³
+ ³ XoReR 2.0                          ³ dR.No                                      ³
+ ³ XoReR 2.1                          ³ dR.No                                      ³
+ ³ XPack 1.0j                         ³ JauMing Tseng                              ³
+ ³ XPack 1.0m - 1.20                  ³ JauMing Tseng                              ³
+ ³ XPack 1.29 - 1.30                  ³ JauMing Tseng                              ³
+ ³ XPack 1.31 - 1.66                  ³ JauMing Tseng                              ³
+ ³ XPack 1.31                         ³ JauMing Tseng                              ³
+ ³ XPack 1.33                         ³ JauMing Tseng                              ³
+ ³ XPack 1.34                         ³ JauMing Tseng                              ³
+ ³ XPack 1.36                         ³ JauMing Tseng                              ³
+ ³ XPack 1.39                         ³ JauMing Tseng                              ³
+ ³ XPack 1.40                         ³ JauMing Tseng                              ³
+ ³ XPack 1.44                         ³ JauMing Tseng                              ³
+ ³ XPack 1.45                         ³ JauMing Tseng                              ³
+ ³ XPack 1.52 - 1.60                  ³ JauMing Tseng                              ³
+ ³ XPack 1.64                         ³ JauMing Tseng                              ³
+ ³ XPack 1.52 - 1.64                  ³ JauMing Tseng                              ³
+ ³ XPack 1.65b2                       ³ JauMing Tseng                              ³
+ ³ XPack 1.65b3/b4                    ³ JauMing Tseng                              ³
+ ³ XPack 1.66                         ³ JauMing Tseng                              ³
+ ³ XPack 1.67                         ³ JauMing Tseng                              ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ YifPress 1.0                       ³ Yiftah Niv                                 ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Zortech 2.00 library (1)           ³ Zortech                                    ³
+ ³ Zortech 2.00 library (2)           ³ Zortech                                    ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ unknown by GyikSoft 1              ³ GyikSoft                                   ³
+ ³ unknown by GyikSoft 2              ³ GyikSoft                                   ³
+ ³ unknown by JVP                     ³ JVP                                        ³
+ ³ unknown by Mr.Wicked               ³ Mr. Wicked                                 ³
+ ³ unknown by Synopsis                ³ Synopsis                                   ³
+ ³ unknown by RAO                     ³ RAO                                        ³
+ ³ unknown virus 1 !!!                ³ ???                                        ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ SYS DOS device drivers                                                          ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ device driver                      ³ ???                                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ SysPack 0.1                        ³ ???                                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ UPX 0.20 - 0.40                    ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.51 - 0.72                    ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.81 - 1.02                    ³ Markus Oberhumer & Laszlo Molnar           ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ PE Portable executables                                                         ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Alloy 1.04.14.2000                 ³ Prakash Gautam                             ³
+ ³ AppLok 95 2.0                      ³ Prakash Gautam                             ³
+ ³ Armadillo 1.80                     ³ Chad Nelson                                ³
+ ³ ASPack 1.01b                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.02b                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.04b                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.05b                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.061b                      ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.061b [DLL]                ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.07b                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.07b [DLL]                 ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.08                        ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.081                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.082                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.083                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 1.084                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 2.000                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 2.001                       ³ Alexey Solodovnikov                        ³
+ ³ ASPack 2.100                       ³ Alexey Solodovnikov                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ BJFNT 1.1                          ³ Marquis de Soire                           ³
+ ³ BJFNT 1.2                          ³ Marquis de Soire                           ³
+ ³ BJFNT 1.3                          ³ Marquis de Soire                           ³
+ ³ Borland C++ Win32 (1994)           ³ Borland                                    ³
+ ³ Borland C++ Win32 (1995)           ³ Borland                                    ³
+ ³ Borland Delphi 3                   ³ Borland                                    ³
+ ³ Borland Delphi 4                   ³ Borland                                    ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Cexe 1.0a                          ³ Tinyware Inc.                              ³
+ ³ CodeCrypt 0.14b                    ³ defiler                                    ³
+ ³ CodeCrypt 0.15b                    ³ defiler                                    ³
+ ³ CodeCrypt 0.16b - 0.161b           ³ defiler                                    ³
+ ³ CodeCrypt 0.163b                   ³ defiler                                    ³
+ ³ CodeCrypt 0.164b                   ³ defiler                                    ³
+ ³ CodeSafe 2.0                       ³ Zhang Dehua                                ³
+ ³ CodeSafe 3.0                       ³ Zhang Dehua                                ³
+ ³ CrypKey Instant Stealth 5.0.161    ³ Kenonic Control Ltd.                       ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Ding Boys PE-lock 0.07             ³ Ding Boy                                   ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ EXE Protector 1.37a                ³ Eyhab Hillail                              ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Harlequin Dylan 1.2                ³ Harlequin Group                            ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Lcc-win 32 1.3                     ³ Jacob Navia                                ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ NeoLite 1.0 - 1.01                 ³ Neoworx                                    ³
+ ³ NeoLite 1.04                       ³ Neoworx                                    ³
+ ³ NeoLite 2.00                       ³ Neoworx                                    ³
+ ³ NFO 1.0                            ³ bart                                       ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ PCPEC [alpha]                      ³ The+Q, Plushmm & MrNop                     ³
+ ³ PE password encryptor              ³ SMT                                        ³
+ ³ PEBundle 0.03                      ³ Jeremy Collake                             ³
+ ³ PEBundle 0.05                      ³ Jeremy Collake                             ³
+ ³ PEBundle 0.05wtd                   ³ Jeremy Collake                             ³
+ ³ PEBundle 0.06                      ³ Jeremy Collake                             ³
+ ³ PEBundle 0.12wtd                   ³ Jeremy Collake                             ³
+ ³ PEBundle 0.14wtd                   ³ Jeremy Collake                             ³
+ ³ PEBundle 0.15wtd                   ³ Jeremy Collake                             ³
+ ³ PECompact 0.92                     ³ Jeremy Collake                             ³
+ ³ PECompact 0.977                    ³ Jeremy Collake                             ³
+ ³ PECompact 0.978                    ³ Jeremy Collake                             ³
+ ³ PECompact 0.978.1                  ³ Jeremy Collake                             ³
+ ³ PECompact 0.978.4                  ³ Jeremy Collake                             ³
+ ³ PECompact 0.98                     ³ Jeremy Collake                             ³
+ ³ PECompact 0.99                     ³ Jeremy Collake                             ³
+ ³ PECompact 1.00                     ³ Jeremy Collake                             ³
+ ³ PECompact 1.10b1                   ³ Jeremy Collake                             ³
+ ³ PECompact 1.10b2                   ³ Jeremy Collake                             ³
+ ³ PECompact 1.10b3                   ³ Jeremy Collake                             ³
+ ³ PECompact 1.10b4                   ³ Jeremy Collake                             ³
+ ³ PECompact 1.10b5                   ³ Jeremy Collake                             ³
+ ³ PECompact 1.10b6                   ³ Jeremy Collake                             ³
+ ³ PECompact 1.10b7                   ³ Jeremy Collake                             ³
+ ³ PECompact 1.10b8                   ³ Jeremy Collake                             ³
+ ³ PECompact 1.20 - 1.20.1            ³ Jeremy Collake                             ³
+ ³ PECompact 1.22                     ³ Jeremy Collake                             ³
+ ³ PECompact 1.23b3 - 1.24.1          ³ Jeremy Collake                             ³
+ ³ PECompact 1.24.2 - 1.24.3          ³ Jeremy Collake                             ³
+ ³ PECompact 1.25                     ³ Jeremy Collake                             ³
+ ³ PECompact 1.26b1 - 1.26b2          ³ Jeremy Collake                             ³
+ ³ PECompact 1.33                     ³ Jeremy Collake                             ³
+ ³ PECompact 1.34 - 1.40b1            ³ Jeremy Collake                             ³
+ ³ PECompact 1.40b2 - 1.40b4          ³ Jeremy Collake                             ³
+ ³ PECompact 1.40b5 - 1.40b6          ³ Jeremy Collake                             ³
+ ³ PECompact 1.40 - 1.41              ³ Jeremy Collake                             ³
+ ³ Petite 1.2                         ³ Ian Luck                                   ³
+ ³ Petite 1.3                         ³ Ian Luck                                   ³
+ ³ Petite 1.4                         ³ Ian Luck                                   ³
+ ³ Petite 2.0                         ³ Ian Luck                                   ³
+ ³ Petite 2.1                         ³ Ian Luck                                   ³
+ ³ Petite 2.2 [PE DLL]                ³ Ian Luck                                   ³
+ ³ Petite 2.2 [PE EXE]                ³ Ian Luck                                   ³
+ ³ PELOCKnt 2.01                      ³ Marquis                                    ³
+ ³ PELOCKnt 2.02á                     ³ Marquis                                    ³
+ ³ PELOCKnt 2.03                      ³ Marquis                                    ³
+ ³ PELOCKnt 2.04                      ³ Marquis                                    ³
+ ³ PeX 0.99                           ³ bart^CrackPl                               ³
+ ³ PE-Crypt32 1.0                     ³ random and acpizer                         ³
+ ³ PE-Crypt32 1.1                     ³ random and acpizer                         ³
+ ³ PE-Crypt32 1.2                     ³ random and acpizer                         ³
+ ³ PE-Prot 0.9                        ³ Christoph Gabler                           ³
+ ³ PKLite32 1.1                       ³ PKWARE                                     ³
+ ³ Private EXE 2.0a                   ³ Midstream                                  ³
+ ³ Private EXE 2.2                    ³ Midstream                                  ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ SecuPack 1.5                       ³ SC - Soft                                  ³
+ ³ Shrinker 3.2                       ³ A.S.M. Inc                                 ³
+ ³ Shrinker 3.4                       ³ A.S.M. Inc                                 ³
+ ³ SPEC beta 3                        ³ hayras                                     ³
+ ³ Stone's PE Crypter 1.0             ³ Stone                                      ³
+ ³ Stone's PE Crypter 1.13            ³ Stone                                      ³
+ ³ Symantec Visual Cafe 3.0           ³ Symantec                                   ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ tELock 0.41c                       ³ tHE EGOiSTE                                ³
+ ³ tELock 0.42                        ³ tHE EGOiSTE                                ³
+ ³ tELock 0.51                        ³ tHE EGOiSTE                                ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ UnHack32 1.1                       ³ Black Panther                              ³
+ ³ UnHack32 1.2                       ³ Black Panther                              ³
+ ³ UPX 0.51 [PE]                      ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.62 [PE]                      ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.62 [PE DLL]                  ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.70 [PE]                      ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.70 [PE DLL]                  ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.71 - 0.72 [PE]               ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.71 - 0.72 [PE DLL]           ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.81 - 0.84 [PE]               ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.81 - 0.84 [PE DLL]           ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.89.6 - 1.02 [PE]             ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.89.6 [PE DLL]                ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.92 - 0.94 [PE DLL]           ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.99/1.00 - 1.02 [PE DLL]      ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.99.1 - 0.99.3[PE DLL]        ³ Markus Oberhumer & Laszlo Molnar           ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ VGCrypt 0.75                       ³ Virogen                                    ³
+ ³ Virtual Pascal 2.1                 ³ vpascal.com                                ³
+ ³ Visual C 2.0                       ³ Microsoft                                  ³
+ ³ Visual C++ 3.1                     ³ Microsoft                                  ³
+ ³ Visual C++ 4.2 (DLL)               ³ Microsoft                                  ³
+ ³ Visual C++ 4.2 (EXE - 1)           ³ Microsoft                                  ³
+ ³ Visual C++ 4.2 (EXE - 2)           ³ Microsoft                                  ³
+ ³ Visual C++ 4.2 (EXE - 3)           ³ Microsoft                                  ³
+ ³ Visual C++ 4.2 (EXE - 4)           ³ Microsoft                                  ³
+ ³ Visual C++ 5.0                     ³ Microsoft                                  ³
+ ³ Visual C++ 5.0 (debug)             ³ Microsoft                                  ³
+ ³ Visual C++ 5.0 (no debug)          ³ Microsoft                                  ³
+ ³ Visual C++ 5.0 SP3                 ³ Microsoft                                  ³
+ ³ Visual C++ 5.0 SP3 (debug)         ³ Microsoft                                  ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ WWPack32 1.0                       ³ Rafal Wierzbicki & Piotr Warezak           ³
+ ³ WWPack32 1.09                      ³ Rafal Wierzbicki & Piotr Warezak           ³
+ ³ WWPack32 1.10 - 1.11               ³ Rafal Wierzbicki & Piotr Warezak           ³
+ ³ WWPack32 1.12                      ³ Rafal Wierzbicki & Piotr Warezak           ³
+ ³ WinKript 1.00                      ³ MrCrimson                                  ³
+ ³ Winzip SFX                         ³ Nico Mak Computing                         ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ NE New executables                                                              ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Borland C++ Win16 (1991)           ³ Borland                                    ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ PC Guard 1.50 for Win16            ³ Blagoje Ceklic                             ³
+ ³ PKLite 2.01                        ³ PKWARE                                     ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Shrinker 3.2                       ³ A.S.M. Inc                                 ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Winzip SFX                         ³ Nico Mak Computing                         ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ LE Linear executables                                                           ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ UPX 0.05 [LE]                      ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.20 - 0.40 [LE]               ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.50 - 0.61 [LE]               ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.62 [LE]                      ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.62 - 0.72 [LE]               ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.81 - 0.83 [LE]               ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.84 [LE]                      ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.89.6 [LE]                    ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.90 [LE]                      ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.92 - 0.94 [LE]               ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 0.99 - 1.01 [LE]               ³ Markus Oberhumer & Laszlo Molnar           ³
+ ³ UPX 1.02 [LE]                      ³ Markus Oberhumer & Laszlo Molnar           ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Watcom C++ 1994/1995               ³ Watcom Inc.                                ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  GetTyp also detects:
+    ş Linear executables (LE/LX)
+    ş New executables (NE)
+    ş several EXE overlay types
+
+
+  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+  ³ 5.4 The rest ³
+  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³ Filetype                            Additional information               ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Adobe PostScript file             ³ creator string                       ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ ADONIS application libraries      ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ ADONIS export file                ³ name of the first model included     ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ aPatch data file                  ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Armadillo project file            ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Batch files                       ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ BGI device driver                 ³ copyright message                    ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ BGI stroked font                  ³ copyright message                    ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Borland Delphi units (old)        ³ the name                             ³
+ ³                                   ³ the source file name                 ³
+ ³                                   ³ the dependencies of this unit        ³
+ ³                                   ³ the Turbo Pascal version to use with ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Borland Delphi 3 units (new)      ³ the source file name                 ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Borland Delphi 4 units (new)      ³ the source file name                 ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Borland Delphi form modules       ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Borland linker mapping file       ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Borland overlay file              ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Borland precompiled header file   ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Bourne Shell Script               ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ C++ library                       ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ C++ symbol file                   ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Common Object File Format         ³ number of entries                    ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Compiled resource file            ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Corel Draw 6-8 files              ³ see RIFF files                       ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Creative voice music file (VOC)   ³ version                              ³
+ ³                                   ³ every block                          ³
+ ³                                   ³ sampling rate                        ³
+ ³                                   ³ length of silence                    ³
+ ³                                   ³ loops                                ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Crypt!                            ³ the version                          ³
+ ³                                   ³ high security: yes/no                ³
+ ³                                   ³ coprocessor used                     ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ DBase database                    ³ the version                          ³
+ ³                                   ³ all columns and their width          ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ DER encoded binary X.509 certif.  ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Device driver                     ³ either character or block device     ³
+ ³                                   ³        (+name)      (+count)         ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ FPK Pascal units                  ³ the version                          ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ FPK Pascal object file            ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Fractal Extreme movie file        ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Fractal Extreme palette file      ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ HTML files                        ³ the title                            ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ IBM Help file                     ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ ibo Ablauf-Profi file             ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ IDA DLL description file          ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Impulse Tracker Module            ³ the name                             ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ installShield InstallScript       ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ installShield uninstall file      ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Java bytecode                     ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Java source code                  ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ JavaScript source code            ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Links LS shot file                ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Lotus 123 worksheet               ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Lotus AmiPro document             ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Lotus Notes 4.5 database          ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Lotus WordPro document            ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Microsoft C/C++ library           ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Microsoft C/C++ program database  ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Microsoft Compress 6.22 files     ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Microsoft Excel 4 worksheet       ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Microsoft HTML-Help file          ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Microsoft precompiled header file ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Microsoft profiler file           ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Modula source code                ³ either a program                     ³
+ ³                                   ³ or a definition file                 ³
+ ³                                   ³ or an implementation file            ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ MPEG file                         ³ Layer                                ³
+ ³                                   ³ Version                              ³
+ ³                                   ³ Error protection                     ³
+ ³                                   ³ Bitrate                              ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ NU Disc doctor undo file          ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Object file                       ³ BINOBJ converted or not              ³
+ ³                                   ³   name of the exported procedure     ³
+ ³                                   ³ module name                          ³
+ ³                                   ³ compiler                             ³
+ ³                                   ³ memory model                         ³
+ ³                                   ³ optimizations or not                 ³
+ ³                                   ³ DOSSEG linker option or not          ³
+ ³                                   ³ include libraries                    ³
+ ³                                   ³ CodeView enabled or not              ³
+ ³                                   ³ linker pass two marker               ³
+ ³                                   ³ comments                             ³
+ ³                                   ³ dependency list                      ³
+ ³                                   ³ list of names                        ³
+ ³                                   ³ length of a segment                  ³
+ ³                                   ³ public definitions                   ³
+ ³                                   ³ group definition                     ³
+ ³                                   ³ module end record                    ³
+ ³                                   ³ fix up record + length               ³
+ ³                                   ³ Logical enumerated data + length     ³
+ ³                                   ³ External name definition record      ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Pascal source code                ³ either a program                     ³
+ ³                                   ³ or a library                         ³
+ ³                                   ³ or a unit                            ³
+ ³                                   ³ or a procedure                       ³
+ ³                                   ³ or a function                        ³
+ ³                                   ³ or just general code                 ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Pax Imperia II save game          ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Perl files                        ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ PGP message                       ³ the version                          ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ PKCS #7 certificate               ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Portable Document Format (PDF)    ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Quick Pascal unit                 ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ QuickTime movie file              ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ RIFF files                        ³ generic object listing               ³
+ ³                                   ³ some special types (e.g. Corel Draw) ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Text files                        ³ DOS style or Unix style              ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Thunderbye Anti virus checksum    ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ TrueType Font (TTF)               ³ Font name (standard or Unicode)      ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Turbo Basic configuration file    ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Turbo C configuration file        ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Turbo C context file              ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Turbo C help file                 ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Turbo C pick list file            ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Turbo C project file              ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Turbo Pascal configuration file   ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Turbo Pascal desktop file         ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Turbo Pascal pick list file       ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Turbo Pascal help file            ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Turbo Pascal units                ³ the name                             ³
+ ³                                   ³ the source name                      ³
+ ³                                   ³ the dependencies of this unit        ³
+ ³                                   ³ the Turbo Pascal version to use with ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Turbo Profiler configuration file ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Turbo Vision help file            ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Virtual Pascal Unit v3            ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Wave music file (WAV)             ³ compressed or not                    ³
+ ³                                   ³ channels                             ³
+ ³                                   ³ sampling rate                        ³
+ ³                                   ³ data size                            ³
+ ³                                   ³ bits (decompressed)                  ³
+ ³                                   ³ playtime                             ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Windows 3.x Help files            ³ name of the help file                ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Windows 95/98 Help files          ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Windows mouse cursor file         ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Windows PIF files                 ³ application name                     ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Windows program manager group     ³ the name of the groups               ³
+ ³ files                             ³                                      ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Windows registry file (binary)    ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Windows registry file (textual)   ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Windows shortcut file             ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ WinWord 2 document                ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ WinWord 6 document                ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Word for DOS document             ³ -- nothing --                        ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Wordperfect files                 ³ macro file                           ³
+ ³                                   ³ help files                           ³
+ ³                                   ³ keyboard definition files            ³
+ ³                                   ³ document files                       ³
+ ³                                   ³ dictionary files                     ³
+ ³                                   ³ thesaurus files                      ³
+ ³                                   ³ block files                          ³
+ ³                                   ³ rectangular block files              ³
+ ³                                   ³ column block files                   ³
+ ³                                   ³ printer resource files               ³
+ ³                                   ³ setup files                          ³
+ ³                                   ³ prefix information files             ³
+ ³                                   ³ printer resource files               ³
+ ³                                   ³ display resource files               ³
+ ³                                   ³ overlay files                        ³
+ ³                                   ³ hyphenation code module files        ³
+ ³                                   ³ hyphenation data module files        ³
+ ³                                   ³ macro resource files                 ³
+ ³                                   ³ graphics driver files                ³
+ ³                                   ³ hyphenation lex module files         ³
+ ³                                   ³ PostScript font files                ³
+ ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+ ³ Unix executable                   ³ -- nothing --                        ³
+ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  If no other type was detected, GetTyp prints out the following:
+    ş Textfile (DOS format)
+    ş Textfile (UNIX format)
+    ş Binary file
+    ş File is 7 bit only (can be sent by email)
+
+  This output can be suppressed by using the /F switch.
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ 6 Future plans ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  ş Detection of several new formats, especially windows
+  ş Fix the bugs.
+  ş I thought about making a Windows GUI for GT but I'm not sure
+    wether it is useful or not.
+  ş Making the Windows version work on all systems
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ 7 Known bugs ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  ş Detection of Excel sheets is wrong - will follow in "next" version
+    since version 1.225. This takes so long because of the complex OLE2
+    file structure ... anyone has any documents???
+  ş Long filenames under Windows 9x don't work on network drives :(
+    I appreciate any suggestion for solution...
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ 8 Error handling ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  ş Error in configuration file (nnn)
+    - there is an error in line nnn of GT.CFG. Read the text displayed.
+    - see [Introduction] for all possible switches
+
+  ş Error opening file ...
+    - the file is opened by another application
+
+  ş XMS error: ...
+    - use the /NX switch to disable XMS usage.
+    - end other applications that use XMS
+
+  ş IO error: ...
+    - File not found       - file simply does not exist
+    - Too many open files  - internal error in GetTyp
+                           - increase number of files in CONFIG.SYS
+                           - end other DOS applications
+    - File access denied   - file is in use by another application
+    - Disk read error      - run Diskfix/chkdsk or similar, maybe dangerous
+                           - "just" a damaged file
+                           - the file was deleted while scanning
+    - all other IO errors  - please send me an eMail with the file
+
+  ş Failed to open the data file GT.DAT for reading.
+    - the data file "gt.dat" could not be found
+    - it must be located in the current directory or in the program
+      directory (prefered)
+
+  ş Syntax error in line nnn in the DAT file
+    - if you have altered the dat file, check for any problem in this
+      line
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ 9 ThanX go to ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄÄÄ-úú
+³ ş Salvatore Meschini
+³   for his great File Format Encyclopedia.
+³
+³     smeschini@ermes.it
+:     http://www.ermes.it/pws/mesk/
+
+ÚÄÄÄ-úú
+³ ş Veit Kannnegieser
+³   for TYP.EXE which was a great help to identify EXE packer,
+³   for bug report and for sending me some packer.
+³   Also for releasing the Typ source code.
+³
+³     Veit.Kannegieser@tu-cottbus.de
+:     http://www-user.tu-cottbus.de/~kannegv/
+
+ÚÄÄÄ-úú
+³ ş Robert F. Day
+³   for his OBJ2ASM disassembler.
+³   I took the information for the object files out of it.
+³   And I removed it because I cannot compete with this program ;)
+³
+³     Robert F. Day
+³     19906 Filbert Dr.
+³     Bothell, WA 98012
+:     (206) 481-8431
+
+ÚÄÄÄ-úú
+³ ş Hann0 Boeck
+³   for taking me into the great EXE mailing list and
+³   for ChkEXE - what about 1.18??
+³
+³     hanno@gmx.de
+:     http://members.xoom.com/hanno/
+
+ÚÄÄÄ-úú
+³ ş Jibz
+³   for his great aPack - it's getting harder with UPX ;)
+³
+:     jibz@hotmail.com
+
+ÚÄÄÄ-úú
+³ ş Stewart Moss
+³   for bug reporting and sending some packers to me
+³
+:     stewart.moss@saexpress.co.za
+
+ÚÄÄÄ-úú
+³ ş Martin Schaefer
+³   for sending me some undetected packer (ACE, BOA, RAX, ...)
+³
+:     martin.schaefer@dortmund.netsurf.de
+
+ÚÄÄÄ-úú
+³ ş The ugly duckling
+³   for his great file base of executable modifier
+³
+:     duckling@beastie.cs.und.ac.za
+
+ÚÄÄÄ-úú
+³ ş Sir Galleyrod
+³   for sending me some pieces of code and some unknown packers
+³     - faster output code
+³     - switch LED lights code (which I didn't use finally)
+³     - "check if output is redirected" code
+³
+:     arturjus@kki.net.pl
+
+ÚÄÄÄ-úú
+³ ş JVP
+³   for sending lots of packers to me (XPack, HackStop, Mess, ...)
+³   what happened to TEU?
+³
+³     jvp@writeme.com
+:     http://members.xoom.com/jvp/
+
+ÚÄÄÄ-úú
+³ ş Stonehead
+³   also for sending lots of packers to me (Mess, XComOr, ...)
+:
+
+ÚÄÄÄ-úú
+³ ş ST!LLSON
+³   for EXESCAN - keep on working - great PE database
+³   What happened to EXEScan?
+³
+³     stills0n@writeme.com
+:
+
+ÚÄÄÄ-úú
+³ ş Iosco
+³   for bug reporting
+³
+³     iosco@writeme.com
+:     http://welcome.to/crYpta
+
+ÚÄÄÄ-úú
+³ ş all my "registered users"
+³   BIG THANX 4 SUPPORTING ME!!
+:
+
+ÚÄÄÄ-úú
+³ ş George Lyapko
+³   for bug reporting and testing GT - ThanX very much
+³   also for sending lots of packer to me!
+³   Visit his homepage and get LGFV which is very small and fast
+³   archive viewer!!
+³
+³     postmaster@ski-factory.uzhgorod.ua
+:     http://www.geocities.com/SiliconValley/Lab/6606/
+
+ÚÄÄÄ-úú
+³ ş e95 - Alexander
+³   for bug reporting, for testing GT, for sending several EXE/COM
+³   modifier to me, for some suggestions, ....
+³   THANX ALOT. You helped me very much in developing this little tool!!
+³
+³     e95@com.mels.ru
+:
+
+ÚÄÄÄ-úú
+³ ş Vadim Tarasov
+³   for bug reporting and some information exchange
+³   what about a new version of FA??
+³
+³     vadimlv@yahoo.com
+:     http://www.lyceum.junik.lv/~vadimlv
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ 10 Contact the author ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+  ş eMail: phax@writeme.com
+           philip@dke.univie.ac.at
+
+  ş Homepages:
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    GetTyp     http://surf.to/phax
+               http://unet.univie.ac.at/~a9606653/gettyp
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Claudia    http://fly.to/claudia
+               http://unet.univie.ac.at/~a9650515/claudia
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Sandra     http://come.to/thejourney
+               http://unet.univie.ac.at/~a9606653
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+  All programs are copyright by their authors.
+  GetTyp is Copyright (c) 1997-2000 by PHaX.
+
+                            --=[EOF]=--

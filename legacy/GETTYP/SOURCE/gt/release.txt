@@ -1,0 +1,19 @@
+2 do:
+
+FILE_ID.DIZ:
+- version
+- anzahl
+
+GT.TXT:
+- version
+- datum
+- groesse
+- packer
+- anzahl
+
+GT.HTM
+- version
+- datum
+- groesse
+- packer
+- anzahl

@@ -1,0 +1,2130 @@
+<html>
+
+<head>
+<meta name="author" content="Copyright (c) 1997-2000 by PHaX">
+<title>Documentation of GetTyp</title>
+
+<style type="text/css">
+<!--
+
+/* style sheets rulez!! */
+/* these are Copyright (c) 1999-2000 by PHaX !! */
+
+h1, h2, h3, h4, h5, h6
+{
+  border-left-width:1mm;
+  border-color:white;  /* so that it is not visible :( */
+  padding-left:4mm;
+  padding-right:4mm;
+  padding-top:2mm;
+  padding-bottom:2mm;
+  font-family:Arial,Helvetica;
+}
+
+h1 { background-color:#A0A0E0; font-size:48pt; }
+h2 { background-color:#A0A0E0; }
+h3 { background-color:#A0E0A0; }
+
+/* a ganz global ... */
+a
+{
+  background-color:#D0D0D0;
+  text-decoration:underline;
+  font-weight:600;
+}
+
+/* a falls in h1 oder h2 */
+h1 a, h2 a
+{
+  background-color:#A0A0E0;
+  font-size:10pt;
+}
+
+/* a falls in h3 */
+h3 a, th a
+{
+  background-color:#A0E0A0;
+  font-size:10pt;
+}
+
+/* definitions for table fields */
+td, th
+{
+  font-size:10pt;
+  font-family:Arial,Helvetica;
+  vertical-align:top;
+}
+
+th { background-color:#A0E0A0; }
+
+dir, ul, ol, li
+{
+  font-family:Arial,Helvetica;
+  font-size:10pt;
+}
+
+/* end of style sheet definition */
+
+// -->
+</style>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#E06060" alink="#FF0000" vlink="#E06060">
+</body>
+
+<a name="chap0"></a>
+
+<br>
+<br>
+
+<h1 align=center>GetTyp documentation</h1>
+
+<br>
+<br>
+
+<table border=1>
+<tr>
+<th colspan=2>Short version information:</th>
+</tr>
+
+<tr>
+<td>Current version:</td>
+<td>2.60</td>
+</tr>
+
+<tr>
+<td>From:</td>
+<td>13.12.2000</td>
+</tr>
+
+<tr>
+<td>Original Size:</td>
+<td>68.762 Bytes</td>
+</tr>
+
+<tr>
+<td>Processed with:</td>
+<td>UPX 1.01</td>
+</tr>
+</table>
+
+<br>
+<br>
+
+<h3><a href="#chap0">[Up]</a> Table of contents</h3>
+<dir>
+  1 <a href="#chap1">Introduction</a>
+  <dir>
+    1.1 <a href="#chap11">Synopsis</a><br>
+    1.2 <a href="#chap12">Synopsis examples</a><br>
+    1.3 <a href="#chap13">System requirements</a><br>
+    1.4 <a href="#chap14">Package information</a>
+  </dir>
+  2 <a href="#chap2">Commandline options</a><br>
+  3 <a href="#chap3">The configuration file GT.CFG</a><br>
+  4 <a href="#chap4">Output format description</a><br>
+  5 <a href="#chap5">Detected file formats</a>
+  <dir>
+    5.1 <a href="#chap51">Archives</a><br>
+    5.2 <a href="#chap52">Images</a><br>
+    5.3 <a href="#chap53">Executables</a><br>
+    5.4 <a href="#chap54">The rest</a>
+  </dir>
+  6 <a href="#chap6">Future plans</a><br>
+  7 <a href="#chap7">Known bugs</a><br>
+  8 <a href="#chap8">Error handling</a><br>
+  9 <a href="#chap9">ThanX go to</a><br>
+  10 <a href="#chapA">Contact the author</a>
+</dir>
+
+<br>
+<br>
+
+<!-- -------------------- 1.1 -------------------- -->
+
+<a name="chap1"></a>
+<h2><a href="#chap0">[Up]</a> 1 Introduction</h2>
+
+<br>
+
+<dir>
+  GetTyp is a file format detection program for DOS. It detects several formats
+  without looking at the filename. It searches the code for special strings and
+  byte code to identify the fileformat.<br>
+
+  <br>
+  The author disclaims all warranties as to this software, whether
+  expressed or implied, including without limitation any implied
+  warranties of merchantability or fitness for a particular purpose.
+  See the accompanying documentation for further disclaimers and
+  information.<br>
+  <br>
+
+  <table border=1>
+  <tr>
+  <td colspan=2>
+  GetTyp is <b>FREEWARE</b>!
+  That means you can do whatever you want with the <b>ENTIRE</b> package.
+  You can copy as the <b>ENTIRE</b> package as often as you want
+  on how many computers you want for as long as you want - okay?
+  </td>
+  </tr>
+  </table>
+
+  <br>
+
+  There is also a mailing list running at <a href="http://www.egroups.com">eGroups</a>.<br>
+  <br>
+  Check out the WebSite <a href="http://www.eGroups.com/list/gettyp">http://www.eGroups.com/list/gettyp</a><br>
+  or subscribe by sending an eMail to
+  <a href="mailto:gettyp-subscribe@egroups.com">gettyp-subscribe@egroups.com</a>.<br>
+  <br>
+  I will send all released version (and some beta releases) to this group.<br>
+
+  <br>
+  <br>
+
+  <!-- -------------------- 1.1 -------------------- -->
+
+  <a name="chap11"></a>
+
+  <h3><a href="#chap0">[Up]</a> 1.1 Synopsis</h3>
+
+  <br>
+
+  <dir>
+    Synopsis: GT [filemask1 [filemask2 [...]]] [options] [&gt; filename]<br>
+    <br>
+    If no filemask is specified, "<code>*.*</code>" is used as default value. You can also
+    pass a path and a drive.<br>
+    If no extension is specifief, GetTyp uses "<code>.*</code>" as default value.
+  </dir>
+
+  <br>
+  <br>
+
+  <!-- -------------------- 1.2 -------------------- -->
+
+  <a name="chap12"></a>
+
+  <h3><a href="#chap0">[Up]</a> 1.2 Synopsis examples</h3>
+
+  <br>
+
+  <dir>
+    GT                              <dir>scan all files in the current directory</dir><br>
+    GT *.PAS                        <dir>scan all .PAS files in the current directory</dir><br>
+    GT *.EXE *.COM /NX /NA          <dir>scan all .EXE and .COM files in the current directory and do not use XMS and do not list files in archives if any found</dir><br>
+    GT C:\WINDOWS\*.DLL             <dir>scan all .DLL files on drive C: in the directory \WINDOWS</dir><br>
+    GT /s                           <dir>scan all files in the current directory and in all subdirectories</dir><br>
+    GT *.TXT /s                     <dir>scan all .TXT files in the current directory and in all subdirectories</dir><br>
+    GT *.EXE *.DLL *.SYS &gt; GT.NFO<dir>scan all .EXE, .DLL and .SYS files in the current directory and write the results to the file GT.NFO</dir><br>
+    GT *.TXT /FILEtexts.txt         <dir>scan all .TXT files in the current directory and save the result to the file &quot;texts.txt&quot;</dir><br>
+    Note:
+    <dir>
+      GT a* b*<dir>is equivalent to:</dir>
+      GT a*.* b*.*<br>
+      <br>
+      if you want to scan the files "a*" without extension, type:<br>
+      GT a*.<br>
+    </dir>
+    <br>
+    Note:
+    <dir>
+      GT *.EXE *.COM /F /NX<br>
+      GT /nX /f *.cOM *.eXe<br>
+      GT /F *.Com /Nx *.ExE<br>
+      GT *.COM /f /nx *.exE<br>
+      is all the same.
+    </dir>
+  </dir>
+
+  <br>
+  <br>
+
+  <!-- -------------------- 1.3 -------------------- -->
+
+  <a name="chap13"></a>
+
+  <h3><a href="#chap0">[Up]</a> 1.3 System requirements</h3>
+
+  <br>
+
+  <dir>
+    GetTyp needs at least a Intel 80286 or higher. It needs at least 200 KB of
+    conventional memory. GetTyp uses XMS if is detected. XMS is only necessary
+    when handling recursive EXE overlays. If no XMS is available it uses
+    conventional memory instead.<br>
+    GetTyp does not use EMS.
+  </dir>
+
+
+  <br>
+  <br>
+
+  <!-- -------------------- 1.4 -------------------- -->
+
+  <a name="chap14"></a>
+
+  <h3><a href="#chap0">[Up]</a> 1.4 Package information</h3>
+
+  <br>
+
+  <dir>
+  <p>
+  This package should contain the following files:
+  </p>
+
+  <table border=1>
+  <tr>
+  <td>GT.EXE</td>
+  <td>the main executable - <b>required</b></td>
+  </tr>
+
+  <tr>
+  <td>GT.DAT</td>
+  <td>the data file - <b>required</b></td>
+  </tr>
+
+  <tr>
+  <td>GT.CFG</td>
+  <td>the configuration file (not needed, but useful)</td>
+  </tr>
+
+  <tr>
+  <td>GT.TXT</td>
+  <td>the documentation file in text format (for DOS)</td>
+  </tr>
+
+  <tr>
+  <td>GT.HTM</td>
+  <td>the documentation in HTML for all the rest of you</td>
+  </tr>
+
+  <tr>
+  <td>GT.HIS</td>
+  <td>internal history of GetTyp</td>
+  </tr>
+
+  <tr>
+  <td>GTSETUP.EXE</td>
+  <td>small setup program to setup your gt.cfg</td>
+  </tr>
+
+  <tr>
+  <td>FILE_ID.DIZ</td>
+  <td>small description file</td>
+  </tr>
+  </table>
+
+  </dir>
+</dir>
+
+<br>
+<br>
+
+<!-- -------------------- 2 -------------------- -->
+
+<a name="chap2"></a>
+
+<h2><a href="#chap0">[Up]</a> 2 Commandline options</h2>
+
+<br>
+
+<dir>
+  <table border=1>
+  <tr>
+  <td>/C<i><font color="#FF0000">n</font></i></td>
+  <td>
+  Set the maximum length of the internal EXE compare buffer.<br>
+  The default value is 80 but some modifier have a (much) shorter<br>
+  startup code so this is only the maximum.<br>
+  You can use this switch in the configuration file.<br>
+  Possible values are between 5 and 80, default is 80.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/F</td>
+  <td>
+  Displays only a result if the file was identified by GetTyp.<br>
+  If this switch is not used, GetTyp displays one message out of<br>
+  the following list:
+  <ul>
+  <li>Textfile (DOS format)</li>
+  <li>Textfile (UNIX format)</li>
+  <li>Binary file</li>
+  </ul>
+  and additionally:
+  <ul>
+  <li>File may be 7 bit only</li>
+  </ul>
+  This is only a suggestion, because GetTyp analyzes only the<br>
+  first 8 Kilobyte of each file.<br>
+  You can use this switch in the configuration file.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/H or /?</td>
+  <td>
+  Displays a screen with the syntax and exits with errorcode 1.<br>
+  This switch is not allowed in the configuration file.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/I</td>
+  <td>
+  Displays some internal information.<br>
+  This switch is not allowed in the configuration file.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/L</td>
+  <td>
+  Simple file listing.<br>
+  Prints only the filename, the size and the type of the file.<br>
+  This may be helpful if scanning whole drives.<br>
+  You can use this switch in the configuration file.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/M</i><font color="#FF0000">n</font></i></td>
+  <td>
+  Stop after n identified files.<br>
+  n must be greater 0 or an error message will occur.<br>
+  You can use this switch in the configuration file.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/NA</td>
+  <td>
+  Do NOT list the contents of an archive.<br>
+  If an archive is found GetTyp will only note the type of the<br>
+  archive, but will not list its contents.<br>
+  You can use this switch in the configuration file.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/NC</td>
+  <td>
+  Do not use the configuration file.<br>
+  The configuration file will be ignored. Only commandline options<br>
+  will be evaluated.<br>
+  This switch is not allowed in the configuration file ;-)
+  </td>
+  </tr>
+
+  <tr>
+  <td>/ND</td>
+  <td>
+  Do not show directories as identified.<br>
+  Otherwise GT will identify directories as files of the type<br>
+  [directory]. If you don't want this use this switch.<br>
+  You can use this switch in the configuration file.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/NH</td>
+  <td>
+  Do not use heuristics in EXE/COM startup code detection.<br>
+  If you don't use this switch, GT may display EXE/COM modifier<br>
+  which end with (?) or (??). This means that GT is not sure and<br>
+  found 1 or 2 different bytes. If you use this switch, GT only<br>
+  displays entries where it is sure.<br>
+  You can use this switch in the configuration file.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/NL</td>
+  <td>
+  Do not use long filenames.<br>
+  This switch will disable the usage of long filenames under<br>
+  Windows 95/98. Use this if any problems occur... (no bug<br>
+  reports until today.)<br>
+  You can use this switch in the configuration file.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/NS</td>
+  <td>
+  Don't print final summary.<br>
+  Normally GetTyp prints out a small summary about the files<br>
+  found, the files identified, the time it took and some info<br>
+  about the archives found.<br>
+  If you use this switch GetTyp will not display it.<br>
+  You can use this switch in the configuration file.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/NX</td>
+  <td>
+  Do not use extended memory (XMS).<br>
+  Normally GetTyp uses some XMS if it handles EXE overlays or<br>
+  EXE to COM converted COM files. If /NX is used, GetTyp tries to<br>
+  allocate conventional memory but this may cause a heap overflow<br>
+  on difficult files like ARJ.EXE.<br>
+  You can use this switch in the configuration file.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/OUT<i><font color="#FF0000">foo</font></i></td>
+  <td>
+  Save the output to the file "foo".<br>
+  Normally GetTyp prints the results to the screen but if you<br>
+  use this switch, you can redirect all the output to a file.<br>
+  This is especially helpful when calling GetTyp from an external<br>
+  tool which cannot redirect the out via &quot;&gt;&quot;.<br>
+  This switch is not allowed in the configuration file.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/OVER</td>
+  <td>
+  Overwrite the file specified with /OUT.<br>
+  Normally GetTyp would not print the results to a file if this<br>
+  file already exists. With this switch you force GetTyp to<br>
+  write the results to the file "foo" even if it exists.<br>
+  If you want if every time, you can include this switch in the<br>
+  configuration file GT.CFG.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/P</td>
+  <td>
+  Pause after every 24 lines of output.<br>
+  When GetTyp stops, it displays the message<br>
+  "Press any key to continue, P to disable pause".<br>
+  If you press "p" then GetTyp won't prompt you for a key until<br>
+  it finishes.<br>
+  You may also use MORE.COM because GetTyp writes to STDOUT.<br>
+  You can use this switch in the configuration file.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/S</td>
+  <td>
+  Search subdirectories.<br>
+  If you use this switch, GetTyp will scan all subdirectories of<br>
+  the current directory - otherwise it does not ;-)<br>
+  This may be very helpful if you want to scan a whole drive.<br>
+  You can use this switch in the configuration file.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/ZA</td>
+  <td>
+  Enable search for ARI archives<br>
+  Normally GetTyp wont search for ARI archives because there is<br>
+  no appropriate method to detect it :( Since there were so many<br>
+  misdetections I made a special switch.<br>
+  You can use this switch in the configuration file.
+  </td>
+  </tr>
+
+
+  <tr>
+  <th colspan=2>Only available for registered users:</th>
+  </tr>
+
+  <tr>
+  <td>/XO</td>
+  <td>
+  Extended object file listing.<br>
+  GetTyp can list lots of information about an object files but<br>
+  this may not be interesting for most of the people and because<br>
+  it's really a lot of crap I decided to make an extra switch<br>
+  for it.<br>
+  You can use this switch in the configuration file.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/ZE</td>
+  <td>
+  Show extended EXE header anyway.<br>
+  GetTyp normally displays only the identified compiler (if any)<br>
+  on PE/NE executables. If you use this switch GT will also dis-<br>
+  play the further information - only for professionals!<br>
+  You can use this switch in the configuration file.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/ZH</td>
+  <td>
+  Supress output of header.<br>
+  GetTyp wont display the first three lines.<br>
+  You can use this switch in the configuration file.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/ZN</td>
+  <td>
+  Show only not identified files.<br>
+  GetTyp will only show the files that can't be identified.<br>
+  This is mainly an internal switch.<br>
+  You can use this switch in the configuration file.
+  </td>
+  </tr>
+
+  <tr>
+  <td>/ZS</td>
+  <td>
+  Show only final statistics.<br>
+  GetTyp will only display the final statistics and no further<br>
+  output. Mainly used internaly for information.<br>
+  You can NOT use this switch in the configuration file.
+  </td>
+  </tr>
+  </table>
+
+</dir>
+
+<br>
+<br>
+
+<!-- -------------------- 3 -------------------- -->
+
+<a name="chap3"></a>
+
+<h2><a href="#chap0">[Up]</a> 3 The configuration file GT.CFG</h2>
+
+<br>
+
+<dir>
+  What's the configuration file:
+  <dir>
+    The configuration file allows you to customize your version a little bit.<br>
+    You can set standard switches. Nearly all switches are allowed, except<br>
+    /?, /H, /I and /NC.<br>
+    Standard file masks are not allowed.<br>
+    For a list of all switches see <a href="#chap2">2 Commandline options</a>.
+  </dir>
+
+  <br>
+
+  Comments:
+  <dir>
+    Empty lines and lines starting with a semicolon (;) are interpreted<br>
+    as comments; spaces and tabs are ignored.
+  </dir>
+
+  <br>
+
+  Errors:
+  <dir>
+    If something is wrong in the configuration file, GetTyp will halt,<br>
+    an tell you what's wrong and in which line the error was detected.
+  </dir>
+</dir>
+
+<br>
+<br>
+
+<!-- -------------------- 4 -------------------- -->
+
+<a name="chap4"></a>
+
+<h2><a href="#chap0">[Up]</a> 4 Output format description</h2>
+
+<br>
+
+<dir>
+  <code>
+  - [TEST\CHECK.PAS] -----<br>
+      Pascal source: program "Check"<br>
+  <br>
+  </code>
+
+  <br>
+
+  <table border=0>
+  <tr>
+  <td>TEST</td>
+  <td>the path to the file, relative to the start path</td>
+  </tr>
+
+  <tr>
+  <td>CHECK.PAS</td>
+  <td>the filename of the researched file</td>
+  </tr>
+
+  <tr>
+  <td>Pascal ...</td>
+  <td>the type of the detected file (here: Pascal source code)</td>
+  </tr>
+  </table>
+</dir>
+
+<br>
+<br>
+
+<!-- -------------------- 5 -------------------- -->
+
+<a name="chap5"></a>
+
+<h2><a href="#chap0">[Up]</a> 5 Detected file formats</h2>
+
+<br>
+
+<dir>
+  92/74 archive formats<br>
+  15 image formats<br>
+  404 EXE/COM modifier/compiler<br>
+  144 PE EXE modifier/compiler<br>
+
+  <br>
+  <br>
+
+  <!-- -------------------- 5.1 -------------------- -->
+
+  <a name="chap51"></a>
+
+  <h3><a href="#chap0">[Up]</a> 5.1 Archives</h3>
+
+  <br>
+
+  <dir>
+    <table border=1>
+    <!-- the complex header with the descriptions -->
+    <tr>
+      <td rowspan=8>&nbsp;</td>
+      <td colspan=8 bgcolor="#D0D0D0">Detect this type of archive</td>
+    </tr>
+    <tr>
+      <td rowspan=8 bgcolor="#D0D0D0">&nbsp;</td>
+      <td colspan=7>List the files in the archive (incl. size and %)</td>
+    </tr>
+    <tr>
+      <td rowspan=7>&nbsp;</td>
+      <td colspan=6 bgcolor="#D0D0D0">List date and time of the archived files</td>
+    </tr>
+    <tr>
+      <td rowspan=6 bgcolor="#D0D0D0">&nbsp;</td>
+      <td colspan=5>Identify password encrypted files</td>
+    </tr>
+    <tr>
+      <td rowspan=5>&nbsp;</td>
+      <td colspan=4 bgcolor="#D0D0D0">Identify file comments</td>
+    </tr>
+    <tr>
+      <td rowspan=4 bgcolor="#D0D0D0">&nbsp;</td>
+      <td colspan=3>Identify SFX archives</td>
+    </tr>
+    <tr>
+      <td rowspan=3>&nbsp;</td>
+      <td colspan=2 bgcolor="#D0D0D0">List SFX archives</td>
+    </tr>
+    <tr>
+      <td rowspan=2 bgcolor="#D0D0D0">&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <!-- other headlines -->
+    <tr>
+      <td>Archive name</td>
+      <td>Copyright &copy;</td>
+    </tr>
+    <!-- start with first archive -->
+    <tr><td>777 0.04b1     </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td><a href="http://www.geocities.com/SiliconValley/Lakes/9584/index.html">1997-98 by Igor Pavlov</a></td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>ACE &gt; 1.1   </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">+</td><td><a href="http://members.aol.com/mlemke6413/ace.html">1997 by Marcel Lemke</a></td></tr>
+    <tr><td>AIN 2.21       </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">-</td><td>1993-94 by Transas Marine (UK) Ltd.</td></tr>
+    <tr><td>AKT 0.5C       </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>1998-99 by TRTi/Agyhalal</td></tr>
+    <tr><td>AKT 0.5Db2     </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>1998-99 by TRTi/Agyhalal</td></tr>
+    <tr><td>AMG 2.2        </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1993 by Milen Georgiev</td></tr>
+    <tr><td>AR 1.1         </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>by Haruhiko Okumura</td></tr>
+    <tr><td>AR7 1.2        </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">-</td><td>by Timothy R. Erickson</td></tr>
+    <tr><td>ARC &gt; 6.00  </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>1985-91 by System Enhancement Ass.</td></tr>
+    <tr><td>ARG 1.01b      </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td><a href="http://www.geocities.com/SiliconValley/Lakes/9584/index.html">1994 by Igor Pavlov</a></td></tr>
+    <tr><td>ARHANGEL       </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">+</td><td><a href="http://www.geocities.com/SiliconValley/Lab/6606/">1997-98 by George Lyapko</a></td></tr>
+    <tr><td>ARI &gt; 2.15  </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1997 by A. Ratushnyak / RAO Inc.</td></tr>
+    <tr><td>ARJ &gt; 2.41  </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td><a href="http://www.arjsoftware.com">1990-99 by ARJ Software Inc.</a></td></tr>
+    <tr><td>ARQ 3.2        </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1993-1997 by DC Micro Development</td></tr>
+    <tr><td>ARS 2.1        </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">-</td><td><a href="http://http://surf.to/stepanyuk">by Oleg Stepanyuk</td></tr>
+    <tr><td>ARX 1.0        </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1994 by Michael A. Kosior</td></tr>
+    <tr><td>ASD 0.13       </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1996 by Topologi Software</td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>BinHex         </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">-</td><td><a href="http://www.apple.com">by Apple</a></td></tr>
+    <tr><td>BIX 1.00b2     </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td><a href="http://www.geocities.com/SiliconValley/Lakes/9584/index.html">1998 by Igor Pavlov</a></td></tr>
+    <tr><td>BLINK &gt; 2.50</td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1998 by D.T.S.</td></tr>
+    <tr><td>BOA 0.58       </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1997-98 by Ian Sutton</td></tr>
+    <tr><td>BS2 2.0        </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1992 by ???</td></tr>
+    <tr><td>BSA 1.95       </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>1992 by Serg Babitchew</td></tr>
+    <tr><td>BSArc 2.00     </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>1992-1994 by PTS Ltd.</td></tr>
+    <tr><td>BZip 0.21      </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">-</td><td><a href="http://www.muraroa.demon.co.uk">Julian Seward</a></td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>Cabinet        </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td><a href="http://www.microsoft.com">by Microsoft</a></td></tr>
+    <tr><td>CHARC 1.2      </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1990 by S. Tchernivetzky</td></tr>
+    <tr><td>CODEC 3.21     </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>by Telvox Teleinformatica</td></tr>
+    <tr><td>COMP16         </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">-</td><td>by Joseph M. Orost</td></tr>
+    <tr><td>Compress 5.0   </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td><a href="http://www.microsoft.com">by Microsoft</a></td></tr>
+    <tr><td>CrossePAC      </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">-</td><td>by Digital Strategies</td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>DPA 1.1a       </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>by Dirk Paehl</td></tr>
+    <tr><td>DWC 5.10       </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>1990 by Dean W. Cooper</td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>ELI 5750       </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">?</td><td>5750 by Jules Revsin</td></tr>
+    <tr><td>ESP 1.92       </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>1997 by GyikSoft</td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>Finish 2.6     </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1992 by ImagiSOFT</td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>GZip 1.2.4     </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>GNU public license</td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>HA 0.999&szlig;</td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1995 by Harri Hirvola</td></tr>
+    <tr><td>HAP 3.0        </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td><a href="http://xs4all.nl/~feldmann">1992 by Hamarsoft</a></td></tr>
+    <tr><td>HPA            </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">-</td><td>1997 by HPA</td></tr>
+    <tr><td>Hyper 2.5      </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>1990 by Peter Sawatzki</td></tr>
+    <tr><td>Hyper 2.6      </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>1992 by Peter Sawatzki</td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>ICE 1.14       </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>1988-89 by Yoshi</td></tr>
+    <tr><td>IMP &gt; 1.01  </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">-</td><td><a href="http://www.technelysium.com.au">1998-2000 by Technelysium</a></td></tr>
+    <tr><td>ISC            </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td><a href="http://www.installshield.com">1990-97 by Stirling Technologies</a></td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>JAR &gt; 1.01  </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">-</td><td><a href="http://www.arjsoftware.com">by ARJSoftware</a></td></tr>
+    <tr><td>JRC 1.10       </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1992-95 by JAYAR Systems</td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>LHA &gt; 2.13  </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>1988-92 by Haruyasu Yoshizaki</td></tr>
+    <tr><td>Limit 1.2      </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1994 by J. Y. Lim</td></tr>
+    <tr><td>Links LS       </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>by Access Software</td></tr>
+    <tr><td>LZA            </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">+</td><td><a href="http://ourworld.compuserve.com/homepages/African_Chief">1999 by the African Chief</a></td></tr>
+    <tr><td>LZOP           </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td><a href="http://wildsau.idv.uni-linz.ac.at/mfx/lzop.html">1996-98 by Markus F. X. J. Oberhumer</a></td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>MAR 1.0        </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>by Micrognosis</td></tr>
+    <tr><td>MSXIE 1.4      </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1995-97 by MercurySoft</td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>PACK           </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>by IBM</td></tr>
+    <tr><td>PAK 2.51       </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1988-90 by NoGate Consulting</td></tr>
+    <tr><td>PAQ            </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1996-98 by Dmitry Dvoinikov</td></tr>
+    <tr><td>PAR            </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">-</td><td>by Philipp Druyts</td></tr>
+    <tr><td>PHP 1.0        </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td><a href="http://surf.to/phax">1997-98 by PHaX</a></td></tr>
+    <tr><td>PKZIP 2.04 g   </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td><a href="http://www.pkware.com">1989-93 by PKWARE Inc.</a></td></tr>
+    <tr><td>PPMZ 8.1       </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">-</td><td><a href="http://www.pkware.com">1989-93 by PKWARE Inc.</a></td></tr>
+    <tr><td>ProPack 2.14   </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1991-92 by Rob Northen Computing</td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>Q &gt; 0.90    </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1993-95 by Cinematronics</td></tr>
+    <tr><td>QFC            </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td><a href="http://www.geocities.com/SiliconValley/Lab/6606/">1993-98 by George G. Lyapko</a></td></tr>
+    <tr><td>Quark 1.00b    </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td><a href="http://www.geocities.com/SiliconValley/Lab/6606/">1993 by Robert Kunz</a></td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>RAR &lt; 1.50  </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>1993-97 by Eugene Roshal</td></tr>
+    <tr><td>RAR &gt; 1.50  </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>1993-97 by Eugene Roshal</td></tr>
+    <tr><td>RAX 1.02       </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>1998 by GeCAD srl</td></tr>
+    <tr><td>RKive 1.4      </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">-</td><td>1996 by Malcolm Taylor</td></tr>
+    <tr><td>RKive 1.92     </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">-</td><td>1996-97 by Malcolm Taylor</td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>SAR 1.0        </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1993 by Streamline Design</td></tr>
+    <tr><td>SBX &gt; 1.2   </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1997 by SpinnerBaker Software</td></tr>
+    <tr><td>SKY 1.15       </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1995-97 by SkyTech</td></tr>
+    <tr><td>SQWEZ 2.3      </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>1995 by JM Software</td></tr>
+    <tr><td>SQZ 1.08.3     </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>by Jonas I. Hammarberg</td></tr>
+    <tr><td>SWG            </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>by SoftWare Archival Group</td></tr>
+    <tr><td>Synetic        </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>by Synetic Software</td></tr>
+    <tr><td>SZip &gt; 1.05 </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">-</td><td><a href="http://www.compressconsult.com/szip/">1997 by Michael Schindler</a></td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>TAR            </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>GNU public license</td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>UC II 3.05     </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>1991-95 by Ad Infinitum Software</td></tr>
+    <tr><td>UFA 0.00       </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td><a href="http://www.geocities.com/SiliconValley/Lakes/9584/index.html">1996 by Igor Pavlov</a></td></tr>
+    <tr><td>UFA 0.01/0.02  </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td><a href="http://www.geocities.com/SiliconValley/Lakes/9584/index.html">1996-97 by Igor Pavlov</a></td></tr>
+    <tr><td>UFA 0.03/0.04  </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td><a href="http://www.geocities.com/SiliconValley/Lakes/9584/index.html">1996-98 by Igor Pavlov</a></td></tr>
+    <tr><td>UHARC 0.2      </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">-</td><td>1997 by Uwe Herklotz</td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>XLink 2.02     </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>1994, 95 by J. E. Hoffmann</td></tr>
+    <tr><td>xpa 1.0.2      </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1999 by jauming tseng</td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>YAC            </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1995 by Aleksandras Surna</td></tr>
+    <tr><td>YamazakiZipper </td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>1997-98 by Binary Technologies</td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>ZET 0.10       </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>1994 by Oleg V. Zaimkin</td></tr>
+    <tr><td>ZOO &gt; 2.01  </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td>GNU public license</td></tr>
+    <tr><td>ZPack 1.0      </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">+</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">-</td><td>1992 by SpeedSOFT</td></tr>
+    <tr><td colspan=9 bgcolor="#A0E0A0">&nbsp;</td></tr>
+    <tr><td>"EX_"          </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td><a href="http://www.installshield.com">1990-95 by Stirling Technologies</a></td></tr>
+    <tr><td>"LIB"          </td><td bgcolor="#D0D0D0">+</td><td>+</td><td bgcolor="#D0D0D0">-</td><td>-</td><td bgcolor="#D0D0D0">-</td><td>?</td><td bgcolor="#D0D0D0">?</td><td><a href="http://www.installshield.com">used with installSHIELD</a></td></tr>
+    </table>
+  </dir>
+
+  <br>
+  <br>
+
+  <!-- -------------------- 5.2 -------------------- -->
+
+  <a name="chap52"></a>
+
+  <h3><a href="#chap0">[Up]</a> 5.2 Images</h3>
+
+  <br>
+
+  <dir>
+    <table border=1>
+    <tr><th>Image name     </th><th>Copyright &copy;</th></tr>
+    <tr><td>BMF 0.3        </td><td>by Dimitri Shkarin</td></tr>
+    <tr><td>BMP (Win, OS/2)</td><td>???</td></tr>
+    <tr><td>CDR (6/7/8)    </td><td><a href="http://www.corel.com">by Corel Inc.</a></td></tr>
+    <tr><td>EMF            </td><td><a href="http://www.microsoft.com">by Microsoft</a></td></tr>
+    <tr><td>DIB            </td><td>see BMP</td></tr>
+    <tr><td>RLE            </td><td>see BMP</td></tr>
+    <tr><td>GIF (+GIFLITE) </td><td><a href="http://www.compuserve.com">by Compuserve</a></td></tr>
+    <tr><td>IFF ILBM       </td><td>???</td></tr>
+    <tr><td>JPG/JFIF       </td><td><a href="http://www.jpeg.org">JPEG group</a></td></tr>
+    <tr><td>MAC            </td><td><a href="http://www.apple.com">by Apple Computer Inc.</a></td></tr>
+    <tr><td>PCD            </td><td>by Kodak</td></tr>
+    <tr><td>PCX            </td><td>by ZSoft</td></tr>
+    <tr><td>PNG            </td><td><a href="http://www.pnglib.org">pnglib</a></td></tr>
+    <tr><td>PSD            </td><td><a href="http://www.adobe.com">Adobe Photoshop</a></td></tr>
+    <tr><td>RAS            </td><td><a href="http://www.sun.com">by Sun</a></td></tr>
+    <tr><td>TIFF           </td><td>by Aldus/<a href="http://www.microsoft.com">Microsoft</a></td></tr>
+    <tr><td>WMF            </td><td><a href="http://www.microsoft.com">by Microsoft</a></td></tr>
+    <tr><td>WPG            </td><td><a href="http://www.corel.com">by WordPerfect</a></td></tr>
+    </table>
+
+    <br>
+    GetTyp detects the following 40 IFF subtypes:
+    <dir>
+      <ol>
+        <li>Copyright notice and license</li>
+        <li>Annotation or comment</li>
+        <li>Document formatting information</li>
+        <li>Footer information of a document</li>
+        <li>Header information of a document</li>
+        <li>Page break indicator</li>
+        <li>Paragraph formatting information</li>
+        <li>Deluxe Print page definition</li>
+        <li>Tab positions</li>
+        <li>Text for a paragraph</li>
+        <li>File version</li>
+        <li>Formatted text</li>
+        <li>Pro-write word processing</li>
+        <li>Amiga Contiguous Bitmap (Microsoft Basic for the Amiga)</li>
+        <li>IFF Deep (24-bit color image)</li>
+        <li>2D object standard format (vector data)</li>
+        <li>Raster font</li>
+        <li>Vector font</li>
+        <li>InterLeaved Bitmap (interleaved planar bitmap data)</li>
+        <li>Portable bitmap</li>
+        <li>Macintosh picture</li>
+        <li>24-bit color image (Impulse)</li>
+        <li>12-bit color image (Impulse)</li>
+        <li>Turbo3d renderung data (3D objects)</li>
+        <li>YUV image data (V-Lab)</li>
+        <li>Animated bitmap</li>
+        <li>Cel animations</li>
+        <li>Super smooth animation (ProDAD)</li>
+        <li>Deluxe Video Construction Set video</li>
+        <li>8-bit sampled voice</li>
+        <li>Audio interchange file format</li>
+        <li>Sampled sound</li>
+        <li>Uhuru Sound Software Macintosh voice</li>
+        <li>General use musical score</li>
+        <li>Simple musical score</li>
+        <li>MIDI music data</li>
+        <li>Uhuru Sound Software musical score</li>
+        <li>Bitmap header</li>
+        <li>Color table</li>
+        <li>image data</li>
+      </ol>
+    </dir>
+  </dir>
+
+  <br>
+  <br>
+
+  <!-- -------------------- 5.3 -------------------- -->
+
+  <a name="chap53"></a>
+
+  <h3><a href="#chap0">[Up]</a> 5.3 Executables</h3>
+
+  <br>
+
+  <dir>
+    <h3>
+    <a href="#chap53_">0-9</a>
+    <a href="#chap53a">A</a>
+    <a href="#chap53b">B</a>
+    <a href="#chap53c">C</a>
+    <a href="#chap53d">D</a>
+    <a href="#chap53e">E</a>
+    <a href="#chap53f">F</a>
+    <a href="#chap53g">G</a>
+    <a href="#chap53h">H</a>
+    <a href="#chap53i">I</a>
+    <a href="#chap53j">J</a>
+    <a href="#chap53k">K</a>
+    <a href="#chap53l">L</a>
+    <a href="#chap53m">M</a>
+    <a href="#chap53n">N</a>
+    <a href="#chap53o">O</a>
+    <a href="#chap53p">P</a>
+    <a href="#chap53q">Q</a>
+    <a href="#chap53r">R</a>
+    <a href="#chap53s">S</a>
+    <a href="#chap53t">T</a>
+    <a href="#chap53u">U</a>
+    <a href="#chap53v">V</a>
+    <a href="#chap53w">W</a>
+    <a href="#chap53x">X</a>
+    <a href="#chap53y">Y</a>
+    <a href="#chap53z">Z</a>
+    <a href="#chap53xyz">???</a>
+    <a href="#chap53sys">driver</a>
+    <a href="#chap53pe">PE</a>
+    <a href="#chap53ne">NE</a>
+    <a href="#chap53le">LE</a>
+    </h3>
+
+    <table border=1>
+    <tr>
+      <td>Modifier name</td>
+      <!-- here are the 4 vertical rows of the 4 headers -->
+      <td>Copyright &copy;</td>
+    </tr>
+    <!-- end headline -->
+
+    <tr><th colspan=2><a name="chap53_"></a><a href="#chap53">[index]</a> 0-9</th></tr>
+<!--EXESTART-->
+    <tr><td>624 1.0                  </td><td>Kim Holviala</td></tr>
+
+    <tr><th colspan=2><a name="chap53a"></a><a href="#chap53">[index]</a> A</th></tr>
+    <tr><td>ABKprot 1.00             </td><td>fds0ft</td></tr>
+    <tr><td>Ady's Glue 1.10          </td><td>Ady</td></tr>
+    <tr><td>AdFlt2                   </td><td>Elicz</td></tr>
+    <tr><td>AEP 1.00                 </td><td>Ke Jia-Hann</td></tr>
+    <tr><td>AinEXE 2.1               </td><td>Transas Marine</td></tr>
+    <tr><td>AinEXE 2.22              </td><td>Transas Marine</td></tr>
+    <tr><td>AinEXE 2.23              </td><td>Transas Marine</td></tr>
+    <tr><td>Alec 1.6                 </td><td>rANDOM</td></tr>
+    <tr><td>Aluwain 8.03             </td><td>Tequila</td></tr>
+    <tr><td>Aluwain 8.09             </td><td>Tequila</td></tr>
+    <tr><td>AntiUPC 1.02             </td><td>Hold</td></tr>
+    <tr><td>aPack 0.58               </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.58 - 0.74 (1)    </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.58 - 0.74 (2)    </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.61               </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.66               </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.69               </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.73 - 0.74        </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.73 - 0.74 -d     </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.73 - 0.74 -m     </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.82               </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.82 -d            </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.82 -m -p         </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.90 - 0.99 -m [EXE]</td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.90 - 0.99 [EXE]  </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.90 - 0.99 -d/-s [EXE]</td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.90 - 0.99 -d/-s -m [EXE]</td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.90 -m -p         </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.90 -m -x         </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.96 -i -m         </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.96 -m            </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.98 - 0.99 [COM]  </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.98 - 0.99 -t [EXE]</td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.98 - 0.99 -x [EXE]</td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.98 -f -m [COM]   </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.98 -i -m [COM]   </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.99 -f -m [COM]   </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>aPack 0.99 -i -m [COM]   </td><td><a href="http://members.xoom.com/jibz">Jibz</a></td></tr>
+    <tr><td>ARJ SFX archive          </td><td><a href="http://www.arjsoftware.com">Robert K. Jung</a></td></tr>
+    <tr><td>AVPack 1.2x              </td><td>Andrei Volkov</td></tr>
+
+    <tr><th colspan=2><a name="chap53b"></a><a href="#chap53">[index]</a> B</th></tr>
+    <tr><td>Batch Compiler 1.0       </td><td>Leviathan</td></tr>
+    <tr><td>BINLock 1.0              </td><td>Hit-BBS</td></tr>
+    <tr><td>BITLOK 3.1               </td><td>Yellow Rose Software Workgroup</td></tr>
+    <tr><td>Borland C++ 3.0          </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>Borland C++ (TR.EXE)     </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>Borland PE loader        </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>BUNNY 4.1 Installation   </td><td>Manfred Bunjes</td></tr>
+    <tr><td>BUNNY 4.1 Manipulation   </td><td>Manfred Bunjes</td></tr>
+    <tr><td>BUNNY 4.1 Password       </td><td>Manfred Bunjes</td></tr>
+
+    <tr><th colspan=2><a name="chap53c"></a><a href="#chap53">[index]</a> C</th></tr>
+    <tr><td>C-Crypt 1.02             </td><td>De'FeinD/uCT</td></tr>
+    <tr><td>CC286x<sup>2</sup> 2.1   </td><td>Dark Stalker</td></tr>
+    <tr><td>CC 2.61b                 </td><td>UniHackers Group</td></tr>
+    <tr><td>Ciphator 4.6             </td><td>Marquis de Soire</td></tr>
+    <tr><td>Com Cryptor BTS 9.12     </td><td>Jozsef Hidasi</td></tr>
+    <tr><td>COM2EXE                  </td><td>cINOgEN</td></tr>
+    <tr><td>COM2EXE                  </td><td>COMSEC</td></tr>
+    <tr><td>COM2EXE                  </td><td>DblStar Software</td></tr>
+    <tr><td>COM2EXE                  </td><td>Fabrice Bellard</td></tr>
+    <tr><td>COM2EXE                  </td><td>HENDR­X</td></tr>
+    <tr><td>COM2EXE                  </td><td>kaot</td></tr>
+    <tr><td>COM2EXE                  </td><td><a href="http://surf.to/phax">PHaX</a></td></tr>
+    <tr><td>COM2EXE                  </td><td>ROSE</td></tr>
+    <tr><td>COM2EXE                  </td><td>Stefan Esser</td></tr>
+    <tr><td>COM2EXE                  </td><td>Trills and Technologies</td></tr>
+    <tr><td>COM2TXT 1.00             </td><td>Nide Naoyuki</td></tr>
+    <tr><td>COM2TXT 1.03 - 1.12      </td><td>Nide Naoyuki</td></tr>
+    <tr><td>COM2TXT 1.20 - 1.41      </td><td>Nide Naoyuki</td></tr>
+    <tr><td>COM4MAIL                 </td><td>Krasilnikov</td></tr>
+    <tr><td>COMCRYPT                 </td><td>unknwon</td></tr>
+    <tr><td>ComLock 0.10             </td><td>BoRZoM</td></tr>
+    <tr><td>Compact 1.05             </td><td>Klaus Peichl</td></tr>
+    <tr><td>Compact 4.5              </td><td>Prominence Computer Services Ltd.</td></tr>
+    <tr><td>Compact 5.1              </td><td>Prominence Computer Services Ltd.</td></tr>
+    <tr><td>ComprEXE 1.0             </td><td>Tom Torfs</td></tr>
+    <tr><td>ComProt 1.0 beta         </td><td>BiZ0n</td></tr>
+    <tr><td>ComProtector 1.0         </td><td>Marco Ruhmann</td></tr>
+    <tr><td>Comt 0.10d               </td><td>Alexander Pruss</td></tr>
+    <tr><td>COP 1.0                  </td><td>Jack A. Orman</td></tr>
+    <tr><td>CrackStop 1.0            </td><td>Stefan Esser</td></tr>
+    <tr><td>CrackStop 1.0b           </td><td>Stefan Esser</td></tr>
+    <tr><td>CrackStop 1.01           </td><td>Stefan Esser</td></tr>
+    <tr><td>CrackStop 1.02           </td><td>Stefan Esser</td></tr>
+    <tr><td>CrackStop 1.03           </td><td>Stefan Esser</td></tr>
+    <tr><td>CrackStop 1.03a          </td><td>Stefan Esser</td></tr>
+    <tr><td>Cruncher 1.0             </td><td>???</td></tr>
+    <tr><td>Cruncher 1.0             </td><td>Ori Berger</td></tr>
+    <tr><td>CryEXE 4.0               </td><td><a href="http://welcome.to/crYpta">Iosco Capitolino</a></td></tr>
+    <tr><td>CRYPACK 3.0              </td><td>George Stark</td></tr>
+    <tr><td>Crypt 1.20               </td><td>Eclipse</td></tr>
+    <tr><td>Crypt 1.21               </td><td>Eclipse</td></tr>
+    <tr><td>Crypt 1.7                </td><td>Dismember</td></tr>
+    <tr><td>Crypt.Trivial.173        </td><td><a href="http://www.chat.ru/~smf">SMT</a></td></tr>
+    <tr><td>CryptC [by unknown]      </td><td>???</td></tr>
+    <tr><td>Crypta 2.0               </td><td><a href="http://welcome.to/crYpta">Iosco Capitolino</a></td></tr>
+    <tr><td>Crypta II 3.0            </td><td><a href="http://welcome.to/crYpta">Iosco Capitolino</a></td></tr>
+    <tr><td>CRYPTCOM                 </td><td>???</td></tr>
+    <tr><td>CRYPTCOM 1.1             </td><td>Frank Baumgartner</td></tr>
+    <tr><td>CryptEXE 1.0             </td><td>Dimitriy Borisov</td></tr>
+    <tr><td>CryptExe 1.04            </td><td>DoP</td></tr>
+    <tr><td>CrypteXeC 0.9&szlig;     </td><td><a href="http://members.xoom.com/ByteWorx">ByteWorx Team</a></td></tr>
+    <tr><td>CrypteXeC 1.01           </td><td><a href="http://members.xoom.com/ByteWorx">ByteWorx Team</a></td></tr>
+    <tr><td>CSV 1.0                  </td><td>Moshe</td></tr>
+    <tr><td>CWC 3.01                 </td><td>Michael Devore</td></tr>
+
+    <tr><th colspan=2><a name="chap53d"></a><a href="#chap53">[index]</a> D</th></tr>
+    <tr><td>DarkStop 1.0             </td><td>Dark Destroyer</td></tr>
+    <tr><td>dEEP-CRyPTeR 0.1&szlig;  </td><td>PLaSMoiD</td></tr>
+    <tr><td>Diet 1.00                </td><td>Teddy Matsumoto</td></tr>
+    <tr><td>Diet 1.10 - 1.20         </td><td>Teddy Matsumoto</td></tr>
+    <tr><td>Diet 1.43 - 1.44         </td><td>Teddy Matsumoto</td></tr>
+    <tr><td>Diet 1.44 - 1.45f        </td><td>Teddy Matsumoto</td></tr>
+    <tr><td>Diet 1.45f               </td><td>Teddy Matsumoto</td></tr>
+    <tr><td>Docmaker 1.20            </td><td>Jack Orman</td></tr>
+    <tr><td>DOS/4GW Extender by Tenberry Software</td>
+                                          <td>Tenberry Software</td></tr>
+    <tr><td>DOS32 3.3                </td><td>Adam Seychell</td></tr>
+    <tr><td>DOS Extender             </td><td>Doug Hoffmann</td></tr>
+    <tr><td>DOS Extender Loader      </td><td>Doug Hoffmann</td></tr>
+    <tr><td>DPMI loader DJ Delorie   </td><td>DJ Delorie</td></tr>
+    <tr><td>DShield                  </td><td>Ben Castricum</td></tr>
+    <tr><td>DS-CRP 1.28              </td><td>Dark Stalker</td></tr>
+
+    <tr><th colspan=2><a name="chap53e"></a><a href="#chap53">[index]</a> E</th></tr>
+    <tr><td>EEXE 1.12 - 1.13         </td><td>Fernando Papa Bundzyn</td></tr>
+    <tr><td>EFP 1.23                 </td><td>Alexei Bulushev</td></tr>
+    <tr><td>Elite 2.00               </td><td>Codeblasters</td></tr>
+    <tr><td>Elite x                  </td><td>Codeblasters</td></tr>
+    <tr><td>Encryptor 1.00&szlig;    </td><td>Gaston B. / Dark Stalker</td></tr>
+    <tr><td>ENcryptCOM 3.01          </td><td>Stewart Moss</td></tr>
+    <tr><td>EPW 1.2                  </td><td>Farpoint Software</td></tr>
+    <tr><td>EPW 1.30                 </td><td>Farpoint Software</td></tr>
+    <tr><td>EXE2COM 1.02             </td><td>DoP</td></tr>
+    <tr><td>EXE2COM 2.00             </td><td>Paul Shpilsher</td></tr>
+    <tr><td>EXETOCOM                 </td><td>???</td></tr>
+    <tr><td>ExeCode 1.0              </td><td>Bal zs Scheidler</td></tr>
+    <tr><td>EXEGuard 1.3             </td><td>Ivanov Vadim</td></tr>
+    <tr><td>EXEHigh 1.01             </td><td>NoddegamrA</td></tr>
+    <tr><td>ExeLock 1.00             </td><td>JON Software</td></tr>
+    <tr><td>EXELOCK 666 1.03         </td><td>STiLLSON</td></tr>
+    <tr><td>EXELOCK 666 1.04         </td><td>STiLLSON</td></tr>
+    <tr><td>EXELOCK 666 1.05         </td><td>STiLLSON</td></tr>
+    <tr><td>EXE Manager 3.0          </td><td>Solar Designer / TorNad0</td></tr>
+    <tr><td>EXE Manager 3.2          </td><td>Solar Designer</td></tr>
+    <tr><td>EXEPACK 3.65             </td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+    <tr><td>EXEPACK 3.69             </td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+    <tr><td>EXEPACK 4.00             </td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+    <tr><td>EXEPACK 4.03             </td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+    <tr><td>EXEPACK 4.06             </td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+
+    <tr><th colspan=2><a name="chap53f"></a><a href="#chap53">[index]</a> F</th></tr>
+    <tr><td>fds-cp 0.4               </td><td>fds0ft</td></tr>
+    <tr><td>File Analyser 1.4 Encryp.</td><td><a href="http://www.lyceum.junik.lv/~vadimlv/">Vadim Tarasov</a></td></tr>
+    <tr><td>FFSE 0.4 E/F/+           </td><td>Zenix</td></tr>
+    <tr><td>FFSE 0.4 R               </td><td>Zenix</td></tr>
+    <tr><td>FFSE 0.5                 </td><td>Zenix</td></tr>
+    <tr><td>F-Xlock 1.16             </td><td>Frisk Software</td></tr>
+
+    <tr><th colspan=2><a name="chap53g"></a><a href="#chap53">[index]</a> G</th></tr>
+    <tr><td>Gardian Angel 1.0        </td><td>???</td></tr>
+
+    <tr><th colspan=2><a name="chap53h"></a><a href="#chap53">[index]</a> H</th></tr>
+    <tr><td>HackStop 0.98            </td><td>ROSE</td></tr>
+    <tr><td>HackStop 0.99            </td><td>ROSE</td></tr>
+    <tr><td>HackStop 1.00            </td><td>ROSE</td></tr>
+    <tr><td>HackStop 1.02&szlig;     </td><td>ROSE</td></tr>
+    <tr><td>HackStop 1.12            </td><td>ROSE</td></tr>
+    <tr><td>HackStop 1.13&szlig;     </td><td>ROSE</td></tr>
+    <tr><td>HackStop 1.14            </td><td>ROSE</td></tr>
+    <tr><td>HackStop 1.15            </td><td>ROSE</td></tr>
+    <tr><td>HackStop 1.17&szlig;     </td><td>ROSE</td></tr>
+    <tr><td>HackStop 1.17&szlig;s    </td><td>ROSE</td></tr>
+    <tr><td>HackStop 1.17            </td><td>ROSE</td></tr>
+    <tr><td>HackStop 1.18            </td><td>ROSE</td></tr>
+    <tr><td>HackStop 1.19 b195       </td><td>ROSE</td></tr>
+    <tr><td>HackStop 1.19 b197       </td><td>ROSE</td></tr>
+    <tr><td>HackStop 1.19 b198       </td><td>ROSE</td></tr>
+    <tr><td>HackStop 1.19 b204       </td><td>ROSE</td></tr>
+    <tr><td>HackStop 1.19 b206       </td><td>ROSE</td></tr>
+    <tr><td>HackStop 1.19 b217       </td><td>ROSE</td></tr>
+    <tr><td>HackStop &gt; 1.10       </td><td>ROSE</td></tr>
+    <tr><td>HelpCOM 1.2              </td><td>Geoff Friesen</td></tr>
+    <tr><td>HelpEXE 1.2              </td><td>Geoff Friesen</td></tr>
+
+    <tr><th colspan=2><a name="chap53i"></a><a href="#chap53">[index]</a> I</th></tr>
+    <tr><td>IBM CRP                  </td><td>??? / Dark Stalker</td></tr>
+    <tr><td>Ice 1.00                 </td><td>Keith P. Graham</td></tr>
+    <tr><td>iLUCRYPT 4.014 - 4.015   </td><td>Christian Schwarz</td></tr>
+    <tr><td>iLUCRYPT 4.019           </td><td>Christian Schwarz</td></tr>
+    <tr><td>Immun 1.2                </td><td>Jens Bleuel</td></tr>
+    <tr><td>Immun 1.2 registered     </td><td>Jens Bleuel</td></tr>
+
+    <tr><th colspan=2><a name="chap53j"></a><a href="#chap53">[index]</a> J</th></tr>
+    <tr><td>Jam 2.11                 </td><td>Eugen Vasilchenko</td></tr>
+    <tr><td>Jam 2.21                 </td><td>Eugen Vasilchenko</td></tr>
+    <tr><td>JMCryptExe 0.7 i/j       </td><td>JauMing Tseng</td></tr>
+    <tr><td>jmt-cp 0.5a/fds-cp 0.4a  </td><td>JauMing Tseng / fds0ft</td></tr>
+
+    <tr><th colspan=2><a name="chap53k"></a><a href="#chap53">[index]</a> K</th></tr>
+    <tr><td>Kartz 0.3                </td><td>Tai Pan</td></tr>
+    <tr><td>Khrome Crypt 0.3         </td><td>Teraphy</td></tr>
+
+    <tr><th colspan=2><a name="chap53l"></a><a href="#chap53">[index]</a> L</th></tr>
+    <tr><td>Lamer Stop 1.0&szlig;    </td><td>???</td></tr>
+    <tr><td>LC 3.00                  </td><td>???</td></tr>
+    <tr><td>LGLZ 1.03b - 1.04d       </td><td><a href="http://www.geocities.com/SiliconValley/Lab/6606/">George Lyapko</a></td></tr>
+    <tr><td>LockProg 0.5a            </td><td>Myrlochar</td></tr>
+    <tr><td>LZExe 0.90               </td><td>Fabrice Bellard</td></tr>
+    <tr><td>LZExe 0.91 / 1.00        </td><td>Fabrice Bellard</td></tr>
+    <tr><td>LZExe 0.91&szlig;        </td><td>Fabrice Bellard</td></tr>
+
+    <tr><th colspan=2><a name="chap53m"></a><a href="#chap53">[index]</a> M</th></tr>
+    <tr><td>Mask 2.3                 </td><td>José M. L. Lopes</td></tr>
+    <tr><td>Mask 2.5                 </td><td>José M. L. Lopes</td></tr>
+    <tr><td>MCLOCK 1.33              </td><td>??? / Dark Stalker</td></tr>
+    <tr><td>MegaLite 1.20            </td><td>ThE KiLLeR</td></tr>
+    <tr><td>Mess /E                  </td><td>Stonehead</td></tr>
+    <tr><td>Mess 1.07                </td><td>Stonehead</td></tr>
+    <tr><td>Mess 1.14                </td><td>Stonehead</td></tr>
+    <tr><td>Mess 1.15                </td><td>Stonehead</td></tr>
+    <tr><td>Mess 1.17                </td><td>Stonehead</td></tr>
+    <tr><td>Mess 1.20                </td><td>Stonehead</td></tr>
+    <tr><td>Microsoft C (1988)       </td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+    <tr><td>Microsoft C++ (1990/92)  </td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+    <tr><td>MINI                     </td><td>Albert Sen</td></tr>
+    <tr><td>MSCC 1.0&szlig;s         </td><td>Mad Scientist</td></tr>
+    <tr><td>Mr.HDKiLLeR Prot. 1.1a   </td><td>mR.HDKiLLeR &amp; eMX</td></tr>
+
+    <tr><th colspan=2><a name="chap53n"></a><a href="#chap53">[index]</a> N</th></tr>
+    <tr><td>NetRun 3.10              </td><td>Jim Tucker</td></tr>
+    <tr><td>NetSafe ZIP-Prot         </td><td>NetSafe</td></tr>
+    <tr><td>NetSend 1.00             </td><td>Jim Tucker</td></tr>
+    <tr><td>NoClip 4.1               </td><td>???</td></tr>
+    <tr><td>N0Ps Shit Protector 0.002</td><td>Cyber Cop</td></tr>
+    <tr><td>NTShell 4.0              </td><td>???</td></tr>
+
+    <tr><th colspan=2><a name="chap53o"></a><a href="#chap53">[index]</a> O</th></tr>
+    <tr><td>OptLink Pass 1           </td><td>SLR</td></tr>
+    <tr><td>OptLink Pass 2           </td><td>SLR</td></tr>
+
+    <tr><th colspan=2><a name="chap53p"></a><a href="#chap53">[index]</a> P</th></tr>
+    <tr><td>Pack 1.0                 </td><td>TurboPower Software</td></tr>
+    <tr><td>Pack 2.01                </td><td>NoddegamrA</td></tr>
+    <tr><td>PackWin 1.0&szlig; - 2.02</td><td>Yellow Rose Workgroup</td></tr>
+    <tr><td>PassCOM 2.0              </td><td>Black Wolf Enterprises</td></tr>
+    <tr><td>PassEXE 2.0              </td><td>Black Wolf Enterprises</td></tr>
+    <tr><td>PCC 1.2                  </td><td>Mark DeSmet</td></tr>
+    <tr><td>PCrypt 3.50              </td><td>MERLiN</td></tr>
+    <tr><td>PGMPAK 0.13              </td><td>Todor Todorov</td></tr>
+    <tr><td>PGMPAK 0.14/0.15         </td><td>Todor Todorov</td></tr>
+    <tr><td>Pirate Stop 1.05         </td><td>Trills and Technologies 1998</td></tr>
+    <tr><td>PK Smart 1.0b            </td><td>Puchkov Sergey and Alex</td></tr>
+    <tr><td>PK Tiny 1.62             </td><td>Thomas M&ouml;nkemeier</td></tr>
+    <tr><td>PKLite 1.00              </td><td><a href="http://www.pkware.com">PKWARE</a></td></tr>
+    <tr><td>PKLite 1.03              </td><td><a href="http://www.pkware.com">PKWARE</a></td></tr>
+    <tr><td>PKLite 1.05              </td><td><a href="http://www.pkware.com">PKWARE</a></td></tr>
+    <tr><td>PKLite 1.12 / 1.20       </td><td><a href="http://www.pkware.com">PKWARE</a></td></tr>
+    <tr><td>PKLite 1.13              </td><td><a href="http://www.pkware.com">PKWARE</a></td></tr>
+    <tr><td>PKLite 1.14              </td><td><a href="http://www.pkware.com">PKWARE</a></td></tr>
+    <tr><td>PKLite 1.15              </td><td><a href="http://www.pkware.com">PKWARE</a></td></tr>
+    <tr><td>PKLite 1.50              </td><td><a href="http://www.pkware.com">PKWARE</a></td></tr>
+    <tr><td>PKLite 2.00&szlig;       </td><td><a href="http://www.pkware.com">PKWARE</a></td></tr>
+    <tr><td>PKLite 2.00&szlig; -e    </td><td><a href="http://www.pkware.com">PKWARE</a></td></tr>
+    <tr><td>PKLite 2.01              </td><td><a href="http://www.pkware.com">PKWARE</a></td></tr>
+    <tr><td>PKLite x.x               </td><td><a href="http://www.pkware.com">PKWARE</a></td></tr>
+    <tr><td>PMODE/W 1.20             </td><td>Daredevil &amp; Trans</td></tr>
+    <tr><td>PMODE/W 1.21             </td><td>Daredevil &amp; Trans</td></tr>
+    <tr><td>PMODE/W 1.33             </td><td>Daredevil &amp; Trans</td></tr>
+    <tr><td>PowerBasic 2.10          </td><td>???</td></tr>
+    <tr><td>PPS                      </td><td>ROSE</td></tr>
+    <tr><td>ProtEXE 2.11             </td><td>Tom Torfs</td></tr>
+    <tr><td>ProtEXE 3.0              </td><td>Tom Torfs</td></tr>
+    <tr><td>ProPack 2.08 -m1         </td><td>Rob Northen Computing</td></tr>
+    <tr><td>ProPack 2.08 -m2         </td><td>Rob Northen Computing</td></tr>
+    <tr><td>ProPack 2.14 -m1         </td><td>Rob Northen Computing</td></tr>
+    <tr><td>ProPack 2.14 -m2         </td><td>Rob Northen Computing</td></tr>
+    <tr><td>Protect! 3.0             </td><td><a href="http://ourworld.compuserve.com/homepages/jjlilley/">Jeremy Lilley</a></td></tr>
+    <tr><td>Protect! 3.1             </td><td><a href="http://ourworld.compuserve.com/homepages/jjlilley/">Jeremy Lilley</a></td></tr>
+    <tr><td>Protect! 4.0             </td><td><a href="http://ourworld.compuserve.com/homepages/jjlilley/">Jeremy Lilley</a></td></tr>
+    <tr><td>Protect! 6.0             </td><td><a href="http://ourworld.compuserve.com/homepages/jjlilley/">Jeremy Lilley</a></td></tr>
+    <tr><td>PW 1.0                   </td><td>Udo Kemle &amp; Klaus Oberpichler</td></tr>
+
+    <tr><th colspan=2><a name="chap53q"></a><a href="#chap53">[index]</a> Q</th></tr>
+    <tr><td>Quick Basic              </td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+
+    <tr><th colspan=2><a name="chap53r"></a><a href="#chap53">[index]</a> R</th></tr>
+    <tr><td>R-Crypt 0.91             </td><td>ROSE</td></tr>
+    <tr><td>RCC II/286 1.13h         </td><td>ROSE</td></tr>
+    <tr><td>RCC II/286 1.13m         </td><td>ROSE</td></tr>
+    <tr><td>RCC II/286 1.14h         </td><td>ROSE</td></tr>
+    <tr><td>RCC II/286 1.14m         </td><td>ROSE</td></tr>
+    <tr><td>RCC II/286 1.15h         </td><td>ROSE</td></tr>
+    <tr><td>RCC II/286 1.15m         </td><td>ROSE</td></tr>
+    <tr><td>RCC II/286 1.16h         </td><td>ROSE</td></tr>
+    <tr><td>RCC II/286 1.16m         </td><td>ROSE</td></tr>
+    <tr><td>RC 386 0.51              </td><td>ROSE</td></tr>
+    <tr><td>REC 0.14                 </td><td>ROSE</td></tr>
+    <tr><td>REC 0.27                 </td><td>ROSE</td></tr>
+    <tr><td>REC 0.28                 </td><td>ROSE</td></tr>
+    <tr><td>REC 0.32                 </td><td>ROSE</td></tr>
+    <tr><td>REC 0.33a                </td><td>ROSE</td></tr>
+    <tr><td>REC 0.38                 </td><td>ROSE</td></tr>
+    <tr><td>REC Small 1.01           </td><td>ROSE</td></tr>
+    <tr><td>REC Small 1.02           </td><td>ROSE</td></tr>
+    <tr><td>REC Small 1.02a          </td><td>ROSE</td></tr>
+    <tr><td>REC Small 1.03           </td><td>ROSE</td></tr>
+    <tr><td>REC Small 1.05           </td><td>ROSE</td></tr>
+    <tr><td>RELOC 1.00               </td><td>???</td></tr>
+    <tr><td>RERP 0.02                </td><td>ROSE</td></tr>
+    <tr><td>RJ Crush 1.10            </td><td>Ronald J. Skinner</td></tr>
+    <tr><td>RoseTiny 0.95            </td><td>ROSE</td></tr>
+    <tr><td>RoseTiny 1.02            </td><td>ROSE</td></tr>
+    <tr><td>RUE 1.32                 </td><td>ROSE</td></tr>
+
+    <tr><th colspan=2><a name="chap53s"></a><a href="#chap53">[index]</a> S</th></tr>
+    <tr><td>SEA AXE 2.00             </td><td>System Enhancement Associates</td></tr>
+    <tr><td>Scram 0.7c1 - 0.8a1      </td><td>bushwoelie &amp; ACP</td></tr>
+    <tr><td>SCRAMB 1.20              </td><td>B.U.G.</td></tr>
+    <tr><td>SCRAMBLE 0.2 beta3       </td><td>Tiny Spaceman Software</td></tr>
+    <tr><td>Scrunch 1.02             </td><td>Graeme W. McRae</td></tr>
+    <tr><td>SCRb2e                   </td><td>Graeme W. McRae</td></tr>
+    <tr><td>Scrypt 1.2               </td><td><a href="http://www.chat.ru/~smf">SMT</a></td></tr>
+    <tr><td>Secure 2.1b              </td><td>???</td></tr>
+    <tr><td>SelfEnc 1.0              </td><td>Daniel Arndt</td></tr>
+    <tr><td>SENs debug protection    </td><td>SEN Kemerovo</td></tr>
+    <tr><td>Shadow 1.0 beta          </td><td>Tailgunner</td></tr>
+    <tr><td>Shield 1.70              </td><td>V Communications</td></tr>
+    <tr><td>Shrink 1.0               </td><td>Thomas G. Hanlin III</td></tr>
+    <tr><td>Shrink 2.0               </td><td>Kevin Tseng</td></tr>
+    <tr><td>SnoopStop 1.15           </td><td>Trills and Technology</td></tr>
+    <tr><td>$pirit 1.5               </td><td>Night $pirit</td></tr>
+    <tr><td>Stone's Comrypt          </td><td>Stone</td></tr>
+    <tr><td>SuckStop 1.08            </td><td>kaot</td></tr>
+    <tr><td>SuckStop 1.10            </td><td>kaot</td></tr>
+    <tr><td>SuckStop 1.11            </td><td>kaot</td></tr>
+
+    <tr><th colspan=2><a name="chap53t"></a><a href="#chap53">[index]</a> T</th></tr>
+    <tr><td>TinyProg 1.0             </td><td>Tranzoa</td></tr>
+    <tr><td>TinyProg 3.3 - 3.9       </td><td>Tranzoa</td></tr>
+    <tr><td>TinyProt 1.0e            </td><td>Igor Hakszer</td></tr>
+    <tr><td>TinyXor 0.1              </td><td>dR.No</td></tr>
+    <tr><td>TLink                    </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>TPack 0.5&szlig; -m1     </td><td>Tuscon</td></tr>
+    <tr><td>TPack 0.5&szlig; -m2     </td><td>Tuscon</td></tr>
+    <tr><td>TPC's COM scrambler 1.0  </td><td>T.P.C.</td></tr>
+    <tr><td>Trap 1.13                </td><td>Christoph Gabler</td></tr>
+    <tr><td>Trap 1.14a               </td><td>Christoph Gabler</td></tr>
+    <tr><td>Trap 1.15                </td><td>Christoph Gabler</td></tr>
+    <tr><td>Trap 1.16&szlig;1        </td><td>Christoph Gabler</td></tr>
+    <tr><td>Trap 1.16&szlig;2        </td><td>Christoph Gabler</td></tr>
+    <tr><td>Trap 1.16 - 1.17         </td><td>Christoph Gabler</td></tr>
+    <tr><td>Trap 1.18                </td><td>Christoph Gabler</td></tr>
+    <tr><td>Trap 1.19                </td><td>Christoph Gabler</td></tr>
+    <tr><td>Trap 1.20                </td><td>Christoph Gabler</td></tr>
+    <tr><td>Trap 1.21                </td><td>Christoph Gabler</td></tr>
+    <tr><td>Turbo Assembler          </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>Turbo Basic              </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>Turbo C 1.0 (1987)       </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>Turbo C 2.0 (1988)       </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>Turbo C++ 3.0            </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>Turbo Pascal 3           </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>Turbo Pascal 4 (1)       </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>Turbo Pascal 4 (2)       </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>Turbo Pascal 5           </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>Turbo Pascal 6           </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>Turbo/Borland Pascal 7   </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>Turbo Prolog 1986        </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>TurboChainer 1.03        </td><td>TWT</td></tr>
+
+    <tr><th colspan=2><a name="chap53u"></a><a href="#chap53">[index]</a> U</th></tr>
+    <tr><td>UC2X 2.4                 </td><td>Ad Infinitum Programs</td></tr>
+    <tr><td>UComCry                  </td><td>UniquE</td></tr>
+    <tr><td>UNP x                    </td><td>Ben Castricum</td></tr>
+    <tr><td>uN-uPC 1.10              </td><td>cINOgEN</td></tr>
+    <tr><td>Un2pack 2                </td><td>ðdatað</td></tr>
+    <tr><td>UPX 0.20                 </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.30 [EXE]           </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.30 - 0.40 [COM]    </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.40 - 0.51 [EXE]    </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.51 - 0.72 [COM]    </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.62 [EXE]           </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.70 [EXE]           </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.71 - 0.72 [EXE]    </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.81 - 0.84 [EXE]    </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.82 - 0.84 [COM]    </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.92 - 1.02 [COM]    </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.90 - 1.02 [EXE]    </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>USCC 1.3                 </td><td>Dark Destroyer</td></tr>
+    <tr><td>Username 3.00            </td><td>Jordi Mas</td></tr>
+
+    <tr><th colspan=2><a name="chap53v"></a><a href="#chap53">[index]</a> V</th></tr>
+    <tr><td>V-Load 0.9&szlig;        </td><td>ONYX</td></tr>
+    <tr><td>Vaccine 1.03 - 1.10      </td><td>Rustam M. Abdrakhimov</td></tr>
+    <tr><td>Virus Self Destructor 2  </td><td>Wojciech Wysznacki</td></tr>
+    <tr><td>VSS                      </td><td>ROSE</td></tr>
+
+    <tr><th colspan=2><a name="chap53w"></a><a href="#chap53">[index]</a> W</th></tr>
+    <tr><td>Watcom C (1994)          </td><td>Watcom Inc.</td></tr>
+    <tr><td>Watcom C (1995)          </td><td>Watcom Inc.</td></tr>
+    <tr><td>WordPerfect EXEPack      </td><td><a href="http://www.corel.com">WordPerfect Inc.</a></td></tr>
+    <tr><td>WWPack 3.00 - 3.05       </td><td>Rafal Wierzbicki &amp; Piotr Warezak</td></tr>
+    <tr><td>WWPack Mutator 1.1c      </td><td>Stefan Esser</td></tr>
+
+    <tr><th colspan=2><a name="chap53x"></a><a href="#chap53">[index]</a> X</th></tr>
+    <tr><td>X3                       </td><td>Dark Stalker</td></tr>
+    <tr><td>XcomOR 0.99a             </td><td>madmax!</td></tr>
+    <tr><td>XcomOR 0.99f/g           </td><td>madmax!</td></tr>
+    <tr><td>XcomOR 0.99h             </td><td>madmax!</td></tr>
+    <tr><td>XcomOR 0.99i             </td><td>madmax!</td></tr>
+    <tr><td>XLOADER 2.00             </td><td>CyberMan and ST!LLS0N</td></tr>
+    <tr><td>XorCopy 1.0              </td><td>Deimos</td></tr>
+    <tr><td>XoReR 1.0                </td><td>dR.No</td></tr>
+    <tr><td>XoReR 2.0                </td><td>dR.No</td></tr>
+    <tr><td>XoReR 2.1                </td><td>dR.No</td></tr>
+    <tr><td>XPack 1.0j               </td><td>JauMing Tseng</td></tr>
+    <tr><td>XPack 1.0m - 1.20        </td><td>JauMing Tseng</td></tr>
+    <tr><td>XPack 1.29 - 1.30        </td><td>JauMing Tseng</td></tr>
+    <tr><td>XPack 1.31 - 1.66        </td><td>JauMing Tseng</td></tr>
+    <tr><td>XPack 1.31               </td><td>JauMing Tseng</td></tr>
+    <tr><td>XPack 1.33               </td><td>JauMing Tseng</td></tr>
+    <tr><td>XPack 1.34               </td><td>JauMing Tseng</td></tr>
+    <tr><td>XPack 1.36               </td><td>JauMing Tseng</td></tr>
+    <tr><td>XPack 1.39               </td><td>JauMing Tseng</td></tr>
+    <tr><td>XPack 1.40               </td><td>JauMing Tseng</td></tr>
+    <tr><td>XPack 1.44               </td><td>JauMing Tseng</td></tr>
+    <tr><td>XPack 1.45               </td><td>JauMing Tseng</td></tr>
+    <tr><td>XPack 1.52 - 1.60        </td><td>JauMing Tseng</td></tr>
+    <tr><td>XPack 1.64               </td><td>JauMing Tseng</td></tr>
+    <tr><td>XPack 1.52 - 1.64        </td><td>JauMing Tseng</td></tr>
+    <tr><td>XPack 1.65b2             </td><td>JauMing Tseng</td></tr>
+    <tr><td>XPack 1.65b3/b4          </td><td>JauMing Tseng</td></tr>
+    <tr><td>XPack 1.66               </td><td>JauMing Tseng</td></tr>
+    <tr><td>XPack 1.67               </td><td>JauMing Tseng</td></tr>
+
+    <tr><th colspan=2><a name="chap53y"></a><a href="#chap53">[index]</a> Y</th></tr>
+    <tr><td>YifPress 1.0             </td><td>Yiftah Niv</td></tr>
+
+    <tr><th colspan=2><a name="chap53z"></a><a href="#chap53">[index]</a> Z</th></tr>
+    <tr><td>Zortech 2.00 library (1) </td><td>Zortech</td></tr>
+    <tr><td>Zortech 2.00 library (2) </td><td>Zortech</td></tr>
+
+    <tr><th colspan=2><a name="chap53xyz"></a><a href="#chap53">[index]</a> ???</th></tr>
+    <tr><td>unknown by GyikSoft 1    </td><td>GyikSoft</td></tr>
+    <tr><td>unknown by GyikSoft 2    </td><td>GyikSoft</td></tr>
+    <tr><td>unknown by JVP           </td><td><a href="http://members.xoom.com/jvp/">JVP</a></td></tr>
+    <tr><td>unknown by Mr.Wicked     </td><td>Mr. Wicked</td></tr>
+    <tr><td>unknown by Synopsis      </td><td>Synopsis</td></tr>
+    <tr><td>unknown by RAO           </td><td>RAO</td></tr>
+    <tr><td>unknown virus 1 !!!      </td><td>???</td></tr>
+<!--END-->
+
+    <tr><th colspan=2><a name="chap53sys"></a><a href="#chap53">[index]</a> Device driver</th></tr>
+<!--SYSSTART-->
+    <tr><td>device driver            </td><td>???</td></tr>
+    <tr><td>SysPack 0.1              </td><td>???</td></tr>
+    <tr><td>UPX 0.20 - 0.40          </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.51 - 0.72          </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.81 - 1.02          </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+<!--END-->
+    </table>
+
+    <br>
+    <br>
+
+    <table border=1>
+    <tr><th colspan=2><a name="chap53pe"></a><a href="#chap53">[index]</a> Portable executables (PE EXE)</th></tr>
+<!--PESTART-->
+    <tr><td>Alloy 1.04.14.2000       </td><td><a href="http://www.alloy32.com/">Prakash Gautam</a></td></tr>
+    <tr><td>AppLok 95 2.0            </td><td><a href="http://www.alloy32.com/">Prakash Gautam</a></td></tr>
+    <tr><td>Armadillo 1.80           </td><td><a href="http://www.siliconrealms.com/">Chad Nelson</a></td></tr>
+    <tr><td>ASPack 1.01b             </td><td><a href="http://www.entechtaiwan.com/aspack.htm">Alexey Solodovnikov</a></td></tr>
+    <tr><td>ASPack 1.02b             </td><td><a href="http://www.entechtaiwan.com/aspack.htm">Alexey Solodovnikov</a></td></tr>
+    <tr><td>ASPack 1.04b             </td><td><a href="http://www.entechtaiwan.com/aspack.htm">Alexey Solodovnikov</a></td></tr>
+    <tr><td>ASPack 1.05b             </td><td><a href="http://www.entechtaiwan.com/aspack.htm">Alexey Solodovnikov</a></td></tr>
+    <tr><td>ASPack 1.061b            </td><td><a href="http://www.entechtaiwan.com/aspack.htm">Alexey Solodovnikov</a></td></tr>
+    <tr><td>ASPack 1.061b [DLL]      </td><td><a href="http://www.entechtaiwan.com/aspack.htm">Alexey Solodovnikov</a></td></tr>
+    <tr><td>ASPack 1.07b             </td><td><a href="http://www.entechtaiwan.com/aspack.htm">Alexey Solodovnikov</a></td></tr>
+    <tr><td>ASPack 1.07b [DLL]       </td><td><a href="http://www.entechtaiwan.com/aspack.htm">Alexey Solodovnikov</a></td></tr>
+    <tr><td>ASPack 1.08              </td><td><a href="http://www.entechtaiwan.com/aspack.htm">Alexey Solodovnikov</a></td></tr>
+    <tr><td>ASPack 1.081             </td><td><a href="http://www.entechtaiwan.com/aspack.htm">Alexey Solodovnikov</a></td></tr>
+    <tr><td>ASPack 1.082             </td><td><a href="http://www.entechtaiwan.com/aspack.htm">Alexey Solodovnikov</a></td></tr>
+    <tr><td>ASPack 1.083             </td><td><a href="http://www.entechtaiwan.com/aspack.htm">Alexey Solodovnikov</a></td></tr>
+    <tr><td>ASPack 1.084             </td><td><a href="http://www.entechtaiwan.com/aspack.htm">Alexey Solodovnikov</a></td></tr>
+    <tr><td>ASPack 2.000             </td><td><a href="http://www.entechtaiwan.com/aspack.htm">Alexey Solodovnikov</a></td></tr>
+    <tr><td>ASPack 2.001             </td><td><a href="http://www.entechtaiwan.com/aspack.htm">Alexey Solodovnikov</a></td></tr>
+    <tr><td>ASPack 2.100             </td><td><a href="http://www.entechtaiwan.com/aspack.htm">Alexey Solodovnikov</a></td></tr>
+
+    <tr><td>BJFNT 1.1                </td><td>Marquis de Soire</td></tr>
+    <tr><td>BJFNT 1.2                </td><td>Marquis de Soire</td></tr>
+    <tr><td>BJFNT 1.3                </td><td>Marquis de Soire</td></tr>
+    <tr><td>Borland C++ Win32 (1994) </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>Borland C++ Win32 (1995) </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>Borland Delphi 3         </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>Borland Delphi 4         </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+
+    <tr><td>Cexe 1.0a                </td><td><a href="http://www.tinyware.com">Tinyware Inc.</a></td></tr>
+    <tr><td>CodeCrypt 0.14b          </td><td>defiler</td></tr>
+    <tr><td>CodeCrypt 0.15b          </td><td>defiler</td></tr>
+    <tr><td>CodeCrypt 0.16b - 0.161b </td><td>defiler</td></tr>
+    <tr><td>CodeCrypt 0.163b         </td><td>defiler</td></tr>
+    <tr><td>CodeCrypt 0.164b         </td><td>defiler</td></tr>
+    <tr><td>CodeSafe 2.0             </td><td>Zhang Dehua</td></tr>
+    <tr><td>CodeSafe 3.0             </td><td>Zhang Dehua</td></tr>
+    <tr><td>CrypKey Instant Stealth 5.0.161</td><td>Kenonic Control Ltd.</td></tr>
+
+    <tr><td>Ding Boys PE-lock 0.07   </td><td>Ding Boy</td></tr>
+
+    <tr><td>EXE Protector 1.37a      </td><td><a href="http://members.xoom.com/ie_manager">Eyhab Hillail</a></td></tr>
+
+    <tr><td>Harlequin Dylan 1.2      </td><td><a href="http://www.harlequin.com">Harlequin Group</a></td></tr>
+
+    <tr><td>Lcc-win 32 1.3           </td><td><a href="http://www.cs.virginia.edu/~lcc-win32">Jacob Navia</a></td></tr>
+
+    <tr><td>NeoLite 1.0 - 1.01       </td><td><a href="http://www.neoworx.com">Neoworx</a></td></tr>
+    <tr><td>NeoLite 1.04             </td><td><a href="http://www.neoworx.com">Neoworx</a></td></tr>
+    <tr><td>NeoLite 2.00             </td><td><a href="http://www.neoworx.com">Neoworx</a></td></tr>
+    <tr><td>NFO 1.0                  </td><td>bart</td></tr>
+
+    <tr><td>PCPEC [alpha]            </td><td>The+Q, Plushmm &amp; MrNop</td></tr>
+    <tr><td>PE password encryptor    </td><td><a href="http://www.chat.ru/~smf">SMT</a></td></tr>
+    <tr><td>PEBundle 0.03            </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PEBundle 0.05            </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PEBundle 0.05wtd         </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PEBundle 0.06            </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PEBundle 0.12wtd         </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PEBundle 0.14wtd         </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PEBundle 0.15wtd         </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 0.92           </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 0.977          </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 0.978          </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 0.978.1        </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 0.978.4        </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 0.98           </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 0.99           </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.00           </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.10b1         </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.10b2         </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.10b3         </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.10b4         </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.10b5         </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.10b6         </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.10b7         </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.10b8         </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.20 - 1.20.1  </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.22           </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.23b3 - 1.24.1</td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.24.2 - 1.24.3</td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.25           </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.26b1 - 1.26b2</td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.33           </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.34 - 1.40b1  </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.40b2 - 1.40b4</td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.40b5 - 1.40b6</td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>PECompact 1.40 - 1.41    </td><td><a href="http://www.collakesoftware.com">Jeremy Collake</a></td></tr>
+    <tr><td>Petite 1.2               </td><td><a href="http://www.icl.ndirect.co.uk/petite">Ian Luck</a></td></tr>
+    <tr><td>Petite 1.3               </td><td><a href="http://www.icl.ndirect.co.uk/petite">Ian Luck</a></td></tr>
+    <tr><td>Petite 1.4               </td><td><a href="http://www.icl.ndirect.co.uk/petite">Ian Luck</a></td></tr>
+    <tr><td>Petite 2.0               </td><td><a href="http://www.icl.ndirect.co.uk/petite">Ian Luck</a></td></tr>
+    <tr><td>Petite 2.1               </td><td><a href="http://www.icl.ndirect.co.uk/petite">Ian Luck</a></td></tr>
+    <tr><td>Petite 2.2 [PE DLL]      </td><td><a href="http://www.icl.ndirect.co.uk/petite">Ian Luck</a></td></tr>
+    <tr><td>Petite 2.2 [PE EXE]      </td><td><a href="http://www.icl.ndirect.co.uk/petite">Ian Luck</a></td></tr>
+    <tr><td>PELOCKnt 2.01            </td><td>Marquis</td></tr>
+    <tr><td>PELOCKnt 2.02&szlig;     </td><td>Marquis</td></tr>
+    <tr><td>PELOCKnt 2.03            </td><td>Marquis</td></tr>
+    <tr><td>PELOCKnt 2.04            </td><td>Marquis</td></tr>
+    <tr><td>PeX 0.99                 </td><td>bart^CrackPl</td></tr>
+    <tr><td>PE-Crypt32 1.0           </td><td>random and acpizer</td></tr>
+    <tr><td>PE-Crypt32 1.1           </td><td>random and acpizer</td></tr>
+    <tr><td>PE-Crypt32 1.2           </td><td>random and acpizer</td></tr>
+    <tr><td>PE-Prot 0.9              </td><td>Christoph Gabler</td></tr>
+    <tr><td>PKLite32 1.1             </td><td><a href="http://www.pkware.com">PKWARE</a></td></tr>
+    <tr><td>Private EXE 2.0a         </td><td>Midstream</td></tr>
+    <tr><td>Private EXE 2.2          </td><td>Midstream</td></tr>
+
+    <tr><td>SecuPack 1.5             </td><td>SC - Soft</td></tr>
+    <tr><td>Shrinker 3.2             </td><td>A.S.M. Inc</td></tr>
+    <tr><td>Shrinker 3.4             </td><td>A.S.M. Inc</td></tr>
+    <tr><td>SPEC beta 3              </td><td>hayras</td></tr>
+    <tr><td>Stone's PE Crypter 1.0   </td><td>Stone</td></tr>
+    <tr><td>Stone's PE Crypter 1.13  </td><td>Stone</td></tr>
+    <tr><td>Symantec Visual Cafe 3.0 </td><td><a href="http://www.symantec.com">Symantec</a></td></tr>
+
+    <tr><td>tELock 0.41c             </td><td>tHE EGOiSTE</td></tr>
+    <tr><td>tELock 0.42              </td><td>tHE EGOiSTE</td></tr>
+    <tr><td>tELock 0.51              </td><td>tHE EGOiSTE</td></tr>
+
+    <tr><td>UnHack32 1.1             </td><td><a href="http://thexbrain.cjb.net">Black Panther</a></td></tr>
+    <tr><td>UnHack32 1.2             </td><td><a href="http://thexbrain.cjb.net">Black Panther</a></td></tr>
+    <tr><td>UPX 0.51 [PE]            </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.62 [PE]            </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.62 [PE DLL]        </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.70 [PE]            </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.70 [PE DLL]        </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.71 - 0.72 [PE]     </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.71 - 0.72 [PE DLL] </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.81 - 0.84 [PE]     </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.81 - 0.84 [PE DLL] </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.89.6 - 1.02 [PE]   </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.89.6 [PE DLL]      </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.92 - 0.94 [PE DLL] </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+<tr><td>UPX 0.99/1.00 - 1.02 [PE DLL]</td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+  <tr><td>UPX 0.99.1 - 0.99.3[PE DLL]</td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+
+    <tr><td>VGCrypt 0.75             </td><td>Virogen</td></tr>
+    <tr><td>Virtual Pascal 2.1       </td><td><a href="http://www.vitualpascal.com">vpascal.com</a></td></tr>
+    <tr><td>Visual C 2.0             </td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+    <tr><td>Visual C++ 3.1           </td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+    <tr><td>Visual C++ 4.2 (DLL)     </td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+    <tr><td>Visual C++ 4.2 (EXE - 1) </td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+    <tr><td>Visual C++ 4.2 (EXE - 2) </td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+    <tr><td>Visual C++ 4.2 (EXE - 3) </td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+    <tr><td>Visual C++ 4.2 (EXE - 4) </td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+    <tr><td>Visual C++ 5.0           </td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+    <tr><td>Visual C++ 5.0 (debug)   </td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+    <tr><td>Visual C++ 5.0 (no debug)</td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+    <tr><td>Visual C++ 5.0 SP3       </td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+   <tr><td>Visual C++ 5.0 SP3 (debug)</td><td><a href="http://www.microsoft.com">Microsoft</a></td></tr>
+
+    <tr><td>WWPack32 1.0             </td><td>Rafal Wierzbicki &amp; Piotr Warezak</td></tr>
+    <tr><td>WWPack32 1.09            </td><td>Rafal Wierzbicki &amp; Piotr Warezak</td></tr>
+    <tr><td>WWPack32 1.10 - 1.11     </td><td>Rafal Wierzbicki &amp; Piotr Warezak</td></tr>
+    <tr><td>WWPack32 1.12            </td><td>Rafal Wierzbicki &amp; Piotr Warezak</td></tr>
+    <tr><td>WinKript 1.00            </td><td><a href="http://i.am/MrCrimson">MrCrimson</a></td></tr>
+    <tr><td>Winzip SFX               </td><td><a href="http://www.winzip.com">Nico Mak Computing</a></td></tr>
+<!--END-->
+    </table>
+
+    <br>
+    <br>
+
+    <table border=1>
+    <tr><th colspan=2><a name="chap53ne"></a><a href="#chap53">[index]</a> New executables (NE EXE)</th></tr>
+<!--NESTART-->
+    <tr><td>Borland C++ Win16 (1991) </td><td><a href="http://www.borland.com">Borland</a></td></tr>
+    <tr><td>PC Guard 1.50 for Win16  </td><td><a href="http://www.pc-guard.co.yu">Blagoje Ceklic</a></td></tr>
+    <tr><td>PKLite 2.01              </td><td><a href="http://www.pkware.com">PKWARE</a></td></tr>
+    <tr><td>Shrinker 3.2             </td><td>A.S.M. Inc</td></tr>
+    <tr><td>Winzip SFX               </td><td><a href="http://www.winzip.com">Nico Mak Computing</a></td></tr>
+<!--END-->
+    </table>
+
+    <br>
+    <br>
+
+    <table border=1>
+    <tr><th colspan=2><a name="chap53le"></a><a href="#chap53">[index]</a> Linear executables (LE EXE)</th></tr>
+<!--LESTART-->
+    <tr><td>UPX 0.05 [LE]            </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.20 - 0.40 [LE]     </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.50 - 0.61 [LE]     </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.62 [LE]            </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.62 - 0.72 [LE]     </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.81 - 0.83 [LE]     </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.84 [LE]            </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.89.6 [LE]          </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.90 [LE]            </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.92 - 0.94 [LE]     </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 0.99 - 1.01 [LE]     </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>UPX 1.02 [LE]            </td><td><a href="http://upx.tsx.org">Markus Oberhumer &amp; Laszlo Molnar</a></td></tr>
+    <tr><td>Watcom C++ 1994/1995     </td><td>Watcom Inc.</td></tr>
+<!--END-->
+    </table>
+
+    <br>
+
+    GetTyp also detects several EXE overlay types.<br>
+  </dir>
+
+  <br>
+  <br>
+
+  <!-- -------------------- 5.4 -------------------- -->
+
+  <a name="chap54"></a>
+
+  <h3><a href="#chap0">[Up]</a> 5.4 The other formats</h3>
+
+  <br>
+
+  <dir>
+    <table border=1>
+<!-- header -->
+<tr><th>Filetype</th><th>Additional information</th></tr>
+<!-- the filetypes -->
+<tr><td>Adobe PostScript file</td><td>creator string</td></tr>
+<tr><td>ADONIS application libraries</td><td>&nbsp;</td></tr>
+<tr><td>ADONIS export file</td><td>name of the first model included</td></tr>
+<tr><td>aPatch data file</td><td>&nbsp;</td></tr>
+<tr><td>Armadillo project file</td><td>&nbsp;</td></tr>
+<tr><td>Batch files</td><td>&nbsp;</td></tr>
+<tr><td>BGI device driver</td><td>copyright message</td></tr>
+<tr><td>BGI stroked font</td><td>copyright message</td></tr>
+<tr><td>Borland Delphi units (old)</td><td>the name<br>the source name<br>the dependencies of this unit<br>the Turbo Pascal version to use with</td></tr>
+<tr><td>Borland Delphi 3 units (new)</td><td>the source file name</td></tr>
+<tr><td>Borland Delphi 4 units (new)</td><td>the source file name</td></tr>
+<tr><td>Borland Delphi form modules</td><td>&nbsp;</td></tr>
+<tr><td>Borland linker mapping file</td><td>&nbsp;</td></tr>
+<tr><td>Borland overlay file</td><td>&nbsp;</td></tr>
+<tr><td>Borland precompiled header file</td><td>&nbsp;</td></tr>
+<tr><td>Bourne Shell Script</td><td>&nbsp;</td></tr>
+<tr><td>C++ library</td><td>&nbsp;</td></tr>
+<tr><td>C++ symbol file</td><td>&nbsp;</td></tr>
+<tr><td>Common Object File Format</td><td>number of entries</td></tr>
+<tr><td>Compiled resource file</td><td>&nbsp;</td></tr>
+<tr><td>Corel Draw 6-8 files</td><td>see RIFF files</td></tr>
+<tr><td>Creative voice music file (VOC)</td><td>version<br>every block<br>sampling rate<br>length of silence<br>loops</td></tr>
+<tr><td>Crypt!</td><td>the version<br>high security: yes/no<br>coprocessor used</td></tr>
+<tr><td>DBase database</td><td>the version<br>all columns and their width</td></tr>
+<tr><td>DER encoded binary X.509 certificate</td><td>&nbsp;</td></tr>
+<tr><td>Device driver</td><td>either character (+name) or block (+count) device</td></tr>
+<tr><td>FPK Pascal units</td><td>the version</td></tr>
+<tr><td>FPK Pascal object file</td><td>&nbsp;</td></tr>
+<tr><td>Fractal Extreme movie file</td><td>&nbsp;</td></tr>
+<tr><td>Fractal Extreme palette file</td><td>&nbsp;</td></tr>
+<tr><td>HTML files</td><td>the title</td></tr>
+<tr><td>IBM Help file</td><td>&nbsp;</td></tr>
+<tr><td>ibo Ablauf-Profi file</td><td>&nbsp;</td></tr>
+<tr><td>IDA DLL description file</td><td>&nbsp;</td></tr>
+<tr><td>Impulse Tracker Module</td><td>the name</td></tr>
+<tr><td>installShield InstallScript</td><td>&nbsp;</td></tr>
+<tr><td>installShield uninstall file</td><td>&nbsp;</td></tr>
+<tr><td>Java bytecode</td><td>&nbsp;</td></tr>
+<tr><td>Java source code</td><td>&nbsp;</td></tr>
+<tr><td>JavaScript source code</td><td>&nbsp;</td></tr>
+<tr><td>Links LS shot file</td><td>&nbsp;</td></tr>
+<tr><td>Lotus 123 worksheet</td><td>&nbsp;</td></tr>
+<tr><td>Lotus AmiPro document</td><td>&nbsp;</td></tr>
+<tr><td>Lotus Notes 4.5 database</td><td>&nbsp;</td></tr>
+<tr><td>Lotus WordPro document</td><td>&nbsp;</td></tr>
+<tr><td>Microsoft Access database file (MDB)</td><td>&nbsp;</td></tr>
+<tr><td>Microsoft browse information file (SBR)</td><td>&nbsp;</td></tr>
+<tr><td>Microsoft C/C++ library</td><td>&nbsp;</td></tr>
+<tr><td>Microsoft C/C++ program database</td><td>&nbsp;</td></tr>
+<tr><td>Microsoft Compress 6.22 file</td><td>&nbsp;</td></tr>
+<tr><td>Microsoft Excel 4 worksheet</td><td>&nbsp;</td></tr>
+<tr><td>Microsoft HTML_Help file</td><td>&nbsp;</td></tr>
+<tr><td>Microsoft precompiled header file</td><td>&nbsp;</td></tr>
+<tr><td>Microsoft profiler file</td><td>&nbsp;</td></tr>
+<tr><td>Microsoft workspace file (MDP)</td><td>&nbsp;</td></tr>
+<tr><td>Modula source code</td><td>either a program<br>or a definition file<br>or an implementation file</td></tr>
+<tr><td>MPEG file</td><td>Layer<br>Version<br>Error protection<br>Bitrate</td></tr>
+<tr><td>NU Disc doctor undo file</td><td>&nbsp;</td></tr>
+<tr><td>Object file</td><td>BINOBJ converted or not<br>name of the exported procedure<br>module name<br>compiler<br>memory model<br>optimizations or not<br>DOSSEG linker option or not<br>include libraries<br>CodeView enabled or not<br>linker pass two marker<br>comments<br>dependency list<br>list of names<br>length of a segment<br>public definitions<br>group definitions<br>module end record<br>fix up record + length<br>Logical enumerated data + length<br>External name definition record</td></tr>
+<tr><td>Pascal source code</td><td>either a program<br>or a library<br>or a unit<br>or a procedure<br>or a function<br>or just general code</td></tr>
+<tr><td>Pax Imperia II save game</td><td>&nbsp;</td></tr>
+<tr><td>Perl file</td><td>&nbsp;</td></tr>
+<tr><td>PGP message</td><td>the version</td></tr>
+<tr><td>PKCS #7 certificate</td><td>&nbsp;</td></tr>
+<tr><td>Portable Document Format (PDF)</td><td>&nbsp;</td></tr>
+<tr><td>Quick Pascal unit</td><td>&nbsp;</td></tr>
+<tr><td>QuickTime movie file</td><td>&nbsp;</td></tr>
+<tr><td>RIFF file</td><td>generic object listing<br>some special types (e.g. Corel Draw)</td></tr>
+<tr><td>Symantec Internet Tools Data File 1.0</td><td>&nbsp;</td></tr>
+<tr><td>Text file</td><td>DOS style or Unix style</td></tr>
+<tr><td>Thunderbye Anti virus checksum</td><td>&nbsp;</td></tr>
+<tr><td>TrueType Font (TTF)</td><td>Font name (standard or Unicode)</td></tr>
+<tr><td>Turbo Basic configuration file</td><td>&nbsp;</td></tr>
+<tr><td>Turbo C configuration file</td><td>&nbsp;</td></tr>
+<tr><td>Turbo C context file</td><td>&nbsp;</td></tr>
+<tr><td>Turbo C help file</td><td>&nbsp;</td></tr>
+<tr><td>Turbo C pick list file</td><td>&nbsp;</td></tr>
+<tr><td>Turbo C project file</td><td>&nbsp;</td></tr>
+<tr><td>Turbo Pascal configuration file</td><td>&nbsp;</td></tr>
+<tr><td>Turbo Pascal desktop file</td><td>&nbsp;</td></tr>
+<tr><td>Turbo Pascal pick list file</td><td>&nbsp;</td></tr>
+<tr><td>Turbo Pascal help file</td><td>&nbsp;</td></tr>
+<tr><td>Turbo Pascal units</td><td>the name<br>the source name<br>the dependencies of this unit<br>the Turbo Pascal version to use with</td></tr>
+<tr><td>Turbo Profiler configuration file</td><td>&nbsp;</td></tr>
+<tr><td>Turbo Vision help file</td><td>&nbsp;</td></tr>
+<tr><td>Virtual Pascal Unit v3</td><td>&nbsp;</td></tr>
+<tr><td>Wave music file (WAV)</td><td>compressed or not<br>channels<br>sampling rate<br>data size<br>bits (decompressed)<br>playtime</td></tr>
+<tr><td>Windows 3.x Help file</td><td>name of the help file</td></tr>
+<tr><td>Windows 95/98 Help file</td><td>&nbsp;</td></tr>
+<tr><td>Windows mouse cursor file</td><td>&nbsp;</td></tr>
+<tr><td>Windows PIF file</td><td>application name</td></tr>
+<tr><td>Windows program manager group file</td><td>the name of the groups</td></tr>
+<tr><td>Windows registry file (binary)</td><td>&nbsp;</td></tr>
+<tr><td>Windows registry file (textual)</td><td>&nbsp;</td></tr>
+<tr><td>Windows shortcut file</td><td>&nbsp;</td></tr>
+<tr><td>WinWord 2 document</td><td>&nbsp;</td></tr>
+<tr><td>WinWord 6 document</td><td>&nbsp;</td></tr>
+<tr><td>Word for DOS document</td><td>&nbsp;</td></tr>
+<tr><td>Wordperfect file</td><td>macro file<br>help file<br>keyboard definition file<br>document file<br>dictionary file<br>thesaurus file<br>block file<br>rectangular block file<br>column block file<br>printer resource file<br>setup file<br>prefix information file<br>printer resource file<br>display resource file<br>overlay file<br>hyphenation code module file<br>hyphenation data module file<br>macro resource file<br>graphics driver file<br>hyphenation lex module file<br>PostScript font file</td></tr>
+<tr><td>Unix executable</td><td>&nbsp;</td></tr>
+</table>
+
+    <br>
+
+    If no other type was detected, GetTyp prints out the following:
+    <ul>
+    <li>Textfile</li>
+    <li>Textfile (UNIX format)</li>
+    <li>Binary file</li>
+    <li>File is 7 bit only (can be sent by email)</li>
+    </ul>
+
+    <br>
+    This output can be suppressed by using the /F switch.<br>
+  </dir>
+</dir>
+
+<br>
+<br>
+
+<!-- -------------------- 6 -------------------- -->
+
+<a name="chap6"></a>
+
+<h2><a href="#chap0">[Up]</a> 6 Future plans</h2>
+
+<br>
+
+<dir>
+  <ul>
+  <li>Detection of several new formats, especially windows</li>
+  <li>Fix the bugs.</li>
+  <li>I thought about making a Windows GUI for GT but I'm not sure wether it is useful or not.</li>
+  </ul>
+</dir>
+
+<br>
+<br>
+
+<!-- -------------------- 7 -------------------- -->
+
+<a name="chap7"></a>
+
+<h2><a href="#chap0">[Up]</a> 7 Known bugs</h2>
+
+<br>
+
+<dir>
+  Here is a list of all known bugs:
+  <ul>
+  <li>Detection of Excel sheets is wrong - will follow in "next" version
+  since version 1.225. This takes so long because of the complex OLE2
+  file structure ...</li>
+
+  <li>Long filenames under Windows 9x don't work on network drives :(<br>
+  I appreciate any suggestion for solution...</li>
+  </ul>
+</dir>
+
+<br>
+<br>
+
+<!-- -------------------- 8 -------------------- -->
+
+<a name="chap8"></a>
+
+<h2><a href="#chap0">[Up]</a> 8 Error handling</h2>
+
+<br>
+
+<dir>
+  <ul>
+    <li>Error in configuration file (nnn)
+      <ol>
+        <li>there is an error in line nnn of GT.CFG. Read the text displayed.</li>
+        <li>see <a href="#chap2">Commandline options</a> for all possible switches</li>
+      </ol>
+    </li>
+
+    <li>Error opening file ...
+      <ol>
+        <li>the file is opened by another application</li>
+        <li>you have no permissions to read the file</li>
+      </ol>
+    </li>
+
+    <li>XMS error: ...
+      <ol>
+        <li>use the /NX switch to disable XMS usage.</li>
+        <li>end other applications that use XMS.</li>
+      </ol>
+    </li>
+
+    <li>IO error: File not found
+      <ol>
+        <li>file simply does not exist</li>
+      </ol>
+    </li>
+
+    <li>IO Error: Too many open files
+      <ol>
+        <li>internal error in GetTyp</li>
+        <li>increase number of FILES in your CONFIG.SYS</li>
+        <li>end other DOS applications</li>
+      </ol>
+    </li>
+
+    <li>IO Error: File access denied
+      <ol>
+        <li>file is in use by another application (e.g. Windows)</li>
+        <li>try a version of GetTyp >= 1.450</li>
+      </ol>
+    </li>
+
+    <li>IO Error: Disk read error
+      <ol>
+        <li>run Diskfix, ScanDisk, or similar, maybe dangerous</li>
+        <li>"just" a damaged file</li>
+        <li>the file was deleted or renamed while scanning</li>
+      </ol>
+    </li>
+
+    <li>Failed to open the data file GT.DAT for reading.
+      <ol>
+         <li>the data file &quot;gt.dat&quot; could not be found</li>
+         <li>it must be located in the current directory or in the program directory (prefered)</li>
+      </ol>
+    </li>
+
+    <li>Syntax error in line <i>number</i> in the DAT file
+      <ol>
+         <li>if you have altered the dat file, check for any problem in this line</li>
+      </ol>
+    </li>
+
+    <li>all other IO errors
+      <ol>
+        <li>please send me an eMail with the file</li>
+      </ol>
+    </li>
+  </ul>
+</dir>
+
+<br>
+<br>
+
+<!-- -------------------- 9 -------------------- -->
+
+<a name="chap9"></a>
+
+<h2><a href="#chap0">[Up]</a> 9 ThanX go to</h2>
+
+<br>
+
+<dir>
+
+  <table border=1>
+
+  <tr>
+  <th>eMail</th>
+  <th>WWW</th>
+  <th>ThanX to</th>
+  <th>ThanX for</th>
+  </tr>
+
+  <tr>
+  <td><a href="mailto:smeschini@ermes.it">eMail</a></td>
+  <td><a href="http://www.ermes.it/pws/mesk/">WWW</a></td>
+  <td>Salvatore Meschini</td>
+  <td>for his great File Format Encyclopedia.</td>
+  </tr>
+
+  <tr>
+  <td><a href="mailto:Veit.Kannegieser@tu-cottbus.de">eMail</a></td>
+  <td><a href="http://www-user.tu-cottbus.de/~kannegv/">WWW</a></td>
+  <td>Veit Kannnegieser</td>
+  <td>for TYP.EXE which was a great help to identify EXE packer,<br>
+  for bug report and for sending me some packer.<br>
+  Also for releasing the Typ source code.
+  </td>
+  </tr>
+
+  <tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>Robert F. Day</td>
+  <td>for his OBJ2ASM disassembler.<br>
+  I took the information for the object files out of it.<br>
+  Robert F. Day<br>
+  19906 Filbert Dr.<br>
+  Bothell, WA 98012<br>
+  (206) 481-8431</td>
+  </tr>
+
+  <tr>
+  <td><a href="mailto:hanno@gmx.de">eMail</a></td>
+  <td><a href="http://members.xoom.com/hanno/">WWW</a></td>
+  <td>Hann0 Boeck</td>
+  <td>for taking me into the great EXE mailing list and for ChkEXE</td>
+  </tr>
+
+  <tr>
+  <td><a href="mailto:jibz@hotmail.com">eMail</a></td>
+  <td><a href="http://members.xoom.com/jibz">WWW</a></td>
+  <td>Jibz</td>
+  <td>for his great aPack - it's better than WWPack!!</td>
+  </tr>
+
+  <tr>
+  <td><a href="mailto:stewart.moss@saexpress.co.za">eMail</a></td>
+  <td>to come</td>
+  <td>Stewart Moss</td>
+  <td>for bug reporting and sending some packers to me</td>
+  </tr>
+
+  <tr>
+  <td><a href="mailto:martin.schaefer@dortmund.netsurf.de">eMail</a></td>
+  <td>&nbsp;</td>
+  <td>Martin Schaefer</td>
+  <td>for sending me some undetected packer (ACE, BOA, RAX, ...)</td>
+  </tr>
+
+  <tr>
+  <td><a href="mailto:duckling@beastie.cs.und.ac.za">eMail</a></td>
+  <td>to come</td>
+  <td>The ugly duckling</td>
+  <td>for his great file base of executable modifier</td>
+  </tr>
+
+  <tr>
+  <td><a href="mailto:arturjus@kki.net.pl">eMail</a></td>
+  <td>&nbsp;</td>
+  <td>Sir Galleyrod</td>
+  <td>for sending me some pieces of code and some unknown packers<br>
+  fast output code<br>
+  switch LED lights code (which I didn't use finally)<br>
+  "is output redirected" code</td>
+  </tr>
+
+  <tr>
+  <td><a href="mailto:jvp@writeme.com">eMail</a></td>
+  <td><a href="http://members.xoom.com/jvp/">WWW</a></td>
+  <td>JVP</td>
+  <td>for sending lots of packers to me (XPack, HackStop, Mess, ...)</td>
+  </tr>
+
+  <tr>
+  <td>to come</td>
+  <td>&nbsp;</td>
+  <td>Stonehead</td>
+  <td>also for sending lots of packers to me (Mess, XComOr, ...)</td>
+  </tr>
+
+  <tr>
+  <td><a href="mailto:stills0n@writeme.com">eMail</a></td>
+  <td>&nbsp;</td>
+  <td>ST!LLSON</td>
+  <td>for EXESCAN - what's up? No further developement??</td>
+  </tr>
+
+  <tr>
+  <td><a href="mailto:iosco@writeme.com">eMail</a></td>
+  <td><a href="http://welcome.to/crYpta">WWW</a></td>
+  <td>Iosco</td>
+  <td>for bug reporting</td>
+  </tr>
+
+  <tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>All my &quot;registered users&quot;</td>
+  <td><b>THANX 4 SUPPORTING ME</b></td>
+  </tr>
+
+  <tr>
+  <td><a href="mailto:postmaster@ski-factory.uzhgorod.ua">eMail</a></td>
+  <td><a href="http://www.geocities.com/SiliconValley/Lab/6606/">WWW</a></td>
+  <td>George Lyapko</td>
+  <td>for bug reporting and testing GT - ThanX very much<br>
+  also for sending lots of packer to me!<br>
+  Visit his homepage and get LGFV which is very small and fast<br>
+  archive only viewer!!</td>
+  </tr>
+
+  <tr>
+  <td><a href="mailto:e95@com.mels.ru">eMail</a></td>
+  <td>&nbsp;</td>
+  <td>e95 - Alexander</td>
+  <td>for bug reporting, for testing GT, for sending several EXE/COM<br>
+  modifier to me, for some suggestions, ....<br>
+  THANX ALOT. You helped me very much in developing this little tool!!</td>
+  </tr>
+
+  <tr>
+  <td><a href="mailto:vadimlv@yahoo.com">eMail</a></td>
+  <td><a href="http://www.lyceum.junik.lv/~vadimlv">WWW</a></td>
+  <td>Vadim Tarasov</td>
+  <td>for bug reporting and some information exchange</td>
+  </tr>
+
+  </table>
+
+  </dir>
+
+<br>
+<br>
+
+<!-- -------------------- 10 -------------------- -->
+
+<a name="chapA"></a>
+
+<h2><a href="#chap0">[Up]</a> 10 Contact the author</h2>
+
+<br>
+
+<dir>
+  You can contact me, by sending an eMail to me:
+  <ul>
+    <li><a href="mailto:phax@writeme.com">phax@writeme.com</a></li>
+    <li><a href="mailto:phax@suddendischarge.com">phax@suddendischarge.com</a></li>
+    <li><a href="mailto:philip@dke.univie.ac.at">philip@dke.univie.ac.at</a></li>
+  </ul>
+
+  <br>
+
+  Or by visiting one of my homepages:
+  <ul>
+    <li><a href="http://surf.to/phax">GetTyp Homepage</a> or <a href="http://unet.univie.ac.at/~a9606653/gettyp/">http://unet.univie.ac.at/~a9606653/gettyp/</a></li>
+    <li><a href="http://fly.to/claudia">Claudia Schiffer Homepage</a> or <a href="http://unet.univie.ac.at/~a9650515/claudia/">http://unet.univie.ac.at/~a9650515/claudia/</a></li>
+    <li><a href="http://come.to/thejourney">My Sandra Homepage</a> or <a href ="http://unet.univie.ac.at/~a9606653/">http://unet.univie.ac.at/~a9606653/</a></li>
+  </ul>
+
+  <br>
+
+  All programs are copyright &copy; by their authors.<br>
+  GetTyp is Copyright (c) 1997-2000 by PHaX.<br>
+</dir>
+
+</html>
