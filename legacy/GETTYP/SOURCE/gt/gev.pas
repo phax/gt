@@ -4,8 +4,18 @@ program GEV;
 
 uses
      XWrite,  { should be first unit! - last ExitProc!! }
-     WinDOS,
+{$ifdef WIN32}
      SysUtils,
+{$else}
+  {$ifdef WINDOWS}
+     WinDOS,
+  {$else}
+     DOS,
+    {$ifdef XMS}
+     XMS,
+    {$endif}
+  {$endif}
+{$endif}
      GTBuf, GTConfig, GTGlobal, GTOutput, GTRegist,
      XCmdLine, XDOS, XGlobal, XString,
      IOError,

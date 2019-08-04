@@ -1,2 +1,4 @@
 @echo off
-fpc -ve gt.pas
+fpc -ve GT.PAS
+fpc -ve ge.pas
+fpc -ve gev.pas
