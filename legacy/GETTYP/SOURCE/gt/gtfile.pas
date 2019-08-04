@@ -11,11 +11,11 @@ unit GTFile;
 interface
 
 uses
-{$ifdef Windows}
-     WinDOS,
-{$else}
-  {$ifdef WIN32}
+{$ifdef WIN32}
      SysUtils,
+{$else}
+  {$ifdef Windows}
+     WinDOS,
   {$else}
      DOS,
   {$endif}

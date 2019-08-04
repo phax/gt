@@ -113,12 +113,7 @@ type
 
        function  GetObjectCount:byte;
 
-{$ifdef BORLAND}
      private
-{$endif}
-{$ifdef VIRTUALPASCAL}
-     private
-{$endif}
        pPEBase:pPE_Table;
        nTableLen:byte;
        nTableSize:word;

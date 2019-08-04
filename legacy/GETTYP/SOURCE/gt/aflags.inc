@@ -1,22 +1,31 @@
 {$define registered}
 
 {$ifdef MSDOS}
-{$ifndef DPMI}
-{$define XMS}
-{$define LOG_}
-{$endif}
+ {$ifndef DPMI}
+  {$define XMS}
+  {$define LOG_}
+ {$endif}
 {$endif}
 
 {$ifdef DPMI}
-{$define MSDOS}
+ {$define MSDOS}
 {$endif}
 
+{ old to new conversion }
 {$ifdef FPK}
-{$undef MSDOS}
+ {$define FPC}
+{$endif}
+
+{$ifdef FPC}
+ {$undef MSDOS}
+ { $modeswitch classicprocvars+ }
+ { $modeswitch POINTERTOPROCVAR+ }
+ { $modeswitch AUTODEREF+ }
+ {$typedaddress on}
+ { $mode objfpc }
 {$endif}
 
 {$ifdef MSDOS}
-
   {$ifndef exe}
     {$define debug}
   {$endif}
@@ -55,7 +64,6 @@
       {$n-,e-}
     {$endif}
   {$endif}
-
 {$else}
   {$ifdef extended}
     {$x+}
@@ -68,59 +76,63 @@
   {$ifdef IDE}
     {$a-,b-,c-,h-,o+}
   {$else}
-    {$a-,b-,c-,d-,h-,i-,l-,o+,q-,r-,y-}
+    {$ifdef FPC}
+      {$a-,b-,c-,d-,h-,i-,o+,q-,r-}
+    {$else}
+      {$a-,b-,c-,d-,h-,i-,l-,o+,q-,r-,y-}
+    {$endif}
   {$endif}
 {$endif}
 
 {$ifdef VER50}
-{$define DOS}
-{$define BORLAND}
-{$define BORLAND_DOS}
+ {$define DOS}
+ {$define BORLAND}
+ {$define BORLAND_DOS}
 {$endif}
 
 {$ifdef VER60}
-{$define DOS}
-{$define STD}
-{$define BORLAND}
-{$define BORLAND_DOS}
+ {$define DOS}
+ {$define STD}
+ {$define BORLAND}
+ {$define BORLAND_DOS}
 {$endif}
 
 {$ifdef VER70}
-{$define DOS}
-{$define STD}
-{$define BORLAND}
-{$define BORLAND_DOS}
+ {$define DOS}
+ {$define STD}
+ {$define BORLAND}
+ {$define BORLAND_DOS}
 {$endif}
 
 {$ifdef WINDOWS}
-{$define WIN}
+ {$define WIN}
 {$endif}
 
 { delphi 3 }
 {$ifdef VER100}
-{$define DELPHI}
-{$define WIN}
-{$define BORLAND}
+ {$define DELPHI}
+ {$define WIN}
+ {$define BORLAND}
 {$endif}
 
 { delphi 4 }
 {$ifdef VER120}
-{$define DELPHI}
-{$define WIN}
-{$define BORLAND}
+ {$define DELPHI}
+ {$define WIN}
+ {$define BORLAND}
 {$endif}
 
 { do not use this before the main ifdef MSDOS because these
   flags are not supported }
 
 {$ifdef __TMT__}
-{$define MSDOS}
-{$undef XMS}
-{$define GETTYP}
-{$define DPMI}
-{$define __CON__}
-{$define SLOW_STRINGPOSINBUFFER}
-{$define SLOW_COMPARE}
+ {$define MSDOS}
+ {$undef XMS}
+ {$define GETTYP}
+ {$define DPMI}
+ {$define __CON__}
+ {$define SLOW_STRINGPOSINBUFFER}
+ {$define SLOW_COMPARE}
 {$endif}
 
 {$ifdef VIRTUALPASCAL}
@@ -136,6 +148,6 @@
 {$endif}
 
 {$ifdef WIN32}
-{$define SLOW_STRINGPOSINBUFFER}
-{$define SLOW_COMPARE}
+ {$define SLOW_STRINGPOSINBUFFER}
+ {$define SLOW_COMPARE}
 {$endif}

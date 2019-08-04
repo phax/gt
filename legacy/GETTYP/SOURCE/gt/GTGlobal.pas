@@ -116,8 +116,12 @@ function  IsJump (b:byte):boolean;
 implementation
 
 uses
-{$ifdef WINDOWS}
+{$ifdef WIN32}
+     Sysutils,
+{$else}
+  {$ifdef WINDOWS}
      WinDOS,
+  {$endif}
 {$endif}
 {$ifdef MSDOS}
      DOS,

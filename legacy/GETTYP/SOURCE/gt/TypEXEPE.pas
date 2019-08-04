@@ -15,11 +15,11 @@ procedure WritePEInfo (aProc:TEXEProc;
 implementation
 
 uses
-{$ifdef Windows}
-     WinDOS,
-{$else}
-  {$ifdef DELPHI}
+{$ifdef Win32}
      SysUtils,
+{$else}
+  {$ifdef Windows}
+     WinDOS,
   {$else}
      DOS,
   {$endif}

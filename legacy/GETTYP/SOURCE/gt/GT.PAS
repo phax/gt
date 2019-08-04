@@ -19,12 +19,15 @@ uses
      GTFile,  { should be second because of the logfile }
 {$endif}
 {$ifdef WIN32}
-     WinDOS,
      SysUtils,
 {$else}
+  {$ifdef WINDOWS}
+     WinDOS,
+  {$else}
      DOS,
-  {$ifdef XMS}
+    {$ifdef XMS}
      XMS,
+    {$endif}
   {$endif}
 {$endif}
      GTBuf, GTConfig, GTGlobal, GTOutput,

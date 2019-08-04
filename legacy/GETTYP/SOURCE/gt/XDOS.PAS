@@ -16,11 +16,11 @@ unit XDOS;
 interface
 
 uses
-{$ifdef WINDOWS}
-     WinDOS;
-{$else}
-  {$ifdef WIN32}
+{$ifdef WIN32}
      SysUtils, Windows;
+{$else}
+  {$ifdef WINDOWS}
+     WinDOS;
   {$else}
      DOS;
   {$endif}

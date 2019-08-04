@@ -299,13 +299,13 @@ end;
 procedure BUF_GetBuf (var buf;
                           nStartPos:TPos;
                           nLength:TPos);
-{$ifdef FPC}
+{$ifdef FPC16}
 var mem_ptr:pointer;
 {$endif}
 begin
   if (nStartPos + nLength <= b.BufLen) then
   begin
-{$ifdef FPC}
+{$ifdef FPC16}
     mem_ptr := ptr (b.pseg, b.pofs + nStartPos - 1);
     move (mem_ptr^, buf, nLength);
 {$else}
@@ -337,14 +337,14 @@ end;
 function BUF_GetString (n:TPos;
                         nLen:byte):string;
 var s:string;
-{$ifdef FPC}
+{$ifdef FPC16}
     mem_ptr:pointer;
 {$endif}
 begin
   if (n + nLen <= b.BufLen) then
   begin
     SetLength (s, nLen);
-{$ifdef FPC}
+{$ifdef FPC16}
     mem_ptr := ptr (b.pseg, b.pofs + n -1);
     move (mem_ptr^, s[1], nLen);
 {$else}
@@ -361,7 +361,7 @@ function  BUF_GetStringUntil (nStartPos:TPos;
 var nEndPos:TPos;
     s:string;
     nLen:byte;
-{$ifdef FPC}
+{$ifdef FPC16}
     mem_ptr:pointer;
 {$endif}
 begin
@@ -369,7 +369,7 @@ begin
   while (nEndPos < b.BufLen) and (b.p^ [nEndPos - 1] <> nEndByte) do
     inc (nEndPos);
   nLen := nEndPos - nStartPos;
-{$ifdef FPC}
+{$ifdef FPC16}
   mem_ptr := ptr (b.pseg, b.pofs + nStartPos - 1);
   move (mem_ptr^, s[1], nLen);
 {$else}

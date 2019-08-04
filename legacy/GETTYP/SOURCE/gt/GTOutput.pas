@@ -50,10 +50,12 @@ var
 implementation
 
 uses
-{$ifdef Windows}
-     WinDOS,
+{$ifdef Win32}
+     SysUtils,
 {$else}
-  {$ifdef MSDOS}
+  {$ifdef Windows}
+     WinDOS,
+  {$else}
      DOS,
   {$endif}
 {$endif}

@@ -23,11 +23,11 @@ function Check_EXE (StartPos:longint;
 implementation
 
 uses
-{$ifdef WINDOWS}
-     WinDOS,
-{$else}
   {$ifdef WIN32}
     SysUtils,
+{$else}
+  {$ifdef WINDOWS}
+     WinDOS,
   {$else}
      DOS,
   {$endif}
@@ -1153,17 +1153,17 @@ begin
           end;
         end;
 
-             if (NE_ID = 'LE') then WriteLXInfo (Check_EXE, NE_Offset)
-        else if (NE_ID = 'LX') then WriteLXInfo (Check_EXE, NE_Offset)
-        else if (NE_ID = 'NE') then WriteNEInfo (Check_EXE, NE_Offset)
-        else if (NE_ID = 'PE') then WritePEInfo (Check_EXE, NE_Offset)
+             if (NE_ID = 'LE') then WriteLXInfo (TEXEProc(@Check_EXE), NE_Offset)
+        else if (NE_ID = 'LX') then WriteLXInfo (TEXEProc(@Check_EXE), NE_Offset)
+        else if (NE_ID = 'NE') then WriteNEInfo (TEXEProc(@Check_EXE), NE_Offset)
+        else if (NE_ID = 'PE') then WritePEInfo (TEXEProc(@Check_EXE), NE_Offset)
         else
         begin
           { - if still nothing was found check if it may be compressed - }
           if (not Found) and (EXEHeader.RelocEntries = 0) then
               Noteln ('Probably compressed or assembler coded');
 
-          WriteOverlayInfo (Check_EXE,
+          WriteOverlayInfo (TEXEProc(@Check_EXE),
                             EXEHeader.GetSizeInHeader,
                             EXEHeader.GetOverlaySize (b.FSize),
                             Found,
