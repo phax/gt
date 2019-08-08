@@ -101,10 +101,6 @@ function LONG_FindFirst (    sFilespec:string;
                          var sr:LONG_SearchRec):integer;
 function LONG_FindNext  (var sr:LONG_SearchRec):integer;
 function LONG_FindClose (var sr:LONG_SearchRec):integer;
-
-{$ifndef DPMI}
-function WinDT2DOSDT (wintime:pointer):longint;
-{$endif}
 {$endif}
 
 {$ifdef WIN32}
@@ -278,20 +274,6 @@ asm
   xor ax, ax
 @quit:
 end;
-
-{$ifndef DPMI}
-{$L win2dos}  { conversion routines in ASM }
-
-procedure WDT2DDT(var d:longint;w:pointer); external;
-
-function WinDT2DOSDT (wintime:pointer):longint;
-var nDT:longint;
-begin
-  WDT2DDT (nDT, wintime);
-  WinDT2DOSDT := nDT;
-end;
-{$endif}
-{$endif}
 
 function UnixDT2DOSDT (nUnixDT:longint):longint;
 const

@@ -571,7 +571,9 @@ var
  {$ifdef DPMI}
                           0,
  {$else}
-                          WinDT2DOSDT (@LH.nModificationDT),
+                          { function is no longer available - this is the only place used }
+                          { WinDT2DOSDT (@LH.nModificationDT), }
+                          0,
  {$endif}
 {$else}
                           0,
