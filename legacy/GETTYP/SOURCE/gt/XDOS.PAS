@@ -275,6 +275,8 @@ asm
 @quit:
 end;
 
+{$endif}
+
 function UnixDT2DOSDT (nUnixDT:longint):longint;
 const
       DaysPerMonth:array[1..12] of byte =
