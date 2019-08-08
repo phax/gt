@@ -611,7 +611,7 @@ var _IP, nPos:longint;
         14..16:s := concat ('3.02 ',  WWPExt [Version - 13]);
         17..20:s := concat ('3.03 ',  WWPExt [Version - 16]);
         21..24:s := concat ('3.04 ',  WWPExt [Version - 20]);
-        25..28:s := concat ('3.05á ', WWPExt [Version - 24]);
+        25..28:s := concat ('3.05ï¿½ ', WWPExt [Version - 24]);
       end;
       Found := true;
       Noteln (concat ('Packer: WWPack ', s));
@@ -1153,17 +1153,29 @@ begin
           end;
         end;
 
+{$ifdef FPC}
              if (NE_ID = 'LE') then WriteLXInfo (TEXEProc(@Check_EXE), NE_Offset)
         else if (NE_ID = 'LX') then WriteLXInfo (TEXEProc(@Check_EXE), NE_Offset)
         else if (NE_ID = 'NE') then WriteNEInfo (TEXEProc(@Check_EXE), NE_Offset)
         else if (NE_ID = 'PE') then WritePEInfo (TEXEProc(@Check_EXE), NE_Offset)
+{$else}
+             if (NE_ID = 'LE') then WriteLXInfo (Check_EXE, NE_Offset)
+        else if (NE_ID = 'LX') then WriteLXInfo (Check_EXE, NE_Offset)
+        else if (NE_ID = 'NE') then WriteNEInfo (Check_EXE, NE_Offset)
+        else if (NE_ID = 'PE') then WritePEInfo (Check_EXE, NE_Offset)
+{$endif}
         else
         begin
           { - if still nothing was found check if it may be compressed - }
           if (not Found) and (EXEHeader.RelocEntries = 0) then
               Noteln ('Probably compressed or assembler coded');
 
-          WriteOverlayInfo (TEXEProc(@Check_EXE),
+          WriteOverlayInfo (
+{$ifdef FPC}
+                            TEXEProc(@Check_EXE),
+{$else}
+                            Check_EXE,
+{$endif}
                             EXEHeader.GetSizeInHeader,
                             EXEHeader.GetOverlaySize (b.FSize),
                             Found,
